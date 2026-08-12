@@ -1,36 +1,2861 @@
-<!-- =========================
-     PROFESSIONAL LOGO DISPLAY
-     ========================= -->
-<section class="brand-visual" aria-label="شعار مكتب روينا عبدالفتاح رحالي">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
 
-    <div class="brand-frame">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-        <!-- Soft ambient glow -->
-        <div class="ambient-glow"></div>
+    <meta
+        name="description"
+        content="مكتب روينا عبدالفتاح رحالي للمحاماة والاستشارات القانونية"
+    >
 
-        <!-- Moving light -->
-        <div class="light-sweep"></div>
+    <meta
+        name="theme-color"
+        content="#08271b"
+    >
 
-        <!-- Decorative particles -->
-        <span class="particle particle-1"></span>
-        <span class="particle particle-2"></span>
-        <span class="particle particle-3"></span>
+    <title>
+        روينا عبدالفتاح رحالي | للمحاماة والاستشارات القانونية
+    </title>
 
-        <!-- Inner glass panel -->
-        <div class="brand-inner">
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
 
-            <div class="logo-halo"></div>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-            <div class="logo-container">
-                <img
-                    src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.jpg"
-                    alt="شعار مكتب روينا عبدالفتاح رحالي"
-                    class="main-logo"
-                />
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- =====================================================
+         ICONS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <style>
+
+    /* =====================================================
+       ROOT
+    ====================================================== */
+
+    :root {
+
+        --bg:
+            #08271b;
+
+        --bg-dark:
+            #061e15;
+
+        --bg-soft:
+            #0c3022;
+
+        --gold:
+            #d8ae55;
+
+        --gold-light:
+            #edca79;
+
+        --gold-soft:
+            rgba(216,174,85,.18);
+
+        --white:
+            #f7f7f3;
+
+        --text:
+            #d8ddd8;
+
+        --muted:
+            #8e9c94;
+
+        --border:
+            rgba(216,174,85,.18);
+
+        --border-light:
+            rgba(255,255,255,.07);
+
+        --container:
+            1240px;
+
+        --radius:
+            2px;
+
+        --shadow:
+            0 30px 80px rgba(0,0,0,.28);
+
+        --transition:
+            .35s cubic-bezier(.2,.8,.2,1);
+    }
+
+
+    /* =====================================================
+       RESET
+    ====================================================== */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+
+    body {
+
+        font-family:
+            "Cairo",
+            sans-serif;
+
+        background:
+            var(--bg);
+
+        color:
+            var(--white);
+
+        overflow-x:
+            hidden;
+
+        line-height:
+            1.7;
+    }
+
+
+    body::before {
+
+        content: "";
+
+        position: fixed;
+
+        inset: 0;
+
+        z-index: -5;
+
+        pointer-events: none;
+
+        background:
+
+            linear-gradient(
+                rgba(216,174,85,.018) 1px,
+                transparent 1px
+            ),
+
+            linear-gradient(
+                90deg,
+                rgba(216,174,85,.018) 1px,
+                transparent 1px
+            );
+
+        background-size:
+            72px 72px;
+
+        opacity: .7;
+    }
+
+
+    body::after {
+
+        content: "";
+
+        position: fixed;
+
+        width: 600px;
+        height: 600px;
+
+        left: 50%;
+        top: 35%;
+
+        transform:
+            translate(-50%,-50%);
+
+        z-index: -4;
+
+        pointer-events: none;
+
+        background:
+            radial-gradient(
+                circle,
+                rgba(216,174,85,.035),
+                transparent 68%
+            );
+
+        filter:
+            blur(30px);
+    }
+
+
+    img {
+        max-width: 100%;
+    }
+
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+
+    button {
+        font-family: inherit;
+    }
+
+
+    .container {
+
+        width:
+            min(
+                var(--container),
+                calc(100% - 48px)
+            );
+
+        margin:
+            0 auto;
+    }
+
+
+    /* =====================================================
+       HEADER
+    ====================================================== */
+
+    header {
+
+        position:
+            fixed;
+
+        top: 0;
+        right: 0;
+        left: 0;
+
+        z-index: 1000;
+
+        height: 86px;
+
+        border-bottom:
+            1px solid
+            rgba(216,174,85,.10);
+
+        background:
+            rgba(5,30,21,.82);
+
+        backdrop-filter:
+            blur(18px);
+
+        -webkit-backdrop-filter:
+            blur(18px);
+    }
+
+
+    .header-inner {
+
+        height: 100%;
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            space-between;
+
+        gap: 25px;
+    }
+
+
+    /* LOGO HEADER */
+
+    .header-logo {
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        gap: 12px;
+
+        min-width:
+            210px;
+    }
+
+
+    .header-logo img {
+
+        width:
+            58px;
+
+        height:
+            58px;
+
+        object-fit:
+            contain;
+
+        display:
+            block;
+
+        filter:
+            drop-shadow(
+                0 0 12px
+                rgba(216,174,85,.15)
+            );
+    }
+
+
+    .header-brand {
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        line-height:
+            1.25;
+    }
+
+
+    .header-brand strong {
+
+        font-size:
+            16px;
+
+        font-weight:
+            800;
+
+        color:
+            var(--white);
+    }
+
+
+    .header-brand span {
+
+        margin-top:
+            4px;
+
+        color:
+            var(--gold-light);
+
+        font-size:
+            9px;
+
+        font-weight:
+            500;
+    }
+
+
+    /* NAV */
+
+    nav {
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        gap:
+            30px;
+    }
+
+
+    nav a {
+
+        position:
+            relative;
+
+        font-size:
+            13px;
+
+        font-weight:
+            600;
+
+        color:
+            #cbd2cd;
+
+        transition:
+            var(--transition);
+    }
+
+
+    nav a::after {
+
+        content: "";
+
+        position:
+            absolute;
+
+        right:
+            0;
+
+        bottom:
+            -9px;
+
+        width:
+            0;
+
+        height:
+            1px;
+
+        background:
+            var(--gold);
+
+        transition:
+            var(--transition);
+    }
+
+
+    nav a:hover {
+
+        color:
+            var(--gold-light);
+    }
+
+
+    nav a:hover::after {
+
+        width:
+            100%;
+    }
+
+
+    /* PHONE */
+
+    .phone-box {
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        gap:
+            10px;
+
+        padding:
+            9px 13px;
+
+        min-width:
+            170px;
+
+        border:
+            1px solid
+            rgba(216,174,85,.25);
+
+        background:
+            rgba(216,174,85,.035);
+
+        transition:
+            var(--transition);
+    }
+
+
+    .phone-box:hover {
+
+        border-color:
+            rgba(216,174,85,.55);
+
+        background:
+            rgba(216,174,85,.08);
+
+        transform:
+            translateY(-2px);
+
+        box-shadow:
+            0 10px 30px
+            rgba(216,174,85,.07);
+    }
+
+
+    .phone-icon {
+
+        width:
+            34px;
+
+        height:
+            34px;
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        border:
+            1px solid
+            rgba(216,174,85,.30);
+
+        color:
+            var(--gold-light);
+
+        font-size:
+            13px;
+    }
+
+
+    .phone-content {
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        line-height:
+            1.2;
+    }
+
+
+    .phone-content small {
+
+        color:
+            var(--muted);
+
+        font-size:
+            8px;
+    }
+
+
+    .phone-content strong {
+
+        direction:
+            ltr;
+
+        color:
+            var(--gold-light);
+
+        font-size:
+            13px;
+
+        letter-spacing:
+            .3px;
+    }
+
+
+    /* MOBILE MENU */
+
+    .menu-toggle {
+
+        display:
+            none;
+
+        width:
+            42px;
+
+        height:
+            42px;
+
+        border:
+            1px solid
+            var(--border);
+
+        background:
+            transparent;
+
+        color:
+            var(--gold-light);
+
+        cursor:
+            pointer;
+    }
+
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .hero {
+
+        min-height:
+            100vh;
+
+        padding:
+            145px 0 70px;
+
+        display:
+            flex;
+
+        align-items:
+            center;
+    }
+
+
+    .hero-grid {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1.08fr .92fr;
+
+        align-items:
+            center;
+
+        gap:
+            65px;
+    }
+
+
+    /* HERO TEXT */
+
+    .hero-text {
+
+        position:
+            relative;
+
+        z-index:
+            2;
+    }
+
+
+    .eyebrow {
+
+        display:
+            inline-flex;
+
+        align-items:
+            center;
+
+        gap:
+            12px;
+
+        color:
+            var(--gold-light);
+
+        font-size:
+            13px;
+
+        font-weight:
+            700;
+
+        margin-bottom:
+            14px;
+    }
+
+
+    .eyebrow::before {
+
+        content: "";
+
+        width:
+            48px;
+
+        height:
+            1px;
+
+        background:
+            var(--gold);
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            clamp(
+                44px,
+                5vw,
+                76px
+            );
+
+        line-height:
+            1.08;
+
+        letter-spacing:
+            -2px;
+
+        font-weight:
+            800;
+
+        color:
+            var(--white);
+
+        margin-bottom:
+            6px;
+    }
+
+
+    .hero h1 span {
+
+        display:
+            block;
+
+        color:
+            var(--gold-light);
+    }
+
+
+    .hero-description {
+
+        max-width:
+            700px;
+
+        color:
+            #aeb9b2;
+
+        font-size:
+            15px;
+
+        line-height:
+            2;
+
+        margin-top:
+            14px;
+
+        margin-bottom:
+            22px;
+    }
+
+
+    .hero-buttons {
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        gap:
+            12px;
+    }
+
+
+    .btn {
+
+        min-height:
+            52px;
+
+        padding:
+            0 25px;
+
+        display:
+            inline-flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        gap:
+            8px;
+
+        border:
+            1px solid
+            transparent;
+
+        font-size:
+            13px;
+
+        font-weight:
+            700;
+
+        cursor:
+            pointer;
+
+        transition:
+            var(--transition);
+    }
+
+
+    .btn-primary {
+
+        color:
+            #132318;
+
+        background:
+            var(--gold);
+
+        border-color:
+            var(--gold);
+    }
+
+
+    .btn-primary:hover {
+
+        background:
+            var(--gold-light);
+
+        transform:
+            translateY(-3px);
+
+        box-shadow:
+            0 15px 35px
+            rgba(216,174,85,.18);
+    }
+
+
+    .btn-outline {
+
+        color:
+            var(--white);
+
+        background:
+            transparent;
+
+        border-color:
+            rgba(255,255,255,.22);
+    }
+
+
+    .btn-outline:hover {
+
+        border-color:
+            var(--gold);
+
+        color:
+            var(--gold-light);
+
+        transform:
+            translateY(-3px);
+    }
+
+
+    /* HERO VISUAL */
+
+    .hero-visual {
+
+        min-height:
+            580px;
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        position:
+            relative;
+    }
+
+
+    .logo-stage {
+
+        width:
+            min(
+                560px,
+                100%
+            );
+
+        aspect-ratio:
+            1 / 1;
+
+        position:
+            relative;
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        border:
+            1px solid
+            rgba(216,174,85,.19);
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(255,255,255,.018),
+                rgba(255,255,255,.004)
+            );
+
+        overflow:
+            hidden;
+
+        box-shadow:
+            0 35px 80px
+            rgba(0,0,0,.20);
+
+        animation:
+            stageFloat 7s ease-in-out infinite;
+    }
+
+
+    @keyframes stageFloat {
+
+        0%,
+        100% {
+            transform:
+                translateY(0);
+        }
+
+        50% {
+            transform:
+                translateY(-7px);
+        }
+    }
+
+
+    .logo-stage::before {
+
+        content: "";
+
+        position:
+            absolute;
+
+        inset:
+            21px;
+
+        border:
+            1px solid
+            rgba(216,174,85,.10);
+
+        pointer-events:
+            none;
+    }
+
+
+    .logo-stage::after {
+
+        content: "";
+
+        position:
+            absolute;
+
+        width:
+            70px;
+
+        height:
+            70px;
+
+        right:
+            18px;
+
+        top:
+            18px;
+
+        border-top:
+            1px solid
+            rgba(216,174,85,.50);
+
+        border-right:
+            1px solid
+            rgba(216,174,85,.50);
+    }
+
+
+    .logo-aura {
+
+        position:
+            absolute;
+
+        width:
+            70%;
+
+        aspect-ratio:
+            1 / 1;
+
+        border-radius:
+            50%;
+
+        background:
+            radial-gradient(
+                circle,
+                rgba(216,174,85,.13),
+                rgba(216,174,85,.035) 40%,
+                transparent 72%
+            );
+
+        filter:
+            blur(20px);
+
+        animation:
+            auraPulse 5s ease-in-out infinite;
+    }
+
+
+    @keyframes auraPulse {
+
+        0%,
+        100% {
+            opacity:
+                .55;
+
+            transform:
+                scale(.92);
+        }
+
+        50% {
+            opacity:
+                .95;
+
+            transform:
+                scale(1.07);
+        }
+    }
+
+
+    .logo-wrap {
+
+        position:
+            relative;
+
+        z-index:
+            3;
+
+        width:
+            73%;
+
+        aspect-ratio:
+            1 / 1;
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        overflow:
+            hidden;
+
+        background:
+            #0d291d;
+
+        box-shadow:
+            0 25px 60px
+            rgba(0,0,0,.28),
+
+            0 0 45px
+            rgba(216,174,85,.08);
+    }
+
+
+    .logo-wrap::after {
+
+        content: "";
+
+        position:
+            absolute;
+
+        inset:
+            0;
+
+        background:
+            linear-gradient(
+                115deg,
+                transparent 20%,
+                rgba(255,255,255,.06) 47%,
+                rgba(216,174,85,.08) 50%,
+                transparent 65%
+            );
+
+        transform:
+            translateX(-120%);
+
+        animation:
+            logoSweep 6s ease-in-out infinite;
+
+        pointer-events:
+            none;
+    }
+
+
+    @keyframes logoSweep {
+
+        0% {
+            transform:
+                translateX(-120%);
+        }
+
+        30% {
+            transform:
+                translateX(120%);
+        }
+
+        100% {
+            transform:
+                translateX(120%);
+        }
+    }
+
+
+    .logo-wrap img {
+
+        width:
+            100%;
+
+        height:
+            100%;
+
+        object-fit:
+            contain;
+
+        display:
+            block;
+
+        filter:
+            drop-shadow(
+                0 12px 22px
+                rgba(0,0,0,.30)
+            );
+
+        transition:
+            transform .7s
+            cubic-bezier(.2,.8,.2,1);
+    }
+
+
+    .logo-stage:hover .logo-wrap img {
+
+        transform:
+            scale(1.025);
+    }
+
+
+    /* PARTICLES */
+
+    .gold-dot {
+
+        position:
+            absolute;
+
+        width:
+            6px;
+
+        height:
+            6px;
+
+        border-radius:
+            50%;
+
+        background:
+            var(--gold-light);
+
+        box-shadow:
+            0 0 15px
+            rgba(237,202,121,.65);
+
+        z-index:
+            5;
+
+        animation:
+            dotFloat 5s ease-in-out infinite;
+    }
+
+
+    .dot-one {
+        top: 12%;
+        left: 12%;
+    }
+
+
+    .dot-two {
+        bottom: 13%;
+        right: 11%;
+        animation-delay: 2s;
+    }
+
+
+    .dot-three {
+        top: 30%;
+        right: 7%;
+        width: 4px;
+        height: 4px;
+        animation-delay: 3.5s;
+    }
+
+
+    @keyframes dotFloat {
+
+        0%,
+        100% {
+            transform:
+                translateY(0);
+
+            opacity:
+                .45;
+        }
+
+        50% {
+            transform:
+                translateY(-14px);
+
+            opacity:
+                1;
+        }
+    }
+
+
+    /* =====================================================
+       SECTION COMMON
+    ====================================================== */
+
+    section:not(.hero) {
+
+        padding:
+            72px 0;
+    }
+
+
+    .section-head {
+
+        max-width:
+            760px;
+
+        margin-bottom:
+            32px;
+    }
+
+
+    .section-label {
+
+        display:
+            inline-flex;
+
+        align-items:
+            center;
+
+        gap:
+            10px;
+
+        color:
+            var(--gold-light);
+
+        font-size:
+            12px;
+
+        font-weight:
+            700;
+
+        margin-bottom:
+            9px;
+    }
+
+
+    .section-label::before {
+
+        content: "";
+
+        width:
+            35px;
+
+        height:
+            1px;
+
+        background:
+            var(--gold);
+    }
+
+
+    .section-title {
+
+        font-size:
+            clamp(
+                29px,
+                4vw,
+                48px
+            );
+
+        line-height:
+            1.25;
+
+        font-weight:
+            800;
+
+        margin-bottom:
+            8px;
+    }
+
+
+    .section-title span {
+
+        color:
+            var(--gold-light);
+    }
+
+
+    .section-description {
+
+        color:
+            var(--muted);
+
+        font-size:
+            14px;
+
+        line-height:
+            1.9;
+
+        max-width:
+            700px;
+    }
+
+
+    /* =====================================================
+       ABOUT
+    ====================================================== */
+
+    .about {
+
+        background:
+            rgba(0,0,0,.055);
+    }
+
+
+    .about-grid {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            .85fr 1.15fr;
+
+        gap:
+            55px;
+
+        align-items:
+            center;
+    }
+
+
+    .about-card {
+
+        position:
+            relative;
+
+        padding:
+            30px;
+
+        border:
+            1px solid
+            var(--border);
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(255,255,255,.018),
+                rgba(255,255,255,.004)
+            );
+
+        box-shadow:
+            var(--shadow);
+    }
+
+
+    .about-card::before {
+
+        content: "";
+
+        position:
+            absolute;
+
+        width:
+            60px;
+
+        height:
+            60px;
+
+        right:
+            -1px;
+
+        top:
+            -1px;
+
+        border-top:
+            1px solid
+            var(--gold);
+
+        border-right:
+            1px solid
+            var(--gold);
+    }
+
+
+    .about-card h3 {
+
+        font-size:
+            25px;
+
+        margin-bottom:
+            10px;
+    }
+
+
+    .about-card p {
+
+        color:
+            var(--muted);
+
+        font-size:
+            13px;
+
+        line-height:
+            1.9;
+    }
+
+
+    .about-text p {
+
+        color:
+            var(--text);
+
+        font-size:
+            14px;
+
+        line-height:
+            2;
+
+        margin-bottom:
+            12px;
+    }
+
+
+    .about-features {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+        gap:
+            12px;
+
+        margin-top:
+            24px;
+    }
+
+
+    .feature {
+
+        padding:
+            17px;
+
+        border-top:
+            1px solid
+            rgba(216,174,85,.25);
+
+        background:
+            rgba(255,255,255,.012);
+    }
+
+
+    .feature strong {
+
+        display:
+            block;
+
+        color:
+            var(--gold-light);
+
+        font-size:
+            15px;
+
+        margin-bottom:
+            3px;
+    }
+
+
+    .feature span {
+
+        color:
+            var(--muted);
+
+        font-size:
+            10px;
+    }
+
+
+    /* =====================================================
+       SERVICES
+    ====================================================== */
+
+    .services-grid {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+        gap:
+            14px;
+    }
+
+
+    .service-card {
+
+        position:
+            relative;
+
+        min-height:
+            190px;
+
+        padding:
+            25px;
+
+        border:
+            1px solid
+            var(--border);
+
+        background:
+            rgba(255,255,255,.012);
+
+        overflow:
+            hidden;
+
+        transition:
+            var(--transition);
+    }
+
+
+    .service-card::before {
+
+        content: "";
+
+        position:
+            absolute;
+
+        width:
+            130px;
+
+        height:
+            130px;
+
+        left:
+            -70px;
+
+        bottom:
+            -70px;
+
+        border-radius:
+            50%;
+
+        background:
+            rgba(216,174,85,.06);
+
+        transition:
+            var(--transition);
+    }
+
+
+    .service-card:hover {
+
+        transform:
+            translateY(-6px);
+
+        border-color:
+            rgba(216,174,85,.42);
+
+        background:
+            rgba(216,174,85,.025);
+
+        box-shadow:
+            0 20px 50px
+            rgba(0,0,0,.18);
+    }
+
+
+    .service-card:hover::before {
+
+        transform:
+            scale(2);
+    }
+
+
+    .service-number {
+
+        color:
+            rgba(216,174,85,.45);
+
+        font-size:
+            11px;
+
+        font-weight:
+            700;
+
+        margin-bottom:
+            15px;
+    }
+
+
+    .service-card h3 {
+
+        font-size:
+            18px;
+
+        margin-bottom:
+            7px;
+    }
+
+
+    .service-card p {
+
+        color:
+            var(--muted);
+
+        font-size:
+            12px;
+
+        line-height:
+            1.8;
+    }
+
+
+    /* =====================================================
+       PRACTICE AREAS
+    ====================================================== */
+
+    .practice {
+
+        background:
+            rgba(0,0,0,.06);
+    }
+
+
+    .practice-grid {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(4,1fr);
+
+        gap:
+            12px;
+    }
+
+
+    .practice-card {
+
+        padding:
+            22px 18px;
+
+        border:
+            1px solid
+            var(--border-light);
+
+        background:
+            rgba(255,255,255,.012);
+
+        transition:
+            var(--transition);
+    }
+
+
+    .practice-card:hover {
+
+        transform:
+            translateY(-4px);
+
+        border-color:
+            rgba(216,174,85,.32);
+    }
+
+
+    .practice-icon {
+
+        width:
+            42px;
+
+        height:
+            42px;
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        border:
+            1px solid
+            rgba(216,174,85,.25);
+
+        color:
+            var(--gold-light);
+
+        margin-bottom:
+            14px;
+    }
+
+
+    .practice-card h3 {
+
+        font-size:
+            15px;
+
+        margin-bottom:
+            5px;
+    }
+
+
+    .practice-card p {
+
+        color:
+            var(--muted);
+
+        font-size:
+            11px;
+
+        line-height:
+            1.8;
+    }
+
+
+    /* =====================================================
+       METHOD
+    ====================================================== */
+
+    .method-grid {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+        gap:
+            14px;
+    }
+
+
+    .method-card {
+
+        padding:
+            26px;
+
+        border:
+            1px solid
+            var(--border);
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(255,255,255,.018),
+                transparent
+            );
+    }
+
+
+    .method-card span {
+
+        display:
+            block;
+
+        color:
+            var(--gold);
+
+        font-size:
+            11px;
+
+        margin-bottom:
+            10px;
+    }
+
+
+    .method-card h3 {
+
+        font-size:
+            19px;
+
+        margin-bottom:
+            7px;
+    }
+
+
+    .method-card p {
+
+        color:
+            var(--muted);
+
+        font-size:
+            12px;
+
+        line-height:
+            1.9;
+    }
+
+
+    /* =====================================================
+       CONTACT
+    ====================================================== */
+
+    .contact {
+
+        padding-bottom:
+            90px !important;
+    }
+
+
+    .contact-box {
+
+        position:
+            relative;
+
+        padding:
+            38px;
+
+        border:
+            1px solid
+            rgba(216,174,85,.22);
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(216,174,85,.055),
+                rgba(255,255,255,.008)
+            );
+
+        overflow:
+            hidden;
+    }
+
+
+    .contact-box::after {
+
+        content: "";
+
+        position:
+            absolute;
+
+        width:
+            280px;
+
+        height:
+            280px;
+
+        left:
+            -100px;
+
+        bottom:
+            -160px;
+
+        border-radius:
+            50%;
+
+        background:
+            rgba(216,174,85,.055);
+
+        filter:
+            blur(25px);
+    }
+
+
+    .contact-content {
+
+        position:
+            relative;
+
+        z-index:
+            2;
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            space-between;
+
+        gap:
+            30px;
+    }
+
+
+    .contact-content h2 {
+
+        font-size:
+            30px;
+
+        line-height:
+            1.35;
+
+        margin-bottom:
+            7px;
+    }
+
+
+    .contact-content p {
+
+        color:
+            var(--muted);
+
+        font-size:
+            13px;
+    }
+
+
+    .contact-actions {
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        gap:
+            10px;
+
+        flex-shrink:
+            0;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ====================================================== */
+
+    footer {
+
+        border-top:
+            1px solid
+            rgba(216,174,85,.10);
+
+        padding:
+            25px 0;
+
+        background:
+            rgba(0,0,0,.12);
+    }
+
+
+    .footer-inner {
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            space-between;
+
+        gap:
+            20px;
+    }
+
+
+    .footer-copy {
+
+        color:
+            var(--muted);
+
+        font-size:
+            10px;
+    }
+
+
+    .footer-brand {
+
+        color:
+            var(--gold-light);
+
+        font-size:
+            11px;
+
+        font-weight:
+            700;
+    }
+
+
+    /* =====================================================
+       WHATSAPP
+    ====================================================== */
+
+    .whatsapp {
+
+        position:
+            fixed;
+
+        left:
+            24px;
+
+        bottom:
+            24px;
+
+        z-index:
+            999;
+
+        width:
+            58px;
+
+        height:
+            58px;
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        border-radius:
+            50%;
+
+        background:
+            var(--gold);
+
+        color:
+            #08271b;
+
+        font-size:
+            25px;
+
+        box-shadow:
+            0 12px 35px
+            rgba(0,0,0,.25);
+
+        transition:
+            var(--transition);
+    }
+
+
+    .whatsapp:hover {
+
+        transform:
+            translateY(-5px)
+            scale(1.04);
+
+        box-shadow:
+            0 18px 40px
+            rgba(216,174,85,.22);
+    }
+
+
+    .whatsapp::before {
+
+        content: "";
+
+        position:
+            absolute;
+
+        inset:
+            -5px;
+
+        border-radius:
+            50%;
+
+        border:
+            1px solid
+            rgba(216,174,85,.35);
+
+        animation:
+            whatsappPulse 2.5s
+            ease-out infinite;
+    }
+
+
+    @keyframes whatsappPulse {
+
+        0% {
+            transform:
+                scale(.9);
+
+            opacity:
+                .8;
+        }
+
+        70% {
+            transform:
+                scale(1.25);
+
+            opacity:
+                0;
+        }
+
+        100% {
+            opacity:
+                0;
+        }
+    }
+
+
+    /* =====================================================
+       RESPONSIVE - TABLET
+    ====================================================== */
+
+    @media (max-width: 1050px) {
+
+        .header-logo {
+            min-width: auto;
+        }
+
+        nav {
+            gap:
+                18px;
+        }
+
+        .phone-box {
+            min-width:
+                auto;
+        }
+
+        .hero-grid {
+            grid-template-columns:
+                1fr 1fr;
+
+            gap:
+                35px;
+        }
+
+        .hero h1 {
+            font-size:
+                clamp(
+                    40px,
+                    5vw,
+                    62px
+                );
+        }
+
+        .hero-visual {
+            min-height:
+                480px;
+        }
+
+        .practice-grid {
+            grid-template-columns:
+                repeat(2,1fr);
+        }
+    }
+
+
+    /* =====================================================
+       RESPONSIVE - MOBILE NAV
+    ====================================================== */
+
+    @media (max-width: 820px) {
+
+        header {
+            height:
+                72px;
+        }
+
+        .header-inner {
+            position:
+                relative;
+        }
+
+        .header-logo img {
+            width:
+                48px;
+
+            height:
+                48px;
+        }
+
+        .header-brand strong {
+            font-size:
+                13px;
+        }
+
+        .header-brand span {
+            font-size:
+                7px;
+        }
+
+        .menu-toggle {
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+        }
+
+        nav {
+
+            position:
+                absolute;
+
+            top:
+                72px;
+
+            right:
+                0;
+
+            left:
+                0;
+
+            display:
+                none;
+
+            flex-direction:
+                column;
+
+            align-items:
+                stretch;
+
+            gap:
+                0;
+
+            padding:
+                10px 20px 20px;
+
+            background:
+                rgba(5,30,21,.97);
+
+            border-bottom:
+                1px solid
+                var(--border);
+
+            box-shadow:
+                0 20px 40px
+                rgba(0,0,0,.2);
+        }
+
+        nav.active {
+            display:
+                flex;
+        }
+
+        nav a {
+            padding:
+                12px 0;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.04);
+        }
+
+        nav a::after {
+            display:
+                none;
+        }
+
+        .phone-box {
+            display:
+                none;
+        }
+
+        .hero {
+            padding:
+                115px 0 55px;
+        }
+
+        .hero-grid {
+            grid-template-columns:
+                1fr;
+
+            gap:
+                35px;
+
+            text-align:
+                center;
+        }
+
+        .hero-text {
+            order:
+                1;
+        }
+
+        .hero-visual {
+            order:
+                2;
+
+            min-height:
+                auto;
+        }
+
+        .eyebrow {
+            justify-content:
+                center;
+        }
+
+        .hero-description {
+            margin-left:
+                auto;
+
+            margin-right:
+                auto;
+        }
+
+        .hero-buttons {
+            justify-content:
+                center;
+        }
+
+        .logo-stage {
+            width:
+                min(
+                    480px,
+                    88vw
+                );
+        }
+
+        .about-grid {
+            grid-template-columns:
+                1fr;
+
+            gap:
+                25px;
+        }
+
+        .services-grid {
+            grid-template-columns:
+                repeat(2,1fr);
+        }
+
+        .contact-content {
+            flex-direction:
+                column;
+
+            align-items:
+                flex-start;
+        }
+
+        .footer-inner {
+            flex-direction:
+                column;
+
+            text-align:
+                center;
+        }
+    }
+
+
+    /* =====================================================
+       RESPONSIVE - SMALL MOBILE
+    ====================================================== */
+
+    @media (max-width: 560px) {
+
+        .container {
+            width:
+                calc(100% - 30px);
+        }
+
+        section:not(.hero) {
+            padding:
+                55px 0;
+        }
+
+        .hero h1 {
+            font-size:
+                42px;
+
+            letter-spacing:
+                -1px;
+        }
+
+        .hero-description {
+            font-size:
+                12px;
+
+            line-height:
+                1.9;
+        }
+
+        .hero-buttons {
+            flex-direction:
+                column;
+
+            width:
+                100%;
+        }
+
+        .hero-buttons .btn {
+            width:
+                100%;
+        }
+
+        .logo-stage {
+            width:
+                92vw;
+        }
+
+        .logo-stage::before {
+            inset:
+                14px;
+        }
+
+        .logo-wrap {
+            width:
+                72%;
+        }
+
+        .section-title {
+            font-size:
+                30px;
+        }
+
+        .section-description {
+            font-size:
+                12px;
+        }
+
+        .services-grid {
+            grid-template-columns:
+                1fr;
+        }
+
+        .practice-grid {
+            grid-template-columns:
+                1fr;
+        }
+
+        .method-grid {
+            grid-template-columns:
+                1fr;
+        }
+
+        .about-features {
+            grid-template-columns:
+                1fr;
+        }
+
+        .contact-box {
+            padding:
+                25px 20px;
+        }
+
+        .contact-content h2 {
+            font-size:
+                24px;
+        }
+
+        .contact-actions {
+            width:
+                100%;
+
+            flex-direction:
+                column;
+        }
+
+        .contact-actions .btn {
+            width:
+                100%;
+        }
+
+        .whatsapp {
+            left:
+                17px;
+
+            bottom:
+                17px;
+
+            width:
+                53px;
+
+            height:
+                53px;
+
+            font-size:
+                22px;
+        }
+    }
+
+
+    /* =====================================================
+       REDUCE MOTION
+    ====================================================== */
+
+    @media (prefers-reduced-motion: reduce) {
+
+        *,
+        *::before,
+        *::after {
+
+            animation-duration:
+                .01ms !important;
+
+            animation-iteration-count:
+                1 !important;
+
+            scroll-behavior:
+                auto !important;
+
+            transition-duration:
+                .01ms !important;
+        }
+    }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
+<header>
+
+    <div class="container header-inner">
+
+
+        <!-- BRAND -->
+
+        <a
+            href="#home"
+            class="header-logo"
+        >
+
+            <img
+                src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.jpg"
+                alt="شعار روينا عبدالفتاح رحالي"
+            >
+
+            <div class="header-brand">
+
+                <strong>
+                    روينا عبدالفتاح رحالي
+                </strong>
+
+                <span>
+                    للمحاماة والاستشارات القانونية
+                </span>
+
             </div>
 
-            <!-- Elegant bottom reflection -->
-            <div class="logo-reflection"></div>
+        </a>
+
+
+        <!-- NAVIGATION -->
+
+        <nav id="mainNav">
+
+            <a href="#about">
+                عن المكتب
+            </a>
+
+            <a href="#services">
+                خدماتنا
+            </a>
+
+            <a href="#practice">
+                مجالات العمل
+            </a>
+
+            <a href="#method">
+                منهجيتنا
+            </a>
+
+            <a href="#contact">
+                تواصل معنا
+            </a>
+
+        </nav>
+
+
+        <!-- PHONE -->
+
+        <a
+            class="phone-box"
+            href="tel:0544270651"
+            aria-label="الاتصال على 0544270651"
+        >
+
+            <span class="phone-icon">
+                <i class="fa-solid fa-phone"></i>
+            </span>
+
+            <span class="phone-content">
+
+                <small>
+                    اتصل بنا
+                </small>
+
+                <strong>
+                    054 427 0651
+                </strong>
+
+            </span>
+
+        </a>
+
+
+        <!-- MOBILE MENU -->
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="فتح القائمة"
+        >
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<main id="home">
+
+<section class="hero">
+
+    <div class="container hero-grid">
+
+
+        <!-- TEXT -->
+
+        <div class="hero-text">
+
+            <div class="eyebrow">
+                مكتب محاماة واستشارات قانونية
+            </div>
+
+
+            <h1>
+
+                قانون واضح.
+
+                <span>
+                    موقف أقوى.
+                </span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                نقرأ قضيتك بعمق، ونحوّل التعقيد القانوني إلى
+                خطوات عملية تحمي حقوقك وتدعم قرارك، من خلال
+                رؤية قانونية واضحة ومنهجية دقيقة.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#contact"
+                    class="btn btn-primary"
+                >
+
+                    احجز استشارتك
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                </a>
+
+
+                <a
+                    href="#about"
+                    class="btn btn-outline"
+                >
+
+                    تعرّف على المكتب
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- LOGO -->
+
+        <div class="hero-visual">
+
+            <div class="logo-stage">
+
+
+                <div class="logo-aura"></div>
+
+
+                <span class="gold-dot dot-one"></span>
+
+                <span class="gold-dot dot-two"></span>
+
+                <span class="gold-dot dot-three"></span>
+
+
+                <div class="logo-wrap">
+
+                    <img
+                        src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.jpg"
+                        alt="شعار مكتب روينا عبدالفتاح رحالي"
+                    >
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+====================================================== -->
+
+<section
+    class="about"
+    id="about"
+>
+
+    <div class="container">
+
+
+        <div class="section-head">
+
+            <div class="section-label">
+                عن المكتب
+            </div>
+
+            <h2 class="section-title">
+
+                القانون ليس تعقيدًا...
+
+                <span>
+                    بل طريق واضح للوصول إلى حقك.
+                </span>
+
+            </h2>
+
+            <p class="section-description">
+
+                نؤمن أن العمل القانوني الاحترافي يبدأ بفهم
+                الوقائع والاستماع الدقيق للعميل، ثم بناء رؤية
+                قانونية واضحة ومدروسة.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="about-grid">
+
+
+            <div class="about-card">
+
+                <h3>
+                    ثقة تُبنى بالوضوح
+                </h3>
+
+                <p>
+
+                    نعمل على تقديم خدمة قانونية تجمع بين
+                    الدقة والسرية والوضوح، مع الاهتمام
+                    بتفاصيل كل قضية واحتياجات كل عميل.
+
+                </p>
+
+
+                <div class="about-features">
+
+
+                    <div class="feature">
+
+                        <strong>
+                            وضوح
+                        </strong>
+
+                        <span>
+                            في كل خطوة
+                        </span>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <strong>
+                            دقة
+                        </strong>
+
+                        <span>
+                            في كل وثيقة
+                        </span>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <strong>
+                            سرية
+                        </strong>
+
+                        <span>
+                            في كل ملف
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <div class="about-text">
+
+                <p>
+
+                    يحرص المكتب على التعامل مع القضايا
+                    والمسائل القانونية بمنهجية عملية تبدأ
+                    من فهم المشكلة وتحليلها بشكل دقيق.
+
+                </p>
+
+                <p>
+
+                    ثم ننتقل إلى تحديد الخيارات القانونية
+                    المناسبة وتقديم الحلول التي تساعد العميل
+                    على اتخاذ القرار بثقة ووضوح.
+
+                </p>
+
+                <p>
+
+                    هدفنا ليس فقط تقديم رأي قانوني، وإنما
+                    بناء استراتيجية قانونية عملية تتناسب
+                    مع طبيعة كل حالة.
+
+                </p>
+
+            </div>
+
 
         </div>
 
@@ -39,611 +2864,876 @@
 </section>
 
 
-<style>
 
-/* =========================================
-   PROFESSIONAL LOGO AREA
-   ========================================= */
+<!-- =====================================================
+     SERVICES
+====================================================== -->
 
-.brand-visual {
-    width: 100%;
-    min-height: 620px;
+<section id="services">
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    position: relative;
-
-    direction: rtl;
-
-    overflow: hidden;
-}
+    <div class="container">
 
 
-/* =========================================
-   MAIN FRAME
-   ========================================= */
+        <div class="section-head">
 
-.brand-frame {
+            <div class="section-label">
+                خدماتنا
+            </div>
 
-    width: min(570px, 90vw);
-    aspect-ratio: 1 / 1;
+            <h2 class="section-title">
+                حلول قانونية
+                <span>متكاملة.</span>
+            </h2>
 
-    position: relative;
+            <p class="section-description">
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+                نقدم مجموعة من الخدمات القانونية المصممة
+                لتلبية احتياجات الأفراد والمنشآت بمهنية
+                ووضوح.
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.025),
-            rgba(255,255,255,0.005)
-        );
+            </p>
 
-    border: 1px solid rgba(218,178,79,0.25);
-
-    box-shadow:
-        inset 0 0 0 1px rgba(255,255,255,0.015),
-        0 25px 70px rgba(0,0,0,0.25);
-
-    backdrop-filter: blur(10px);
-
-    overflow: hidden;
-
-    transition:
-        transform .7s cubic-bezier(.2,.8,.2,1),
-        box-shadow .7s ease;
-}
+        </div>
 
 
-/* Elegant hover */
 
-.brand-frame:hover {
-
-    transform: translateY(-8px);
-
-    box-shadow:
-        inset 0 0 0 1px rgba(255,255,255,0.025),
-        0 35px 90px rgba(0,0,0,0.38),
-        0 0 55px rgba(211,169,70,0.08);
-}
+        <div class="services-grid">
 
 
-/* =========================================
-   INNER FRAME
-   ========================================= */
+            <article class="service-card">
 
-.brand-inner {
+                <div class="service-number">
+                    01
+                </div>
 
-    position: absolute;
+                <h3>
+                    الاستشارات القانونية
+                </h3>
 
-    inset: 22px;
+                <p>
 
-    border: 1px solid rgba(218,178,79,0.13);
+                    تحليل المسألة القانونية وتوضيح الخيارات
+                    والآثار القانونية المترتبة عليها.
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+                </p>
 
-    overflow: hidden;
-
-    background:
-
-        radial-gradient(
-            circle at center,
-            rgba(214,171,72,0.07) 0%,
-            rgba(214,171,72,0.025) 28%,
-            transparent 62%
-        ),
-
-        linear-gradient(
-            145deg,
-            rgba(13,43,30,0.92),
-            rgba(6,32,23,0.96)
-        );
-}
+            </article>
 
 
-/* =========================================
-   AMBIENT GOLDEN LIGHT
-   ========================================= */
+            <article class="service-card">
 
-.ambient-glow {
+                <div class="service-number">
+                    02
+                </div>
 
-    position: absolute;
+                <h3>
+                    الترافع والتمثيل
+                </h3>
 
-    width: 330px;
-    height: 330px;
+                <p>
 
-    border-radius: 50%;
+                    تمثيل العملاء ومتابعة الإجراءات القانونية
+                    والدفاع عن مصالحهم أمام الجهات المختصة.
 
-    background:
+                </p>
 
-        radial-gradient(
-            circle,
-            rgba(218,178,79,0.20) 0%,
-            rgba(218,178,79,0.08) 32%,
-            rgba(218,178,79,0.025) 55%,
-            transparent 72%
-        );
-
-    filter: blur(15px);
-
-    opacity: .8;
-
-    animation:
-        ambientPulse 5s ease-in-out infinite;
-
-    pointer-events: none;
-}
+            </article>
 
 
-@keyframes ambientPulse {
+            <article class="service-card">
 
-    0%,
-    100% {
-        transform: scale(.92);
-        opacity: .65;
+                <div class="service-number">
+                    03
+                </div>
+
+                <h3>
+                    صياغة العقود
+                </h3>
+
+                <p>
+
+                    إعداد ومراجعة العقود والاتفاقيات بما يحقق
+                    وضوح الالتزامات ويحمي المصالح.
+
+                </p>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    04
+                </div>
+
+                <h3>
+                    القضايا التجارية
+                </h3>
+
+                <p>
+
+                    تقديم الدعم القانوني للمشروعات والمنشآت
+                    في المسائل والمعاملات التجارية.
+
+                </p>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    05
+                </div>
+
+                <h3>
+                    القضايا العمالية
+                </h3>
+
+                <p>
+
+                    معالجة المنازعات العمالية ومتابعة الحقوق
+                    والالتزامات وفق الأنظمة ذات العلاقة.
+
+                </p>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    06
+                </div>
+
+                <h3>
+                    التسويات والمنازعات
+                </h3>
+
+                <p>
+
+                    دراسة النزاعات والبحث عن الحلول القانونية
+                    المناسبة قبل وأثناء التقاضي.
+
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PRACTICE AREAS
+====================================================== -->
+
+<section
+    class="practice"
+    id="practice"
+>
+
+    <div class="container">
+
+
+        <div class="section-head">
+
+            <div class="section-label">
+                مجالات العمل
+            </div>
+
+            <h2 class="section-title">
+
+                خبرة قانونية
+                <span>تخدم احتياجك.</span>
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="practice-grid">
+
+
+            <article class="practice-card">
+
+                <div class="practice-icon">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+
+                <h3>
+                    الشركات والأعمال
+                </h3>
+
+                <p>
+                    خدمات قانونية مرتبطة بالمنشآت والمعاملات التجارية.
+                </p>
+
+            </article>
+
+
+            <article class="practice-card">
+
+                <div class="practice-icon">
+                    <i class="fa-solid fa-file-contract"></i>
+                </div>
+
+                <h3>
+                    العقود والاتفاقيات
+                </h3>
+
+                <p>
+                    صياغة ومراجعة الوثائق والعقود القانونية.
+                </p>
+
+            </article>
+
+
+            <article class="practice-card">
+
+                <div class="practice-icon">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+
+                <h3>
+                    التقاضي والمرافعات
+                </h3>
+
+                <p>
+                    متابعة القضايا والتمثيل القانوني أمام الجهات المختصة.
+                </p>
+
+            </article>
+
+
+            <article class="practice-card">
+
+                <div class="practice-icon">
+                    <i class="fa-solid fa-briefcase"></i>
+                </div>
+
+                <h3>
+                    القضايا العمالية
+                </h3>
+
+                <p>
+                    معالجة المنازعات وحماية الحقوق العمالية.
+                </p>
+
+            </article>
+
+
+            <article class="practice-card">
+
+                <div class="practice-icon">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+
+                <h3>
+                    التسويات
+                </h3>
+
+                <p>
+                    حلول عملية للمنازعات وتقليل المخاطر القانونية.
+                </p>
+
+            </article>
+
+
+            <article class="practice-card">
+
+                <div class="practice-icon">
+                    <i class="fa-solid fa-gavel"></i>
+                </div>
+
+                <h3>
+                    المنازعات
+                </h3>
+
+                <p>
+                    دراسة النزاع ووضع المسار القانوني المناسب.
+                </p>
+
+            </article>
+
+
+            <article class="practice-card">
+
+                <div class="practice-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <h3>
+                    الامتثال القانوني
+                </h3>
+
+                <p>
+                    دعم المنشآت في التعامل مع المتطلبات النظامية.
+                </p>
+
+            </article>
+
+
+            <article class="practice-card">
+
+                <div class="practice-icon">
+                    <i class="fa-solid fa-comments"></i>
+                </div>
+
+                <h3>
+                    الرأي القانوني
+                </h3>
+
+                <p>
+                    تحليل المسائل القانونية وتقديم الرأي المناسب.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     METHOD
+====================================================== -->
+
+<section id="method">
+
+    <div class="container">
+
+
+        <div class="section-head">
+
+            <div class="section-label">
+                منهجيتنا
+            </div>
+
+            <h2 class="section-title">
+
+                من المشكلة
+                <span>إلى الحل.</span>
+
+            </h2>
+
+            <p class="section-description">
+
+                نعمل وفق خطوات واضحة تساعد على فهم المسألة
+                القانونية والوصول إلى القرار المناسب.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="method-grid">
+
+
+            <article class="method-card">
+
+                <span>
+                    الخطوة الأولى
+                </span>
+
+                <h3>
+                    نفهم قضيتك
+                </h3>
+
+                <p>
+
+                    نستمع إلى التفاصيل ونراجع الوقائع
+                    والمستندات ذات الصلة.
+
+                </p>
+
+            </article>
+
+
+            <article class="method-card">
+
+                <span>
+                    الخطوة الثانية
+                </span>
+
+                <h3>
+                    نحلل الموقف
+                </h3>
+
+                <p>
+
+                    نحدد المسائل القانونية والخيارات
+                    المتاحة والمخاطر المحتملة.
+
+                </p>
+
+            </article>
+
+
+            <article class="method-card">
+
+                <span>
+                    الخطوة الثالثة
+                </span>
+
+                <h3>
+                    نبني الحل
+                </h3>
+
+                <p>
+
+                    نقدم مسارًا قانونيًا واضحًا يساعدك
+                    على اتخاذ القرار المناسب.
+
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+====================================================== -->
+
+<section
+    class="contact"
+    id="contact"
+>
+
+    <div class="container">
+
+
+        <div class="contact-box">
+
+
+            <div class="contact-content">
+
+
+                <div>
+
+                    <div class="section-label">
+                        تواصل معنا
+                    </div>
+
+                    <h2>
+                        ابدأ بخطوة
+                        <span style="color:var(--gold-light)">
+                            واضحة.
+                        </span>
+                    </h2>
+
+                    <p>
+
+                        تواصل معنا لمعرفة الخيارات القانونية
+                        المناسبة لحالتك.
+
+                    </p>
+
+                </div>
+
+
+                <div class="contact-actions">
+
+                    <a
+                        href="tel:0544270651"
+                        class="btn btn-primary"
+                    >
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        اتصل الآن
+
+                    </a>
+
+
+                    <a
+                        href="https://wa.me/966544270651"
+                        target="_blank"
+                        rel="noopener"
+                        class="btn btn-outline"
+                    >
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                        واتساب
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+    <div class="container footer-inner">
+
+        <div class="footer-brand">
+            روينا عبدالفتاح رحالي
+        </div>
+
+        <div class="footer-copy">
+
+            جميع الحقوق محفوظة ©
+            <span id="year"></span>
+
+        </div>
+
+        <div class="footer-copy">
+
+            للمحاماة والاستشارات القانونية
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     WHATSAPP FLOATING BUTTON
+====================================================== -->
+
+<a
+    href="https://wa.me/966544270651"
+    target="_blank"
+    rel="noopener"
+    class="whatsapp"
+    aria-label="التواصل عبر واتساب"
+>
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+
+/* =====================================================
+   YEAR
+===================================================== */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+const menuToggle =
+    document.getElementById("menuToggle");
+
+const mainNav =
+    document.getElementById("mainNav");
+
+
+menuToggle.addEventListener(
+    "click",
+    function () {
+
+        mainNav.classList.toggle("active");
+
+        const icon =
+            menuToggle.querySelector("i");
+
+        if (
+            mainNav.classList.contains("active")
+        ) {
+
+            icon.classList.remove(
+                "fa-bars"
+            );
+
+            icon.classList.add(
+                "fa-xmark"
+            );
+
+        } else {
+
+            icon.classList.remove(
+                "fa-xmark"
+            );
+
+            icon.classList.add(
+                "fa-bars"
+            );
+
+        }
+
     }
+);
 
-    50% {
-        transform: scale(1.08);
-        opacity: .95;
+
+
+/* =====================================================
+   CLOSE MOBILE MENU
+===================================================== */
+
+document
+    .querySelectorAll("#mainNav a")
+    .forEach(
+        link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    mainNav.classList.remove(
+                        "active"
+                    );
+
+                    const icon =
+                        menuToggle.querySelector("i");
+
+                    icon.classList.remove(
+                        "fa-xmark"
+                    );
+
+                    icon.classList.add(
+                        "fa-bars"
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+
+/* =====================================================
+   HEADER SCROLL EFFECT
+===================================================== */
+
+const header =
+    document.querySelector("header");
+
+
+window.addEventListener(
+    "scroll",
+    function () {
+
+        if (window.scrollY > 40) {
+
+            header.style.background =
+                "rgba(5,30,21,.94)";
+
+            header.style.boxShadow =
+                "0 15px 40px rgba(0,0,0,.15)";
+
+        } else {
+
+            header.style.background =
+                "rgba(5,30,21,.82)";
+
+            header.style.boxShadow =
+                "none";
+
+        }
+
     }
-}
+);
 
 
-/* =========================================
-   LOGO CONTAINER
-   ========================================= */
 
-.logo-container {
+/* =====================================================
+   LOGO MOUSE PARALLAX
+===================================================== */
 
-    width: min(350px, 62%);
+const logoStage =
+    document.querySelector(".logo-stage");
 
-    aspect-ratio: 1 / 1;
 
-    position: relative;
+if (logoStage) {
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    logoStage.addEventListener(
+        "mousemove",
+        function (e) {
 
-    z-index: 5;
+            if (window.innerWidth < 900)
+                return;
 
-    overflow: hidden;
+            const rect =
+                logoStage.getBoundingClientRect();
 
-    background:
+            const x =
+                e.clientX - rect.left;
 
-        radial-gradient(
-            circle at 50% 45%,
-            rgba(218,178,79,0.035),
-            transparent 68%
-        );
+            const y =
+                e.clientY - rect.top;
 
-    transition:
-        transform .7s cubic-bezier(.2,.8,.2,1);
-}
+            const rotateY =
+                ((x / rect.width) - .5) * 4;
 
+            const rotateX =
+                ((y / rect.height) - .5) * -4;
 
-/* Slight elegant movement */
+            logoStage.style.transform =
+                `perspective(900px)
+                 rotateX(${rotateX}deg)
+                 rotateY(${rotateY}deg)
+                 translateY(-4px)`;
 
-.brand-frame:hover .logo-container {
+        }
+    );
 
-    transform: scale(1.025);
 
-}
+    logoStage.addEventListener(
+        "mouseleave",
+        function () {
 
+            logoStage.style.transform =
+                "";
 
-/* =========================================
-   LOGO
-   ========================================= */
-
-.main-logo {
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-
-    display: block;
-
-    position: relative;
-
-    z-index: 5;
-
-    /*
-       Important:
-       لا نستخدم border-radius
-       ولا نقص الصورة
-    */
-
-    filter:
-        drop-shadow(0 12px 25px rgba(0,0,0,0.28))
-        drop-shadow(0 0 22px rgba(218,178,79,0.10));
-
-    transform: translateZ(0);
-
-    transition:
-        filter .6s ease,
-        transform .6s ease;
-}
-
-
-/* =========================================
-   LOGO HALO
-   ========================================= */
-
-.logo-halo {
-
-    position: absolute;
-
-    width: 75%;
-    height: 75%;
-
-    border-radius: 50%;
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(218,178,79,0.12) 0%,
-            rgba(218,178,79,0.035) 38%,
-            transparent 70%
-        );
-
-    filter: blur(25px);
-
-    z-index: 1;
-
-    animation:
-        haloPulse 4.5s ease-in-out infinite;
-}
-
-
-@keyframes haloPulse {
-
-    0%,
-    100% {
-        transform: scale(.9);
-        opacity: .55;
-    }
-
-    50% {
-        transform: scale(1.08);
-        opacity: .9;
-    }
-}
-
-
-/* =========================================
-   MOVING LIGHT SWEEP
-   ========================================= */
-
-.light-sweep {
-
-    position: absolute;
-
-    width: 160px;
-    height: 140%;
-
-    top: -20%;
-
-    left: -220px;
-
-    z-index: 10;
-
-    pointer-events: none;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,0.035),
-            rgba(218,178,79,0.12),
-            rgba(255,255,255,0.035),
-            transparent
-        );
-
-    transform:
-        rotate(18deg);
-
-    filter: blur(18px);
-
-    animation:
-        sweepLight 7s ease-in-out infinite;
-}
-
-
-@keyframes sweepLight {
-
-    0% {
-        left: -240px;
-        opacity: 0;
-    }
-
-    15% {
-        opacity: .5;
-    }
-
-    45% {
-        opacity: .8;
-    }
-
-    65% {
-        opacity: .3;
-    }
-
-    100% {
-        left: 800px;
-        opacity: 0;
-    }
-}
-
-
-/* =========================================
-   PARTICLES
-   ========================================= */
-
-.particle {
-
-    position: absolute;
-
-    width: 5px;
-    height: 5px;
-
-    border-radius: 50%;
-
-    background: #e2bd63;
-
-    box-shadow:
-        0 0 8px rgba(226,189,99,.8),
-        0 0 18px rgba(226,189,99,.35);
-
-    z-index: 12;
-
-    animation:
-        floatingParticle 6s ease-in-out infinite;
-}
-
-
-.particle-1 {
-
-    top: 13%;
-    right: 12%;
-
-    animation-delay: 0s;
-}
-
-
-.particle-2 {
-
-    bottom: 15%;
-    left: 13%;
-
-    animation-delay: 2s;
-
-    width: 4px;
-    height: 4px;
-}
-
-
-.particle-3 {
-
-    top: 32%;
-    left: 8%;
-
-    animation-delay: 4s;
-
-    width: 3px;
-    height: 3px;
-}
-
-
-@keyframes floatingParticle {
-
-    0%,
-    100% {
-        transform:
-            translateY(0)
-            scale(1);
-
-        opacity: .45;
-    }
-
-    50% {
-        transform:
-            translateY(-18px)
-            scale(1.35);
-
-        opacity: 1;
-    }
-}
-
-
-/* =========================================
-   REFLECTION
-   ========================================= */
-
-.logo-reflection {
-
-    position: absolute;
-
-    width: 48%;
-    height: 35px;
-
-    bottom: 7%;
-
-    left: 26%;
-
-    background:
-
-        radial-gradient(
-            ellipse,
-            rgba(218,178,79,0.14),
-            transparent 70%
-        );
-
-    filter: blur(15px);
-
-    opacity: .55;
-
-    z-index: 2;
-}
-
-
-/* =========================================
-   GOLD CORNER DETAILS
-   ========================================= */
-
-.brand-frame::before,
-.brand-frame::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 65px;
-    height: 65px;
-
-    border-color:
-        rgba(218,178,79,0.45);
-
-    border-style: solid;
-
-    z-index: 20;
-
-    pointer-events: none;
-}
-
-
-.brand-frame::before {
-
-    top: -1px;
-    right: -1px;
-
-    border-width:
-        1px
-        1px
-        0
-        0;
-}
-
-
-.brand-frame::after {
-
-    bottom: -1px;
-    left: -1px;
-
-    border-width:
-        0
-        0
-        1px
-        1px;
-}
-
-
-/* =========================================
-   DESKTOP IMPROVEMENT
-   ========================================= */
-
-@media (min-width: 1200px) {
-
-    .brand-visual {
-        min-height: 650px;
-    }
-
-    .brand-frame {
-        width: 560px;
-    }
+        }
+    );
 
 }
 
 
-/* =========================================
-   TABLET
-   ========================================= */
 
-@media (max-width: 900px) {
+/* =====================================================
+   INTERSECTION ANIMATION
+===================================================== */
 
-    .brand-visual {
-        min-height: 520px;
+const revealItems =
+    document.querySelectorAll(
+        ".service-card, .practice-card, .method-card, .about-card"
+    );
+
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(
+                entry => {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target.style.opacity =
+                            "1";
+
+                        entry.target.style.transform =
+                            "translateY(0)";
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold: .12
+        }
+    );
+
+
+revealItems.forEach(
+    item => {
+
+        item.style.opacity =
+            "0";
+
+        item.style.transform =
+            "translateY(18px)";
+
+        item.style.transition =
+            "opacity .7s ease, transform .7s ease";
+
+        observer.observe(item);
+
     }
-
-    .brand-frame {
-        width: min(500px, 86vw);
-    }
-
-    .logo-container {
-        width: 62%;
-    }
-
-}
+);
 
 
-/* =========================================
-   MOBILE
-   ========================================= */
 
-@media (max-width: 600px) {
+/* =====================================================
+   PREVENT JUMP ON INTERNAL LINKS
+===================================================== */
 
-    .brand-visual {
+document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(
+        link => {
 
-        min-height: 430px;
+            link.addEventListener(
+                "click",
+                function (e) {
 
-        padding: 30px 15px;
+                    const target =
+                        document.querySelector(
+                            this.getAttribute("href")
+                        );
 
-    }
+                    if (target) {
 
-    .brand-frame {
+                        e.preventDefault();
 
-        width: min(390px, 88vw);
+                        target.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
 
-        border-color:
-            rgba(218,178,79,0.20);
-    }
+                    }
 
-    .brand-inner {
-        inset: 14px;
-    }
+                }
+            );
 
-    .logo-container {
-        width: 68%;
-    }
-
-    .ambient-glow {
-        width: 230px;
-        height: 230px;
-    }
-
-    .particle {
-        width: 4px;
-        height: 4px;
-    }
-
-}
+        }
+    );
 
 
-/* =========================================
-   REDUCE MOTION
-   ========================================= */
+</script>
 
-@media (prefers-reduced-motion: reduce) {
 
-    *,
-    *::before,
-    *::after {
-
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-
-        transition-duration: 0.01ms !important;
-    }
-
-}
-
-</style>
+</body>
+</html>
