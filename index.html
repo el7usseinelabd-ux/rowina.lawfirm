@@ -1,55 +1,1023 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#031810">
+
+<title>
+روينا عبدالفتاح رحالي | المحاماة والاستشارات القانونية
+</title>
+
+<meta name="description"
+content="روينا عبدالفتاح رحالي للمحاماة والاستشارات القانونية والتوثيق">
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
+
+
+<style>
+
 /* =========================================================
-   PREMIUM LOGO PRESENTATION
-   تصميم متناسب مع الشعار المربع
+   01 — VARIABLES
 ========================================================= */
 
-.hero-visual{
-    min-height:500px;
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
+:root{
 
+    --green-1:#01120c;
+    --green-2:#031b12;
+    --green-3:#062219;
 
-/* الحاوية الرئيسية */
+    --gold:#d2a94f;
+    --gold-light:#efd27f;
 
-.logo-stage{
+    --white:#ffffff;
 
-    position:relative;
+    --text:#d9e1dc;
+    --muted:#83938c;
 
-    width:440px;
-    height:440px;
+    --line:rgba(218,178,82,.18);
+    --soft-line:rgba(255,255,255,.065);
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    --container:1240px;
 
 }
 
 
-/* إضاءة خلفية ناعمة */
+/* =========================================================
+   02 — RESET
+========================================================= */
 
-.logo-stage::before{
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    min-width:320px;
+
+    font-family:
+        "Cairo",
+        Arial,
+        sans-serif;
+
+    color:var(--white);
+
+    background:
+
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(209,169,79,.045),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 10% 60%,
+            rgba(13,91,60,.08),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            var(--green-1),
+            var(--green-2) 50%,
+            var(--green-1)
+        );
+
+    overflow-x:hidden;
+
+}
+
+
+/* شبكة خلفية */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-10;
+
+    pointer-events:none;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,.018) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.018) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        72px 72px;
+
+}
+
+
+/* تغميق الحواف */
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-9;
+
+    pointer-events:none;
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 40%,
+            rgba(0,0,0,.20) 100%
+        );
+
+}
+
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button{
+    font-family:inherit;
+}
+
+
+/* =========================================================
+   03 — GENERAL
+========================================================= */
+
+.container{
+
+    width:
+        min(
+            var(--container),
+            calc(100% - 48px)
+        );
+
+    margin-inline:auto;
+
+}
+
+
+.section{
+
+    padding:
+        58px 0;
+
+}
+
+
+.eyebrow{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:var(--gold-light);
+
+    font-size:11px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+
+.eyebrow::after{
+
+    content:"";
+
+    width:42px;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold),
+            transparent
+        );
+
+}
+
+
+.section-title{
+
+    font-size:
+        clamp(
+            28px,
+            3vw,
+            43px
+        );
+
+    line-height:1.35;
+
+    font-weight:800;
+
+}
+
+
+.section-description{
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:2;
+
+    max-width:650px;
+
+    margin-top:7px;
+
+}
+
+
+/* =========================================================
+   04 — HEADER
+========================================================= */
+
+.header{
+
+    position:fixed;
+
+    top:0;
+    right:0;
+    left:0;
+
+    height:76px;
+
+    z-index:1000;
+
+    background:
+        rgba(1,17,11,.72);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.055);
+
+    transition:
+        background .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.header.scrolled{
+
+    background:
+        rgba(1,17,11,.95);
+
+    box-shadow:
+        0 12px 35px
+        rgba(0,0,0,.20);
+
+}
+
+
+.header-inner{
+
+    height:100%;
+
+    width:
+        min(
+            var(--container),
+            calc(100% - 48px)
+        );
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        220px
+        1fr
+        190px;
+
+    align-items:center;
+
+    gap:25px;
+
+}
+
+
+/* =========================================================
+   05 — BRAND
+========================================================= */
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    min-width:0;
+
+}
+
+
+.brand-logo{
+
+    width:46px;
+
+    height:46px;
+
+    flex:0 0 46px;
+
+    object-fit:contain;
+
+    object-position:center;
+
+    display:block;
+
+    filter:
+        drop-shadow(
+            0 0 7px
+            rgba(213,173,88,.20)
+        );
+
+}
+
+
+.brand-info{
+
+    min-width:0;
+
+}
+
+
+.brand-name{
+
+    color:#fff;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    line-height:1.4;
+
+    white-space:nowrap;
+
+}
+
+
+.brand-sub{
+
+    color:var(--gold-light);
+
+    opacity:.78;
+
+    font-size:7px;
+
+    line-height:1.5;
+
+    white-space:nowrap;
+
+}
+
+
+/* =========================================================
+   06 — NAV
+========================================================= */
+
+.nav{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:32px;
+
+}
+
+
+.nav a{
+
+    position:relative;
+
+    color:#b9c5bf;
+
+    font-size:11px;
+
+    font-weight:600;
+
+    padding:8px 0;
+
+    transition:
+        color .25s ease;
+
+}
+
+
+.nav a:hover{
+
+    color:var(--gold-light);
+
+}
+
+
+.nav a::after{
 
     content:"";
 
     position:absolute;
 
-    width:310px;
-    height:310px;
+    right:0;
+
+    bottom:0;
+
+    width:0;
+
+    height:1px;
+
+    background:var(--gold-light);
+
+    transition:
+        width .25s ease;
+
+}
+
+
+.nav a:hover::after{
+
+    width:100%;
+
+}
+
+
+/* =========================================================
+   07 — PHONE HEADER
+========================================================= */
+
+.header-phone{
+
+    display:flex;
+
+    justify-content:flex-start;
+
+}
+
+
+.header-phone a{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    transition:
+        transform .25s ease;
+
+}
+
+
+.header-phone a:hover{
+
+    transform:translateX(-3px);
+
+}
+
+
+.phone-label{
+
+    color:#71827b;
+
+    font-size:8px;
+
+}
+
+
+.phone-number{
+
+    direction:ltr;
+
+    unicode-bidi:isolate;
+
+    color:var(--gold-light);
+
+    font-size:13px;
+
+    font-weight:800;
+
+    white-space:nowrap;
+
+}
+
+
+/* =========================================================
+   08 — MOBILE BUTTON
+========================================================= */
+
+.menu-button{
+
+    display:none;
+
+    width:42px;
+
+    height:42px;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:
+        1px solid
+        var(--line);
+
+    background:
+        rgba(255,255,255,.02);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+}
+
+
+/* =========================================================
+   09 — HERO
+========================================================= */
+
+.hero{
+
+    min-height:100vh;
+
+    padding-top:76px;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+
+.hero-grid{
+
+    width:
+        min(
+            var(--container),
+            calc(100% - 48px)
+        );
+
+    margin:auto;
+
+    display:grid;
+
+    /*
+       مهم:
+       العمودين متساويين نسبيًا
+       حتى لا يخرج النص خارج الشاشة
+    */
+
+    grid-template-columns:
+        minmax(0,1.05fr)
+        minmax(0,.95fr);
+
+    align-items:center;
+
+    gap:clamp(
+        35px,
+        5vw,
+        90px
+    );
+
+    padding:
+        40px 0 35px;
+
+}
+
+
+/* =========================================================
+   10 — HERO CONTENT
+========================================================= */
+
+.hero-content{
+
+    min-width:0;
+
+}
+
+
+.hero-title{
+
+    color:#fff;
+
+    font-size:
+        clamp(
+            48px,
+            5.2vw,
+            76px
+        );
+
+    line-height:1.08;
+
+    letter-spacing:-2px;
+
+    font-weight:800;
+
+    margin-bottom:15px;
+
+}
+
+
+.hero-title span{
+
+    display:block;
+
+    color:var(--gold-light);
+
+    margin-top:4px;
+
+}
+
+
+.hero-description{
+
+    color:#9aa9a3;
+
+    font-size:12px;
+
+    line-height:2;
+
+    max-width:600px;
+
+    margin-bottom:21px;
+
+}
+
+
+.hero-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+
+/* =========================================================
+   11 — BUTTONS
+========================================================= */
+
+.btn{
+
+    min-height:47px;
+
+    padding:
+        0 21px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:9px;
+
+    font-size:10px;
+
+    font-weight:800;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease,
+        border-color .25s ease;
+
+}
+
+
+.btn-gold{
+
+    color:#08160f;
+
+    background:
+        linear-gradient(
+            135deg,
+            #cda452,
+            #ebcb76
+        );
+
+    box-shadow:
+        0 10px 25px
+        rgba(210,169,79,.08);
+
+}
+
+
+.btn-gold:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 16px 32px
+        rgba(210,169,79,.18);
+
+}
+
+
+.btn-outline{
+
+    color:#fff;
+
+    border:
+        1px solid
+        rgba(210,169,79,.27);
+
+    background:
+        rgba(255,255,255,.012);
+
+}
+
+
+.btn-outline:hover{
+
+    transform:translateY(-3px);
+
+    border-color:
+        rgba(210,169,79,.65);
+
+    background:
+        rgba(210,169,79,.04);
+
+}
+
+
+/* =========================================================
+   12 — TRUST
+========================================================= */
+
+.trust-row{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(90px,120px));
+
+    gap:10px;
+
+    margin-top:25px;
+
+}
+
+
+.trust-item{
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.08);
+
+    padding-top:7px;
+
+}
+
+
+.trust-title{
+
+    color:var(--gold-light);
+
+    font-size:11px;
+
+    font-weight:800;
+
+}
+
+
+.trust-sub{
+
+    color:#60726a;
+
+    font-size:7px;
+
+    margin-top:1px;
+
+}
+
+
+/* =========================================================
+   13 — LOGO AREA
+========================================================= */
+
+.hero-logo-area{
+
+    min-width:0;
+
+    min-height:440px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+/*
+   هذه هي المساحة الجديدة للشعار.
+   لا دائرة ضخمة.
+   لا قص.
+*/
+
+.logo-card{
+
+    position:relative;
+
+    width:
+        min(
+            390px,
+            100%
+        );
+
+    aspect-ratio:1 / .82;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:
+        1px solid
+        rgba(210,169,79,.25);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.026),
+            rgba(255,255,255,.006)
+        );
+
+    box-shadow:
+
+        0 25px 70px
+        rgba(0,0,0,.25),
+
+        inset 0 0 60px
+        rgba(210,169,79,.025);
+
+    overflow:hidden;
+
+}
+
+
+/* إطار داخلي */
+
+.logo-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:14px;
+
+    border:
+        1px solid
+        rgba(210,169,79,.09);
+
+    pointer-events:none;
+
+}
+
+
+/* خط إضاءة */
+
+.logo-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-50%;
+
+    right:-45%;
+
+    width:35%;
+
+    height:200%;
+
+    transform:rotate(25deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(239,210,127,.13),
+            transparent
+        );
+
+    filter:blur(10px);
+
+    animation:
+        cardLight 7s ease-in-out infinite;
+
+    pointer-events:none;
+
+}
+
+
+/* =========================================================
+   14 — LOGO
+========================================================= */
+
+.logo-holder{
+
+    position:relative;
+
+    z-index:3;
+
+    width:
+        min(
+            255px,
+            70%
+        );
+
+    aspect-ratio:1 / 1;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+/* هالة صغيرة فقط خلف الشعار */
+
+.logo-holder::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:12%;
 
     border-radius:50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(213,173,88,.16) 0%,
-            rgba(213,173,88,.07) 35%,
+            rgba(210,169,79,.18),
+            rgba(210,169,79,.07) 40%,
             transparent 72%
         );
 
-    filter:blur(28px);
+    filter:blur(20px);
+
+    z-index:-1;
 
     animation:
         logoGlow 5s ease-in-out infinite;
@@ -57,178 +1025,34 @@
 }
 
 
-/* إضاءة ثانية خفيفة */
+/* الصورة */
 
-.logo-stage::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:230px;
-    height:230px;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(213,173,88,.08),
-            transparent 70%
-        );
-
-    filter:blur(18px);
-
-}
-
-
-/* =========================================================
-   الإطار الرئيسي
-========================================================= */
-
-.logo-frame{
-
-    position:relative;
-
-    width:360px;
-    height:300px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.025),
-            rgba(255,255,255,.008)
-        );
-
-    border:
-        1px solid
-        rgba(213,173,88,.30);
-
-    box-shadow:
-
-        0 25px 70px
-        rgba(0,0,0,.30),
-
-        inset 0 0 60px
-        rgba(213,173,88,.025);
-
-    overflow:hidden;
-
-}
-
-
-/* الإطار الداخلي */
-
-.logo-frame::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:13px;
-
-    border:
-        1px solid
-        rgba(213,173,88,.12);
-
-    pointer-events:none;
-
-}
-
-
-/* خط ضوء متحرك */
-
-.logo-frame::after{
-
-    content:"";
-
-    position:absolute;
-
-    top:-100%;
-
-    left:-40%;
-
-    width:35%;
-
-    height:300%;
-
-    transform:rotate(25deg);
-
-    background:
-
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(239,212,135,.16),
-            transparent
-        );
-
-    filter:blur(9px);
-
-    animation:
-        logoLight 6s ease-in-out infinite;
-
-    pointer-events:none;
-
-}
-
-
-/* =========================================================
-   الشعار
-========================================================= */
-
-.hero-logo{
-
-    position:relative;
-
-    z-index:5;
-
-    width:245px;
-    height:245px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-}
-
-
-/*
-   مهم جدًا:
-   الشعار يظهر بالكامل بدون قص
-*/
-
-.hero-logo img{
-
-    display:block;
+.logo-holder img{
 
     width:100%;
+
     height:100%;
+
+    display:block;
 
     object-fit:contain;
 
     object-position:center;
 
-    background:transparent;
-
-    border:0;
+    /*
+       يمنع القص تمامًا
+    */
 
     filter:
 
         drop-shadow(
             0 0 7px
-            rgba(213,173,88,.28)
+            rgba(255,255,255,.10)
         )
 
         drop-shadow(
-            0 0 22px
-            rgba(213,173,88,.16)
+            0 0 18px
+            rgba(210,169,79,.30)
         );
 
     animation:
@@ -238,32 +1062,36 @@
 
 
 /* =========================================================
-   خطوط ديكورية بدل الدائرة
+   15 — LOGO DETAILS
 ========================================================= */
 
-.logo-decoration{
+.logo-line{
 
     position:absolute;
+
+    z-index:4;
+
+    height:1px;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            rgba(213,173,88,.55),
+            var(--gold),
             transparent
         );
 
-    opacity:.7;
+    opacity:.65;
 
 }
 
 
-.logo-decoration.top{
+.logo-line.top{
 
-    width:80px;
-    height:1px;
+    width:58px;
 
-    top:52px;
+    top:30px;
+
     left:50%;
 
     transform:translateX(-50%);
@@ -271,12 +1099,12 @@
 }
 
 
-.logo-decoration.bottom{
+.logo-line.bottom{
 
-    width:55px;
-    height:1px;
+    width:42px;
 
-    bottom:52px;
+    bottom:30px;
+
     left:50%;
 
     transform:translateX(-50%);
@@ -284,45 +1112,527 @@
 }
 
 
-/* نقطتان صغيرتان فقط */
-
-.logo-dot{
+.logo-corner{
 
     position:absolute;
 
-    width:5px;
-    height:5px;
+    width:6px;
+
+    height:6px;
 
     border-radius:50%;
 
-    background:
-        #efd487;
+    background:var(--gold-light);
 
     box-shadow:
         0 0 12px
-        rgba(239,212,135,.65);
+        rgba(239,210,127,.6);
 
 }
 
 
-.logo-dot.left{
+.logo-corner.one{
 
-    left:43px;
-    top:50%;
+    top:27px;
+    right:28px;
 
 }
 
 
-.logo-dot.right{
+.logo-corner.two{
 
-    right:43px;
-    top:50%;
+    bottom:27px;
+    left:28px;
 
 }
 
 
 /* =========================================================
-   ANIMATIONS
+   16 — SERVICES
+========================================================= */
+
+.services-header{
+
+    margin-bottom:22px;
+
+}
+
+
+.services-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:11px;
+
+}
+
+
+.service-card{
+
+    min-height:170px;
+
+    padding:21px;
+
+    border:
+        1px solid
+        var(--soft-line);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.022),
+            rgba(255,255,255,.006)
+        );
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.service-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:
+        rgba(210,169,79,.28);
+
+    box-shadow:
+        0 18px 45px
+        rgba(0,0,0,.15);
+
+}
+
+
+.service-number{
+
+    color:var(--gold);
+
+    font-size:10px;
+
+    font-weight:800;
+
+    margin-bottom:13px;
+
+}
+
+
+.service-card h3{
+
+    font-size:16px;
+
+    font-weight:800;
+
+    margin-bottom:6px;
+
+}
+
+
+.service-card p{
+
+    color:#75877f;
+
+    font-size:10px;
+
+    line-height:1.9;
+
+}
+
+
+/* =========================================================
+   17 — ABOUT
+========================================================= */
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,.9fr)
+        minmax(0,1.1fr);
+
+    align-items:center;
+
+    gap:60px;
+
+}
+
+
+/* صورة الشعار في قسم عن المكتب */
+
+.about-logo{
+
+    min-height:360px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    position:relative;
+
+    border:
+        1px solid
+        rgba(210,169,79,.18);
+
+    background:
+        rgba(255,255,255,.008);
+
+}
+
+
+.about-logo::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:15px;
+
+    border:
+        1px solid
+        rgba(210,169,79,.08);
+
+}
+
+
+.about-logo img{
+
+    position:relative;
+
+    z-index:2;
+
+    width:78%;
+
+    height:78%;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 0 18px
+            rgba(210,169,79,.22)
+        );
+
+}
+
+
+/* النص */
+
+.about-content{
+
+    min-width:0;
+
+}
+
+
+.about-content h2{
+
+    font-size:
+        clamp(
+            28px,
+            3vw,
+            42px
+        );
+
+    line-height:1.4;
+
+    margin-bottom:12px;
+
+}
+
+
+.about-content h2 span{
+
+    color:var(--gold-light);
+
+}
+
+
+.about-content p{
+
+    color:#82938c;
+
+    font-size:11px;
+
+    line-height:2;
+
+    margin-bottom:7px;
+
+}
+
+
+/* =========================================================
+   18 — METHOD
+========================================================= */
+
+.method-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:11px;
+
+    margin-top:22px;
+
+}
+
+
+.method-card{
+
+    padding:22px;
+
+    border:
+        1px solid
+        var(--soft-line);
+
+    background:
+        rgba(255,255,255,.01);
+
+}
+
+
+.method-number{
+
+    color:var(--gold);
+
+    font-size:10px;
+
+    font-weight:800;
+
+    margin-bottom:10px;
+
+}
+
+
+.method-card h3{
+
+    font-size:15px;
+
+    margin-bottom:5px;
+
+}
+
+
+.method-card p{
+
+    color:#71837b;
+
+    font-size:10px;
+
+    line-height:1.9;
+
+}
+
+
+/* =========================================================
+   19 — CONTACT
+========================================================= */
+
+.contact-box{
+
+    position:relative;
+
+    min-height:160px;
+
+    padding:
+        30px 34px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:25px;
+
+    border:
+        1px solid
+        rgba(210,169,79,.20);
+
+    background:
+
+        radial-gradient(
+            circle at 85% 50%,
+            rgba(210,169,79,.07),
+            transparent 32%
+        ),
+
+        rgba(255,255,255,.01);
+
+}
+
+
+.contact-box h2{
+
+    font-size:
+        clamp(
+            24px,
+            3vw,
+            34px
+        );
+
+    margin-bottom:3px;
+
+}
+
+
+.contact-box p{
+
+    color:#7c8e86;
+
+    font-size:10px;
+
+}
+
+
+.contact-actions{
+
+    display:flex;
+
+    gap:9px;
+
+    flex-wrap:wrap;
+
+}
+
+
+/* =========================================================
+   20 — WHATSAPP
+========================================================= */
+
+.whatsapp{
+
+    position:fixed;
+
+    z-index:999;
+
+    left:20px;
+
+    bottom:20px;
+
+    width:58px;
+
+    height:58px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    color:#07160f;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ebcc78,
+            #cba34c
+        );
+
+    box-shadow:
+        0 12px 35px
+        rgba(0,0,0,.35);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+
+.whatsapp:hover{
+
+    transform:
+        translateY(-4px)
+        scale(1.04);
+
+    box-shadow:
+        0 18px 40px
+        rgba(0,0,0,.45);
+
+}
+
+
+.whatsapp svg{
+
+    width:27px;
+
+    height:27px;
+
+}
+
+
+/* =========================================================
+   21 — FOOTER
+========================================================= */
+
+.footer{
+
+    padding:20px 0;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.05);
+
+}
+
+
+.footer-inner{
+
+    width:
+        min(
+            var(--container),
+            calc(100% - 48px)
+        );
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+.footer-copy{
+
+    color:#5f7169;
+
+    font-size:8px;
+
+}
+
+
+.footer-phone{
+
+    direction:ltr;
+
+    unicode-bidi:isolate;
+
+    color:var(--gold-light);
+
+    font-size:10px;
+
+    font-weight:800;
+
+}
+
+
+/* =========================================================
+   22 — ANIMATIONS
 ========================================================= */
 
 @keyframes logoGlow{
@@ -340,7 +1650,7 @@
 
         opacity:1;
 
-        transform:scale(1.06);
+        transform:scale(1.07);
 
     }
 
@@ -367,11 +1677,11 @@
 }
 
 
-@keyframes logoLight{
+@keyframes cardLight{
 
     0%{
 
-        left:-45%;
+        right:-45%;
 
         opacity:0;
 
@@ -385,7 +1695,7 @@
 
     55%{
 
-        left:125%;
+        right:125%;
 
         opacity:.7;
 
@@ -393,10 +1703,1419 @@
 
     100%{
 
-        left:125%;
+        right:125%;
 
         opacity:0;
 
     }
 
 }
+
+
+/* =========================================================
+   23 — LARGE LAPTOP
+========================================================= */
+
+@media(max-width:1150px){
+
+    .header-inner{
+
+        grid-template-columns:
+            190px
+            1fr
+            155px;
+
+        gap:18px;
+
+    }
+
+
+    .nav{
+
+        gap:21px;
+
+    }
+
+
+    .hero-grid{
+
+        gap:35px;
+
+    }
+
+
+    .logo-card{
+
+        width:350px;
+
+    }
+
+
+    .logo-holder{
+
+        width:225px;
+
+    }
+
+}
+
+
+/* =========================================================
+   24 — TABLET
+========================================================= */
+
+@media(max-width:900px){
+
+    .header-inner{
+
+        grid-template-columns:
+            auto
+            1fr
+            auto;
+
+    }
+
+
+    .nav{
+
+        gap:15px;
+
+    }
+
+
+    .header-phone{
+
+        display:none;
+
+    }
+
+
+    .hero{
+
+        min-height:auto;
+
+    }
+
+
+    .hero-grid{
+
+        grid-template-columns:
+            minmax(0,1fr)
+            minmax(300px,.8fr);
+
+        gap:25px;
+
+        padding:
+            65px 0 45px;
+
+    }
+
+
+    .hero-title{
+
+        font-size:52px;
+
+    }
+
+
+    .hero-logo-area{
+
+        min-height:380px;
+
+    }
+
+
+    .logo-card{
+
+        width:330px;
+
+    }
+
+
+    .logo-holder{
+
+        width:215px;
+
+    }
+
+
+    .services-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+    }
+
+
+    .about-grid{
+
+        gap:30px;
+
+    }
+
+}
+
+
+/* =========================================================
+   25 — MOBILE
+========================================================= */
+
+@media(max-width:720px){
+
+    .container,
+    .hero-grid,
+    .header-inner,
+    .footer-inner{
+
+        width:
+            calc(100% - 34px);
+
+    }
+
+
+    .header{
+
+        height:68px;
+
+    }
+
+
+    .header-inner{
+
+        display:flex;
+
+        justify-content:space-between;
+
+    }
+
+
+    .brand-logo{
+
+        width:42px;
+        height:42px;
+
+        flex-basis:42px;
+
+    }
+
+
+    .brand-name{
+
+        font-size:12px;
+
+    }
+
+
+    .brand-sub{
+
+        display:none;
+
+    }
+
+
+    .menu-button{
+
+        display:flex;
+
+    }
+
+
+    .nav{
+
+        position:absolute;
+
+        top:68px;
+
+        right:17px;
+
+        left:17px;
+
+        display:none;
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:0;
+
+        padding:5px;
+
+        background:
+            rgba(1,17,11,.98);
+
+        border:
+            1px solid
+            rgba(210,169,79,.18);
+
+        box-shadow:
+            0 20px 50px
+            rgba(0,0,0,.35);
+
+    }
+
+
+    .nav.open{
+
+        display:flex;
+
+    }
+
+
+    .nav a{
+
+        padding:
+            12px 14px;
+
+        border-bottom:
+            1px solid
+            rgba(255,255,255,.045);
+
+    }
+
+
+    .nav a:last-child{
+
+        border-bottom:0;
+
+    }
+
+
+    .hero{
+
+        padding-top:68px;
+
+    }
+
+
+    .hero-grid{
+
+        width:
+            calc(100% - 34px);
+
+        grid-template-columns:1fr;
+
+        gap:10px;
+
+        padding:
+            45px 0 35px;
+
+    }
+
+
+    .hero-content{
+
+        text-align:center;
+
+    }
+
+
+    .eyebrow{
+
+        justify-content:center;
+
+    }
+
+
+    .eyebrow::after{
+
+        display:none;
+
+    }
+
+
+    .hero-title{
+
+        font-size:
+            clamp(
+                39px,
+                11vw,
+                53px
+            );
+
+        letter-spacing:-1px;
+
+    }
+
+
+    .hero-description{
+
+        max-width:560px;
+
+        margin:
+            0 auto 19px;
+
+        font-size:10.5px;
+
+    }
+
+
+    .hero-actions{
+
+        justify-content:center;
+
+    }
+
+
+    .trust-row{
+
+        justify-content:center;
+
+        margin-top:22px;
+
+    }
+
+
+    .hero-logo-area{
+
+        min-height:330px;
+
+    }
+
+
+    .logo-card{
+
+        width:
+            min(
+                340px,
+                92vw
+            );
+
+    }
+
+
+    .logo-holder{
+
+        width:
+            min(
+                210px,
+                58vw
+            );
+
+    }
+
+
+    .services-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .about-grid{
+
+        grid-template-columns:1fr;
+
+        gap:25px;
+
+    }
+
+
+    .about-logo{
+
+        min-height:300px;
+
+    }
+
+
+    .about-content{
+
+        text-align:center;
+
+    }
+
+
+    .about-content .eyebrow{
+
+        justify-content:center;
+
+    }
+
+
+    .method-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .contact-box{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        padding:
+            28px 20px;
+
+    }
+
+
+    .contact-actions{
+
+        justify-content:center;
+
+        width:100%;
+
+    }
+
+
+    .contact-actions .btn{
+
+        flex:1;
+
+    }
+
+
+    .footer-inner{
+
+        flex-direction:column;
+
+        gap:6px;
+
+    }
+
+}
+
+
+/* =========================================================
+   26 — SMALL MOBILE
+========================================================= */
+
+@media(max-width:420px){
+
+    .hero-grid{
+
+        padding-top:35px;
+
+    }
+
+
+    .hero-title{
+
+        font-size:38px;
+
+    }
+
+
+    .hero-description{
+
+        font-size:10px;
+
+    }
+
+
+    .hero-actions{
+
+        flex-direction:column;
+
+        width:100%;
+
+    }
+
+
+    .hero-actions .btn{
+
+        width:100%;
+
+    }
+
+
+    .trust-row{
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+    }
+
+
+    .hero-logo-area{
+
+        min-height:300px;
+
+    }
+
+
+    .logo-card{
+
+        width:300px;
+
+    }
+
+
+    .logo-holder{
+
+        width:185px;
+
+    }
+
+
+    .about-logo{
+
+        min-height:270px;
+
+    }
+
+
+    .contact-actions{
+
+        flex-direction:column;
+
+    }
+
+
+    .contact-actions .btn{
+
+        width:100%;
+
+    }
+
+
+    .whatsapp{
+
+        width:53px;
+
+        height:53px;
+
+        left:14px;
+
+        bottom:14px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="header" id="header">
+
+<div class="header-inner">
+
+
+<a href="#home" class="brand">
+
+<img
+    class="brand-logo"
+    src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.jpg"
+    alt="شعار روينا عبدالفتاح رحالي"
+>
+
+<div class="brand-info">
+
+<div class="brand-name">
+روينا عبدالفتاح رحالي
+</div>
+
+<div class="brand-sub">
+المحاماة والاستشارات القانونية والتوثيق
+</div>
+
+</div>
+
+</a>
+
+
+<nav class="nav" id="nav">
+
+<a href="#home">
+الرئيسية
+</a>
+
+<a href="#about">
+عن المكتب
+</a>
+
+<a href="#services">
+مجالات العمل
+</a>
+
+<a href="#method">
+منهجيتنا
+</a>
+
+<a href="#contact">
+تواصل معنا
+</a>
+
+</nav>
+
+
+<!-- رقم الاتصال -->
+
+<div class="header-phone">
+
+<a href="tel:+966544270651">
+
+<span class="phone-label">
+اتصل بنا
+</span>
+
+<span class="phone-number">
+054 427 0651
+</span>
+
+</a>
+
+</div>
+
+
+<button
+    class="menu-button"
+    id="menuButton"
+    type="button"
+    aria-label="فتح القائمة"
+>
+
+☰
+
+</button>
+
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<main>
+
+<section class="hero" id="home">
+
+<div class="hero-grid">
+
+
+<!-- النص -->
+
+<div class="hero-content">
+
+<div class="eyebrow">
+مكتب محاماة واستشارات قانونية
+</div>
+
+
+<h1 class="hero-title">
+
+قانون واضح.
+
+<span>
+موقف أقوى.
+</span>
+
+</h1>
+
+
+<p class="hero-description">
+
+نقرأ قضيتك بعمق، ونحوّل التعقيد القانوني
+إلى خطوات عملية تحمي حقوقك وتدعم قرارك.
+
+</p>
+
+
+<div class="hero-actions">
+
+
+<a
+    href="https://wa.me/966544270651"
+    target="_blank"
+    rel="noopener"
+    class="btn btn-gold"
+>
+
+احجز استشارتك
+
+<span>←</span>
+
+</a>
+
+
+<a
+    href="#about"
+    class="btn btn-outline"
+>
+
+تعرّف على المكتب
+
+</a>
+
+
+</div>
+
+
+<div class="trust-row">
+
+
+<div class="trust-item">
+
+<div class="trust-title">
+وضوح
+</div>
+
+<div class="trust-sub">
+في كل توصية
+</div>
+
+</div>
+
+
+<div class="trust-item">
+
+<div class="trust-title">
+دقة
+</div>
+
+<div class="trust-sub">
+في كل قضية
+</div>
+
+</div>
+
+
+<div class="trust-item">
+
+<div class="trust-title">
+سرية
+</div>
+
+<div class="trust-sub">
+في كل ملف
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- الشعار -->
+
+<div class="hero-logo-area">
+
+
+<div class="logo-card">
+
+
+<div class="logo-line top"></div>
+
+<div class="logo-line bottom"></div>
+
+
+<div class="logo-corner one"></div>
+
+<div class="logo-corner two"></div>
+
+
+<div class="logo-holder">
+
+<img
+    src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.jpg"
+    alt="شعار روينا عبدالفتاح رحالي"
+>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section class="section" id="services">
+
+<div class="container">
+
+
+<div class="services-header">
+
+<div class="eyebrow">
+مجالات العمل
+</div>
+
+<h2 class="section-title">
+حلول قانونية واضحة تحمي مصالحك.
+</h2>
+
+<p class="section-description">
+
+خدمات قانونية متخصصة للأفراد والمنشآت
+بمنهج يعتمد على الفهم الدقيق والوضوح.
+
+</p>
+
+</div>
+
+
+<div class="services-grid">
+
+
+<article class="service-card">
+
+<div class="service-number">
+01
+</div>
+
+<h3>
+الاستشارات القانونية
+</h3>
+
+<p>
+تحليل الموقف القانوني وتحديد الخيارات
+والحلول المناسبة قبل اتخاذ القرار.
+</p>
+
+</article>
+
+
+<article class="service-card">
+
+<div class="service-number">
+02
+</div>
+
+<h3>
+الترافع والتمثيل
+</h3>
+
+<p>
+تمثيل ومتابعة الإجراءات والدفاع
+عن الحقوق أمام الجهات المختصة.
+</p>
+
+</article>
+
+
+<article class="service-card">
+
+<div class="service-number">
+03
+</div>
+
+<h3>
+صياغة العقود
+</h3>
+
+<p>
+إعداد ومراجعة العقود والاتفاقيات
+بصياغة قانونية دقيقة.
+</p>
+
+</article>
+
+
+<article class="service-card">
+
+<div class="service-number">
+04
+</div>
+
+<h3>
+القضايا التجارية
+</h3>
+
+<p>
+معالجة النزاعات والمعاملات التجارية
+وتقديم الحلول القانونية المناسبة.
+</p>
+
+</article>
+
+
+<article class="service-card">
+
+<div class="service-number">
+05
+</div>
+
+<h3>
+القضايا العمالية
+</h3>
+
+<p>
+حماية الحقوق ومعالجة النزاعات
+العمالية وفق الأنظمة والإجراءات.
+</p>
+
+</article>
+
+
+<article class="service-card">
+
+<div class="service-number">
+06
+</div>
+
+<h3>
+الخدمات القانونية والتوثيق
+</h3>
+
+<p>
+خدمات قانونية وتوثيقية للأفراد
+والمنشآت باحترافية وسرية.
+</p>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section class="section" id="about">
+
+<div class="container">
+
+
+<div class="about-grid">
+
+
+<div class="about-logo">
+
+<img
+    src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.jpg"
+    alt="شعار روينا عبدالفتاح رحالي"
+>
+
+</div>
+
+
+<div class="about-content">
+
+<div class="eyebrow">
+عن المكتب
+</div>
+
+
+<h2>
+
+القانون ليس تعقيدًا...
+
+<br>
+
+<span>
+بل طريق واضح للوصول إلى حقك.
+</span>
+
+</h2>
+
+
+<p>
+
+نؤمن أن العمل القانوني الاحترافي يبدأ
+بفهم الوقائع والاستماع الدقيق للعميل،
+ثم بناء رؤية قانونية واضحة.
+
+</p>
+
+
+<p>
+
+هدفنا تقديم خدمة قانونية تجمع بين
+الدقة والسرية والوضوح، مع الاهتمام
+بتفاصيل كل قضية.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     METHOD
+========================================================= -->
+
+<section class="section" id="method">
+
+<div class="container">
+
+
+<div class="eyebrow">
+منهجيتنا
+</div>
+
+<h2 class="section-title">
+نفهم أولًا. ثم نبني الحل.
+</h2>
+
+<p class="section-description">
+
+نبدأ بفهم التفاصيل، ثم نحلل الموقف القانوني،
+ونقدم رؤية عملية تساعدك على اتخاذ القرار.
+
+</p>
+
+
+<div class="method-grid">
+
+
+<div class="method-card">
+
+<div class="method-number">
+01
+</div>
+
+<h3>
+نفهم قضيتك
+</h3>
+
+<p>
+نستمع إلى التفاصيل ونحدد جوهر
+المشكلة القانونية.
+</p>
+
+</div>
+
+
+<div class="method-card">
+
+<div class="method-number">
+02
+</div>
+
+<h3>
+نحلل الموقف
+</h3>
+
+<p>
+ندرس الوقائع والخيارات القانونية
+المتاحة أمامك.
+</p>
+
+</div>
+
+
+<div class="method-card">
+
+<div class="method-number">
+03
+</div>
+
+<h3>
+نبني الحل
+</h3>
+
+<p>
+نقدم لك رؤية عملية واضحة تساعدك
+على اتخاذ القرار.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section class="section" id="contact">
+
+<div class="container">
+
+
+<div class="contact-box">
+
+
+<div>
+
+<div class="eyebrow">
+تواصل معنا
+</div>
+
+<h2>
+لديك مسألة قانونية؟
+</h2>
+
+<p>
+ابدأ بخطوة واضحة وتواصل معنا.
+</p>
+
+</div>
+
+
+<div class="contact-actions">
+
+
+<a
+    href="tel:+966544270651"
+    class="btn btn-gold"
+>
+
+اتصل الآن
+
+</a>
+
+
+<a
+    href="https://wa.me/966544270651"
+    target="_blank"
+    rel="noopener"
+    class="btn btn-outline"
+>
+
+واتساب
+
+</a>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+
+<!-- =========================================================
+     WHATSAPP
+========================================================= -->
+
+<a
+    href="https://wa.me/966544270651"
+    target="_blank"
+    rel="noopener"
+    class="whatsapp"
+    aria-label="التواصل عبر واتساب"
+>
+
+<svg
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+>
+
+<path
+    d="M20.5 11.5a8.5 8.5 0 0 1-12.7 7.4L3 20l1.2-4.5A8.5 8.5 0 1 1 20.5 11.5Z"
+    stroke="currentColor"
+    stroke-width="1.7"
+/>
+
+<path
+    d="M8.7 8.2c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.6.7c.7 1.2 1.6 2 2.8 2.6l.6-.7c.2-.2.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .3 0 .5-.4.7-.5.3-1.1.5-1.7.3-1.6-.4-3.2-1.4-4.5-2.7-1.3-1.3-2.3-2.9-2.7-4.5-.2-.6 0-1.2.3-1.7Z"
+    fill="currentColor"
+/>
+
+</svg>
+
+</a>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+<div class="footer-inner">
+
+<div class="footer-copy">
+
+© 2026 روينا عبدالفتاح رحالي — جميع الحقوق محفوظة
+
+</div>
+
+
+<a
+    href="tel:+966544270651"
+    class="footer-phone"
+>
+
+054 427 0651
+
+</a>
+
+
+</div>
+
+</footer>
+
+
+
+<script>
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuButton =
+    document.getElementById("menuButton");
+
+const nav =
+    document.getElementById("nav");
+
+
+menuButton.addEventListener(
+    "click",
+    function(){
+
+        nav.classList.toggle("open");
+
+        menuButton.textContent =
+            nav.classList.contains("open")
+            ? "×"
+            : "☰";
+
+    }
+);
+
+
+/* إغلاق القائمة بعد اختيار قسم */
+
+document
+    .querySelectorAll(".nav a")
+    .forEach(function(link){
+
+        link.addEventListener(
+            "click",
+            function(){
+
+                nav.classList.remove("open");
+
+                menuButton.textContent="☰";
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   HEADER ON SCROLL
+========================================================= */
+
+const header =
+    document.getElementById("header");
+
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        if(window.scrollY > 20){
+
+            header.classList.add("scrolled");
+
+        }else{
+
+            header.classList.remove("scrolled");
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(
+        ".service-card, .method-card, .about-grid, .contact-box"
+    );
+
+
+const observer =
+    new IntersectionObserver(
+        function(entries){
+
+            entries.forEach(
+                function(entry){
+
+                    if(entry.isIntersecting){
+
+                        entry.target.style.opacity="1";
+
+                        entry.target.style.transform=
+                            "translateY(0)";
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold:.10
+        }
+    );
+
+
+revealElements.forEach(
+    function(element){
+
+        element.style.opacity="0";
+
+        element.style.transform=
+            "translateY(20px)";
+
+        element.style.transition=
+            "opacity .7s ease, transform .7s ease";
+
+        observer.observe(element);
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
