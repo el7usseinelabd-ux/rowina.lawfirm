@@ -3,47 +3,49 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<title>روينا عبدالفتاح رحالي | المحاماة والاستشارات القانونية</title>
+    <title>
+        روينا عبدالفتاح رحالي | المحاماة والاستشارات القانونية
+    </title>
 
-<meta name="description"
-      content="روينا عبدالفتاح رحالي للمحاماة والاستشارات القانونية والتوثيق">
+    <meta name="description"
+          content="روينا عبدالفتاح رحالي للمحاماة والاستشارات القانونية والتوثيق">
 
-<link rel="preconnect"
-      href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-<link rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin>
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
 
 
 <style>
 
 /* =========================================================
-   VARIABLES
+   ROOT
 ========================================================= */
 
 :root {
 
-    --green-dark: #02140e;
-    --green: #031c13;
-    --green-light: #06271b;
+    --bg: #02150e;
+    --bg-2: #031b13;
+    --bg-3: #062219;
 
     --gold: #d5ad58;
     --gold-light: #edcf83;
 
     --white: #ffffff;
-    --text: #d9e0dc;
-    --muted: #91a29a;
+    --text: #dce4df;
+    --muted: #8d9e96;
 
-    --border: rgba(213,173,88,.20);
+    --line: rgba(213,173,88,.20);
 
 }
 
@@ -68,21 +70,21 @@ body {
 
     font-family: "Cairo", sans-serif;
 
+    color: var(--white);
+
     background:
         radial-gradient(
             circle at 75% 30%,
-            rgba(213,173,88,.06),
-            transparent 30%
+            rgba(213,173,88,.055),
+            transparent 28%
         ),
 
         linear-gradient(
             135deg,
-            #02140e,
+            #02140e 0%,
             #031c13 55%,
-            #02170f
+            #02170f 100%
         );
-
-    color: var(--white);
 
     overflow-x: hidden;
 
@@ -97,22 +99,22 @@ body::before {
 
     inset: 0;
 
-    z-index: -10;
+    z-index: -5;
 
     background-image:
 
         linear-gradient(
-            rgba(255,255,255,.022) 1px,
+            rgba(255,255,255,.018) 1px,
             transparent 1px
         ),
 
         linear-gradient(
             90deg,
-            rgba(255,255,255,.022) 1px,
+            rgba(255,255,255,.018) 1px,
             transparent 1px
         );
 
-    background-size: 80px 80px;
+    background-size: 76px 76px;
 
     pointer-events: none;
 
@@ -120,8 +122,13 @@ body::before {
 
 
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
+}
+
+
+button {
+    font-family: inherit;
 }
 
 
@@ -137,19 +144,25 @@ a {
     right: 0;
     left: 0;
 
-    height: 82px;
+    height: 78px;
 
     z-index: 1000;
 
     background:
-        rgba(2,20,14,.82);
+        rgba(2,20,14,.78);
 
     backdrop-filter:
         blur(18px);
 
+    -webkit-backdrop-filter:
+        blur(18px);
+
     border-bottom:
         1px solid
-        rgba(255,255,255,.06);
+        rgba(255,255,255,.055);
+
+    transition:
+        background .3s ease;
 
 }
 
@@ -168,13 +181,13 @@ a {
 
     justify-content: space-between;
 
-    gap: 30px;
+    gap: 25px;
 
 }
 
 
 /* =========================================================
-   HEADER LOGO
+   HEADER BRAND
 ========================================================= */
 
 .logo {
@@ -183,7 +196,7 @@ a {
 
     align-items: center;
 
-    gap: 12px;
+    gap: 11px;
 
     min-width: 260px;
 
@@ -192,51 +205,47 @@ a {
 
 .logo-image {
 
-    width: 52px;
-
-    height: 52px;
+    width: 49px;
+    height: 49px;
 
     object-fit: contain;
 
-    border-radius: 50%;
+    border-radius: 0;
 
     filter:
         drop-shadow(
             0 0 7px
-            rgba(213,173,88,.65)
-        )
-
-        drop-shadow(
-            0 0 20px
-            rgba(213,173,88,.20)
+            rgba(213,173,88,.45)
         );
 
     animation:
-        headerLogoFloat 4s ease-in-out infinite;
+        headerLogoFloat 5s ease-in-out infinite;
 
 }
 
 
 .logo-name {
 
+    color: #fff;
+
     font-size: 15px;
 
     font-weight: 800;
 
-    line-height: 1.4;
-
-    color: #fff;
+    line-height: 1.35;
 
 }
 
 
 .logo-sub {
 
+    color: var(--gold-light);
+
+    font-size: 8.5px;
+
     margin-top: 2px;
 
-    font-size: 9px;
-
-    color: var(--gold-light);
+    opacity: .85;
 
 }
 
@@ -251,20 +260,47 @@ a {
 
     align-items: center;
 
-    gap: 30px;
+    justify-content: center;
+
+    gap: 31px;
 
 }
 
 
 .nav a {
 
-    font-size: 13px;
+    color: #b8c5be;
+
+    font-size: 12px;
 
     font-weight: 600;
 
-    color: #b8c5be;
+    position: relative;
 
-    transition: .3s;
+    transition:
+        color .3s ease;
+
+}
+
+
+.nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+
+    bottom: -8px;
+
+    width: 0;
+
+    height: 1px;
+
+    background: var(--gold);
+
+    transition:
+        width .3s ease;
 
 }
 
@@ -276,17 +312,20 @@ a {
 }
 
 
+.nav a:hover::after {
+
+    width: 100%;
+
+}
+
+
 /* =========================================================
    PHONE
 ========================================================= */
 
 .phone-box {
 
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
+    min-width: 165px;
 
     padding-right: 20px;
 
@@ -299,9 +338,9 @@ a {
 
 .phone-label {
 
-    color: #71837a;
+    color: #6f8178;
 
-    font-size: 9px;
+    font-size: 8px;
 
     margin-bottom: 2px;
 
@@ -312,7 +351,7 @@ a {
 
     color: var(--gold-light);
 
-    font-size: 14px;
+    font-size: 13px;
 
     font-weight: 700;
 
@@ -326,25 +365,25 @@ a {
 
 
 /* =========================================================
-   MOBILE MENU BUTTON
+   MOBILE MENU
 ========================================================= */
 
 .menu {
 
     display: none;
 
-    width: 44px;
+    width: 43px;
 
-    height: 44px;
+    height: 43px;
 
     border:
         1px solid
-        var(--border);
+        var(--line);
 
     background:
-        rgba(255,255,255,.02);
+        rgba(255,255,255,.025);
 
-    color: #fff;
+    color: white;
 
     font-size: 21px;
 
@@ -361,7 +400,7 @@ a {
 
     min-height: 100vh;
 
-    padding-top: 82px;
+    padding-top: 78px;
 
     display: flex;
 
@@ -372,30 +411,30 @@ a {
 
 .hero-inner {
 
-    width: min(1240px,92%);
+    width: min(1240px, 92%);
 
     margin: auto;
 
     display: grid;
 
     grid-template-columns:
-        1.05fr
-        .95fr;
+        1.04fr
+        .96fr;
 
     align-items: center;
 
-    gap: 40px;
+    gap: 25px;
 
 }
 
 
 /* =========================================================
-   HERO CONTENT
+   HERO TEXT
 ========================================================= */
 
 .hero-content {
 
-    padding-top: 10px;
+    padding-top: 4px;
 
 }
 
@@ -406,15 +445,15 @@ a {
 
     align-items: center;
 
-    gap: 12px;
+    gap: 11px;
 
     color: var(--gold-light);
 
-    font-size: 13px;
+    font-size: 12px;
 
     font-weight: 700;
 
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 
 }
 
@@ -423,32 +462,29 @@ a {
 
     content: "";
 
-    width: 42px;
+    width: 38px;
 
     height: 1px;
 
-    background:
-        var(--gold);
+    background: var(--gold);
 
 }
 
 
 .hero-title {
 
+    color: white;
+
     font-size:
-        clamp(
-            48px,
-            5.5vw,
-            78px
-        );
-
-    line-height: 1.13;
-
-    letter-spacing: -2px;
+        clamp(48px, 5.4vw, 76px);
 
     font-weight: 800;
 
-    margin-bottom: 18px;
+    line-height: 1.12;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 17px;
 
 }
 
@@ -464,15 +500,15 @@ a {
 
 .hero-text {
 
-    max-width: 620px;
+    max-width: 590px;
 
-    color: #a6b5ae;
+    color: #a2b1aa;
 
-    font-size: 15px;
+    font-size: 14px;
 
-    line-height: 2;
+    line-height: 1.95;
 
-    margin-bottom: 25px;
+    margin-bottom: 23px;
 
 }
 
@@ -487,7 +523,7 @@ a {
 
     align-items: center;
 
-    gap: 12px;
+    gap: 10px;
 
     flex-wrap: wrap;
 
@@ -496,9 +532,10 @@ a {
 
 .btn {
 
-    min-height: 51px;
+    min-height: 49px;
 
-    padding: 0 25px;
+    padding:
+        0 23px;
 
     display: inline-flex;
 
@@ -506,13 +543,17 @@ a {
 
     justify-content: center;
 
-    gap: 10px;
+    gap: 9px;
 
-    font-size: 13px;
+    font-size: 12px;
 
     font-weight: 700;
 
-    transition: .3s;
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease,
+        border-color .3s ease;
 
 }
 
@@ -522,11 +563,11 @@ a {
     background:
         linear-gradient(
             135deg,
-            #cda54d,
-            #e4c575
+            #cda64f,
+            #e5c675
         );
 
-    color: #071b12;
+    color: #071a11;
 
 }
 
@@ -537,8 +578,8 @@ a {
         translateY(-3px);
 
     box-shadow:
-        0 12px 30px
-        rgba(213,173,88,.22);
+        0 12px 28px
+        rgba(213,173,88,.20);
 
 }
 
@@ -547,9 +588,12 @@ a {
 
     border:
         1px solid
-        rgba(213,173,88,.30);
+        rgba(213,173,88,.28);
 
     color: #fff;
+
+    background:
+        rgba(255,255,255,.01);
 
 }
 
@@ -560,7 +604,7 @@ a {
         var(--gold);
 
     background:
-        rgba(213,173,88,.06);
+        rgba(213,173,88,.055);
 
 }
 
@@ -574,18 +618,18 @@ a {
     display: grid;
 
     grid-template-columns:
-        repeat(3,130px);
+        repeat(3, 125px);
 
-    gap: 15px;
+    gap: 13px;
 
-    margin-top: 28px;
+    margin-top: 25px;
 
 }
 
 
 .trust-item {
 
-    padding-top: 10px;
+    padding-top: 9px;
 
     border-top:
         1px solid
@@ -598,7 +642,7 @@ a {
 
     color: var(--gold-light);
 
-    font-size: 13px;
+    font-size: 12px;
 
     font-weight: 800;
 
@@ -609,7 +653,7 @@ a {
 
     color: #64776e;
 
-    font-size: 9px;
+    font-size: 8px;
 
     margin-top: 3px;
 
@@ -617,20 +661,20 @@ a {
 
 
 /* =========================================================
-   HERO LOGO VISUAL
+   HERO VISUAL
 ========================================================= */
 
 .visual {
 
-    height: 470px;
+    height: 460px;
+
+    position: relative;
 
     display: flex;
 
     align-items: center;
 
     justify-content: center;
-
-    position: relative;
 
 }
 
@@ -641,49 +685,75 @@ a {
 
     position: absolute;
 
-    width: 320px;
+    width: 330px;
 
-    height: 320px;
+    height: 330px;
 
     border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(213,173,88,.12),
-            transparent 65%
+            rgba(213,173,88,.10),
+            transparent 68%
         );
 
-    filter: blur(18px);
+    filter: blur(15px);
 
 }
 
 
 /* =========================================================
-   CIRCLES
+   OUTER CIRCLE
 ========================================================= */
 
 .circle {
 
     position: absolute;
 
-    width: 365px;
+    width: 355px;
 
-    height: 365px;
+    height: 355px;
 
     border:
         1px solid
-        rgba(213,173,88,.23);
+        rgba(213,173,88,.22);
 
     border-radius: 50%;
 
     animation:
-        rotateCircle 20s linear infinite;
+        rotateCircle 22s linear infinite;
 
 }
 
 
 .circle::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background:
+        var(--gold-light);
+
+    top: 37px;
+
+    right: 56px;
+
+    box-shadow:
+        0 0 18px
+        rgba(237,207,131,.7);
+
+}
+
+
+.circle::after {
 
     content: "";
 
@@ -696,41 +766,45 @@ a {
     border-radius: 50%;
 
     background:
-        var(--gold-light);
+        var(--gold);
 
-    top: 20px;
+    bottom: 62px;
 
-    right: 65px;
+    left: 50px;
 
     box-shadow:
-        0 0 18px
-        var(--gold-light);
+        0 0 16px
+        rgba(213,173,88,.6);
 
 }
 
 
 .circle-two {
 
-    width: 290px;
+    width: 286px;
 
-    height: 290px;
+    height: 286px;
 
-    border-style: dashed;
+    border:
+        1px dashed
+        rgba(213,173,88,.13);
 
-    border-color:
-        rgba(213,173,88,.15);
+    animation:
+        rotateCircleReverse 17s linear infinite;
 
-    animation-direction:
-        reverse;
+}
 
-    animation-duration:
-        15s;
+
+.circle-two::before,
+.circle-two::after {
+
+    display: none;
 
 }
 
 
 /* =========================================================
-   MAIN LOGO
+   HERO LOGO CONTAINER
 ========================================================= */
 
 .logo-center {
@@ -750,15 +824,17 @@ a {
 }
 
 
+/* glow */
+
 .logo-center::before {
 
     content: "";
 
     position: absolute;
 
-    width: 170px;
+    width: 180px;
 
-    height: 170px;
+    height: 180px;
 
     border-radius: 50%;
 
@@ -767,53 +843,104 @@ a {
 
     filter: blur(30px);
 
-}
-
-
-.main-logo {
-
-    width: 175px;
-
-    height: 175px;
-
-    object-fit: contain;
-
-    position: relative;
-
-    z-index: 5;
-
-    filter:
-
-        drop-shadow(
-            0 0 10px
-            rgba(213,173,88,.75)
-        )
-
-        drop-shadow(
-            0 0 30px
-            rgba(213,173,88,.30)
-        );
-
     animation:
-        mainLogoFloat 5s ease-in-out infinite;
+        logoGlow 3.5s ease-in-out infinite;
 
 }
 
 
 /* =========================================================
-   GENERAL SECTIONS
+   HERO LOGO - SYMBOL ONLY
+========================================================= */
+
+.logo-mark-only {
+
+    width: 125px;
+
+    height: 125px;
+
+    position: relative;
+
+    z-index: 5;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+}
+
+
+/*
+    الصورة الأصلية في GitHub تحتوي
+    على الرمز + اسم المكتب.
+
+    هنا يتم تكبير الصورة داخل نافذة
+    صغيرة بحيث يظهر الجزء الخاص
+    بالرمز فقط في الـHero.
+*/
+
+.logo-mark-only img {
+
+    position: absolute;
+
+    z-index: 2;
+
+    width: 430px;
+
+    max-width: none;
+
+    height: auto;
+
+    /*
+       الرمز موجود في الجهة اليسرى
+       من الشعار الأصلي.
+    */
+
+    left: 18%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    filter:
+        drop-shadow(
+            0 0 9px
+            rgba(213,173,88,.72)
+        )
+
+        drop-shadow(
+            0 0 28px
+            rgba(213,173,88,.25)
+        );
+
+    animation:
+        logoFloat 4.5s ease-in-out infinite;
+
+}
+
+
+/* =========================================================
+   SECTIONS
 ========================================================= */
 
 .section {
 
-    padding: 65px 0;
+    padding:
+        58px 0;
 
 }
 
 
 .container {
 
-    width: min(1240px,92%);
+    width: min(1240px, 92%);
 
     margin: auto;
 
@@ -824,7 +951,14 @@ a {
 
     max-width: 650px;
 
-    margin-bottom: 30px;
+    margin-bottom: 27px;
+
+}
+
+
+.section-head .label {
+
+    margin-bottom: 10px;
 
 }
 
@@ -832,24 +966,20 @@ a {
 .section-head h2 {
 
     font-size:
-        clamp(
-            30px,
-            3.5vw,
-            45px
-        );
+        clamp(29px, 3.4vw, 43px);
 
     line-height: 1.35;
 
-    margin-bottom: 9px;
+    margin-bottom: 8px;
 
 }
 
 
 .section-head p {
 
-    color: #81938b;
+    color: #82938b;
 
-    font-size: 13px;
+    font-size: 12px;
 
     line-height: 1.9;
 
@@ -865,27 +995,30 @@ a {
     display: grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        repeat(3, 1fr);
 
-    gap: 13px;
+    gap: 11px;
 
 }
 
 
 .service {
 
-    padding: 25px;
+    min-height: 178px;
 
-    min-height: 185px;
+    padding: 23px;
 
     border:
         1px solid
-        rgba(255,255,255,.07);
+        rgba(255,255,255,.065);
 
     background:
-        rgba(255,255,255,.018);
+        rgba(255,255,255,.014);
 
-    transition: .35s;
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        background .3s ease;
 
 }
 
@@ -899,30 +1032,31 @@ a {
         rgba(213,173,88,.28);
 
     background:
-        rgba(213,173,88,.035);
+        rgba(213,173,88,.028);
 
 }
 
 
 .service-number {
 
-    color:
-        var(--gold);
+    color: var(--gold);
 
-    font-size: 11px;
+    font-size: 10px;
 
     font-weight: 800;
 
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 
 }
 
 
 .service h3 {
 
-    font-size: 18px;
+    color: white;
 
-    margin-bottom: 8px;
+    font-size: 17px;
+
+    margin-bottom: 7px;
 
 }
 
@@ -931,15 +1065,15 @@ a {
 
     color: #75877f;
 
-    font-size: 12px;
+    font-size: 11px;
 
-    line-height: 1.8;
+    line-height: 1.85;
 
 }
 
 
 /* =========================================================
-   ABOUT SECTION
+   ABOUT
 ========================================================= */
 
 .about {
@@ -947,12 +1081,12 @@ a {
     display: grid;
 
     grid-template-columns:
-        .75fr
-        1.25fr;
-
-    gap: 55px;
+        .82fr
+        1.18fr;
 
     align-items: center;
+
+    gap: 48px;
 
 }
 
@@ -963,7 +1097,17 @@ a {
 
 .about-logo {
 
-    height: 300px;
+    height: 375px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
 
     border:
         1px solid
@@ -972,20 +1116,10 @@ a {
     background:
         rgba(255,255,255,.012);
 
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    overflow: hidden;
-
 }
 
 
-/* inner border */
+/* inner frame */
 
 .about-logo::before {
 
@@ -993,7 +1127,7 @@ a {
 
     position: absolute;
 
-    inset: 18px;
+    inset: 22px;
 
     border:
         1px solid
@@ -1012,33 +1146,39 @@ a {
 
     position: absolute;
 
-    width: 220px;
+    width: 300px;
 
-    height: 220px;
+    height: 210px;
 
     border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(213,173,88,.09),
-            transparent 68%
+            rgba(213,173,88,.075),
+            transparent 70%
         );
 
-    filter: blur(12px);
+    filter: blur(15px);
 
 }
 
 
 /* =========================================================
-   IMPORTANT LOGO INSIDE CARD
+   FULL LOGO INSIDE CARD
 ========================================================= */
 
 .brand-card-logo {
 
-    width: 190px;
+    width: 100%;
 
-    height: 190px;
+    height: 100%;
+
+    min-height: 280px;
+
+    position: relative;
+
+    z-index: 5;
 
     display: flex;
 
@@ -1046,14 +1186,12 @@ a {
 
     justify-content: center;
 
-    position: relative;
-
-    z-index: 5;
+    overflow: hidden;
 
 }
 
 
-/* glow behind logo */
+/* subtle glow */
 
 .brand-card-logo::before {
 
@@ -1061,53 +1199,63 @@ a {
 
     position: absolute;
 
-    width: 155px;
+    width: 250px;
 
-    height: 155px;
+    height: 170px;
 
     border-radius: 50%;
 
     background:
-        rgba(213,173,88,.10);
+        rgba(213,173,88,.075);
 
-    filter: blur(25px);
+    filter: blur(32px);
 
     animation:
-        cardLogoGlow 3s ease-in-out infinite;
+        cardLogoGlow 4s ease-in-out infinite;
 
 }
 
 
-/* REAL GITHUB LOGO */
+/* FULL IMAGE */
 
 .brand-card-logo img {
-
-    width: 145px;
-
-    height: 145px;
-
-    object-fit: contain;
 
     position: relative;
 
     z-index: 2;
 
-    border-radius: 50%;
+    display: block;
+
+    width:
+        min(430px, 78%);
+
+    height: auto;
+
+    max-height: 190px;
+
+    object-fit: contain;
+
+    /*
+       مهم:
+       لا يوجد border-radius
+       حتى لا يتم قص الشعار.
+    */
+
+    border-radius: 0;
 
     filter:
-
         drop-shadow(
             0 0 8px
-            rgba(213,173,88,.65)
+            rgba(213,173,88,.45)
         )
 
         drop-shadow(
-            0 0 25px
-            rgba(213,173,88,.22)
+            0 0 23px
+            rgba(213,173,88,.17)
         );
 
     animation:
-        cardLogoFloat 4s ease-in-out infinite;
+        cardLogoFloat 5s ease-in-out infinite;
 
 }
 
@@ -1116,14 +1264,19 @@ a {
    ABOUT TEXT
 ========================================================= */
 
+.about-text .label {
+
+    margin-bottom: 12px;
+
+}
+
+
 .about-text h2 {
 
+    color: white;
+
     font-size:
-        clamp(
-            28px,
-            3vw,
-            42px
-        );
+        clamp(28px, 3vw, 41px);
 
     line-height: 1.4;
 
@@ -1136,11 +1289,11 @@ a {
 
     color: #8c9d95;
 
-    font-size: 13px;
+    font-size: 12px;
 
     line-height: 2;
 
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 
 }
 
@@ -1154,23 +1307,23 @@ a {
     display: grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        repeat(3, 1fr);
 
-    gap: 13px;
+    gap: 11px;
 
 }
 
 
 .method-card {
 
-    padding: 25px;
+    padding: 23px;
 
     border:
         1px solid
-        rgba(255,255,255,.07);
+        rgba(255,255,255,.065);
 
     background:
-        rgba(255,255,255,.015);
+        rgba(255,255,255,.014);
 
 }
 
@@ -1179,29 +1332,29 @@ a {
 
     color: var(--gold);
 
-    font-size: 11px;
+    font-size: 10px;
 
-    margin-bottom: 15px;
+    margin-bottom: 13px;
 
 }
 
 
 .method-card h3 {
 
-    font-size: 17px;
+    font-size: 16px;
 
-    margin-bottom: 7px;
+    margin-bottom: 6px;
 
 }
 
 
 .method-card p {
 
-    color: #768880;
+    color: #75877f;
 
-    font-size: 12px;
+    font-size: 11px;
 
-    line-height: 1.8;
+    line-height: 1.85;
 
 }
 
@@ -1212,7 +1365,8 @@ a {
 
 .contact {
 
-    padding: 45px 50px;
+    padding:
+        38px 45px;
 
     border:
         1px solid
@@ -1222,11 +1376,11 @@ a {
 
         radial-gradient(
             circle at 80% 30%,
-            rgba(213,173,88,.07),
+            rgba(213,173,88,.06),
             transparent 35%
         ),
 
-        rgba(255,255,255,.015);
+        rgba(255,255,255,.012);
 
     display: flex;
 
@@ -1234,16 +1388,23 @@ a {
 
     justify-content: space-between;
 
-    gap: 30px;
+    gap: 25px;
+
+}
+
+
+.contact .label {
+
+    margin-bottom: 7px;
 
 }
 
 
 .contact h2 {
 
-    font-size: 30px;
+    font-size: 29px;
 
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 
 }
 
@@ -1252,7 +1413,7 @@ a {
 
     color: #81928b;
 
-    font-size: 12px;
+    font-size: 11px;
 
 }
 
@@ -1261,7 +1422,7 @@ a {
 
     display: flex;
 
-    gap: 10px;
+    gap: 9px;
 
     flex-wrap: wrap;
 
@@ -1276,13 +1437,15 @@ a {
 
     position: fixed;
 
-    bottom: 22px;
+    left: 20px;
 
-    left: 22px;
+    bottom: 20px;
 
-    width: 59px;
+    width: 58px;
 
-    height: 59px;
+    height: 58px;
+
+    z-index: 999;
 
     border-radius: 50%;
 
@@ -1298,13 +1461,12 @@ a {
 
     justify-content: center;
 
-    z-index: 999;
-
     box-shadow:
-        0 10px 30px
+        0 9px 28px
         rgba(0,0,0,.35);
 
-    transition: .3s;
+    transition:
+        transform .3s ease;
 
 }
 
@@ -1334,9 +1496,10 @@ a {
 
     border-top:
         1px solid
-        rgba(255,255,255,.07);
+        rgba(255,255,255,.06);
 
-    padding: 24px 0;
+    padding:
+        21px 0;
 
 }
 
@@ -1360,20 +1523,20 @@ a {
 
     color: #62746c;
 
-    font-size: 10px;
+    font-size: 9px;
 
 }
 
 
 .footer-phone {
 
+    color: var(--gold-light);
+
+    font-size: 11px;
+
     direction: ltr;
 
     unicode-bidi: isolate;
-
-    color: var(--gold-light);
-
-    font-size: 12px;
 
 }
 
@@ -1384,29 +1547,29 @@ a {
 
 @keyframes headerLogoFloat {
 
-    0%,100% {
+    0%, 100% {
         transform: translateY(0);
     }
 
     50% {
-        transform: translateY(-4px);
+        transform: translateY(-3px);
     }
 
 }
 
 
-@keyframes mainLogoFloat {
+@keyframes logoFloat {
 
-    0%,100% {
+    0%, 100% {
         transform:
-            translateY(0)
-            scale(1);
+            translate(-50%, -50%)
+            translateY(0);
     }
 
     50% {
         transform:
-            translateY(-9px)
-            scale(1.025);
+            translate(-50%, -50%)
+            translateY(-5px);
     }
 
 }
@@ -1414,16 +1577,33 @@ a {
 
 @keyframes cardLogoFloat {
 
-    0%,100% {
-        transform:
-            translateY(0)
-            scale(1);
+    0%, 100% {
+        transform: translateY(0);
     }
 
     50% {
-        transform:
-            translateY(-6px)
-            scale(1.025);
+        transform: translateY(-5px);
+    }
+
+}
+
+
+@keyframes logoGlow {
+
+    0%, 100% {
+
+        opacity: .55;
+
+        transform: scale(.94);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform: scale(1.06);
+
     }
 
 }
@@ -1431,14 +1611,20 @@ a {
 
 @keyframes cardLogoGlow {
 
-    0%,100% {
-        opacity: .55;
+    0%, 100% {
+
+        opacity: .45;
+
         transform: scale(.95);
+
     }
 
     50% {
-        opacity: 1;
+
+        opacity: .9;
+
         transform: scale(1.05);
+
     }
 
 }
@@ -1457,64 +1643,71 @@ a {
 }
 
 
+@keyframes rotateCircleReverse {
+
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+
+}
+
+
 /* =========================================================
    TABLET
 ========================================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
 
     .nav {
-        gap: 18px;
+        gap: 19px;
     }
 
 
     .phone-box {
-        display: none;
+        min-width: 140px;
     }
 
 
     .hero-inner {
-        gap: 20px;
+        gap: 15px;
     }
 
 
     .hero-title {
-        font-size: 58px;
+        font-size: 57px;
     }
 
 
     .visual {
-        height: 400px;
+        height: 410px;
     }
 
 
     .circle {
-        width: 310px;
-        height: 310px;
+        width: 315px;
+        height: 315px;
     }
 
 
     .circle-two {
-        width: 245px;
-        height: 245px;
-    }
-
-
-    .main-logo {
-        width: 145px;
-        height: 145px;
+        width: 255px;
+        height: 255px;
     }
 
 
     .services {
         grid-template-columns:
-            repeat(2,1fr);
+            repeat(2, 1fr);
     }
 
 
     .method-grid {
         grid-template-columns:
-            repeat(2,1fr);
+            repeat(2, 1fr);
     }
 
 }
@@ -1527,7 +1720,7 @@ a {
 @media (max-width: 760px) {
 
     .header {
-        height: 72px;
+        height: 70px;
     }
 
 
@@ -1542,13 +1735,13 @@ a {
 
 
     .logo-image {
-        width: 47px;
-        height: 47px;
+        width: 45px;
+        height: 45px;
     }
 
 
     .logo-name {
-        font-size: 13px;
+        font-size: 12px;
     }
 
 
@@ -1557,8 +1750,17 @@ a {
     }
 
 
+    .phone-box {
+        display: none;
+    }
+
+
     .menu {
-        display: block;
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
     }
 
 
@@ -1566,7 +1768,7 @@ a {
 
         position: absolute;
 
-        top: 72px;
+        top: 70px;
 
         right: 5%;
 
@@ -1580,14 +1782,18 @@ a {
 
         gap: 0;
 
-        padding: 8px;
+        padding: 7px;
 
         background:
             rgba(2,20,14,.98);
 
         border:
             1px solid
-            rgba(213,173,88,.20);
+            rgba(213,173,88,.18);
+
+        box-shadow:
+            0 20px 45px
+            rgba(0,0,0,.35);
 
     }
 
@@ -1603,8 +1809,13 @@ a {
 
         border-bottom:
             1px solid
-            rgba(255,255,255,.06);
+            rgba(255,255,255,.055);
 
+    }
+
+
+    .nav a:last-child {
+        border-bottom: none;
     }
 
 
@@ -1612,7 +1823,7 @@ a {
 
         min-height: auto;
 
-        padding-top: 72px;
+        padding-top: 70px;
 
     }
 
@@ -1621,12 +1832,14 @@ a {
 
         width: 90%;
 
+        display: grid;
+
         grid-template-columns: 1fr;
 
-        gap: 5px;
+        gap: 0;
 
         padding:
-            55px 0 40px;
+            52px 0 35px;
 
         text-align: center;
 
@@ -1642,13 +1855,17 @@ a {
 
         order: 2;
 
-        height: 290px;
+        height: 285px;
+
+        margin-top: 8px;
 
     }
 
 
     .label {
+
         justify-content: center;
+
     }
 
 
@@ -1663,7 +1880,7 @@ a {
             clamp(
                 40px,
                 11vw,
-                56px
+                54px
             );
 
         letter-spacing:
@@ -1674,16 +1891,20 @@ a {
 
     .hero-text {
 
-        font-size: 13px;
+        max-width: 520px;
 
         margin:
-            0 auto 22px;
+            0 auto 21px;
+
+        font-size: 12px;
 
     }
 
 
     .buttons {
+
         justify-content: center;
+
     }
 
 
@@ -1692,12 +1913,12 @@ a {
         justify-content: center;
 
         grid-template-columns:
-            repeat(3,1fr);
+            repeat(3, 1fr);
 
-        max-width: 450px;
+        max-width: 430px;
 
         margin:
-            25px auto 0;
+            23px auto 0;
 
     }
 
@@ -1713,50 +1934,60 @@ a {
 
     .circle-two {
 
-        width: 195px;
+        width: 198px;
 
-        height: 195px;
-
-    }
-
-
-    .main-logo {
-
-        width: 120px;
-
-        height: 120px;
+        height: 198px;
 
     }
 
 
     .logo-center {
 
-        width: 180px;
+        width: 175px;
 
-        height: 180px;
+        height: 175px;
+
+    }
+
+
+    .logo-mark-only {
+
+        width: 100px;
+
+        height: 100px;
+
+    }
+
+
+    .logo-mark-only img {
+
+        width: 340px;
 
     }
 
 
     .section {
 
-        padding: 52px 0;
+        padding:
+            48px 0;
 
     }
 
 
     .section-head {
 
-        margin-bottom: 25px;
+        margin-bottom:
+            23px;
 
     }
 
 
     .services {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
-        gap: 10px;
+        gap: 9px;
 
     }
 
@@ -1765,37 +1996,57 @@ a {
 
         min-height: auto;
 
-        padding: 22px;
+        padding: 21px;
 
     }
 
 
     .about {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
-        gap: 28px;
+        gap: 27px;
 
     }
 
 
     .about-logo {
 
-        height: 280px;
+        height: 300px;
+
+    }
+
+
+    .brand-card-logo {
+
+        min-height: 260px;
+
+    }
+
+
+    .brand-card-logo img {
+
+        width:
+            min(390px, 85%);
+
+        max-height: 160px;
 
     }
 
 
     .method-grid {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
     }
 
 
     .contact {
 
-        padding: 35px 24px;
+        padding:
+            32px 23px;
 
         flex-direction: column;
 
@@ -1815,7 +2066,7 @@ a {
 
         flex-direction: column;
 
-        gap: 8px;
+        gap: 7px;
 
         text-align: center;
 
@@ -1825,18 +2076,23 @@ a {
 
 
 /* =========================================================
-   SMALL MOBILE
+   SMALL PHONES
 ========================================================= */
 
 @media (max-width: 450px) {
 
+    .hero-inner {
+        padding-top: 45px;
+    }
+
+
     .hero-title {
-        font-size: 40px;
+        font-size: 39px;
     }
 
 
     .hero-text {
-        font-size: 12px;
+        font-size: 11px;
     }
 
 
@@ -1851,22 +2107,22 @@ a {
 
 
     .trust {
-        gap: 8px;
+        gap: 7px;
     }
 
 
     .trust-title {
-        font-size: 12px;
+        font-size: 11px;
     }
 
 
     .trust-desc {
-        font-size: 8px;
+        font-size: 7px;
     }
 
 
     .visual {
-        height: 260px;
+        height: 255px;
     }
 
 
@@ -1881,65 +2137,70 @@ a {
 
     .circle-two {
 
-        width: 170px;
+        width: 172px;
 
-        height: 170px;
-
-    }
-
-
-    .main-logo {
-
-        width: 105px;
-
-        height: 105px;
+        height: 172px;
 
     }
 
 
     .logo-center {
 
-        width: 160px;
+        width: 155px;
 
-        height: 160px;
+        height: 155px;
+
+    }
+
+
+    .logo-mark-only {
+
+        width: 88px;
+
+        height: 88px;
+
+    }
+
+
+    .logo-mark-only img {
+
+        width: 300px;
 
     }
 
 
     .about-logo {
 
-        height: 250px;
+        height: 265px;
 
     }
 
 
     .brand-card-logo {
 
-        width: 170px;
-
-        height: 170px;
+        min-height: 230px;
 
     }
 
 
     .brand-card-logo img {
 
-        width: 130px;
+        width: 88%;
 
-        height: 130px;
+        max-height: 135px;
 
     }
 
 
     .whatsapp {
 
-        width: 55px;
+        width: 54px;
 
-        height: 55px;
+        height: 54px;
 
-        left: 16px;
+        left: 15px;
 
-        bottom: 16px;
+        bottom: 15px;
 
     }
 
@@ -1962,14 +2223,16 @@ a {
     <div class="header-inner">
 
 
-        <a href="#home" class="logo">
+        <a
+            href="#home"
+            class="logo"
+        >
 
             <img
                 class="logo-image"
                 src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.jpg"
                 alt="شعار روينا عبدالفتاح رحالي"
             >
-
 
             <div>
 
@@ -1986,7 +2249,10 @@ a {
         </a>
 
 
-        <nav class="nav" id="nav">
+        <nav
+            class="nav"
+            id="nav"
+        >
 
             <a href="#home">
                 الرئيسية
@@ -2031,6 +2297,7 @@ a {
         <button
             class="menu"
             id="menu"
+            type="button"
             aria-label="فتح القائمة"
         >
             ☰
@@ -2047,7 +2314,10 @@ a {
      HERO
 ========================================================= -->
 
-<section class="hero" id="home">
+<section
+    class="hero"
+    id="home"
+>
 
     <div class="hero-inner">
 
@@ -2085,12 +2355,15 @@ a {
                 <a
                     href="https://wa.me/966544270651"
                     target="_blank"
+                    rel="noopener"
                     class="btn btn-gold"
                 >
 
                     احجز استشارتك
 
-                    ←
+                    <span>
+                        ←
+                    </span>
 
                 </a>
 
@@ -2157,7 +2430,9 @@ a {
 
 
 
-        <!-- HERO LOGO -->
+        <!-- =================================================
+             HERO VISUAL
+        ================================================== -->
 
         <div class="visual">
 
@@ -2170,11 +2445,18 @@ a {
             <div class="logo-center">
 
 
-                <img
-                    class="main-logo"
-                    src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.jpg"
-                    alt="شعار مكتب روينا عبدالفتاح رحالي"
-                >
+                <!--
+                    رمز الشعار فقط
+                -->
+
+                <div class="logo-mark-only">
+
+                    <img
+                        src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.jpg"
+                        alt="شعار روينا عبدالفتاح رحالي"
+                    >
+
+                </div>
 
 
             </div>
@@ -2193,12 +2475,16 @@ a {
      SERVICES
 ========================================================= -->
 
-<section class="section" id="services">
+<section
+    class="section"
+    id="services"
+>
 
     <div class="container">
 
 
         <div class="section-head">
+
 
             <div class="label">
                 مجالات العمل
@@ -2206,16 +2492,21 @@ a {
 
 
             <h2>
+
                 حلول قانونية واضحة
                 <br>
                 تحمي مصالحك.
+
             </h2>
 
 
             <p>
+
                 خدمات قانونية متخصصة للأفراد والمنشآت،
                 بمنهج يعتمد على الفهم الدقيق والوضوح.
+
             </p>
+
 
         </div>
 
@@ -2343,7 +2634,10 @@ a {
      ABOUT
 ========================================================= -->
 
-<section class="section" id="about">
+<section
+    class="section"
+    id="about"
+>
 
     <div class="container">
 
@@ -2352,7 +2646,7 @@ a {
 
 
             <!-- =================================================
-                 LOGO CARD
+                 FULL LOGO CARD
             ================================================== -->
 
             <div class="about-logo">
@@ -2362,8 +2656,7 @@ a {
 
 
                     <!--
-                        الشعار الحقيقي من GitHub
-                        لا يوجد حرف R هنا
+                        اللوجو الكامل
                     -->
 
                     <img
@@ -2435,12 +2728,16 @@ a {
      METHOD
 ========================================================= -->
 
-<section class="section" id="method">
+<section
+    class="section"
+    id="method"
+>
 
     <div class="container">
 
 
         <div class="section-head">
+
 
             <div class="label">
                 منهجيتنا
@@ -2463,6 +2760,7 @@ a {
                 ونقدم رؤية عملية تساعدك على اتخاذ القرار.
 
             </p>
+
 
         </div>
 
@@ -2537,7 +2835,10 @@ a {
      CONTACT
 ========================================================= -->
 
-<section class="section" id="contact">
+<section
+    class="section"
+    id="contact"
+>
 
     <div class="container">
 
@@ -2572,6 +2873,7 @@ a {
                 <a
                     href="https://wa.me/966544270651"
                     target="_blank"
+                    rel="noopener"
                     class="btn btn-gold"
                 >
                     تواصل عبر واتساب
@@ -2599,12 +2901,13 @@ a {
 
 
 <!-- =========================================================
-     WHATSAPP BUTTON
+     WHATSAPP
 ========================================================= -->
 
 <a
     href="https://wa.me/966544270651"
     target="_blank"
+    rel="noopener"
     class="whatsapp"
     aria-label="التواصل عبر واتساب"
 >
@@ -2613,6 +2916,7 @@ a {
     <svg
         viewBox="0 0 24 24"
         fill="none"
+        aria-hidden="true"
     >
 
         <path
@@ -2701,17 +3005,17 @@ menu.addEventListener(
 
 
 /* =========================================================
-   CLOSE MOBILE MENU
+   CLOSE MENU AFTER CLICK
 ========================================================= */
 
 document
     .querySelectorAll(".nav a")
     .forEach(
-        function (link) {
+        function(link) {
 
             link.addEventListener(
                 "click",
-                function () {
+                function() {
 
                     nav.classList.remove("active");
 
@@ -2725,12 +3029,12 @@ document
 
 
 /* =========================================================
-   HEADER ON SCROLL
+   HEADER SCROLL
 ========================================================= */
 
 window.addEventListener(
     "scroll",
-    function () {
+    function() {
 
         const header =
             document.querySelector(".header");
@@ -2744,7 +3048,7 @@ window.addEventListener(
         } else {
 
             header.style.background =
-                "rgba(2,20,14,.82)";
+                "rgba(2,20,14,.78)";
 
         }
 
