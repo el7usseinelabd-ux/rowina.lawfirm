@@ -1,2291 +1,1842 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <title>روينا عبد الفتاح رحالي | للمحاماة والاستشارات القانونية</title>
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="روينا عبد الفتاح رحالي للمحاماة والاستشارات القانونية. خدمات قانونية متخصصة باحترافية ووضوح وسرية.">
+    <meta name="theme-color" content="#031b14">
 
-<meta name="theme-color" content="#031810">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<title>
-روينا عبدالفتاح رحالي | المحاماة والاستشارات القانونية
-</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
-<meta name="description"
-content="روينا عبدالفتاح رحالي للمحاماة والاستشارات القانونية والتوثيق">
+    <style>
 
-<link rel="preconnect"
-      href="https://fonts.googleapis.com">
+        /* =========================================================
+           ROOT
+        ========================================================= */
 
-<link rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin>
+        :root {
+            --bg: #031b14;
+            --bg-2: #061f17;
+            --bg-3: #08261c;
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet">
+            --gold: #d9b45d;
+            --gold-light: #efd17a;
+            --gold-dark: #a98435;
 
+            --white: #f7f7f2;
+            --text: #d6ddd8;
+            --muted: #87958e;
 
-<style>
+            --border: rgba(217,180,93,.20);
+            --border-light: rgba(255,255,255,.07);
 
-/* =========================================================
-   01 — VARIABLES
-========================================================= */
+            --container: 1240px;
 
-:root{
+            --shadow:
+                0 25px 70px rgba(0,0,0,.30);
 
-    --green-1:#01120c;
-    --green-2:#031b12;
-    --green-3:#062219;
+            --transition:
+                .35s cubic-bezier(.2,.8,.2,1);
+        }
 
-    --gold:#d2a94f;
-    --gold-light:#efd27f;
 
-    --white:#ffffff;
+        /* =========================================================
+           RESET
+        ========================================================= */
 
-    --text:#d9e1dc;
-    --muted:#83938c;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    --line:rgba(218,178,82,.18);
-    --soft-line:rgba(255,255,255,.065);
+        html {
+            scroll-behavior: smooth;
+        }
 
-    --container:1240px;
+        body {
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(217,180,93,.045),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #021710,
+                    #031b14 50%,
+                    #02160f
+                );
 
-}
+            color: var(--white);
 
+            font-family:
+                "Cairo",
+                "Tajawal",
+                sans-serif;
 
-/* =========================================================
-   02 — RESET
-========================================================= */
+            overflow-x: hidden;
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+            line-height: 1.8;
+        }
 
-html{
-    scroll-behavior:smooth;
-}
+        body::before {
+            content: "";
 
-body{
+            position: fixed;
+            inset: 0;
 
-    min-width:320px;
+            pointer-events: none;
 
-    font-family:
-        "Cairo",
-        Arial,
-        sans-serif;
+            opacity: .55;
 
-    color:var(--white);
-
-    background:
-
-        radial-gradient(
-            circle at 80% 10%,
-            rgba(209,169,79,.045),
-            transparent 28%
-        ),
-
-        radial-gradient(
-            circle at 10% 60%,
-            rgba(13,91,60,.08),
-            transparent 30%
-        ),
-
-        linear-gradient(
-            135deg,
-            var(--green-1),
-            var(--green-2) 50%,
-            var(--green-1)
-        );
-
-    overflow-x:hidden;
-
-}
-
-
-/* شبكة خلفية */
-
-body::before{
-
-    content:"";
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:-10;
-
-    pointer-events:none;
-
-    background-image:
-
-        linear-gradient(
-            rgba(255,255,255,.018) 1px,
-            transparent 1px
-        ),
-
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,.018) 1px,
-            transparent 1px
-        );
-
-    background-size:
-        72px 72px;
-
-}
-
-
-/* تغميق الحواف */
-
-body::after{
-
-    content:"";
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:-9;
-
-    pointer-events:none;
-
-    background:
-        radial-gradient(
-            circle at center,
-            transparent 40%,
-            rgba(0,0,0,.20) 100%
-        );
-
-}
-
-
-a{
-    color:inherit;
-    text-decoration:none;
-}
-
-button{
-    font-family:inherit;
-}
-
-
-/* =========================================================
-   03 — GENERAL
-========================================================= */
-
-.container{
-
-    width:
-        min(
-            var(--container),
-            calc(100% - 48px)
-        );
-
-    margin-inline:auto;
-
-}
-
-
-.section{
-
-    padding:
-        58px 0;
-
-}
-
-
-.eyebrow{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    color:var(--gold-light);
-
-    font-size:11px;
-
-    font-weight:700;
-
-    margin-bottom:10px;
-
-}
-
-
-.eyebrow::after{
-
-    content:"";
-
-    width:42px;
-
-    height:1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--gold),
-            transparent
-        );
-
-}
-
-
-.section-title{
-
-    font-size:
-        clamp(
-            28px,
-            3vw,
-            43px
-        );
-
-    line-height:1.35;
-
-    font-weight:800;
-
-}
-
-
-.section-description{
-
-    color:var(--muted);
-
-    font-size:11px;
-
-    line-height:2;
-
-    max-width:650px;
-
-    margin-top:7px;
-
-}
-
-
-/* =========================================================
-   04 — HEADER
-========================================================= */
-
-.header{
-
-    position:fixed;
-
-    top:0;
-    right:0;
-    left:0;
-
-    height:76px;
-
-    z-index:1000;
-
-    background:
-        rgba(1,17,11,.72);
-
-    backdrop-filter:
-        blur(18px);
-
-    -webkit-backdrop-filter:
-        blur(18px);
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,.055);
-
-    transition:
-        background .3s ease,
-        box-shadow .3s ease;
-
-}
-
-
-.header.scrolled{
-
-    background:
-        rgba(1,17,11,.95);
-
-    box-shadow:
-        0 12px 35px
-        rgba(0,0,0,.20);
-
-}
-
-
-.header-inner{
-
-    height:100%;
-
-    width:
-        min(
-            var(--container),
-            calc(100% - 48px)
-        );
-
-    margin:auto;
-
-    display:grid;
-
-    grid-template-columns:
-        220px
-        1fr
-        190px;
-
-    align-items:center;
-
-    gap:25px;
-
-}
-
-
-/* =========================================================
-   05 — BRAND
-========================================================= */
-
-.brand{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    min-width:0;
-
-}
-
-
-.brand-logo{
-
-    width:46px;
-
-    height:46px;
-
-    flex:0 0 46px;
-
-    object-fit:contain;
-
-    object-position:center;
-
-    display:block;
-
-    filter:
-        drop-shadow(
-            0 0 7px
-            rgba(213,173,88,.20)
-        );
-
-}
-
-
-.brand-info{
-
-    min-width:0;
-
-}
-
-
-.brand-name{
-
-    color:#fff;
-
-    font-size:14px;
-
-    font-weight:800;
-
-    line-height:1.4;
-
-    white-space:nowrap;
-
-}
-
-
-.brand-sub{
-
-    color:var(--gold-light);
-
-    opacity:.78;
-
-    font-size:7px;
-
-    line-height:1.5;
-
-    white-space:nowrap;
-
-}
-
-
-/* =========================================================
-   06 — NAV
-========================================================= */
-
-.nav{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:32px;
-
-}
-
-
-.nav a{
-
-    position:relative;
-
-    color:#b9c5bf;
-
-    font-size:11px;
-
-    font-weight:600;
-
-    padding:8px 0;
-
-    transition:
-        color .25s ease;
-
-}
-
-
-.nav a:hover{
-
-    color:var(--gold-light);
-
-}
-
-
-.nav a::after{
-
-    content:"";
-
-    position:absolute;
-
-    right:0;
-
-    bottom:0;
-
-    width:0;
-
-    height:1px;
-
-    background:var(--gold-light);
-
-    transition:
-        width .25s ease;
-
-}
-
-
-.nav a:hover::after{
-
-    width:100%;
-
-}
-
-
-/* =========================================================
-   07 — PHONE HEADER
-========================================================= */
-
-.header-phone{
-
-    display:flex;
-
-    justify-content:flex-start;
-
-}
-
-
-.header-phone a{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
-    transition:
-        transform .25s ease;
-
-}
-
-
-.header-phone a:hover{
-
-    transform:translateX(-3px);
-
-}
-
-
-.phone-label{
-
-    color:#71827b;
-
-    font-size:8px;
-
-}
-
-
-.phone-number{
-
-    direction:ltr;
-
-    unicode-bidi:isolate;
-
-    color:var(--gold-light);
-
-    font-size:13px;
-
-    font-weight:800;
-
-    white-space:nowrap;
-
-}
-
-
-/* =========================================================
-   08 — MOBILE BUTTON
-========================================================= */
-
-.menu-button{
-
-    display:none;
-
-    width:42px;
-
-    height:42px;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border:
-        1px solid
-        var(--line);
-
-    background:
-        rgba(255,255,255,.02);
-
-    color:white;
-
-    cursor:pointer;
-
-    font-size:20px;
-
-}
-
-
-/* =========================================================
-   09 — HERO
-========================================================= */
-
-.hero{
-
-    min-height:100vh;
-
-    padding-top:76px;
-
-    display:flex;
-
-    align-items:center;
-
-}
-
-
-.hero-grid{
-
-    width:
-        min(
-            var(--container),
-            calc(100% - 48px)
-        );
-
-    margin:auto;
-
-    display:grid;
-
-    /*
-       مهم:
-       العمودين متساويين نسبيًا
-       حتى لا يخرج النص خارج الشاشة
-    */
-
-    grid-template-columns:
-        minmax(0,1.05fr)
-        minmax(0,.95fr);
-
-    align-items:center;
-
-    gap:clamp(
-        35px,
-        5vw,
-        90px
-    );
-
-    padding:
-        40px 0 35px;
-
-}
-
-
-/* =========================================================
-   10 — HERO CONTENT
-========================================================= */
-
-.hero-content{
-
-    min-width:0;
-
-}
-
-
-.hero-title{
-
-    color:#fff;
-
-    font-size:
-        clamp(
-            48px,
-            5.2vw,
-            76px
-        );
-
-    line-height:1.08;
-
-    letter-spacing:-2px;
-
-    font-weight:800;
-
-    margin-bottom:15px;
-
-}
-
-
-.hero-title span{
-
-    display:block;
-
-    color:var(--gold-light);
-
-    margin-top:4px;
-
-}
-
-
-.hero-description{
-
-    color:#9aa9a3;
-
-    font-size:12px;
-
-    line-height:2;
-
-    max-width:600px;
-
-    margin-bottom:21px;
-
-}
-
-
-.hero-actions{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    flex-wrap:wrap;
-
-}
-
-
-/* =========================================================
-   11 — BUTTONS
-========================================================= */
-
-.btn{
-
-    min-height:47px;
-
-    padding:
-        0 21px;
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:9px;
-
-    font-size:10px;
-
-    font-weight:800;
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease,
-        background .25s ease,
-        border-color .25s ease;
-
-}
-
-
-.btn-gold{
-
-    color:#08160f;
-
-    background:
-        linear-gradient(
-            135deg,
-            #cda452,
-            #ebcb76
-        );
-
-    box-shadow:
-        0 10px 25px
-        rgba(210,169,79,.08);
-
-}
-
-
-.btn-gold:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:
-        0 16px 32px
-        rgba(210,169,79,.18);
-
-}
-
-
-.btn-outline{
-
-    color:#fff;
-
-    border:
-        1px solid
-        rgba(210,169,79,.27);
-
-    background:
-        rgba(255,255,255,.012);
-
-}
-
-
-.btn-outline:hover{
-
-    transform:translateY(-3px);
-
-    border-color:
-        rgba(210,169,79,.65);
-
-    background:
-        rgba(210,169,79,.04);
-
-}
-
-
-/* =========================================================
-   12 — TRUST
-========================================================= */
-
-.trust-row{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,minmax(90px,120px));
-
-    gap:10px;
-
-    margin-top:25px;
-
-}
-
-
-.trust-item{
-
-    border-top:
-        1px solid
-        rgba(255,255,255,.08);
-
-    padding-top:7px;
-
-}
-
-
-.trust-title{
-
-    color:var(--gold-light);
-
-    font-size:11px;
-
-    font-weight:800;
-
-}
-
-
-.trust-sub{
-
-    color:#60726a;
-
-    font-size:7px;
-
-    margin-top:1px;
-
-}
-
-
-/* =========================================================
-   13 — LOGO AREA
-========================================================= */
-
-.hero-logo-area{
-
-    min-width:0;
-
-    min-height:440px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-}
-
-
-/*
-   هذه هي المساحة الجديدة للشعار.
-   لا دائرة ضخمة.
-   لا قص.
-*/
-
-.logo-card{
-
-    position:relative;
-
-    width:
-        min(
-            390px,
-            100%
-        );
-
-    aspect-ratio:1 / .82;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border:
-        1px solid
-        rgba(210,169,79,.25);
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.026),
-            rgba(255,255,255,.006)
-        );
-
-    box-shadow:
-
-        0 25px 70px
-        rgba(0,0,0,.25),
-
-        inset 0 0 60px
-        rgba(210,169,79,.025);
-
-    overflow:hidden;
-
-}
-
-
-/* إطار داخلي */
-
-.logo-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:14px;
-
-    border:
-        1px solid
-        rgba(210,169,79,.09);
-
-    pointer-events:none;
-
-}
-
-
-/* خط إضاءة */
-
-.logo-card::after{
-
-    content:"";
-
-    position:absolute;
-
-    top:-50%;
-
-    right:-45%;
-
-    width:35%;
-
-    height:200%;
-
-    transform:rotate(25deg);
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(239,210,127,.13),
-            transparent
-        );
-
-    filter:blur(10px);
-
-    animation:
-        cardLight 7s ease-in-out infinite;
-
-    pointer-events:none;
-
-}
-
-
-/* =========================================================
-   14 — LOGO
-========================================================= */
-
-.logo-holder{
-
-    position:relative;
-
-    z-index:3;
-
-    width:
-        min(
-            255px,
-            70%
-        );
-
-    aspect-ratio:1 / 1;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-}
-
-
-/* هالة صغيرة فقط خلف الشعار */
-
-.logo-holder::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:12%;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(210,169,79,.18),
-            rgba(210,169,79,.07) 40%,
-            transparent 72%
-        );
-
-    filter:blur(20px);
-
-    z-index:-1;
-
-    animation:
-        logoGlow 5s ease-in-out infinite;
-
-}
-
-
-/* الصورة */
-
-.logo-holder img{
-
-    width:100%;
-
-    height:100%;
-
-    display:block;
-
-    object-fit:contain;
-
-    object-position:center;
-
-    /*
-       يمنع القص تمامًا
-    */
-
-    filter:
-
-        drop-shadow(
-            0 0 7px
-            rgba(255,255,255,.10)
-        )
-
-        drop-shadow(
-            0 0 18px
-            rgba(210,169,79,.30)
-        );
-
-    animation:
-        logoFloat 5s ease-in-out infinite;
-
-}
-
-
-/* =========================================================
-   15 — LOGO DETAILS
-========================================================= */
-
-.logo-line{
-
-    position:absolute;
-
-    z-index:4;
-
-    height:1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--gold),
-            transparent
-        );
-
-    opacity:.65;
-
-}
-
-
-.logo-line.top{
-
-    width:58px;
-
-    top:30px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-}
-
-
-.logo-line.bottom{
-
-    width:42px;
-
-    bottom:30px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-}
-
-
-.logo-corner{
-
-    position:absolute;
-
-    width:6px;
-
-    height:6px;
-
-    border-radius:50%;
-
-    background:var(--gold-light);
-
-    box-shadow:
-        0 0 12px
-        rgba(239,210,127,.6);
-
-}
-
-
-.logo-corner.one{
-
-    top:27px;
-    right:28px;
-
-}
-
-
-.logo-corner.two{
-
-    bottom:27px;
-    left:28px;
-
-}
-
-
-/* =========================================================
-   16 — SERVICES
-========================================================= */
-
-.services-header{
-
-    margin-bottom:22px;
-
-}
-
-
-.services-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,minmax(0,1fr));
-
-    gap:11px;
-
-}
-
-
-.service-card{
-
-    min-height:170px;
-
-    padding:21px;
-
-    border:
-        1px solid
-        var(--soft-line);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.022),
-            rgba(255,255,255,.006)
-        );
-
-    transition:
-        transform .3s ease,
-        border-color .3s ease,
-        box-shadow .3s ease;
-
-}
-
-
-.service-card:hover{
-
-    transform:translateY(-5px);
-
-    border-color:
-        rgba(210,169,79,.28);
-
-    box-shadow:
-        0 18px 45px
-        rgba(0,0,0,.15);
-
-}
-
-
-.service-number{
-
-    color:var(--gold);
-
-    font-size:10px;
-
-    font-weight:800;
-
-    margin-bottom:13px;
-
-}
-
-
-.service-card h3{
-
-    font-size:16px;
-
-    font-weight:800;
-
-    margin-bottom:6px;
-
-}
-
-
-.service-card p{
-
-    color:#75877f;
-
-    font-size:10px;
-
-    line-height:1.9;
-
-}
-
-
-/* =========================================================
-   17 — ABOUT
-========================================================= */
-
-.about-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        minmax(0,.9fr)
-        minmax(0,1.1fr);
-
-    align-items:center;
-
-    gap:60px;
-
-}
-
-
-/* صورة الشعار في قسم عن المكتب */
-
-.about-logo{
-
-    min-height:360px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    position:relative;
-
-    border:
-        1px solid
-        rgba(210,169,79,.18);
-
-    background:
-        rgba(255,255,255,.008);
-
-}
-
-
-.about-logo::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:15px;
-
-    border:
-        1px solid
-        rgba(210,169,79,.08);
-
-}
-
-
-.about-logo img{
-
-    position:relative;
-
-    z-index:2;
-
-    width:78%;
-
-    height:78%;
-
-    object-fit:contain;
-
-    filter:
-        drop-shadow(
-            0 0 18px
-            rgba(210,169,79,.22)
-        );
-
-}
-
-
-/* النص */
-
-.about-content{
-
-    min-width:0;
-
-}
-
-
-.about-content h2{
-
-    font-size:
-        clamp(
-            28px,
-            3vw,
-            42px
-        );
-
-    line-height:1.4;
-
-    margin-bottom:12px;
-
-}
-
-
-.about-content h2 span{
-
-    color:var(--gold-light);
-
-}
-
-
-.about-content p{
-
-    color:#82938c;
-
-    font-size:11px;
-
-    line-height:2;
-
-    margin-bottom:7px;
-
-}
-
-
-/* =========================================================
-   18 — METHOD
-========================================================= */
-
-.method-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,minmax(0,1fr));
-
-    gap:11px;
-
-    margin-top:22px;
-
-}
-
-
-.method-card{
-
-    padding:22px;
-
-    border:
-        1px solid
-        var(--soft-line);
-
-    background:
-        rgba(255,255,255,.01);
-
-}
-
-
-.method-number{
-
-    color:var(--gold);
-
-    font-size:10px;
-
-    font-weight:800;
-
-    margin-bottom:10px;
-
-}
-
-
-.method-card h3{
-
-    font-size:15px;
-
-    margin-bottom:5px;
-
-}
-
-
-.method-card p{
-
-    color:#71837b;
-
-    font-size:10px;
-
-    line-height:1.9;
-
-}
-
-
-/* =========================================================
-   19 — CONTACT
-========================================================= */
-
-.contact-box{
-
-    position:relative;
-
-    min-height:160px;
-
-    padding:
-        30px 34px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:25px;
-
-    border:
-        1px solid
-        rgba(210,169,79,.20);
-
-    background:
-
-        radial-gradient(
-            circle at 85% 50%,
-            rgba(210,169,79,.07),
-            transparent 32%
-        ),
-
-        rgba(255,255,255,.01);
-
-}
-
-
-.contact-box h2{
-
-    font-size:
-        clamp(
-            24px,
-            3vw,
-            34px
-        );
-
-    margin-bottom:3px;
-
-}
-
-
-.contact-box p{
-
-    color:#7c8e86;
-
-    font-size:10px;
-
-}
-
-
-.contact-actions{
-
-    display:flex;
-
-    gap:9px;
-
-    flex-wrap:wrap;
-
-}
-
-
-/* =========================================================
-   20 — WHATSAPP
-========================================================= */
-
-.whatsapp{
-
-    position:fixed;
-
-    z-index:999;
-
-    left:20px;
-
-    bottom:20px;
-
-    width:58px;
-
-    height:58px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:50%;
-
-    color:#07160f;
-
-    background:
-        linear-gradient(
-            145deg,
-            #ebcc78,
-            #cba34c
-        );
-
-    box-shadow:
-        0 12px 35px
-        rgba(0,0,0,.35);
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease;
-
-}
-
-
-.whatsapp:hover{
-
-    transform:
-        translateY(-4px)
-        scale(1.04);
-
-    box-shadow:
-        0 18px 40px
-        rgba(0,0,0,.45);
-
-}
-
-
-.whatsapp svg{
-
-    width:27px;
-
-    height:27px;
-
-}
-
-
-/* =========================================================
-   21 — FOOTER
-========================================================= */
-
-.footer{
-
-    padding:20px 0;
-
-    border-top:
-        1px solid
-        rgba(255,255,255,.05);
-
-}
-
-
-.footer-inner{
-
-    width:
-        min(
-            var(--container),
-            calc(100% - 48px)
-        );
-
-    margin:auto;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-}
-
-
-.footer-copy{
-
-    color:#5f7169;
-
-    font-size:8px;
-
-}
-
-
-.footer-phone{
-
-    direction:ltr;
-
-    unicode-bidi:isolate;
-
-    color:var(--gold-light);
-
-    font-size:10px;
-
-    font-weight:800;
-
-}
-
-
-/* =========================================================
-   22 — ANIMATIONS
-========================================================= */
-
-@keyframes logoGlow{
-
-    0%,
-    100%{
-
-        opacity:.65;
-
-        transform:scale(.94);
-
-    }
-
-    50%{
-
-        opacity:1;
-
-        transform:scale(1.07);
-
-    }
-
-}
-
-
-@keyframes logoFloat{
-
-    0%,
-    100%{
-
-        transform:
-            translateY(0);
-
-    }
-
-    50%{
-
-        transform:
-            translateY(-4px);
-
-    }
-
-}
-
-
-@keyframes cardLight{
-
-    0%{
-
-        right:-45%;
-
-        opacity:0;
-
-    }
-
-    15%{
-
-        opacity:1;
-
-    }
-
-    55%{
-
-        right:125%;
-
-        opacity:.7;
-
-    }
-
-    100%{
-
-        right:125%;
-
-        opacity:0;
-
-    }
-
-}
-
-
-/* =========================================================
-   23 — LARGE LAPTOP
-========================================================= */
-
-@media(max-width:1150px){
-
-    .header-inner{
-
-        grid-template-columns:
-            190px
-            1fr
-            155px;
-
-        gap:18px;
-
-    }
-
-
-    .nav{
-
-        gap:21px;
-
-    }
-
-
-    .hero-grid{
-
-        gap:35px;
-
-    }
-
-
-    .logo-card{
-
-        width:350px;
-
-    }
-
-
-    .logo-holder{
-
-        width:225px;
-
-    }
-
-}
-
-
-/* =========================================================
-   24 — TABLET
-========================================================= */
-
-@media(max-width:900px){
-
-    .header-inner{
-
-        grid-template-columns:
-            auto
-            1fr
-            auto;
-
-    }
-
-
-    .nav{
-
-        gap:15px;
-
-    }
-
-
-    .header-phone{
-
-        display:none;
-
-    }
-
-
-    .hero{
-
-        min-height:auto;
-
-    }
-
-
-    .hero-grid{
-
-        grid-template-columns:
-            minmax(0,1fr)
-            minmax(300px,.8fr);
-
-        gap:25px;
-
-        padding:
-            65px 0 45px;
-
-    }
-
-
-    .hero-title{
-
-        font-size:52px;
-
-    }
-
-
-    .hero-logo-area{
-
-        min-height:380px;
-
-    }
-
-
-    .logo-card{
-
-        width:330px;
-
-    }
-
-
-    .logo-holder{
-
-        width:215px;
-
-    }
-
-
-    .services-grid{
-
-        grid-template-columns:
-            repeat(2,minmax(0,1fr));
-
-    }
-
-
-    .about-grid{
-
-        gap:30px;
-
-    }
-
-}
-
-
-/* =========================================================
-   25 — MOBILE
-========================================================= */
-
-@media(max-width:720px){
-
-    .container,
-    .hero-grid,
-    .header-inner,
-    .footer-inner{
-
-        width:
-            calc(100% - 34px);
-
-    }
-
-
-    .header{
-
-        height:68px;
-
-    }
-
-
-    .header-inner{
-
-        display:flex;
-
-        justify-content:space-between;
-
-    }
-
-
-    .brand-logo{
-
-        width:42px;
-        height:42px;
-
-        flex-basis:42px;
-
-    }
-
-
-    .brand-name{
-
-        font-size:12px;
-
-    }
-
-
-    .brand-sub{
-
-        display:none;
-
-    }
-
-
-    .menu-button{
-
-        display:flex;
-
-    }
-
-
-    .nav{
-
-        position:absolute;
-
-        top:68px;
-
-        right:17px;
-
-        left:17px;
-
-        display:none;
-
-        flex-direction:column;
-
-        align-items:stretch;
-
-        gap:0;
-
-        padding:5px;
-
-        background:
-            rgba(1,17,11,.98);
-
-        border:
-            1px solid
-            rgba(210,169,79,.18);
-
-        box-shadow:
-            0 20px 50px
-            rgba(0,0,0,.35);
-
-    }
-
-
-    .nav.open{
-
-        display:flex;
-
-    }
-
-
-    .nav a{
-
-        padding:
-            12px 14px;
-
-        border-bottom:
-            1px solid
-            rgba(255,255,255,.045);
-
-    }
-
-
-    .nav a:last-child{
-
-        border-bottom:0;
-
-    }
-
-
-    .hero{
-
-        padding-top:68px;
-
-    }
-
-
-    .hero-grid{
-
-        width:
-            calc(100% - 34px);
-
-        grid-template-columns:1fr;
-
-        gap:10px;
-
-        padding:
-            45px 0 35px;
-
-    }
-
-
-    .hero-content{
-
-        text-align:center;
-
-    }
-
-
-    .eyebrow{
-
-        justify-content:center;
-
-    }
-
-
-    .eyebrow::after{
-
-        display:none;
-
-    }
-
-
-    .hero-title{
-
-        font-size:
-            clamp(
-                39px,
-                11vw,
-                53px
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,.025) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,.025) 1px,
+                    transparent 1px
+                );
+
+            background-size: 52px 52px;
+
+            z-index: -1;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+
+        /* =========================================================
+           CONTAINER
+        ========================================================= */
+
+        .container {
+            width: min(
+                calc(100% - 48px),
+                var(--container)
             );
 
-        letter-spacing:-1px;
-
-    }
-
-
-    .hero-description{
-
-        max-width:560px;
-
-        margin:
-            0 auto 19px;
-
-        font-size:10.5px;
-
-    }
+            margin-inline: auto;
+        }
 
 
-    .hero-actions{
+        /* =========================================================
+           HEADER
+        ========================================================= */
 
-        justify-content:center;
+        header {
+            position: fixed;
 
-    }
+            top: 0;
+            right: 0;
+            left: 0;
+
+            height: 88px;
+
+            z-index: 1000;
+
+            border-bottom:
+                1px solid rgba(255,255,255,.06);
+
+            background:
+                rgba(2,22,15,.78);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            height: 76px;
+
+            background:
+                rgba(2,18,13,.94);
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,.20);
+        }
+
+        .nav {
+            height: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 35px;
+        }
 
 
-    .trust-row{
+        /* =========================================================
+           BRAND
+        ========================================================= */
 
-        justify-content:center;
+        .brand {
+            display: flex;
 
-        margin-top:22px;
+            align-items: center;
 
-    }
+            gap: 13px;
+
+            min-width: max-content;
+        }
+
+        .brand-logo {
+            width: 48px;
+            height: 48px;
+
+            object-fit: contain;
+
+            border-radius: 10px;
+
+            /* لا يوجد filter حتى لا تتغير ألوان الشعار */
+            filter: none;
+
+            transition: var(--transition);
+        }
+
+        .brand:hover .brand-logo {
+            transform: translateY(-2px) scale(1.03);
+        }
+
+        .brand-text {
+            display: flex;
+
+            flex-direction: column;
+
+            line-height: 1.3;
+        }
+
+        .brand-name {
+            font-size: 16px;
+
+            font-weight: 800;
+
+            color: var(--white);
+        }
+
+        .brand-sub {
+            font-size: 9px;
+
+            color: var(--gold);
+
+            margin-top: 3px;
+        }
 
 
-    .hero-logo-area{
+        /* =========================================================
+           NAV LINKS
+        ========================================================= */
 
-        min-height:330px;
+        .nav-links {
+            display: flex;
 
-    }
+            align-items: center;
+
+            gap: 36px;
+        }
+
+        .nav-links a {
+            position: relative;
+
+            font-size: 13px;
+
+            font-weight: 500;
+
+            color: #c5cec9;
+
+            transition: var(--transition);
+        }
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+
+            right: 0;
+            bottom: -9px;
+
+            width: 0;
+            height: 1px;
+
+            background: var(--gold);
+
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
 
 
-    .logo-card{
+        /* =========================================================
+           PHONE
+        ========================================================= */
 
-        width:
-            min(
-                340px,
-                92vw
+        .phone-box {
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            padding-right: 20px;
+
+            border-right:
+                1px solid rgba(255,255,255,.10);
+        }
+
+        .phone-label {
+            display: block;
+
+            color: #7e8d86;
+
+            font-size: 9px;
+
+            margin-bottom: 2px;
+        }
+
+        .phone-number {
+            direction: ltr;
+
+            display: inline-block;
+
+            color: var(--gold-light);
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            letter-spacing: .5px;
+
+            transition: var(--transition);
+        }
+
+        .phone-number:hover {
+            color: white;
+
+            transform: translateX(-2px);
+        }
+
+
+        /* =========================================================
+           MOBILE MENU
+        ========================================================= */
+
+        .menu-toggle {
+            display: none;
+
+            width: 44px;
+            height: 44px;
+
+            border:
+                1px solid var(--border);
+
+            background:
+                rgba(217,180,93,.05);
+
+            color: var(--gold);
+
+            cursor: pointer;
+
+            font-size: 22px;
+
+            border-radius: 8px;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: 100vh;
+
+            padding-top: 88px;
+
+            display: flex;
+
+            align-items: center;
+
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 600px;
+            height: 600px;
+
+            left: -250px;
+            top: 100px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(217,180,93,.06),
+                    transparent 68%
+                );
+
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            min-height: calc(100vh - 88px);
+
+            display: grid;
+
+            grid-template-columns:
+                1.05fr
+                .95fr;
+
+            align-items: center;
+
+            gap: 70px;
+        }
+
+        .hero-content {
+            position: relative;
+
+            z-index: 2;
+        }
+
+        .eyebrow {
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            color: var(--gold-light);
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            margin-bottom: 22px;
+        }
+
+        .eyebrow::before {
+            content: "";
+
+            width: 45px;
+            height: 1px;
+
+            background: var(--gold);
+        }
+
+        .hero h1 {
+            font-size:
+                clamp(
+                    48px,
+                    5.8vw,
+                    82px
+                );
+
+            line-height: 1.08;
+
+            font-weight: 800;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            display: block;
+
+            color: var(--gold-light);
+        }
+
+        .hero-description {
+            max-width: 670px;
+
+            color: #aab6b0;
+
+            font-size: 17px;
+
+            line-height: 2;
+
+            margin-bottom: 32px;
+        }
+
+
+        /* =========================================================
+           BUTTONS
+        ========================================================= */
+
+        .buttons {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            min-height: 54px;
+
+            padding:
+                0 28px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            border: 1px solid transparent;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            transition: var(--transition);
+
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+
+            color: #102218;
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 30px rgba(217,180,93,.15);
+        }
+
+        .btn-outline {
+            border-color:
+                rgba(217,180,93,.32);
+
+            color: var(--white);
+
+            background:
+                rgba(255,255,255,.015);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+
+            color: var(--gold-light);
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================================================
+           HERO VISUAL
+        ========================================================= */
+
+        .hero-visual {
+            min-height: 560px;
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        .hero-ring {
+            position: absolute;
+
+            width: 470px;
+            height: 470px;
+
+            border:
+                1px solid rgba(217,180,93,.20);
+
+            border-radius: 50%;
+        }
+
+        .hero-ring::before {
+            content: "";
+
+            position: absolute;
+
+            inset: 40px;
+
+            border:
+                1px dashed rgba(217,180,93,.13);
+
+            border-radius: 50%;
+        }
+
+        .hero-ring::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 105px;
+
+            border:
+                1px solid rgba(217,180,93,.08);
+
+            border-radius: 50%;
+        }
+
+        .orbit-dot {
+            position: absolute;
+
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: var(--gold-light);
+
+            box-shadow:
+                0 0 15px rgba(239,209,122,.55);
+
+            z-index: 3;
+        }
+
+        .dot-one {
+            top: 8%;
+            right: 28%;
+        }
+
+        .dot-two {
+            bottom: 16%;
+            left: 20%;
+        }
+
+        .hero-logo-wrap {
+            position: relative;
+
+            z-index: 2;
+
+            width: min(420px, 78%);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        .hero-logo-wrap::before {
+            content: "";
+
+            position: absolute;
+
+            width: 80%;
+
+            aspect-ratio: 1;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(217,180,93,.10),
+                    transparent 65%
+                );
+
+            filter: blur(20px);
+
+            z-index: -1;
+        }
+
+        .hero-logo {
+            width: 100%;
+
+            display: block;
+
+            object-fit: contain;
+
+            /* الألوان الأصلية للشعار بدون فلتر */
+            filter: drop-shadow(
+                0 25px 35px rgba(0,0,0,.32)
             );
 
-    }
+            animation:
+                logoFloat 6s ease-in-out infinite;
+        }
 
+        @keyframes logoFloat {
 
-    .logo-holder{
+            0%,100% {
+                transform: translateY(0);
+            }
 
-        width:
-            min(
-                210px,
-                58vw
-            );
+            50% {
+                transform: translateY(-9px);
+            }
+        }
 
-    }
 
+        /* =========================================================
+           TRUST BAR
+        ========================================================= */
 
-    .services-grid{
+        .trust {
+            padding: 0 0 70px;
+        }
 
-        grid-template-columns:1fr;
+        .trust-grid {
+            display: grid;
 
-    }
+            grid-template-columns:
+                repeat(3,1fr);
 
+            border-top:
+                1px solid var(--border);
 
-    .about-grid{
+            border-bottom:
+                1px solid var(--border);
+        }
 
-        grid-template-columns:1fr;
+        .trust-item {
+            padding: 25px;
 
-        gap:25px;
+            text-align: center;
 
-    }
+            border-left:
+                1px solid var(--border);
+        }
 
+        .trust-item:last-child {
+            border-left: 0;
+        }
 
-    .about-logo{
+        .trust-title {
+            color: var(--gold-light);
 
-        min-height:300px;
+            font-size: 16px;
 
-    }
+            font-weight: 700;
+        }
 
+        .trust-text {
+            color: #778780;
 
-    .about-content{
+            font-size: 11px;
 
-        text-align:center;
+            margin-top: 3px;
+        }
 
-    }
 
+        /* =========================================================
+           SECTION
+        ========================================================= */
 
-    .about-content .eyebrow{
+        section {
+            position: relative;
 
-        justify-content:center;
+            padding: 110px 0;
+        }
 
-    }
+        .section-head {
+            max-width: 720px;
 
+            margin-bottom: 55px;
+        }
 
-    .method-grid{
+        .section-label {
+            display: flex;
 
-        grid-template-columns:1fr;
+            align-items: center;
 
-    }
+            gap: 13px;
 
+            color: var(--gold-light);
 
-    .contact-box{
+            font-size: 13px;
 
-        flex-direction:column;
+            font-weight: 700;
 
-        text-align:center;
+            margin-bottom: 14px;
+        }
 
-        padding:
-            28px 20px;
+        .section-label::before {
+            content: "";
 
-    }
+            width: 42px;
+            height: 1px;
 
+            background: var(--gold);
+        }
 
-    .contact-actions{
+        .section-title {
+            font-size:
+                clamp(
+                    32px,
+                    4vw,
+                    56px
+                );
 
-        justify-content:center;
+            line-height: 1.25;
 
-        width:100%;
+            font-weight: 800;
 
-    }
+            margin-bottom: 15px;
+        }
 
+        .section-title span {
+            color: var(--gold-light);
+        }
 
-    .contact-actions .btn{
+        .section-description {
+            color: #87958e;
 
-        flex:1;
+            font-size: 15px;
 
-    }
+            line-height: 2;
+        }
 
 
-    .footer-inner{
+        /* =========================================================
+           ABOUT
+        ========================================================= */
 
-        flex-direction:column;
+        .about-grid {
+            display: grid;
 
-        gap:6px;
+            grid-template-columns:
+                .9fr
+                1.1fr;
 
-    }
+            align-items: center;
 
-}
+            gap: 80px;
+        }
 
+        .about-content {
+            order: 2;
+        }
 
-/* =========================================================
-   26 — SMALL MOBILE
-========================================================= */
+        .about-visual {
+            order: 1;
 
-@media(max-width:420px){
+            position: relative;
 
-    .hero-grid{
+            width: 100%;
 
-        padding-top:35px;
+            min-height: 570px;
 
-    }
+            display: flex;
 
+            align-items: center;
 
-    .hero-title{
+            justify-content: center;
 
-        font-size:38px;
+            overflow: hidden;
+        }
 
-    }
+        .about-frame {
+            position: absolute;
 
+            width: 92%;
+            height: 82%;
 
-    .hero-description{
+            border:
+                1px solid rgba(217,180,93,.18);
+        }
 
-        font-size:10px;
+        .about-frame::before {
+            content: "";
 
-    }
+            position: absolute;
 
+            inset: 18px;
 
-    .hero-actions{
+            border:
+                1px solid rgba(255,255,255,.045);
+        }
 
-        flex-direction:column;
+        .about-image {
+            position: relative;
 
-        width:100%;
+            z-index: 2;
 
-    }
+            width: min(570px, 88%);
 
+            max-height: 520px;
 
-    .hero-actions .btn{
+            object-fit: contain;
 
-        width:100%;
+            display: block;
 
-    }
+            /* بدون تغيير ألوان الصورة */
+            filter:
+                drop-shadow(
+                    0 25px 40px rgba(0,0,0,.32)
+                );
 
+            transition: var(--transition);
+        }
 
-    .trust-row{
+        .about-visual:hover .about-image {
+            transform:
+                translateY(-7px)
+                scale(1.015);
 
-        grid-template-columns:
-            repeat(3,1fr);
+            filter:
+                drop-shadow(
+                    0 30px 50px rgba(0,0,0,.40)
+                );
+        }
 
-    }
+        .about-glow {
+            position: absolute;
 
+            width: 380px;
+            height: 380px;
 
-    .hero-logo-area{
+            border-radius: 50%;
 
-        min-height:300px;
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(217,180,93,.07),
+                    transparent 67%
+                );
 
-    }
+            z-index: 0;
 
+            pointer-events: none;
+        }
 
-    .logo-card{
+        .about-text {
+            color: #9ba8a1;
 
-        width:300px;
+            font-size: 15px;
 
-    }
+            line-height: 2.15;
 
+            margin-bottom: 20px;
+        }
 
-    .logo-holder{
+        .about-list {
+            display: grid;
 
-        width:185px;
+            grid-template-columns:
+                repeat(2,1fr);
 
-    }
+            gap: 12px;
 
+            margin-top: 30px;
+        }
 
-    .about-logo{
+        .about-list-item {
+            padding: 18px;
 
-        min-height:270px;
+            border:
+                1px solid rgba(255,255,255,.06);
 
-    }
+            background:
+                rgba(255,255,255,.015);
 
+            transition: var(--transition);
+        }
 
-    .contact-actions{
+        .about-list-item:hover {
+            border-color:
+                rgba(217,180,93,.22);
 
-        flex-direction:column;
+            transform: translateY(-3px);
+        }
 
-    }
+        .about-list-item strong {
+            display: block;
 
+            color: var(--gold-light);
 
-    .contact-actions .btn{
+            font-size: 14px;
 
-        width:100%;
+            margin-bottom: 3px;
+        }
 
-    }
+        .about-list-item span {
+            color: #74837b;
 
+            font-size: 11px;
+        }
 
-    .whatsapp{
 
-        width:53px;
+        /* =========================================================
+           SERVICES
+        ========================================================= */
 
-        height:53px;
+        .services {
+            background:
+                linear-gradient(
+                    180deg,
+                    transparent,
+                    rgba(255,255,255,.012),
+                    transparent
+                );
+        }
 
-        left:14px;
+        .services-grid {
+            display: grid;
 
-        bottom:14px;
+            grid-template-columns:
+                repeat(3,1fr);
 
-    }
+            gap: 16px;
+        }
 
-}
+        .service-card {
+            position: relative;
 
-</style>
+            min-height: 245px;
 
+            padding: 30px;
+
+            border:
+                1px solid rgba(255,255,255,.07);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.025),
+                    rgba(255,255,255,.008)
+                );
+
+            overflow: hidden;
+
+            transition: var(--transition);
+        }
+
+        .service-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 110px;
+            height: 110px;
+
+            left: -45px;
+            bottom: -55px;
+
+            border:
+                1px solid rgba(217,180,93,.13);
+
+            border-radius: 50%;
+
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+
+            border-color:
+                rgba(217,180,93,.27);
+
+            box-shadow:
+                var(--shadow);
+        }
+
+        .service-card:hover::before {
+            transform: scale(1.6);
+        }
+
+        .service-number {
+            color: var(--gold);
+
+            font-size: 12px;
+
+            direction: ltr;
+
+            margin-bottom: 35px;
+        }
+
+        .service-card h3 {
+            font-size: 21px;
+
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #7f8d86;
+
+            font-size: 13px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================================================
+           PRACTICE
+        ========================================================= */
+
+        .practice-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4,1fr);
+
+            gap: 12px;
+        }
+
+        .practice-card {
+            min-height: 190px;
+
+            padding: 28px 24px;
+
+            border:
+                1px solid rgba(217,180,93,.13);
+
+            background:
+                rgba(3,27,20,.55);
+
+            transition: var(--transition);
+        }
+
+        .practice-card:hover {
+            background:
+                rgba(217,180,93,.045);
+
+            border-color:
+                rgba(217,180,93,.30);
+
+            transform: translateY(-5px);
+        }
+
+        .practice-icon {
+            color: var(--gold-light);
+
+            font-size: 22px;
+
+            margin-bottom: 22px;
+        }
+
+        .practice-card h3 {
+            font-size: 16px;
+
+            margin-bottom: 7px;
+        }
+
+        .practice-card p {
+            color: #74827b;
+
+            font-size: 11px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================================================
+           METHODOLOGY
+        ========================================================= */
+
+        .method-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap: 16px;
+        }
+
+        .method-card {
+            position: relative;
+
+            padding: 38px 30px;
+
+            border-top:
+                1px solid var(--border);
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(255,255,255,.018),
+                    transparent
+                );
+        }
+
+        .method-number {
+            color: var(--gold);
+
+            font-size: 12px;
+
+            margin-bottom: 22px;
+        }
+
+        .method-card h3 {
+            font-size: 22px;
+
+            margin-bottom: 12px;
+        }
+
+        .method-card p {
+            color: #7d8c84;
+
+            font-size: 13px;
+
+            line-height: 2;
+        }
+
+
+        /* =========================================================
+           CTA
+        ========================================================= */
+
+        .cta {
+            padding: 100px 0;
+        }
+
+        .cta-box {
+            position: relative;
+
+            padding: 65px;
+
+            border:
+                1px solid rgba(217,180,93,.23);
+
+            background:
+                radial-gradient(
+                    circle at 80% 50%,
+                    rgba(217,180,93,.07),
+                    transparent 35%
+                ),
+                rgba(255,255,255,.015);
+
+            overflow: hidden;
+        }
+
+        .cta-box::after {
+            content: "";
+
+            position: absolute;
+
+            width: 260px;
+            height: 260px;
+
+            left: -100px;
+            bottom: -150px;
+
+            border:
+                1px solid rgba(217,180,93,.15);
+
+            border-radius: 50%;
+        }
+
+        .cta-content {
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 750px;
+        }
+
+        .cta h2 {
+            font-size:
+                clamp(30px,4vw,52px);
+
+            line-height: 1.3;
+
+            margin-bottom: 14px;
+        }
+
+        .cta h2 span {
+            color: var(--gold-light);
+        }
+
+        .cta p {
+            color: #8a9891;
+
+            font-size: 14px;
+
+            margin-bottom: 28px;
+        }
+
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 18px;
+        }
+
+        .contact-card {
+            padding: 32px;
+
+            border:
+                1px solid rgba(255,255,255,.07);
+
+            background:
+                rgba(255,255,255,.012);
+        }
+
+        .contact-card-label {
+            color: var(--gold);
+
+            font-size: 11px;
+
+            margin-bottom: 8px;
+        }
+
+        .contact-card h3 {
+            font-size: 21px;
+
+            margin-bottom: 8px;
+        }
+
+        .contact-card p {
+            color: #829089;
+
+            font-size: 13px;
+
+            line-height: 1.9;
+        }
+
+        .contact-link {
+            display: inline-block;
+
+            margin-top: 12px;
+
+            color: var(--gold-light);
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            direction: ltr;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            padding: 35px 0;
+
+            border-top:
+                1px solid rgba(255,255,255,.06);
+
+            background:
+                rgba(0,0,0,.12);
+        }
+
+        .footer-inner {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .footer-copy {
+            color: #66746d;
+
+            font-size: 10px;
+        }
+
+        .footer-phone {
+            color: var(--gold);
+
+            font-size: 12px;
+
+            direction: ltr;
+        }
+
+
+        /* =========================================================
+           WHATSAPP
+        ========================================================= */
+
+        .whatsapp {
+            position: fixed;
+
+            bottom: 25px;
+            left: 25px;
+
+            width: 58px;
+            height: 58px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                var(--gold);
+
+            color: #052016;
+
+            z-index: 999;
+
+            box-shadow:
+                0 12px 35px rgba(0,0,0,.35);
+
+            transition: var(--transition);
+        }
+
+        .whatsapp:hover {
+            transform:
+                translateY(-5px)
+                scale(1.04);
+
+            background:
+                var(--gold-light);
+        }
+
+        .whatsapp svg {
+            width: 28px;
+            height: 28px;
+        }
+
+
+        /* =========================================================
+           REVEAL
+        ========================================================= */
+
+        .reveal {
+            opacity: 0;
+
+            transform: translateY(25px);
+
+            transition:
+                opacity .8s ease,
+                transform .8s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* =========================================================
+           RESPONSIVE - TABLET
+        ========================================================= */
+
+        @media (max-width: 1050px) {
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .phone-box {
+                display: none;
+            }
+
+            .hero-grid {
+                grid-template-columns:
+                    1fr 1fr;
+
+                gap: 30px;
+            }
+
+            .hero h1 {
+                font-size: 55px;
+            }
+
+            .about-grid {
+                gap: 35px;
+            }
+
+            .services-grid {
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+            .practice-grid {
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+        }
+
+
+        /* =========================================================
+           RESPONSIVE - MOBILE
+        ========================================================= */
+
+        @media (max-width: 760px) {
+
+            .container {
+                width:
+                    min(
+                        calc(100% - 30px),
+                        var(--container)
+                    );
+            }
+
+            header {
+                height: 72px;
+            }
+
+            header.scrolled {
+                height: 68px;
+            }
+
+            .nav {
+                gap: 10px;
+            }
+
+            .brand-logo {
+                width: 40px;
+                height: 40px;
+            }
+
+            .brand-name {
+                font-size: 13px;
+            }
+
+            .brand-sub {
+                font-size: 7px;
+            }
+
+            .menu-toggle {
+                display: flex;
+
+                align-items: center;
+                justify-content: center;
+            }
+
+            .nav-links {
+                position: fixed;
+
+                top: 72px;
+
+                right: 15px;
+                left: 15px;
+
+                display: none;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 0;
+
+                padding: 10px;
+
+                border:
+                    1px solid rgba(217,180,93,.16);
+
+                background:
+                    rgba(2,20,14,.97);
+
+                backdrop-filter: blur(20px);
+
+                box-shadow:
+                    0 20px 50px rgba(0,0,0,.35);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 13px 15px;
+
+                border-bottom:
+                    1px solid rgba(255,255,255,.045);
+            }
+
+            .nav-links a:last-child {
+                border-bottom: 0;
+            }
+
+            .nav-links a::after {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 72px;
+            }
+
+            .hero-grid {
+                min-height: auto;
+
+                grid-template-columns: 1fr;
+
+                padding:
+                    70px 0 50px;
+
+                gap: 30px;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .eyebrow {
+                justify-content: center;
+
+                font-size: 11px;
+            }
+
+            .hero h1 {
+                font-size:
+                    clamp(
+                        40px,
+                        12vw,
+                        58px
+                    );
+
+                letter-spacing: -1px;
+            }
+
+            .hero-description {
+                font-size: 13px;
+
+                line-height: 2;
+
+                margin-inline: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .btn {
+                min-height: 50px;
+
+                padding:
+                    0 20px;
+
+                font-size: 12px;
+            }
+
+            .hero-visual {
+                min-height: 410px;
+            }
+
+            .hero-ring {
+                width: 310px;
+                height: 310px;
+            }
+
+            .hero-ring::before {
+                inset: 28px;
+            }
+
+            .hero-ring::after {
+                inset: 70px;
+            }
+
+            .hero-logo-wrap {
+                width: 285px;
+            }
+
+            .trust {
+                padding-bottom: 30px;
+            }
+
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-item {
+                border-left: 0;
+
+                border-bottom:
+                    1px solid var(--border);
+            }
+
+            .trust-item:last-child {
+                border-bottom: 0;
+            }
+
+            section {
+                padding: 75px 0;
+            }
+
+            .section-head {
+                margin-bottom: 35px;
+            }
+
+            .section-title {
+                font-size: 34px;
+            }
+
+            .section-description {
+                font-size: 13px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+
+                gap: 30px;
+            }
+
+            .about-content {
+                order: 1;
+
+                text-align: center;
+            }
+
+            .about-visual {
+                order: 2;
+
+                min-height: 380px;
+            }
+
+            .about-frame {
+                width: 94%;
+
+                height: 82%;
+            }
+
+            .about-image {
+                width: 90%;
+
+                max-height: 350px;
+            }
+
+            .about-list {
+                grid-template-columns: 1fr;
+
+                text-align: right;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                min-height: auto;
+            }
+
+            .practice-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .practice-card {
+                min-height: 170px;
+
+                padding: 22px 18px;
+            }
+
+            .method-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta {
+                padding: 70px 0;
+            }
+
+            .cta-box {
+                padding: 35px 25px;
+
+                text-align: center;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+            .whatsapp {
+                width: 54px;
+                height: 54px;
+
+                left: 17px;
+                bottom: 17px;
+            }
+
+        }
+
+
+        /* =========================================================
+           VERY SMALL DEVICES
+        ========================================================= */
+
+        @media (max-width: 390px) {
+
+            .brand-text {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero-visual {
+                min-height: 350px;
+            }
+
+            .hero-ring {
+                width: 270px;
+                height: 270px;
+            }
+
+            .hero-logo-wrap {
+                width: 245px;
+            }
+
+            .practice-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .buttons {
+                flex-direction: column;
+
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+        }
+
+    </style>
 </head>
 
 
@@ -2296,91 +1847,95 @@ button{
      HEADER
 ========================================================= -->
 
-<header class="header" id="header">
+<header id="header">
 
-<div class="header-inner">
+    <div class="container">
 
+        <nav class="nav">
 
-<a href="#home" class="brand">
+            <a href="#home" class="brand">
 
-<img
-    class="brand-logo"
-    src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.jpg"
-    alt="شعار روينا عبدالفتاح رحالي"
->
+                <img
+                    class="brand-logo"
+                    src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.jpg"
+                    alt="شعار روينا عبد الفتاح رحالي"
+                >
 
-<div class="brand-info">
+                <div class="brand-text">
 
-<div class="brand-name">
-روينا عبدالفتاح رحالي
-</div>
+                    <span class="brand-name">
+                        روينا عبد الفتاح رحالي
+                    </span>
 
-<div class="brand-sub">
-المحاماة والاستشارات القانونية والتوثيق
-</div>
+                    <span class="brand-sub">
+                        للمحاماة والاستشارات القانونية
+                    </span>
 
-</div>
+                </div>
 
-</a>
-
-
-<nav class="nav" id="nav">
-
-<a href="#home">
-الرئيسية
-</a>
-
-<a href="#about">
-عن المكتب
-</a>
-
-<a href="#services">
-مجالات العمل
-</a>
-
-<a href="#method">
-منهجيتنا
-</a>
-
-<a href="#contact">
-تواصل معنا
-</a>
-
-</nav>
+            </a>
 
 
-<!-- رقم الاتصال -->
+            <div class="nav-links" id="navLinks">
 
-<div class="header-phone">
+                <a href="#home">
+                    الرئيسية
+                </a>
 
-<a href="tel:+966544270651">
+                <a href="#about">
+                    عن المكتب
+                </a>
 
-<span class="phone-label">
-اتصل بنا
-</span>
+                <a href="#services">
+                    خدماتنا
+                </a>
 
-<span class="phone-number">
-054 427 0651
-</span>
+                <a href="#practice">
+                    مجالات العمل
+                </a>
 
-</a>
+                <a href="#method">
+                    منهجيتنا
+                </a>
 
-</div>
+                <a href="#contact">
+                    تواصل معنا
+                </a>
 
-
-<button
-    class="menu-button"
-    id="menuButton"
-    type="button"
-    aria-label="فتح القائمة"
->
-
-☰
-
-</button>
+            </div>
 
 
-</div>
+            <div class="phone-box">
+
+                <div>
+
+                    <span class="phone-label">
+                        اتصل بنا
+                    </span>
+
+                    <a
+                        class="phone-number"
+                        href="tel:+966544270651"
+                    >
+                        054 427 0651
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="فتح القائمة"
+            >
+                ☰
+            </button>
+
+        </nav>
+
+    </div>
 
 </header>
 
@@ -2390,563 +1945,878 @@ button{
      HERO
 ========================================================= -->
 
-<main>
+<main id="home">
 
-<section class="hero" id="home">
+    <section class="hero">
 
-<div class="hero-grid">
+        <div class="container">
 
+            <div class="hero-grid">
 
-<!-- النص -->
 
-<div class="hero-content">
+                <div class="hero-content reveal">
 
-<div class="eyebrow">
-مكتب محاماة واستشارات قانونية
-</div>
+                    <div class="eyebrow">
+                        مكتب محاماة واستشارات قانونية
+                    </div>
 
 
-<h1 class="hero-title">
+                    <h1>
 
-قانون واضح.
+                        قانون واضح.
+                        <span>
+                            موقف أقوى.
+                        </span>
 
-<span>
-موقف أقوى.
-</span>
+                    </h1>
 
-</h1>
 
+                    <p class="hero-description">
 
-<p class="hero-description">
+                        نقرأ قضيتك بعمق، ونحوّل التعقيد القانوني
+                        إلى خطوات عملية تحمي حقوقك وتدعم قرارك.
 
-نقرأ قضيتك بعمق، ونحوّل التعقيد القانوني
-إلى خطوات عملية تحمي حقوقك وتدعم قرارك.
+                    </p>
 
-</p>
 
+                    <div class="buttons">
 
-<div class="hero-actions">
+                        <a
+                            href="tel:+966544270651"
+                            class="btn btn-primary"
+                        >
+                            اتصل بنا
+                            <span>←</span>
+                        </a>
 
+                        <a
+                            href="#about"
+                            class="btn btn-outline"
+                        >
+                            تعرّف على المكتب
+                        </a>
 
-<a
-    href="https://wa.me/966544270651"
-    target="_blank"
-    rel="noopener"
-    class="btn btn-gold"
->
+                    </div>
 
-احجز استشارتك
+                </div>
 
-<span>←</span>
 
-</a>
 
+                <div class="hero-visual reveal">
 
-<a
-    href="#about"
-    class="btn btn-outline"
->
+                    <div class="hero-ring"></div>
 
-تعرّف على المكتب
+                    <span class="orbit-dot dot-one"></span>
+                    <span class="orbit-dot dot-two"></span>
 
-</a>
+                    <div class="hero-logo-wrap">
 
+                        <img
+                            class="hero-logo"
+                            src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.jpg"
+                            alt="روينا عبد الفتاح رحالي للمحاماة والاستشارات القانونية"
+                        >
 
-</div>
+                    </div>
 
+                </div>
 
-<div class="trust-row">
 
+            </div>
 
-<div class="trust-item">
+        </div>
 
-<div class="trust-title">
-وضوح
-</div>
+    </section>
 
-<div class="trust-sub">
-في كل توصية
-</div>
 
-</div>
 
+    <!-- =====================================================
+         TRUST
+    ====================================================== -->
 
-<div class="trust-item">
+    <section class="trust">
 
-<div class="trust-title">
-دقة
-</div>
+        <div class="container">
 
-<div class="trust-sub">
-في كل قضية
-</div>
+            <div class="trust-grid reveal">
 
-</div>
+                <div class="trust-item">
 
+                    <div class="trust-title">
+                        وضوح
+                    </div>
 
-<div class="trust-item">
+                    <div class="trust-text">
+                        في كل توصية
+                    </div>
 
-<div class="trust-title">
-سرية
-</div>
+                </div>
 
-<div class="trust-sub">
-في كل ملف
-</div>
 
-</div>
+                <div class="trust-item">
 
+                    <div class="trust-title">
+                        دقة
+                    </div>
 
-</div>
+                    <div class="trust-text">
+                        في كل وثيقة
+                    </div>
 
-</div>
+                </div>
 
 
+                <div class="trust-item">
 
-<!-- الشعار -->
+                    <div class="trust-title">
+                        سرية
+                    </div>
 
-<div class="hero-logo-area">
+                    <div class="trust-text">
+                        في كل ملف
+                    </div>
 
+                </div>
 
-<div class="logo-card">
+            </div>
 
+        </div>
 
-<div class="logo-line top"></div>
+    </section>
 
-<div class="logo-line bottom"></div>
 
 
-<div class="logo-corner one"></div>
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
 
-<div class="logo-corner two"></div>
+    <section id="about">
 
+        <div class="container">
 
-<div class="logo-holder">
+            <div class="about-grid">
 
-<img
-    src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.jpg"
-    alt="شعار روينا عبدالفتاح رحالي"
->
 
-</div>
+                <div class="about-content reveal">
 
+                    <div class="section-label">
+                        عن المكتب
+                    </div>
 
-</div>
+                    <h2 class="section-title">
 
-</div>
+                        القانون ليس تعقيدًا...
+                        <span>
+                            بل طريق واضح للوصول إلى حقك.
+                        </span>
 
+                    </h2>
 
-</div>
+                    <p class="about-text">
 
-</section>
+                        نؤمن أن العمل القانوني الاحترافي يبدأ بفهم
+                        الوقائع والاستماع الدقيق للعميل، ثم بناء رؤية
+                        قانونية واضحة تستند إلى الأنظمة واللوائح
+                        ذات العلاقة.
 
+                    </p>
 
+                    <p class="about-text">
 
-<!-- =========================================================
-     SERVICES
-========================================================= -->
+                        هدفنا تقديم خدمة قانونية تجمع بين الدقة
+                        والسرية والوضوح، مع الاهتمام بتفاصيل كل قضية
+                        وبناء استراتيجية قانونية تناسب احتياجات العميل.
 
-<section class="section" id="services">
+                    </p>
 
-<div class="container">
 
+                    <div class="about-list">
 
-<div class="services-header">
+                        <div class="about-list-item">
 
-<div class="eyebrow">
-مجالات العمل
-</div>
+                            <strong>
+                                استشارة دقيقة
+                            </strong>
 
-<h2 class="section-title">
-حلول قانونية واضحة تحمي مصالحك.
-</h2>
+                            <span>
+                                تحليل قانوني واضح للوقائع.
+                            </span>
 
-<p class="section-description">
+                        </div>
 
-خدمات قانونية متخصصة للأفراد والمنشآت
-بمنهج يعتمد على الفهم الدقيق والوضوح.
 
-</p>
+                        <div class="about-list-item">
 
-</div>
+                            <strong>
+                                حلول عملية
+                            </strong>
 
+                            <span>
+                                تحويل الرؤية القانونية إلى خطوات.
+                            </span>
 
-<div class="services-grid">
+                        </div>
 
 
-<article class="service-card">
+                        <div class="about-list-item">
 
-<div class="service-number">
-01
-</div>
+                            <strong>
+                                سرية تامة
+                            </strong>
 
-<h3>
-الاستشارات القانونية
-</h3>
+                            <span>
+                                حماية خصوصية العميل وملفه.
+                            </span>
 
-<p>
-تحليل الموقف القانوني وتحديد الخيارات
-والحلول المناسبة قبل اتخاذ القرار.
-</p>
+                        </div>
 
-</article>
 
+                        <div class="about-list-item">
 
-<article class="service-card">
+                            <strong>
+                                متابعة مستمرة
+                            </strong>
 
-<div class="service-number">
-02
-</div>
+                            <span>
+                                اهتمام بتفاصيل الملف ومراحله.
+                            </span>
 
-<h3>
-الترافع والتمثيل
-</h3>
+                        </div>
 
-<p>
-تمثيل ومتابعة الإجراءات والدفاع
-عن الحقوق أمام الجهات المختصة.
-</p>
+                    </div>
 
-</article>
+                </div>
 
 
-<article class="service-card">
 
-<div class="service-number">
-03
-</div>
+                <!-- الصورة الجديدة التي طلبتها -->
 
-<h3>
-صياغة العقود
-</h3>
+                <div class="about-visual reveal">
 
-<p>
-إعداد ومراجعة العقود والاتفاقيات
-بصياغة قانونية دقيقة.
-</p>
+                    <div class="about-glow"></div>
 
-</article>
+                    <div class="about-frame"></div>
 
+                    <img
+                        class="about-image"
+                        src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/3d%20%D8%B1%D9%88%D9%8A%D9%86%D8%A7%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%81%D8%AA%D8%A7%D8%AD%20%D8%B1%D8%AD%D8%A7%D9%84%D9%8A.jpg"
+                        alt="روينا عبد الفتاح رحالي للمحاماة والاستشارات القانونية"
+                    >
 
-<article class="service-card">
+                </div>
 
-<div class="service-number">
-04
-</div>
 
-<h3>
-القضايا التجارية
-</h3>
+            </div>
 
-<p>
-معالجة النزاعات والمعاملات التجارية
-وتقديم الحلول القانونية المناسبة.
-</p>
+        </div>
 
-</article>
+    </section>
 
 
-<article class="service-card">
 
-<div class="service-number">
-05
-</div>
+    <!-- =====================================================
+         SERVICES
+    ====================================================== -->
 
-<h3>
-القضايا العمالية
-</h3>
+    <section
+        id="services"
+        class="services"
+    >
 
-<p>
-حماية الحقوق ومعالجة النزاعات
-العمالية وفق الأنظمة والإجراءات.
-</p>
+        <div class="container">
 
-</article>
+            <div class="section-head reveal">
 
+                <div class="section-label">
+                    خدماتنا
+                </div>
 
-<article class="service-card">
+                <h2 class="section-title">
+                    حلول قانونية
+                    <span>
+                        مصممة لاحتياجاتك.
+                    </span>
+                </h2>
 
-<div class="service-number">
-06
-</div>
+                <p class="section-description">
 
-<h3>
-الخدمات القانونية والتوثيق
-</h3>
+                    نقدم مجموعة متكاملة من الخدمات القانونية
+                    للأفراد والمنشآت، مع التركيز على فهم الاحتياج
+                    وبناء الحل القانوني المناسب.
 
-<p>
-خدمات قانونية وتوثيقية للأفراد
-والمنشآت باحترافية وسرية.
-</p>
+                </p>
 
-</article>
+            </div>
 
 
-</div>
+            <div class="services-grid">
 
-</div>
 
-</section>
+                <article class="service-card reveal">
 
+                    <div class="service-number">
+                        01
+                    </div>
 
+                    <h3>
+                        الاستشارات القانونية
+                    </h3>
 
-<!-- =========================================================
-     ABOUT
-========================================================= -->
+                    <p>
+                        دراسة المسائل القانونية وتقديم الرأي
+                        القانوني المبني على فهم الوقائع والأنظمة
+                        ذات الصلة.
+                    </p>
 
-<section class="section" id="about">
+                </article>
 
-<div class="container">
 
+                <article class="service-card reveal">
 
-<div class="about-grid">
+                    <div class="service-number">
+                        02
+                    </div>
 
+                    <h3>
+                        صياغة ومراجعة العقود
+                    </h3>
 
-<div class="about-logo">
+                    <p>
+                        صياغة العقود والاتفاقيات ومراجعتها بما
+                        يوضح الالتزامات ويحمي المصالح القانونية.
+                    </p>
 
-<img
-    src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.jpg"
-    alt="شعار روينا عبدالفتاح رحالي"
->
+                </article>
 
-</div>
 
+                <article class="service-card reveal">
 
-<div class="about-content">
+                    <div class="service-number">
+                        03
+                    </div>
 
-<div class="eyebrow">
-عن المكتب
-</div>
+                    <h3>
+                        الترافع والتمثيل القانوني
+                    </h3>
 
+                    <p>
+                        تمثيل العملاء ومتابعة الإجراءات القانونية
+                        أمام الجهات المختصة وفق الاستراتيجية المناسبة.
+                    </p>
 
-<h2>
+                </article>
 
-القانون ليس تعقيدًا...
 
-<br>
+                <article class="service-card reveal">
 
-<span>
-بل طريق واضح للوصول إلى حقك.
-</span>
+                    <div class="service-number">
+                        04
+                    </div>
 
-</h2>
+                    <h3>
+                        القضايا التجارية
+                    </h3>
 
+                    <p>
+                        معالجة المسائل والمنازعات التجارية وتقديم
+                        الحلول القانونية التي تراعي طبيعة النشاط.
+                    </p>
 
-<p>
+                </article>
 
-نؤمن أن العمل القانوني الاحترافي يبدأ
-بفهم الوقائع والاستماع الدقيق للعميل،
-ثم بناء رؤية قانونية واضحة.
 
-</p>
+                <article class="service-card reveal">
 
+                    <div class="service-number">
+                        05
+                    </div>
 
-<p>
+                    <h3>
+                        القضايا العمالية
+                    </h3>
 
-هدفنا تقديم خدمة قانونية تجمع بين
-الدقة والسرية والوضوح، مع الاهتمام
-بتفاصيل كل قضية.
+                    <p>
+                        تقديم الدعم القانوني في المنازعات والمسائل
+                        المتعلقة بعلاقات العمل والحقوق العمالية.
+                    </p>
 
-</p>
+                </article>
 
-</div>
 
+                <article class="service-card reveal">
 
-</div>
+                    <div class="service-number">
+                        06
+                    </div>
 
-</div>
+                    <h3>
+                        الخدمات القانونية للمنشآت
+                    </h3>
 
-</section>
+                    <p>
+                        دعم قانوني مستمر للمنشآت يساعدها على إدارة
+                        المخاطر والالتزامات القانونية.
+                    </p>
 
+                </article>
 
 
-<!-- =========================================================
-     METHOD
-========================================================= -->
+            </div>
 
-<section class="section" id="method">
+        </div>
 
-<div class="container">
+    </section>
 
 
-<div class="eyebrow">
-منهجيتنا
-</div>
 
-<h2 class="section-title">
-نفهم أولًا. ثم نبني الحل.
-</h2>
+    <!-- =====================================================
+         PRACTICE AREAS
+    ====================================================== -->
 
-<p class="section-description">
+    <section id="practice">
 
-نبدأ بفهم التفاصيل، ثم نحلل الموقف القانوني،
-ونقدم رؤية عملية تساعدك على اتخاذ القرار.
+        <div class="container">
 
-</p>
+            <div class="section-head reveal">
 
+                <div class="section-label">
+                    مجالات العمل
+                </div>
 
-<div class="method-grid">
+                <h2 class="section-title">
+                    خبرة قانونية
+                    <span>
+                        في مجالات متعددة.
+                    </span>
+                </h2>
 
+            </div>
 
-<div class="method-card">
 
-<div class="method-number">
-01
-</div>
+            <div class="practice-grid">
 
-<h3>
-نفهم قضيتك
-</h3>
 
-<p>
-نستمع إلى التفاصيل ونحدد جوهر
-المشكلة القانونية.
-</p>
+                <div class="practice-card reveal">
 
-</div>
+                    <div class="practice-icon">
+                        01
+                    </div>
 
+                    <h3>
+                        القانون التجاري
+                    </h3>
 
-<div class="method-card">
+                    <p>
+                        الشركات والمعاملات والمنازعات التجارية.
+                    </p>
 
-<div class="method-number">
-02
-</div>
+                </div>
 
-<h3>
-نحلل الموقف
-</h3>
 
-<p>
-ندرس الوقائع والخيارات القانونية
-المتاحة أمامك.
-</p>
+                <div class="practice-card reveal">
 
-</div>
+                    <div class="practice-icon">
+                        02
+                    </div>
 
+                    <h3>
+                        القانون العمالي
+                    </h3>
 
-<div class="method-card">
+                    <p>
+                        الحقوق والالتزامات والمنازعات العمالية.
+                    </p>
 
-<div class="method-number">
-03
-</div>
+                </div>
 
-<h3>
-نبني الحل
-</h3>
 
-<p>
-نقدم لك رؤية عملية واضحة تساعدك
-على اتخاذ القرار.
-</p>
+                <div class="practice-card reveal">
 
-</div>
+                    <div class="practice-icon">
+                        03
+                    </div>
 
+                    <h3>
+                        العقود
+                    </h3>
 
-</div>
+                    <p>
+                        إعداد ومراجعة وصياغة العقود القانونية.
+                    </p>
 
-</div>
+                </div>
 
-</section>
 
+                <div class="practice-card reveal">
 
+                    <div class="practice-icon">
+                        04
+                    </div>
 
-<!-- =========================================================
-     CONTACT
-========================================================= -->
+                    <h3>
+                        التقاضي
+                    </h3>
 
-<section class="section" id="contact">
+                    <p>
+                        الترافع والتمثيل ومتابعة الإجراءات.
+                    </p>
 
-<div class="container">
+                </div>
 
 
-<div class="contact-box">
+                <div class="practice-card reveal">
 
+                    <div class="practice-icon">
+                        05
+                    </div>
 
-<div>
+                    <h3>
+                        الشركات
+                    </h3>
 
-<div class="eyebrow">
-تواصل معنا
-</div>
+                    <p>
+                        الاستشارات والخدمات القانونية للمنشآت.
+                    </p>
 
-<h2>
-لديك مسألة قانونية؟
-</h2>
+                </div>
 
-<p>
-ابدأ بخطوة واضحة وتواصل معنا.
-</p>
 
-</div>
+                <div class="practice-card reveal">
 
+                    <div class="practice-icon">
+                        06
+                    </div>
 
-<div class="contact-actions">
+                    <h3>
+                        المنازعات
+                    </h3>
 
+                    <p>
+                        تحليل النزاعات وبناء الحلول القانونية.
+                    </p>
 
-<a
-    href="tel:+966544270651"
-    class="btn btn-gold"
->
+                </div>
 
-اتصل الآن
 
-</a>
+                <div class="practice-card reveal">
 
+                    <div class="practice-icon">
+                        07
+                    </div>
 
-<a
-    href="https://wa.me/966544270651"
-    target="_blank"
-    rel="noopener"
-    class="btn btn-outline"
->
+                    <h3>
+                        الامتثال
+                    </h3>
 
-واتساب
+                    <p>
+                        مساعدة المنشآت على فهم التزاماتها النظامية.
+                    </p>
 
-</a>
+                </div>
 
 
-</div>
+                <div class="practice-card reveal">
 
+                    <div class="practice-icon">
+                        08
+                    </div>
 
-</div>
+                    <h3>
+                        الاستشارات
+                    </h3>
 
-</div>
+                    <p>
+                        رأي قانوني واضح يساعدك على اتخاذ القرار.
+                    </p>
 
-</section>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         METHODOLOGY
+    ====================================================== -->
+
+    <section
+        id="method"
+        class="services"
+    >
+
+        <div class="container">
+
+            <div class="section-head reveal">
+
+                <div class="section-label">
+                    منهجيتنا
+                </div>
+
+                <h2 class="section-title">
+                    نبدأ بالفهم،
+                    <span>
+                        ثم نبني الحل.
+                    </span>
+                </h2>
+
+                <p class="section-description">
+
+                    منهجية العمل لدينا تقوم على مراحل واضحة
+                    تساعد على فهم المشكلة القانونية وبناء الحل
+                    المناسب ومتابعة تنفيذه.
+
+                </p>
+
+            </div>
+
+
+            <div class="method-grid">
+
+
+                <div class="method-card reveal">
+
+                    <div class="method-number">
+                        المرحلة الأولى — 01
+                    </div>
+
+                    <h3>
+                        نفهم
+                    </h3>
+
+                    <p>
+                        نبدأ بالاستماع إلى العميل ودراسة الوقائع
+                        والمستندات وفهم جميع جوانب المسألة القانونية.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card reveal">
+
+                    <div class="method-number">
+                        المرحلة الثانية — 02
+                    </div>
+
+                    <h3>
+                        نحلل
+                    </h3>
+
+                    <p>
+                        نحلل الوقائع في ضوء الأنظمة واللوائح
+                        ونحدد الخيارات والمخاطر القانونية المحتملة.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card reveal">
+
+                    <div class="method-number">
+                        المرحلة الثالثة — 03
+                    </div>
+
+                    <h3>
+                        نتحرك
+                    </h3>
+
+                    <p>
+                        نضع الخطوات القانونية المناسبة ونتابع
+                        الإجراءات بما يخدم مصلحة العميل.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CTA
+    ====================================================== -->
+
+    <section class="cta">
+
+        <div class="container">
+
+            <div class="cta-box reveal">
+
+                <div class="cta-content">
+
+                    <div class="section-label">
+                        ابدأ الآن
+                    </div>
+
+                    <h2>
+                        لديك مسألة قانونية؟
+                        <span>
+                            دعنا نبدأ من حيث أنت.
+                        </span>
+                    </h2>
+
+                    <p>
+                        تواصل معنا لمناقشة احتياجك القانوني
+                        ومعرفة الخطوات المناسبة.
+                    </p>
+
+                    <div class="buttons">
+
+                        <a
+                            href="tel:+966544270651"
+                            class="btn btn-primary"
+                        >
+                            اتصل الآن
+                        </a>
+
+                        <a
+                            href="https://wa.me/966544270651"
+                            target="_blank"
+                            rel="noopener"
+                            class="btn btn-outline"
+                        >
+                            تواصل عبر واتساب
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONTACT
+    ====================================================== -->
+
+    <section id="contact">
+
+        <div class="container">
+
+            <div class="section-head reveal">
+
+                <div class="section-label">
+                    تواصل معنا
+                </div>
+
+                <h2 class="section-title">
+                    نحن هنا
+                    <span>
+                        لمساعدتك.
+                    </span>
+                </h2>
+
+            </div>
+
+
+            <div class="contact-grid">
+
+
+                <div class="contact-card reveal">
+
+                    <div class="contact-card-label">
+                        الهاتف
+                    </div>
+
+                    <h3>
+                        اتصل بنا
+                    </h3>
+
+                    <p>
+                        يمكنك التواصل معنا مباشرة لمناقشة
+                        احتياجك القانوني.
+                    </p>
+
+                    <a
+                        class="contact-link"
+                        href="tel:+966544270651"
+                    >
+                        054 427 0651
+                    </a>
+
+                </div>
+
+
+                <div class="contact-card reveal">
+
+                    <div class="contact-card-label">
+                        واتساب
+                    </div>
+
+                    <h3>
+                        تواصل سريع
+                    </h3>
+
+                    <p>
+                        يمكنك إرسال استفسارك مباشرة عبر واتساب
+                        وسنقوم بالتواصل معك.
+                    </p>
+
+                    <a
+                        class="contact-link"
+                        href="https://wa.me/966544270651"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        فتح واتساب
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
 
 </main>
 
 
 
 <!-- =========================================================
-     WHATSAPP
+     WHATSAPP FLOATING BUTTON
 ========================================================= -->
 
 <a
+    class="whatsapp"
     href="https://wa.me/966544270651"
     target="_blank"
     rel="noopener"
-    class="whatsapp"
     aria-label="التواصل عبر واتساب"
 >
 
-<svg
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
->
+    <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    >
 
-<path
-    d="M20.5 11.5a8.5 8.5 0 0 1-12.7 7.4L3 20l1.2-4.5A8.5 8.5 0 1 1 20.5 11.5Z"
-    stroke="currentColor"
-    stroke-width="1.7"
-/>
+        <path
+            d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.6 8.6 0 0 1-4-.9L3 20l1.2-4.7A8.3 8.3 0 0 1 3 11.2 8.5 8.5 0 0 1 12 3a8.5 8.5 0 0 1 9 8.5Z"
+        />
 
-<path
-    d="M8.7 8.2c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.6.7c.7 1.2 1.6 2 2.8 2.6l.6-.7c.2-.2.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .3 0 .5-.4.7-.5.3-1.1.5-1.7.3-1.6-.4-3.2-1.4-4.5-2.7-1.3-1.3-2.3-2.9-2.7-4.5-.2-.6 0-1.2.3-1.7Z"
-    fill="currentColor"
-/>
+        <path
+            d="M8.5 8.5c.2-.5.5-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.7c.1.2.1.4-.1.6l-.5.6c.5 1 1.3 1.8 2.3 2.3l.6-.5c.2-.2.4-.2.6-.1l1.7.7c.3.1.4.3.4.5v.5c0 .3 0 .6-.5.8-.5.2-1.8.2-3.4-.6-1.6-.8-3-2.3-3.8-3.8-.8-1.6-.8-2.9-.6-3.4Z"
+        />
 
-</svg>
+    </svg>
 
 </a>
 
@@ -2956,130 +2826,121 @@ button{
      FOOTER
 ========================================================= -->
 
-<footer class="footer">
+<footer>
 
-<div class="footer-inner">
+    <div class="container">
 
-<div class="footer-copy">
+        <div class="footer-inner">
 
-© 2026 روينا عبدالفتاح رحالي — جميع الحقوق محفوظة
+            <div class="footer-copy">
 
-</div>
+                © 2026 روينا عبد الفتاح رحالي
+                للمحاماة والاستشارات القانونية.
+                جميع الحقوق محفوظة.
 
+            </div>
 
-<a
-    href="tel:+966544270651"
-    class="footer-phone"
->
+            <a
+                class="footer-phone"
+                href="tel:+966544270651"
+            >
+                054 427 0651
+            </a>
 
-054 427 0651
+        </div>
 
-</a>
-
-
-</div>
+    </div>
 
 </footer>
 
 
 
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
 <script>
 
-/* =========================================================
-   MOBILE MENU
-========================================================= */
+    /* =========================================================
+       HEADER SCROLL
+    ========================================================= */
 
-const menuButton =
-    document.getElementById("menuButton");
+    const header =
+        document.getElementById("header");
 
-const nav =
-    document.getElementById("nav");
+    window.addEventListener("scroll", () => {
 
-
-menuButton.addEventListener(
-    "click",
-    function(){
-
-        nav.classList.toggle("open");
-
-        menuButton.textContent =
-            nav.classList.contains("open")
-            ? "×"
-            : "☰";
-
-    }
-);
-
-
-/* إغلاق القائمة بعد اختيار قسم */
-
-document
-    .querySelectorAll(".nav a")
-    .forEach(function(link){
-
-        link.addEventListener(
-            "click",
-            function(){
-
-                nav.classList.remove("open");
-
-                menuButton.textContent="☰";
-
-            }
-        );
-
-    });
-
-
-/* =========================================================
-   HEADER ON SCROLL
-========================================================= */
-
-const header =
-    document.getElementById("header");
-
-
-window.addEventListener(
-    "scroll",
-    function(){
-
-        if(window.scrollY > 20){
+        if (window.scrollY > 40) {
 
             header.classList.add("scrolled");
 
-        }else{
+        } else {
 
             header.classList.remove("scrolled");
 
         }
 
-    }
-);
+    });
 
 
-/* =========================================================
-   REVEAL ANIMATION
-========================================================= */
 
-const revealElements =
-    document.querySelectorAll(
-        ".service-card, .method-card, .about-grid, .contact-box"
-    );
+    /* =========================================================
+       MOBILE MENU
+    ========================================================= */
+
+    const menuToggle =
+        document.getElementById("menuToggle");
+
+    const navLinks =
+        document.getElementById("navLinks");
 
 
-const observer =
-    new IntersectionObserver(
-        function(entries){
+    menuToggle.addEventListener("click", () => {
 
-            entries.forEach(
-                function(entry){
+        navLinks.classList.toggle("active");
 
-                    if(entry.isIntersecting){
+        menuToggle.textContent =
+            navLinks.classList.contains("active")
+                ? "×"
+                : "☰";
 
-                        entry.target.style.opacity="1";
+    });
 
-                        entry.target.style.transform=
-                            "translateY(0)";
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                navLinks.classList.remove("active");
+
+                menuToggle.textContent = "☰";
+
+            });
+
+        });
+
+
+
+    /* =========================================================
+       SCROLL REVEAL
+    ========================================================= */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+
+    const observer =
+        new IntersectionObserver(
+
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("show");
 
                         observer.unobserve(
                             entry.target
@@ -3087,35 +2948,49 @@ const observer =
 
                     }
 
-                }
-            );
+                });
 
-        },
-        {
-            threshold:.10
-        }
-    );
+            },
+
+            {
+                threshold: .12
+            }
+
+        );
 
 
-revealElements.forEach(
-    function(element){
-
-        element.style.opacity="0";
-
-        element.style.transform=
-            "translateY(20px)";
-
-        element.style.transition=
-            "opacity .7s ease, transform .7s ease";
+    revealElements.forEach(element => {
 
         observer.observe(element);
 
-    }
-);
+    });
+
+
+
+    /* =========================================================
+       PREVENT BROKEN IMAGE FROM LOOKING BAD
+    ========================================================= */
+
+    document
+        .querySelectorAll("img")
+        .forEach(img => {
+
+            img.addEventListener(
+                "error",
+                () => {
+
+                    console.warn(
+                        "تعذر تحميل الصورة:",
+                        img.src
+                    );
+
+                }
+            );
+
+        });
 
 </script>
 
 
 </body>
-
 </html>
