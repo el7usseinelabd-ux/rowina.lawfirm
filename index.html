@@ -1,59 +1,31 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>روينا عبدالفتاح رحالي | المحاماة والاستشارات القانونية</title>
 
-<title>روينا عبدالفتاح رحالي | للمحاماة والاستشارات القانونية</title>
-
-<meta name="description"
-content="مكتب روينا عبدالفتاح رحالي للمحاماة والاستشارات القانونية والتوثيق في جدة.">
-
-<meta name="theme-color" content="#061b13">
+<meta name="description" content="مكتب روينا عبدالفتاح رحالي للمحاماة والاستشارات القانونية. حلول قانونية احترافية تحمي حقوقك وتدعم قراراتك.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap"
-rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* =====================================================
-   ROOT
-===================================================== */
-
 :root{
-
-    --green:#061b13;
-    --green-2:#0b281d;
-    --green-3:#123a2b;
-
-    --gold:#c9a45d;
-    --gold-light:#e3c982;
-
-    --cream:#f8f5ee;
-    --paper:#eeeae1;
-
+    --green:#031b13;
+    --green-2:#06251b;
+    --green-3:#0a3024;
+    --gold:#d8b15a;
+    --gold-light:#f0d184;
     --white:#ffffff;
-    --text:#17231d;
-    --muted:#707971;
-
-    --line:rgba(6,27,19,.13);
-
-    --container:1280px;
-
+    --text:#d8dfdb;
+    --muted:#91a49b;
+    --border:rgba(216,177,90,.22);
+    --shadow:0 25px 80px rgba(0,0,0,.35);
 }
-
-
-/* =====================================================
-   RESET
-===================================================== */
 
 *{
     margin:0;
@@ -66,26 +38,10 @@ html{
 }
 
 body{
-
-    margin:0;
-
-    background:var(--cream);
-
-    color:var(--text);
-
-    font-family:'Noto Kufi Arabic',sans-serif;
-
+    font-family:"Cairo",sans-serif;
+    background:var(--green);
+    color:var(--white);
     overflow-x:hidden;
-
-}
-
-body.menu-open{
-    overflow:hidden;
-}
-
-img{
-    display:block;
-    max-width:100%;
 }
 
 a{
@@ -93,3022 +49,1081 @@ a{
     color:inherit;
 }
 
-button,
-input,
-textarea{
+button{
     font-family:inherit;
 }
 
-button{
-    cursor:pointer;
-}
+/* =========================
+   BACKGROUND
+========================= */
 
-.container{
-
-    width:min(
-        var(--container),
-        calc(100% - 80px)
-    );
-
-    margin-inline:auto;
-
-}
-
-
-/* =====================================================
-   LOGO SOURCE
-===================================================== */
-
-.logo-image{
-
-    width:100%;
-    height:100%;
-
-    object-fit:contain;
-
-}
-
-
-/* =====================================================
-   LOADER
-===================================================== */
-
-.preloader{
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:99999;
-
-    background:var(--green);
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    transition:
-        opacity .8s ease,
-        visibility .8s ease;
-
-}
-
-.preloader.hide{
-
-    opacity:0;
-
-    visibility:hidden;
-
-}
-
-.loader-box{
-
-    position:relative;
-
-    width:130px;
-
-    height:130px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-}
-
-.loader-ring{
-
-    position:absolute;
-
-    inset:0;
-
-    border:1px solid rgba(201,164,93,.3);
-
-    border-radius:50%;
-
-    animation:loaderRotate 3s linear infinite;
-
-}
-
-.loader-ring::after{
-
+body::before{
     content:"";
-
-    position:absolute;
-
-    width:7px;
-
-    height:7px;
-
-    border-radius:50%;
-
-    background:var(--gold-light);
-
-    top:-3px;
-
-    left:50%;
-
-    box-shadow:
-        0 0 12px var(--gold-light),
-        0 0 30px var(--gold);
-
+    position:fixed;
+    inset:0;
+    z-index:-5;
+    background:
+        radial-gradient(circle at 75% 35%,rgba(216,177,90,.08),transparent 27%),
+        radial-gradient(circle at 15% 75%,rgba(30,100,70,.12),transparent 30%),
+        linear-gradient(135deg,#02150f,#031c14 50%,#041a13);
 }
 
-.loader-logo{
-
-    width:70px;
-    height:70px;
-
-    object-fit:contain;
-
-    filter:
-        drop-shadow(0 0 8px rgba(201,164,93,.4));
-
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-4;
+    opacity:.28;
+    background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+    background-size:70px 70px;
+    pointer-events:none;
 }
 
-@keyframes loaderRotate{
-
-    to{
-        transform:rotate(360deg);
-    }
-
-}
-
-
-/* =====================================================
+/* =========================
    HEADER
-===================================================== */
+========================= */
 
 .header{
-
-    position:absolute;
-
+    position:fixed;
     top:0;
     right:0;
     left:0;
-
-    z-index:1000;
-
     height:92px;
-
-    border-bottom:
-        1px solid rgba(255,255,255,.10);
-
-    transition:.35s ease;
-
-}
-
-.header.scrolled{
-
-    position:fixed;
-
-    height:76px;
-
-    background:
-        rgba(4,23,16,.94);
-
+    z-index:1000;
+    border-bottom:1px solid rgba(255,255,255,.07);
+    background:rgba(2,20,14,.78);
     backdrop-filter:blur(18px);
-
-    box-shadow:
-        0 10px 40px rgba(0,0,0,.18);
-
+    -webkit-backdrop-filter:blur(18px);
 }
 
 .header-inner{
-
+    width:min(1320px,92%);
     height:100%;
-
+    margin:auto;
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
-    gap:40px;
-
+    gap:35px;
 }
-
 
 /* LOGO */
 
-.brand{
-
+.logo{
     display:flex;
-
     align-items:center;
-
     gap:14px;
-
-    min-width:270px;
-
-    color:white;
-
+    min-width:250px;
 }
 
-.brand-logo{
-
-    width:56px;
-    height:56px;
-
-    object-fit:contain;
-
-    filter:
-        drop-shadow(
-            0 0 7px
-            rgba(201,164,93,.22)
-        );
-
-    transition:.35s;
-
-}
-
-.brand:hover .brand-logo{
-
-    filter:
-        drop-shadow(
-            0 0 14px
-            rgba(227,201,130,.5)
-        );
-
-    transform:scale(1.04);
-
-}
-
-.brand-text{
-
+.logo-image-wrap{
+    position:relative;
+    width:68px;
+    height:68px;
     display:flex;
+    align-items:center;
+    justify-content:center;
+}
 
+.logo-image-wrap::before,
+.logo-image-wrap::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border:1px solid rgba(216,177,90,.45);
+    border-radius:50%;
+    animation:logoPulse 4s ease-in-out infinite;
+}
+
+.logo-image-wrap::after{
+    inset:-8px;
+    opacity:.25;
+    animation-delay:1s;
+}
+
+.logo-img{
+    width:58px;
+    height:58px;
+    object-fit:contain;
+    position:relative;
+    z-index:2;
+    filter:
+        drop-shadow(0 0 7px rgba(216,177,90,.55))
+        drop-shadow(0 0 18px rgba(216,177,90,.18));
+    animation:logoFloat 4s ease-in-out infinite;
+}
+
+.logo-text{
+    display:flex;
     flex-direction:column;
-
-    gap:4px;
-
+    line-height:1.25;
 }
 
-.brand-text strong{
-
-    font-family:'IBM Plex Sans Arabic';
-
-    font-size:15px;
-
-    font-weight:600;
-
-    white-space:nowrap;
-
+.logo-name{
+    font-size:17px;
+    font-weight:800;
+    color:white;
 }
 
-.brand-text small{
-
+.logo-sub{
+    font-size:9px;
     color:var(--gold-light);
-
-    font-size:7px;
-
-    white-space:nowrap;
-
+    margin-top:4px;
+    font-weight:600;
 }
-
 
 /* NAV */
 
 .nav{
-
     display:flex;
-
     align-items:center;
-
-    gap:34px;
-
+    gap:38px;
 }
 
 .nav a{
-
-    color:
-        rgba(255,255,255,.78);
-
-    font-size:10px;
-
-    padding:10px 0;
-
     position:relative;
-
-    transition:.25s;
-
+    color:#c9d2cd;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s;
 }
 
 .nav a::after{
-
     content:"";
-
     position:absolute;
-
     right:0;
-
-    bottom:0;
-
+    bottom:-10px;
     width:0;
-
     height:1px;
-
     background:var(--gold-light);
-
     transition:.3s;
-
 }
 
 .nav a:hover{
-
     color:white;
-
 }
 
 .nav a:hover::after{
-
     width:100%;
-
 }
-
 
 /* PHONE */
 
 .header-phone{
-
     display:flex;
-
     align-items:center;
-
     gap:14px;
-
+    border-right:1px solid rgba(255,255,255,.12);
     padding-right:25px;
-
-    border-right:
-        1px solid rgba(255,255,255,.15);
-
-    color:var(--gold-light);
-
-    font-size:11px;
-
-    white-space:nowrap;
-
 }
 
-.header-phone small{
-
-    display:block;
-
-    color:rgba(255,255,255,.45);
-
-    font-size:7px;
-
-    margin-bottom:3px;
-
+.phone-label{
+    font-size:10px;
+    color:#81958c;
 }
 
 .phone-number{
-
+    color:var(--gold-light);
+    font-size:15px;
+    font-weight:700;
     direction:ltr;
-
-    unicode-bidi:plaintext;
-
-    display:inline-block;
-
-    font-family:Arial,sans-serif;
-
-    letter-spacing:.3px;
-
+    unicode-bidi:isolate;
+    white-space:nowrap;
 }
-
 
 /* MOBILE BUTTON */
 
-.mobile-button{
-
+.menu-btn{
     display:none;
-
-    width:44px;
-    height:44px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.22);
-
+    width:45px;
+    height:45px;
+    border:1px solid var(--border);
     background:transparent;
-
-}
-
-.mobile-button span{
-
-    display:block;
-
-    width:20px;
-
-    height:1px;
-
-    background:white;
-
-    margin:5px auto;
-
-    transition:.3s;
-
-}
-
-
-/* =====================================================
-   MOBILE NAV
-===================================================== */
-
-.mobile-nav{
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:900;
-
-    background:
-        rgba(5,25,17,.98);
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transition:.4s;
-
-}
-
-.mobile-nav.active{
-
-    opacity:1;
-
-    visibility:visible;
-
-}
-
-.mobile-nav-content{
-
-    text-align:center;
-
-}
-
-.mobile-nav a{
-
-    display:block;
-
     color:white;
-
-    font-family:'IBM Plex Sans Arabic';
-
-    font-size:26px;
-
-    margin:22px 0;
-
-    transition:.25s;
-
+    cursor:pointer;
+    font-size:22px;
 }
 
-.mobile-nav a:hover{
-
-    color:var(--gold-light);
-
-}
-
-
-/* =====================================================
+/* =========================
    HERO
-===================================================== */
+========================= */
 
 .hero{
-
-    min-height:
-        max(780px,100vh);
-
-    position:relative;
-
-    overflow:hidden;
-
-    background:var(--green);
-
-    color:white;
-
+    min-height:100vh;
+    padding-top:92px;
     display:flex;
-
     align-items:center;
-
+    position:relative;
 }
-
-
-/* BACKGROUND IMAGE */
-
-.hero-background{
-
-    position:absolute;
-
-    inset:0;
-
-    background-image:
-
-        linear-gradient(
-            90deg,
-            rgba(3,20,13,.97) 0%,
-            rgba(3,20,13,.90) 38%,
-            rgba(3,20,13,.66) 72%,
-            rgba(3,20,13,.45) 100%
-        ),
-
-        url(
-        "https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/1-8.jpg"
-        );
-
-    background-size:cover;
-
-    background-position:center;
-
-    transform:scale(1.02);
-
-}
-
-
-/* GRID */
-
-.hero-grid{
-
-    position:absolute;
-
-    inset:0;
-
-    opacity:.055;
-
-    background-image:
-
-        linear-gradient(
-            rgba(255,255,255,.25) 1px,
-            transparent 1px
-        ),
-
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,.25) 1px,
-            transparent 1px
-        );
-
-    background-size:
-        100px 100px;
-
-}
-
-
-/* GOLD LIGHT */
-
-.hero-light{
-
-    position:absolute;
-
-    width:600px;
-
-    height:600px;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(201,164,93,.10),
-            transparent 65%
-        );
-
-    left:-180px;
-
-    top:20%;
-
-    pointer-events:none;
-
-}
-
-
-/* HERO CONTENT */
 
 .hero-container{
-
-    position:relative;
-
-    z-index:2;
-
-    width:min(
-        var(--container),
-        calc(100% - 80px)
-    );
-
-    margin-inline:auto;
-
-    padding-top:100px;
-
+    width:min(1320px,92%);
+    margin:auto;
+    min-height:calc(100vh - 92px);
     display:grid;
-
-    grid-template-columns:
-        minmax(320px,.72fr)
-        minmax(500px,1.28fr);
-
-    gap:90px;
-
+    grid-template-columns:1.1fr .9fr;
     align-items:center;
-
+    gap:70px;
 }
 
-
-/* =====================================================
-   PROFESSIONAL LOGO DISPLAY
-===================================================== */
-
-.hero-logo-stage{
-
-    position:relative;
-
-    width:430px;
-
-    height:430px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    justify-self:start;
-
-}
-
-
-/* OUTER RING */
-
-.logo-ring{
-
-    position:absolute;
-
-    width:390px;
-    height:390px;
-
-    border-radius:50%;
-
-    border:
-        1px solid
-        rgba(201,164,93,.25);
-
-    animation:
-        slowRotate 18s linear infinite;
-
-}
-
-.logo-ring::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:10px;
-    height:10px;
-
-    background:var(--gold-light);
-
-    border-radius:50%;
-
-    top:-5px;
-
-    left:50%;
-
-    box-shadow:
-        0 0 15px var(--gold),
-        0 0 35px rgba(201,164,93,.7);
-
-}
-
-
-/* SECOND RING */
-
-.logo-ring-2{
-
-    position:absolute;
-
-    width:310px;
-    height:310px;
-
-    border-radius:50%;
-
-    border:
-        1px dashed
-        rgba(201,164,93,.28);
-
-    animation:
-        slowRotateReverse 24s linear infinite;
-
-}
-
-@keyframes slowRotate{
-
-    to{
-        transform:rotate(360deg);
-    }
-
-}
-
-@keyframes slowRotateReverse{
-
-    to{
-        transform:rotate(-360deg);
-    }
-
-}
-
-
-/* LOGO HALO */
-
-.logo-halo{
-
-    position:absolute;
-
-    width:260px;
-    height:260px;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(201,164,93,.17),
-            rgba(201,164,93,.04) 45%,
-            transparent 72%
-        );
-
-    filter:blur(2px);
-
-    animation:
-        logoPulse 4s ease-in-out infinite;
-
-}
-
-@keyframes logoPulse{
-
-    0%,100%{
-        transform:scale(.94);
-        opacity:.65;
-    }
-
-    50%{
-        transform:scale(1.06);
-        opacity:1;
-    }
-
-}
-
-
-/* ACTUAL LOGO */
-
-.hero-logo{
-
-    position:relative;
-
-    z-index:3;
-
-    width:190px;
-    height:190px;
-
-    object-fit:contain;
-
-    filter:
-
-        drop-shadow(
-            0 0 5px
-            rgba(255,255,255,.12)
-        )
-
-        drop-shadow(
-            0 0 20px
-            rgba(201,164,93,.28)
-        );
-
-    animation:
-        logoFloat 5s ease-in-out infinite;
-
-}
-
-@keyframes logoFloat{
-
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-9px);
-    }
-
-}
-
-
-/* SHINE */
-
-.logo-shine{
-
-    position:absolute;
-
-    z-index:4;
-
-    width:240px;
-
-    height:80px;
-
-    transform:
-        rotate(-35deg)
-        translateX(-230px);
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,.22),
-            transparent
-        );
-
-    animation:
-        logoShine 5s ease-in-out infinite;
-
-    pointer-events:none;
-
-}
-
-@keyframes logoShine{
-
-    0%,55%{
-        transform:
-            rotate(-35deg)
-            translateX(-250px);
-    }
-
-    75%,100%{
-        transform:
-            rotate(-35deg)
-            translateX(250px);
-    }
-
-}
-
-
-/* =====================================================
-   HERO TEXT
-===================================================== */
+/* HERO TEXT */
 
 .hero-content{
-
-    max-width:800px;
-
-    justify-self:end;
-
-}
-
-.hero-eyebrow{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:13px;
-
-    color:var(--gold-light);
-
-    font-size:11px;
-
-    margin-bottom:25px;
-
-}
-
-.hero-eyebrow::before{
-
-    content:"";
-
-    width:40px;
-
-    height:1px;
-
-    background:var(--gold);
-
-}
-
-
-/* TITLE */
-
-.hero-title{
-
-    font-family:'IBM Plex Sans Arabic';
-
-    font-size:
-        clamp(
-            48px,
-            6vw,
-            88px
-        );
-
-    line-height:1.15;
-
-    letter-spacing:-3px;
-
-    font-weight:600;
-
-}
-
-.hero-title span{
-
-    color:var(--gold-light);
-
-}
-
-
-/* DESCRIPTION */
-
-.hero-description{
-
-    max-width:590px;
-
-    color:
-        rgba(255,255,255,.68);
-
-    font-size:13px;
-
-    line-height:2.25;
-
-    margin:
-        30px 0 32px;
-
-}
-
-
-/* BUTTONS */
-
-.hero-buttons{
-
-    display:flex;
-
-    gap:13px;
-
-    flex-wrap:wrap;
-
-}
-
-.button{
-
-    min-height:54px;
-
-    padding:
-        0 25px;
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:12px;
-
-    font-size:10px;
-
-    transition:.3s;
-
-}
-
-.button-gold{
-
-    background:var(--gold);
-
-    color:var(--green);
-
-}
-
-.button-gold:hover{
-
-    background:var(--gold-light);
-
-    transform:translateY(-3px);
-
-}
-
-.button-outline{
-
-    border:
-        1px solid
-        rgba(255,255,255,.27);
-
-    color:white;
-
-}
-
-.button-outline:hover{
-
-    border-color:var(--gold-light);
-
-    color:var(--gold-light);
-
-}
-
-
-/* =====================================================
-   HERO INFO
-===================================================== */
-
-.hero-info{
-
-    margin-top:35px;
-
-    display:flex;
-
-    gap:30px;
-
-}
-
-.hero-info-item{
-
-    padding-top:13px;
-
-    border-top:
-        1px solid
-        rgba(255,255,255,.15);
-
-    min-width:100px;
-
-}
-
-.hero-info-item strong{
-
-    display:block;
-
-    color:var(--gold-light);
-
-    font-family:'IBM Plex Sans Arabic';
-
-    font-size:12px;
-
-    margin-bottom:3px;
-
-}
-
-.hero-info-item span{
-
-    color:
-        rgba(255,255,255,.42);
-
-    font-size:7px;
-
-}
-
-
-/* =====================================================
-   ABOUT
-===================================================== */
-
-.about{
-
-    padding:
-        150px 0;
-
-    background:var(--cream);
-
-}
-
-.about-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        80px
-        1fr
-        1fr;
-
-    gap:65px;
-
-}
-
-.side-number{
-
-    color:var(--gold);
-
-    font-family:'IBM Plex Sans Arabic';
-
-    font-size:12px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    gap:17px;
-
-}
-
-.side-number::after{
-
-    content:"";
-
-    width:1px;
-
-    height:150px;
-
-    background:var(--gold);
-
-    opacity:.5;
-
+    position:relative;
+    z-index:5;
 }
 
 .eyebrow{
-
     display:flex;
-
     align-items:center;
-
-    gap:12px;
-
-    color:var(--gold);
-
-    font-size:10px;
-
-    margin-bottom:22px;
-
+    gap:14px;
+    color:var(--gold-light);
+    font-size:14px;
+    font-weight:700;
+    margin-bottom:25px;
 }
 
-.eyebrow::before{
-
-    content:"";
-
-    width:35px;
-
+.eyebrow span{
+    width:48px;
     height:1px;
-
     background:var(--gold);
-
 }
 
-.section-title{
-
-    font-family:'IBM Plex Sans Arabic';
-
-    font-size:
-        clamp(42px,5vw,68px);
-
-    line-height:1.3;
-
+.hero-title{
+    font-size:clamp(48px,5.5vw,88px);
+    line-height:1.15;
+    font-weight:800;
     letter-spacing:-2px;
-
+    margin-bottom:27px;
 }
 
-.section-title span{
-
-    color:var(--gold);
-
+.hero-title .gold{
+    display:block;
+    color:var(--gold-light);
+    text-shadow:0 0 35px rgba(216,177,90,.12);
 }
 
-.about-text{
-
-    padding-top:50px;
-
-    max-width:480px;
-
+.hero-description{
+    max-width:650px;
+    color:#aebdb6;
+    font-size:17px;
+    line-height:2;
+    margin-bottom:35px;
 }
 
-.about-text p{
-
-    color:var(--muted);
-
-    font-size:12px;
-
-    line-height:2.3;
-
-    margin-bottom:18px;
-
+.hero-actions{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
 }
 
+.btn{
+    min-height:58px;
+    padding:0 28px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    font-size:14px;
+    font-weight:700;
+    transition:.35s;
+    cursor:pointer;
+}
 
-/* =====================================================
-   SERVICES
-===================================================== */
+.btn-gold{
+    background:linear-gradient(135deg,#d0a84e,#e3c16e);
+    color:#081a12;
+    box-shadow:0 10px 35px rgba(216,177,90,.15);
+}
 
-.services{
+.btn-gold:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 45px rgba(216,177,90,.28);
+}
 
-    background:var(--paper);
+.btn-outline{
+    border:1px solid rgba(216,177,90,.35);
+    color:white;
+    background:rgba(255,255,255,.015);
+}
 
-    padding:
-        135px 0;
+.btn-outline:hover{
+    border-color:var(--gold);
+    background:rgba(216,177,90,.07);
+    transform:translateY(-3px);
+}
 
+/* TRUST */
+
+.trust-row{
+    display:grid;
+    grid-template-columns:repeat(3,150px);
+    gap:15px;
+    margin-top:45px;
+}
+
+.trust-item{
+    padding-top:17px;
+    border-top:1px solid rgba(255,255,255,.12);
+}
+
+.trust-title{
+    color:var(--gold-light);
+    font-size:15px;
+    font-weight:800;
+    margin-bottom:6px;
+}
+
+.trust-text{
+    color:#71857b;
+    font-size:10px;
+}
+
+/* =========================
+   LOGO SHOWCASE
+========================= */
+
+.hero-visual{
+    position:relative;
+    height:560px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.orbit{
+    position:absolute;
+    width:420px;
+    height:420px;
+    border:1px solid rgba(216,177,90,.25);
+    border-radius:50%;
+    animation:rotate 18s linear infinite;
+}
+
+.orbit::before{
+    content:"";
+    position:absolute;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--gold-light);
+    top:25px;
+    right:65px;
+    box-shadow:0 0 20px rgba(240,209,132,.8);
+}
+
+.orbit-2{
+    width:330px;
+    height:330px;
+    border-style:dashed;
+    border-color:rgba(216,177,90,.18);
+    animation-direction:reverse;
+    animation-duration:14s;
+}
+
+.logo-stage{
+    width:270px;
+    height:270px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.logo-stage::before{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:rgba(216,177,90,.09);
+    filter:blur(35px);
+    animation:glow 3s ease-in-out infinite;
+}
+
+.logo-stage::after{
+    content:"";
+    position:absolute;
+    inset:15px;
+    border-radius:50%;
+    border:1px solid rgba(216,177,90,.3);
+    box-shadow:
+        0 0 60px rgba(216,177,90,.08),
+        inset 0 0 50px rgba(216,177,90,.05);
+}
+
+.hero-logo{
+    width:190px;
+    height:190px;
+    object-fit:contain;
+    position:relative;
+    z-index:5;
+    filter:
+        drop-shadow(0 0 10px rgba(216,177,90,.8))
+        drop-shadow(0 0 35px rgba(216,177,90,.35));
+    animation:
+        heroLogoFloat 5s ease-in-out infinite,
+        heroLogoGlow 3s ease-in-out infinite alternate;
+}
+
+/* decorative light */
+
+.light-beam{
+    position:absolute;
+    width:270px;
+    height:100px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.06),
+        transparent
+    );
+    transform:rotate(-35deg);
+    filter:blur(4px);
+    animation:beam 5s ease-in-out infinite;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+    padding:120px 0;
+    position:relative;
+}
+
+.section-container{
+    width:min(1200px,92%);
+    margin:auto;
 }
 
 .section-heading{
-
-    display:flex;
-
-    align-items:end;
-
-    justify-content:space-between;
-
-    gap:50px;
-
+    max-width:700px;
     margin-bottom:60px;
+}
 
+.section-label{
+    color:var(--gold-light);
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.section-title{
+    font-size:clamp(32px,4vw,52px);
+    line-height:1.3;
+    margin-bottom:18px;
 }
 
 .section-description{
-
-    max-width:380px;
-
-    color:var(--muted);
-
-    font-size:11px;
-
-    line-height:2.2;
-
+    color:#8fa199;
+    line-height:2;
 }
 
-.service-list{
+/* =========================
+   SERVICES
+========================= */
 
-    border-top:
-        1px solid
-        var(--line);
-
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
 }
 
 .service{
+    min-height:230px;
+    padding:35px;
+    border:1px solid rgba(255,255,255,.08);
+    background:
+        linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.008));
+    position:relative;
+    overflow:hidden;
+    transition:.4s;
+}
 
-    width:100%;
-
-    display:grid;
-
-    grid-template-columns:
-        65px
-        55px
-        1fr
-        340px
-        20px;
-
-    gap:18px;
-
-    align-items:center;
-
-    padding:
-        27px 0;
-
-    border-bottom:
-        1px solid
-        var(--line);
-
-    transition:.3s;
-
+.service::before{
+    content:"";
+    position:absolute;
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:rgba(216,177,90,.07);
+    top:-60px;
+    left:-60px;
+    transition:.4s;
 }
 
 .service:hover{
+    transform:translateY(-8px);
+    border-color:rgba(216,177,90,.3);
+    box-shadow:var(--shadow);
+}
 
-    background:
-        rgba(201,164,93,.08);
-
-    padding-inline:
-        20px;
-
+.service:hover::before{
+    transform:scale(2);
 }
 
 .service-number{
-
     color:var(--gold);
-
-    font-family:'IBM Plex Sans Arabic';
-
     font-size:12px;
-
-}
-
-.service-icon{
-
-    width:42px;
-    height:42px;
-
-    border:
-        1px solid
-        rgba(201,164,93,.7);
-
-    border-radius:50%;
-
-    display:grid;
-
-    place-items:center;
-
-    color:var(--gold);
-
-    font-family:serif;
-
-    font-size:18px;
-
+    font-weight:800;
+    margin-bottom:35px;
 }
 
 .service h3{
-
-    font-family:'IBM Plex Sans Arabic';
-
-    font-size:19px;
-
-    font-weight:500;
-
+    font-size:20px;
+    margin-bottom:12px;
 }
 
 .service p{
-
-    color:var(--muted);
-
-    font-size:9px;
-
+    color:#81938c;
+    font-size:13px;
     line-height:1.9;
-
 }
 
-.service-arrow{
+/* =========================
+   ABOUT
+========================= */
 
-    color:var(--gold);
-
-    transition:.3s;
-
-}
-
-.service:hover .service-arrow{
-
-    transform:
-        translate(-5px,-5px);
-
-}
-
-
-/* =====================================================
-   FEATURE
-===================================================== */
-
-.feature{
-
+.about{
     display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    min-height:650px;
-
-    background:var(--green);
-
-    color:white;
-
-}
-
-.feature-image{
-
-    min-height:600px;
-
-    background:
-
-        linear-gradient(
-            rgba(6,27,19,.18),
-            rgba(6,27,19,.55)
-        ),
-
-        url(
-        "https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/1-8.jpg"
-        )
-        center/cover;
-
-}
-
-.feature-content{
-
-    padding:
-        110px 11%;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-}
-
-.feature-quote{
-
-    font-family:'IBM Plex Sans Arabic';
-
-    font-size:
-        clamp(27px,3.2vw,45px);
-
-    line-height:1.65;
-
-    margin:
-        30px 0;
-
-}
-
-.feature-quote span{
-
-    color:var(--gold-light);
-
-}
-
-.gold-line{
-
-    width:55px;
-
-    height:2px;
-
-    background:var(--gold);
-
-    margin-bottom:25px;
-
-}
-
-.feature-description{
-
-    max-width:480px;
-
-    color:
-        rgba(255,255,255,.60);
-
-    font-size:11px;
-
-    line-height:2.2;
-
-}
-
-.feature-points{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:20px;
-
-    border-top:
-        1px solid
-        rgba(255,255,255,.13);
-
-    margin-top:50px;
-
-    padding-top:23px;
-
-}
-
-.feature-points strong{
-
-    display:block;
-
-    color:var(--gold-light);
-
-    font-family:'IBM Plex Sans Arabic';
-
-    font-size:14px;
-
-}
-
-.feature-points span{
-
-    color:
-        rgba(255,255,255,.40);
-
-    font-size:7px;
-
-}
-
-
-/* =====================================================
-   PRACTICE
-===================================================== */
-
-.practice{
-
-    padding:
-        140px 0;
-
-    background:var(--green-2);
-
-    color:white;
-
-}
-
-.practice-grid{
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:100px;
-
-}
-
-.practice-title{
-
-    font-family:'IBM Plex Sans Arabic';
-
-    font-size:
-        clamp(42px,5vw,68px);
-
-    line-height:1.3;
-
-    letter-spacing:-2px;
-
-}
-
-.practice-title span{
-
-    color:var(--gold-light);
-
-}
-
-.practice-description{
-
-    max-width:410px;
-
-    color:
-        rgba(255,255,255,.60);
-
-    font-size:11px;
-
-    line-height:2.2;
-
-    margin-top:25px;
-
-}
-
-.practice-list{
-
-    border-top:
-        1px solid
-        rgba(255,255,255,.15);
-
-}
-
-.practice-item{
-
-    display:flex;
-
+    grid-template-columns:.8fr 1.2fr;
+    gap:80px;
     align-items:center;
-
-    gap:18px;
-
-    padding:
-        21px 0;
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,.13);
-
-    transition:.3s;
-
 }
 
-.practice-item span{
-
-    color:var(--gold-light);
-
-    width:25px;
-
-    font-size:9px;
-
+.about-card{
+    min-height:380px;
+    border:1px solid rgba(216,177,90,.2);
+    padding:45px;
+    background:linear-gradient(145deg,rgba(216,177,90,.06),rgba(255,255,255,.015));
+    position:relative;
 }
 
-.practice-item strong{
-
-    flex:1;
-
-    font-family:'IBM Plex Sans Arabic';
-
-    font-size:15px;
-
-    font-weight:500;
-
+.about-card::before{
+    content:"";
+    position:absolute;
+    inset:15px;
+    border:1px solid rgba(216,177,90,.08);
+    pointer-events:none;
 }
 
-.practice-item i{
-
-    color:var(--gold-light);
-
-    font-style:normal;
-
-    transition:.3s;
-
+.about-symbol{
+    font-family:"Playfair Display",serif;
+    font-size:110px;
+    color:rgba(216,177,90,.18);
+    line-height:1;
 }
 
-.practice-item:hover{
-
-    padding-right:12px;
-
+.about-card h3{
+    position:relative;
+    font-size:25px;
+    margin-top:30px;
 }
 
-.practice-item:hover i{
-
-    transform:
-        translate(-5px,-5px);
-
-}
-
-
-/* =====================================================
-   PROCESS
-===================================================== */
-
-.process{
-
-    padding:
-        135px 0;
-
-    background:var(--cream);
-
-}
-
-.process-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    margin-top:60px;
-
-    border-top:
-        1px solid
-        var(--line);
-
-    border-right:
-        1px solid
-        var(--line);
-
-}
-
-.process-item{
-
-    padding:
-        40px 30px;
-
-    border-left:
-        1px solid
-        var(--line);
-
-    border-bottom:
-        1px solid
-        var(--line);
-
-    transition:.3s;
-
-}
-
-.process-item:hover{
-
-    background:white;
-
-    transform:translateY(-4px);
-
-    box-shadow:
-        0 25px 60px
-        rgba(0,0,0,.08);
-
-}
-
-.process-number{
-
-    color:var(--gold);
-
-    font-size:9px;
-
-    margin-bottom:30px;
-
-}
-
-.process-item h3{
-
-    font-family:'IBM Plex Sans Arabic';
-
-    font-size:20px;
-
-    margin-bottom:13px;
-
-}
-
-.process-item p{
-
-    color:var(--muted);
-
-    font-size:10px;
-
-    line-height:2;
-
-}
-
-
-/* =====================================================
-   CTA
-===================================================== */
-
-.cta{
-
-    padding:
-        105px 0;
-
-    background:
-
-        linear-gradient(
-            100deg,
-            #061b13,
-            #0d3022
-        );
-
-    color:white;
-
-}
-
-.cta-inner{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:50px;
-
-}
-
-.cta h2{
-
-    font-family:'IBM Plex Sans Arabic';
-
-    font-size:
-        clamp(38px,4.5vw,60px);
-
+.about-text h2{
+    font-size:45px;
     line-height:1.35;
-
+    margin-bottom:25px;
 }
 
-.cta h2 span{
-
-    color:var(--gold-light);
-
-}
-
-.cta p{
-
-    color:
-        rgba(255,255,255,.55);
-
-    font-size:10px;
-
-    margin-top:15px;
-
-}
-
-.cta-button{
-
-    flex-shrink:0;
-
-    background:var(--gold);
-
-    color:var(--green);
-
-    padding:
-        18px 30px;
-
-    font-size:10px;
-
-    transition:.3s;
-
-}
-
-.cta-button:hover{
-
-    background:var(--gold-light);
-
-    transform:translateY(-4px);
-
-}
-
-
-/* =====================================================
-   CONTACT
-===================================================== */
-
-.contact{
-
-    padding:
-        140px 0;
-
-    background:var(--cream);
-
-}
-
-.contact-grid{
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:110px;
-
-}
-
-.contact-title{
-
-    font-family:'IBM Plex Sans Arabic';
-
-    font-size:
-        clamp(42px,5vw,68px);
-
-    line-height:1.3;
-
-}
-
-.contact-title span{
-
-    color:var(--gold);
-
-}
-
-.contact-description{
-
-    max-width:420px;
-
-    color:var(--muted);
-
-    font-size:11px;
-
+.about-text p{
+    color:#9caba5;
     line-height:2.2;
-
-    margin-top:23px;
-
-}
-
-.contact-data{
-
-    display:grid;
-
-    gap:16px;
-
-    margin-top:40px;
-
-}
-
-.contact-data a,
-.contact-data div{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    font-size:10px;
-
-}
-
-.contact-icon{
-
-    width:34px;
-    height:34px;
-
-    border:
-        1px solid
-        rgba(201,164,93,.55);
-
-    color:var(--gold);
-
-    display:grid;
-
-    place-items:center;
-
-}
-
-.contact-phone{
-
-    direction:ltr;
-
-    unicode-bidi:plaintext;
-
-    display:inline-block;
-
-    font-family:Arial,sans-serif;
-
-}
-
-
-/* FORM */
-
-.contact-form{
-
-    border-top:
-        1px solid
-        var(--line);
-
-    padding-top:15px;
-
-}
-
-.form-group{
-
-    margin-bottom:21px;
-
-}
-
-.form-group label{
-
-    display:block;
-
-    font-size:9px;
-
-    margin-bottom:7px;
-
-}
-
-.form-group input,
-.form-group textarea{
-
-    width:100%;
-
-    background:none;
-
-    border:0;
-
-    border-bottom:
-        1px solid
-        var(--line);
-
-    padding:
-        12px 0;
-
-    outline:none;
-
-    font-size:11px;
-
-    color:var(--green);
-
-}
-
-.form-group input:focus,
-.form-group textarea:focus{
-
-    border-color:var(--gold);
-
-}
-
-.form-group textarea{
-
-    min-height:110px;
-
-    resize:vertical;
-
-}
-
-.submit-button{
-
-    width:100%;
-
-    min-height:54px;
-
-    border:0;
-
-    background:var(--green);
-
-    color:white;
-
-    font-size:10px;
-
-    transition:.3s;
-
-}
-
-.submit-button:hover{
-
-    background:var(--green-3);
-
-    transform:translateY(-2px);
-
-}
-
-.form-note{
-
-    color:var(--muted);
-
-    font-size:7px;
-
-    margin-top:11px;
-
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-.footer{
-
-    background:#04140d;
-
-    color:white;
-
-    padding:
-        60px 0 25px;
-
-}
-
-.footer-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        1.5fr
-        1fr
-        1fr;
-
-    gap:50px;
-
-}
-
-.footer-brand{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:14px;
-
-}
-
-.footer-logo{
-
-    width:55px;
-    height:55px;
-
-    object-fit:contain;
-
-    filter:
-        drop-shadow(
-            0 0 8px
-            rgba(201,164,93,.25)
-        );
-
-}
-
-.footer-brand strong{
-
-    display:block;
-
-    font-family:'IBM Plex Sans Arabic';
-
-    font-size:14px;
-
-}
-
-.footer-brand small{
-
-    display:block;
-
-    color:var(--gold-light);
-
-    font-size:7px;
-
-    margin-top:5px;
-
-}
-
-.footer-column h4{
-
-    color:var(--gold-light);
-
-    font-family:'IBM Plex Sans Arabic';
-
-    font-size:10px;
-
     margin-bottom:18px;
-
 }
 
-.footer-column a{
+/* =========================
+   CONTACT
+========================= */
 
-    display:block;
-
-    color:
-        rgba(255,255,255,.48);
-
-    font-size:8px;
-
-    margin-bottom:10px;
-
-    transition:.25s;
-
-}
-
-.footer-column a:hover{
-
-    color:white;
-
-}
-
-.footer-bottom{
-
-    margin-top:45px;
-
-    padding-top:20px;
-
-    border-top:
-        1px solid
-        rgba(255,255,255,.10);
-
+.contact-box{
+    padding:60px;
+    border:1px solid rgba(216,177,90,.25);
+    background:
+        radial-gradient(circle at 80% 20%,rgba(216,177,90,.09),transparent 30%),
+        rgba(255,255,255,.015);
     display:flex;
-
+    align-items:center;
     justify-content:space-between;
-
-    gap:20px;
-
-    color:
-        rgba(255,255,255,.32);
-
-    font-size:7px;
-
+    gap:40px;
 }
 
+.contact-box h2{
+    font-size:38px;
+    margin-bottom:12px;
+}
 
-/* =====================================================
+.contact-box p{
+    color:#8e9f98;
+}
+
+.contact-actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+/* =========================
    WHATSAPP
-===================================================== */
+========================= */
 
 .whatsapp{
-
     position:fixed;
-
-    left:22px;
-    bottom:22px;
-
-    z-index:500;
-
-    width:58px;
-    height:58px;
-
+    bottom:25px;
+    left:25px;
+    width:65px;
+    height:65px;
     border-radius:50%;
-
-    background:#c9a45d;
-
-    color:#071b13;
-
-    display:grid;
-
-    place-items:center;
-
-    box-shadow:
-        0 12px 35px
-        rgba(0,0,0,.30);
-
+    background:#d8b15a;
+    color:#071b12;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:999;
+    box-shadow:0 10px 35px rgba(0,0,0,.35);
     transition:.3s;
-
 }
 
 .whatsapp:hover{
-
-    transform:
-        translateY(-5px)
-        scale(1.05);
-
+    transform:scale(1.08);
 }
 
 .whatsapp svg{
-
-    width:27px;
-    height:27px;
-
+    width:32px;
+    height:32px;
 }
 
+/* =========================
+   FOOTER
+========================= */
 
-/* =====================================================
-   ANIMATION
-===================================================== */
-
-.reveal{
-
-    opacity:0;
-
-    transform:translateY(28px);
-
-    transition:
-        opacity .8s ease,
-        transform .8s ease;
-
+.footer{
+    border-top:1px solid rgba(255,255,255,.08);
+    padding:35px 0;
 }
 
-.reveal.visible{
-
-    opacity:1;
-
-    transform:none;
-
+.footer-inner{
+    width:min(1200px,92%);
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
 }
 
+.footer p{
+    color:#64766e;
+    font-size:11px;
+}
 
-/* =====================================================
-   TABLET
-===================================================== */
+.footer-phone{
+    color:var(--gold-light);
+    direction:ltr;
+    unicode-bidi:isolate;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes logoPulse{
+    0%,100%{transform:scale(1);opacity:.35}
+    50%{transform:scale(1.07);opacity:.7}
+}
+
+@keyframes logoFloat{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-5px)}
+}
+
+@keyframes heroLogoFloat{
+    0%,100%{transform:translateY(0) rotate(0)}
+    50%{transform:translateY(-12px) rotate(1deg)}
+}
+
+@keyframes heroLogoGlow{
+    from{
+        filter:
+        drop-shadow(0 0 8px rgba(216,177,90,.5))
+        drop-shadow(0 0 25px rgba(216,177,90,.15));
+    }
+    to{
+        filter:
+        drop-shadow(0 0 16px rgba(240,209,132,.95))
+        drop-shadow(0 0 45px rgba(216,177,90,.4));
+    }
+}
+
+@keyframes rotate{
+    from{transform:rotate(0)}
+    to{transform:rotate(360deg)}
+}
+
+@keyframes glow{
+    0%,100%{transform:scale(.85);opacity:.5}
+    50%{transform:scale(1.15);opacity:1}
+}
+
+@keyframes beam{
+    0%,100%{opacity:.1;transform:translateX(-30px) rotate(-35deg)}
+    50%{opacity:.6;transform:translateX(30px) rotate(-35deg)}
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media(max-width:1100px){
 
-    .container,
-    .hero-container{
-
-        width:
-            calc(100% - 50px);
-
-    }
-
     .nav{
-
         gap:20px;
-
-    }
-
-    .brand{
-
-        min-width:auto;
-
     }
 
     .header-phone{
-
         display:none;
-
     }
 
     .hero-container{
-
-        grid-template-columns:
-            .8fr
-            1.2fr;
-
-        gap:40px;
-
+        gap:30px;
     }
 
-    .hero-logo-stage{
+    .hero-title{
+        font-size:65px;
+    }
 
+    .hero-visual{
+        height:470px;
+    }
+
+    .orbit{
         width:350px;
         height:350px;
-
     }
 
-    .logo-ring{
-
-        width:320px;
-        height:320px;
-
+    .orbit-2{
+        width:275px;
+        height:275px;
     }
-
-    .logo-ring-2{
-
-        width:260px;
-        height:260px;
-
-    }
-
-    .hero-logo{
-
-        width:155px;
-        height:155px;
-
-    }
-
-    .service{
-
-        grid-template-columns:
-            50px
-            45px
-            1fr
-            260px
-            20px;
-
-    }
-
 }
 
-
-/* =====================================================
-   TABLET / MOBILE
-===================================================== */
-
-@media(max-width:850px){
-
-    .container,
-    .hero-container{
-
-        width:
-            calc(100% - 40px);
-
-    }
+@media(max-width:800px){
 
     .header{
+        height:78px;
+    }
 
-        height:76px;
+    .header-inner{
+        width:90%;
+    }
 
+    .logo{
+        min-width:auto;
+    }
+
+    .logo-image-wrap{
+        width:50px;
+        height:50px;
+    }
+
+    .logo-img{
+        width:43px;
+        height:43px;
+    }
+
+    .logo-name{
+        font-size:13px;
+    }
+
+    .logo-sub{
+        font-size:7px;
     }
 
     .nav{
-
+        position:absolute;
+        top:78px;
+        right:5%;
+        left:5%;
         display:none;
-
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        padding:12px;
+        background:rgba(2,20,14,.97);
+        border:1px solid rgba(216,177,90,.18);
+        box-shadow:0 20px 50px rgba(0,0,0,.4);
     }
 
-    .mobile-button{
+    .nav.active{
+        display:flex;
+    }
 
+    .nav a{
+        padding:15px;
+        border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .nav a:last-child{
+        border-bottom:none;
+    }
+
+    .nav a::after{
+        display:none;
+    }
+
+    .menu-btn{
         display:block;
-
     }
-
-    .brand-logo{
-
-        width:46px;
-        height:46px;
-
-    }
-
-    .brand-text strong{
-
-        font-size:13px;
-
-    }
-
-    .brand-text small{
-
-        font-size:6px;
-
-    }
-
-
-    /* HERO */
 
     .hero{
-
-        min-height:
-            900px;
-
+        padding-top:78px;
     }
 
     .hero-container{
-
-        padding-top:115px;
-
         grid-template-columns:1fr;
-
-        gap:30px;
-
-        text-align:right;
-
+        text-align:center;
+        padding:65px 0 80px;
     }
 
     .hero-content{
-
-        justify-self:stretch;
-
         order:1;
-
     }
 
-    .hero-logo-stage{
-
+    .hero-visual{
         order:2;
-
-        justify-self:center;
-
-        width:300px;
-        height:300px;
-
-        margin-top:5px;
-
+        height:350px;
+        margin-top:10px;
     }
 
-    .logo-ring{
-
-        width:280px;
-        height:280px;
-
+    .eyebrow{
+        justify-content:center;
     }
 
-    .logo-ring-2{
-
-        width:220px;
-        height:220px;
-
+    .hero-title{
+        font-size:clamp(43px,11vw,65px);
+        letter-spacing:-1px;
     }
 
-    .logo-halo{
+    .hero-description{
+        margin-right:auto;
+        margin-left:auto;
+        font-size:14px;
+    }
 
+    .hero-actions{
+        justify-content:center;
+    }
+
+    .trust-row{
+        justify-content:center;
+        grid-template-columns:repeat(3,1fr);
+        max-width:500px;
+        margin-right:auto;
+        margin-left:auto;
+    }
+
+    .orbit{
+        width:290px;
+        height:290px;
+    }
+
+    .orbit-2{
+        width:225px;
+        height:225px;
+    }
+
+    .hero-logo{
+        width:145px;
+        height:145px;
+    }
+
+    .logo-stage{
         width:210px;
         height:210px;
-
     }
 
-    .hero-logo{
-
-        width:135px;
-        height:135px;
-
+    .services-grid{
+        grid-template-columns:1fr;
     }
-
-    .hero-title{
-
-        font-size:
-            clamp(43px,10vw,68px);
-
-        letter-spacing:-1.5px;
-
-    }
-
-    .hero-description{
-
-        font-size:11px;
-
-    }
-
-    .hero-info{
-
-        margin-top:27px;
-
-    }
-
-
-    /* ABOUT */
 
     .about{
-
-        padding:
-            95px 0;
-
-    }
-
-    .about-grid{
-
         grid-template-columns:1fr;
-
-        gap:25px;
-
+        gap:40px;
     }
 
-    .side-number{
-
-        display:none;
-
+    .about-text h2{
+        font-size:34px;
     }
 
-    .about-text{
-
-        padding-top:0;
-
+    .contact-box{
+        flex-direction:column;
+        text-align:center;
+        padding:40px 25px;
     }
 
-
-    /* SERVICES */
-
-    .services{
-
-        padding:
-            95px 0;
-
+    .contact-actions{
+        justify-content:center;
     }
 
-    .section-heading{
-
-        display:block;
-
-        margin-bottom:40px;
-
+    .footer-inner{
+        flex-direction:column;
+        text-align:center;
     }
-
-    .section-description{
-
-        margin-top:20px;
-
-    }
-
-    .service{
-
-        grid-template-columns:
-            38px
-            42px
-            1fr
-            18px;
-
-        gap:9px;
-
-        padding:
-            20px 0;
-
-    }
-
-    .service h3{
-
-        font-size:14px;
-
-    }
-
-    .service p{
-
-        grid-column:
-            3 / 5;
-
-        margin-top:4px;
-
-        font-size:8px;
-
-    }
-
-
-    /* FEATURE */
-
-    .feature{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .feature-image{
-
-        min-height:380px;
-
-    }
-
-    .feature-content{
-
-        padding:
-            80px 30px;
-
-    }
-
-
-    /* PRACTICE */
-
-    .practice{
-
-        padding:
-            95px 0;
-
-    }
-
-    .practice-grid{
-
-        grid-template-columns:1fr;
-
-        gap:55px;
-
-    }
-
-
-    /* PROCESS */
-
-    .process{
-
-        padding:
-            95px 0;
-
-    }
-
-    .process-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    /* CTA */
-
-    .cta{
-
-        padding:
-            85px 0;
-
-    }
-
-    .cta-inner{
-
-        display:block;
-
-    }
-
-    .cta-button{
-
-        display:inline-flex;
-
-        margin-top:28px;
-
-    }
-
-
-    /* CONTACT */
-
-    .contact{
-
-        padding:
-            95px 0;
-
-    }
-
-    .contact-grid{
-
-        grid-template-columns:1fr;
-
-        gap:60px;
-
-    }
-
-
-    /* FOOTER */
-
-    .footer-grid{
-
-        grid-template-columns:
-            1fr 1fr;
-
-    }
-
 }
 
+@media(max-width:480px){
 
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
-
-@media(max-width:520px){
-
-    .container,
-    .hero-container{
-
-        width:
-            calc(100% - 30px);
-
-    }
-
-    .hero{
-
-        min-height:
-            850px;
-
+    .logo-sub{
+        display:none;
     }
 
     .hero-container{
-
-        padding-top:105px;
-
-    }
-
-    .brand-text strong{
-
-        font-size:11px;
-
-    }
-
-    .brand-text small{
-
-        font-size:5px;
-
-    }
-
-    .brand-logo{
-
-        width:40px;
-        height:40px;
-
+        width:90%;
     }
 
     .hero-title{
-
-        font-size:
-            44px;
-
+        font-size:43px;
     }
 
     .hero-description{
-
-        font-size:10px;
-
-        line-height:2.1;
-
+        font-size:13px;
+        line-height:2;
     }
 
-    .hero-buttons{
-
+    .btn{
         width:100%;
-
-        flex-direction:column;
-
     }
 
-    .button{
-
+    .hero-actions{
         width:100%;
-
     }
 
-    .hero-logo-stage{
-
-        width:250px;
-        height:250px;
-
+    .trust-row{
+        gap:8px;
     }
 
-    .logo-ring{
-
-        width:235px;
-        height:235px;
-
+    .trust-title{
+        font-size:13px;
     }
 
-    .logo-ring-2{
-
-        width:185px;
-        height:185px;
-
+    .trust-text{
+        font-size:8px;
     }
 
-    .logo-halo{
+    .hero-visual{
+        height:300px;
+    }
 
-        width:180px;
-        height:180px;
+    .orbit{
+        width:245px;
+        height:245px;
+    }
 
+    .orbit-2{
+        width:195px;
+        height:195px;
     }
 
     .hero-logo{
-
-        width:110px;
-        height:110px;
-
+        width:120px;
+        height:120px;
     }
 
-    .hero-info{
-
-        gap:15px;
-
-    }
-
-    .hero-info-item{
-
-        min-width:80px;
-
-    }
-
-
-    .section-title,
-    .practice-title,
-    .contact-title{
-
-        font-size:
-            40px;
-
-        letter-spacing:-1px;
-
-    }
-
-    .feature-content{
-
-        padding:
-            70px 20px;
-
-    }
-
-    .feature-quote{
-
-        font-size:
-            27px;
-
-    }
-
-    .feature-points{
-
-        gap:10px;
-
-    }
-
-    .feature-points strong{
-
-        font-size:12px;
-
-    }
-
-    .footer-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .footer-bottom{
-
-        display:block;
-
-        line-height:2;
-
+    .logo-stage{
+        width:180px;
+        height:180px;
     }
 
     .whatsapp{
-
-        width:52px;
-        height:52px;
-
-        left:15px;
-        bottom:15px;
-
+        width:58px;
+        height:58px;
+        bottom:18px;
+        left:18px;
     }
 
-}
-
-
-/* =====================================================
-   VERY SMALL
-===================================================== */
-
-@media(max-width:360px){
-
-    .hero-title{
-
-        font-size:
-            38px;
-
+    .section{
+        padding:80px 0;
     }
 
-    .hero-logo-stage{
-
-        width:220px;
-        height:220px;
-
+    .section-title{
+        font-size:32px;
     }
 
-    .logo-ring{
-
-        width:205px;
-        height:205px;
-
+    .contact-box h2{
+        font-size:29px;
     }
-
-    .logo-ring-2{
-
-        width:160px;
-        height:160px;
-
-    }
-
-    .hero-logo{
-
-        width:95px;
-        height:95px;
-
-    }
-
-}
-
-
-/* =====================================================
-   REDUCED MOTION
-===================================================== */
-
-@media(prefers-reduced-motion:reduce){
-
-    *,
-    *::before,
-    *::after{
-
-        animation-duration:.01ms !important;
-
-        animation-iteration-count:1 !important;
-
-        scroll-behavior:auto !important;
-
-        transition-duration:.01ms !important;
-
-    }
-
 }
 
 </style>
-
 </head>
-
 
 <body>
 
+<!-- ================= HEADER ================= -->
 
-<!-- =================================================
-     PRELOADER
-================================================= -->
+<header class="header">
 
-<div class="preloader" id="preloader">
+    <div class="header-inner">
 
-    <div class="loader-box">
+        <a href="#home" class="logo">
 
-        <div class="loader-ring"></div>
+            <div class="logo-image-wrap">
 
-        <img
-        class="loader-logo"
-        src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/IMG_20260102_034847.png"
-        alt="شعار روينا عبدالفتاح رحالي">
+                <img
+                    class="logo-img"
+                    src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.png"
+                    alt="شعار روينا عبدالفتاح رحالي"
+                    onerror="this.style.display='none';"
+                >
 
-    </div>
+            </div>
 
-</div>
+            <div class="logo-text">
 
-
-
-<!-- =================================================
-     HEADER
-================================================= -->
-
-<header class="header" id="header">
-
-    <div class="header-inner container">
-
-
-        <a
-        href="#home"
-        class="brand">
-
-            <img
-            class="brand-logo"
-            src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/IMG_20260102_034847.png"
-            alt="شعار مكتب روينا عبدالفتاح رحالي">
-
-            <div class="brand-text">
-
-                <strong>
+                <div class="logo-name">
                     روينا عبدالفتاح رحالي
-                </strong>
+                </div>
 
-                <small>
-                    للمحاماة والاستشارات القانونية والتوثيق
-                </small>
+                <div class="logo-sub">
+                    المحاماة والاستشارات القانونية والتوثيق
+                </div>
 
             </div>
 
         </a>
 
 
+        <nav class="nav" id="nav">
 
-        <nav class="nav">
-
-            <a href="#about">
-                عن المكتب
-            </a>
-
-            <a href="#services">
-                خدماتنا
-            </a>
-
-            <a href="#practice">
-                مجالات العمل
-            </a>
-
-            <a href="#process">
-                منهجيتنا
-            </a>
-
-            <a href="#contact">
-                تواصل معنا
-            </a>
+            <a href="#home">الرئيسية</a>
+            <a href="#about">عن المكتب</a>
+            <a href="#services">مجالات العمل</a>
+            <a href="#method">منهجيتنا</a>
+            <a href="#contact">تواصل معنا</a>
 
         </nav>
 
 
-
-        <a
-        href="tel:+966544270651"
-        class="header-phone">
+        <div class="header-phone">
 
             <div>
 
-                <small>
+                <div class="phone-label">
                     اتصل بنا
-                </small>
+                </div>
 
-                <span
-                class="phone-number"
-                dir="ltr">
+                <div class="phone-number">
                     054 427 0651
-                </span>
+                </div>
 
             </div>
 
-            <span>
-                ←
-            </span>
-
-        </a>
+        </div>
 
 
-
-        <button
-        class="mobile-button"
-        id="mobileButton"
-        aria-label="فتح القائمة">
-
-            <span></span>
-            <span></span>
-            <span></span>
-
+        <button class="menu-btn" id="menuBtn">
+            ☰
         </button>
 
     </div>
@@ -3116,95 +1131,19 @@ button{
 </header>
 
 
+<!-- ================= HERO ================= -->
 
-<!-- =================================================
-     MOBILE MENU
-================================================= -->
+<main id="home">
 
-<div
-class="mobile-nav"
-id="mobileNav">
-
-    <div class="mobile-nav-content">
-
-        <a href="#about">
-            عن المكتب
-        </a>
-
-        <a href="#services">
-            خدماتنا
-        </a>
-
-        <a href="#practice">
-            مجالات العمل
-        </a>
-
-        <a href="#process">
-            منهجيتنا
-        </a>
-
-        <a href="#contact">
-            تواصل معنا
-        </a>
-
-    </div>
-
-</div>
-
-
-
-<!-- =================================================
-     HERO
-================================================= -->
-
-<section
-class="hero"
-id="home">
-
-
-    <div class="hero-background"></div>
-
-    <div class="hero-grid"></div>
-
-    <div class="hero-light"></div>
-
-
+<section class="hero">
 
     <div class="hero-container">
 
+        <div class="hero-content">
 
-        <!-- LOGO -->
+            <div class="eyebrow">
 
-        <div
-        class="hero-logo-stage reveal">
-
-
-            <div class="logo-ring"></div>
-
-            <div class="logo-ring-2"></div>
-
-            <div class="logo-halo"></div>
-
-
-            <img
-            class="hero-logo"
-            src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/IMG_20260102_034847.png"
-            alt="شعار روينا عبدالفتاح رحالي">
-
-
-            <div class="logo-shine"></div>
-
-        </div>
-
-
-
-        <!-- TEXT -->
-
-        <div
-        class="hero-content reveal">
-
-
-            <div class="hero-eyebrow">
+                <span></span>
 
                 مكتب محاماة واستشارات قانونية
 
@@ -3214,10 +1153,8 @@ id="home">
             <h1 class="hero-title">
 
                 قانون واضح.
-
-                <br>
-
-                <span>
+                
+                <span class="gold">
                     موقف أقوى.
                 </span>
 
@@ -3226,82 +1163,97 @@ id="home">
 
             <p class="hero-description">
 
-                نقرأ قضيتك بعمق، ونحوّل التعقيد القانوني
-                إلى خطوات عملية تحمي حقوقك وتخدم قرارك.
+                نقرأ قضيتك بعمق، ونحوّل التعقيد القانوني إلى خطوات عملية
+                تحمي حقوقك وتدعم قرارك بثقة ووضوح.
 
             </p>
 
 
-
-            <div class="hero-buttons">
-
+            <div class="hero-actions">
 
                 <a
-                href="#contact"
-                class="button button-gold">
-
+                    href="https://wa.me/966544270651"
+                    class="btn btn-gold"
+                    target="_blank"
+                >
                     احجز استشارتك
-
-                    <span>
-                        ←
-                    </span>
-
+                    <span>←</span>
                 </a>
 
 
                 <a
-                href="#about"
-                class="button button-outline">
-
+                    href="#about"
+                    class="btn btn-outline"
+                >
                     تعرّف على المكتب
-
                 </a>
 
             </div>
 
 
+            <div class="trust-row">
 
-            <div class="hero-info">
+                <div class="trust-item">
 
-
-                <div class="hero-info-item">
-
-                    <strong>
+                    <div class="trust-title">
                         وضوح
-                    </strong>
+                    </div>
 
-                    <span>
+                    <div class="trust-text">
                         في كل توصية
-                    </span>
+                    </div>
 
                 </div>
 
 
-                <div class="hero-info-item">
+                <div class="trust-item">
 
-                    <strong>
+                    <div class="trust-title">
                         دقة
-                    </strong>
+                    </div>
 
-                    <span>
-                        في كل وثيقة
-                    </span>
+                    <div class="trust-text">
+                        في كل قضية
+                    </div>
 
                 </div>
 
 
-                <div class="hero-info-item">
+                <div class="trust-item">
 
-                    <strong>
+                    <div class="trust-title">
                         سرية
-                    </strong>
+                    </div>
 
-                    <span>
+                    <div class="trust-text">
                         في كل ملف
-                    </span>
+                    </div>
 
                 </div>
 
+            </div>
+
+        </div>
+
+
+        <!-- LOGO VISUAL -->
+
+        <div class="hero-visual">
+
+            <div class="orbit"></div>
+
+            <div class="orbit orbit-2"></div>
+
+            <div class="light-beam"></div>
+
+            <div class="logo-stage">
+
+                <img
+                    class="hero-logo"
+                    src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.png"
+                    alt="شعار مكتب روينا عبدالفتاح رحالي"
+                    onerror="this.style.display='none';"
+                >
 
             </div>
 
@@ -3312,459 +1264,139 @@ id="home">
 </section>
 
 
+<!-- ================= SERVICES ================= -->
 
-<!-- =================================================
-     ABOUT
-================================================= -->
+<section class="section" id="services">
 
-<section
-class="about"
-id="about">
+    <div class="section-container">
 
-    <div class="about-grid container">
+        <div class="section-heading">
 
-
-        <div class="side-number">
-            01
-        </div>
-
-
-        <div class="reveal">
-
-            <div class="eyebrow">
-                عن المكتب
+            <div class="section-label">
+                مجالات العمل
             </div>
 
             <h2 class="section-title">
-
-                الخبرة التي
-
-                <br>
-
-                <span>
-                    تقرأ التفاصيل.
-                </span>
-
+                حلول قانونية مصممة<br>
+                لحماية مصالحك.
             </h2>
 
-        </div>
-
-
-        <div
-        class="about-text reveal">
-
-            <p>
-
-                في مكتب روينا عبدالفتاح رحالي للمحاماة
-                والاستشارات القانونية والتوثيق، نؤمن بأن
-                أفضل الحلول تبدأ بفهم دقيق للوقائع.
-
-            </p>
-
-            <p>
-
-                نقدّم رأيًا قانونيًا واضحًا، وصياغة دقيقة،
-                وتمثيلًا مهنيًا يضع مصلحتك في مقدمة كل خطوة.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =================================================
-     SERVICES
-================================================= -->
-
-<section
-class="services"
-id="services">
-
-    <div class="container">
-
-
-        <div class="section-heading reveal">
-
-
-            <div>
-
-                <div class="eyebrow">
-                    خدماتنا
-                </div>
-
-                <h2 class="section-title">
-
-                    حلول قانونية
-
-                    <br>
-
-                    <span>
-                        تخدم قرارك.
-                    </span>
-
-                </h2>
-
-            </div>
-
-
             <p class="section-description">
-
-                من الاستشارة الأولى إلى إتمام الإجراء،
-                نرافقك بمنهج عملي ولغة مفهومة،
-                مع عناية دقيقة بتفاصيل كل ملف.
-
+                نقدم خدمات قانونية متخصصة للأفراد والمنشآت،
+                مع التركيز على فهم المشكلة وبناء الحل القانوني المناسب.
             </p>
 
         </div>
 
 
+        <div class="services-grid">
 
-        <div class="service-list">
+            <div class="service">
 
-
-            <a
-            href="#contact"
-            class="service reveal">
-
-                <span class="service-number">
+                <div class="service-number">
                     01
-                </span>
-
-                <span class="service-icon">
-                    §
-                </span>
+                </div>
 
                 <h3>
                     الاستشارات القانونية
                 </h3>
 
                 <p>
-                    تقييم موقفك وتقديم الرأي القانوني
-                    الذي يساعدك على اختيار الخطوة المناسبة.
+                    تحليل قانوني واضح للمشكلة وتقديم الخيارات
+                    والحلول المناسبة قبل اتخاذ القرار.
                 </p>
 
-                <span class="service-arrow">
-                    ↗
-                </span>
-
-            </a>
+            </div>
 
 
+            <div class="service">
 
-            <a
-            href="#contact"
-            class="service reveal">
-
-                <span class="service-number">
+                <div class="service-number">
                     02
-                </span>
-
-                <span class="service-icon">
-                    ◌
-                </span>
-
-                <h3>
-                    صياغة ومراجعة العقود
-                </h3>
-
-                <p>
-                    عقود واضحة ومتوازنة تحفظ الحقوق
-                    وتحدد الالتزامات بدقة.
-                </p>
-
-                <span class="service-arrow">
-                    ↗
-                </span>
-
-            </a>
-
-
-
-            <a
-            href="#contact"
-            class="service reveal">
-
-                <span class="service-number">
-                    03
-                </span>
-
-                <span class="service-icon">
-                    ⚖
-                </span>
+                </div>
 
                 <h3>
                     الترافع والتمثيل
                 </h3>
 
                 <p>
-                    متابعة مهنية وتمثيل قانوني قائم
-                    على الاستعداد وفهم تفاصيل الملف.
+                    تمثيل قانوني ومتابعة الإجراءات والدفاع
+                    عن الحقوق والمصالح أمام الجهات المختصة.
                 </p>
 
-                <span class="service-arrow">
-                    ↗
-                </span>
-
-            </a>
+            </div>
 
 
+            <div class="service">
 
-            <a
-            href="#contact"
-            class="service reveal">
-
-                <span class="service-number">
-                    04
-                </span>
-
-                <span class="service-icon">
-                    □
-                </span>
+                <div class="service-number">
+                    03
+                </div>
 
                 <h3>
-                    التوثيق والأعمال التجارية
+                    صياغة العقود
                 </h3>
 
                 <p>
-                    خدمات قانونية عملية للأفراد
-                    والمنشآت والمعاملات التجارية.
+                    إعداد ومراجعة العقود والاتفاقيات بصورة
+                    قانونية دقيقة تقلل المخاطر المستقبلية.
                 </p>
 
-                <span class="service-arrow">
-                    ↗
-                </span>
-
-            </a>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =================================================
-     FEATURE
-================================================= -->
-
-<section class="feature">
-
-
-    <div class="feature-image"></div>
-
-
-    <div
-    class="feature-content reveal">
-
-
-        <div class="eyebrow">
-            منهجنا
-        </div>
-
-
-        <div class="feature-quote">
-
-            «القانون لا يكتفي بأن يكون صحيحًا؛
-
-            <br>
-
-            <span>
-                يجب أن يكون مفهومًا لمن يحتمي به.
-            </span>
-
-        </div>
-
-
-        <div class="gold-line"></div>
-
-
-        <p class="feature-description">
-
-            نختصر عليك المسافة بين السؤال والقرار.
-            نوضح الاحتمالات، نرتب الأولويات،
-            ونبقيك على اطلاع بما يهم في كل مرحلة.
-
-        </p>
-
-
-        <div class="feature-points">
-
-
-            <div>
-
-                <strong>
-                    وضوح
-                </strong>
-
-                <span>
-                    في كل توصية
-                </span>
-
             </div>
 
 
-            <div>
+            <div class="service">
 
-                <strong>
-                    دقة
-                </strong>
+                <div class="service-number">
+                    04
+                </div>
 
-                <span>
-                    في كل وثيقة
-                </span>
-
-            </div>
-
-
-            <div>
-
-                <strong>
-                    سرية
-                </strong>
-
-                <span>
-                    في كل ملف
-                </span>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =================================================
-     PRACTICE
-================================================= -->
-
-<section
-class="practice"
-id="practice">
-
-    <div class="practice-grid container">
-
-
-        <div class="reveal">
-
-            <div class="eyebrow">
-                مجالات العمل
-            </div>
-
-
-            <h2 class="practice-title">
-
-                فهم أوسع
-
-                <br>
-
-                <span>
-                    لقضيتك.
-                </span>
-
-            </h2>
-
-
-            <p class="practice-description">
-
-                نخدم الأفراد والمنشآت في مجالات قانونية
-                متعددة، مع عناية خاصة بطبيعة كل موقف وأثره.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="practice-list reveal">
-
-
-            <a href="#contact" class="practice-item">
-
-                <span>01</span>
-
-                <strong>
+                <h3>
                     القضايا التجارية
-                </strong>
+                </h3>
 
-                <i>↗</i>
+                <p>
+                    حلول قانونية للنزاعات والمعاملات التجارية
+                    ومتابعة القضايا ذات الطبيعة التجارية.
+                </p>
 
-            </a>
-
-
-            <a href="#contact" class="practice-item">
-
-                <span>02</span>
-
-                <strong>
-                    الأحوال الشخصية
-                </strong>
-
-                <i>↗</i>
-
-            </a>
+            </div>
 
 
-            <a href="#contact" class="practice-item">
+            <div class="service">
 
-                <span>03</span>
+                <div class="service-number">
+                    05
+                </div>
 
-                <strong>
+                <h3>
                     القضايا العمالية
-                </strong>
+                </h3>
 
-                <i>↗</i>
+                <p>
+                    معالجة النزاعات العمالية وحفظ الحقوق
+                    وفق الأنظمة والإجراءات المعمول بها.
+                </p>
 
-            </a>
-
-
-            <a href="#contact" class="practice-item">
-
-                <span>04</span>
-
-                <strong>
-                    القضايا الجنائية
-                </strong>
-
-                <i>↗</i>
-
-            </a>
+            </div>
 
 
-            <a href="#contact" class="practice-item">
+            <div class="service">
 
-                <span>05</span>
+                <div class="service-number">
+                    06
+                </div>
 
-                <strong>
-                    التوثيق والعقود
-                </strong>
+                <h3>
+                    التوثيق والخدمات القانونية
+                </h3>
 
-                <i>↗</i>
+                <p>
+                    خدمات قانونية وتوثيقية تساعد الأفراد
+                    والمنشآت على إنجاز معاملاتهم بثقة.
+                </p>
 
-            </a>
-
-
-            <a href="#contact" class="practice-item">
-
-                <span>06</span>
-
-                <strong>
-                    المنازعات العقارية
-                </strong>
-
-                <i>↗</i>
-
-            </a>
-
+            </div>
 
         </div>
 
@@ -3773,106 +1405,84 @@ id="practice">
 </section>
 
 
+<!-- ================= ABOUT ================= -->
 
-<!-- =================================================
-     PROCESS
-================================================= -->
+<section class="section" id="about">
 
-<section
-class="process"
-id="process">
+    <div class="section-container">
 
-    <div class="container">
+        <div class="about">
 
+            <div class="about-card">
 
-        <div class="reveal">
+                <div class="about-symbol">
+                    R
+                </div>
 
-            <div class="eyebrow">
-                منهجية العمل
+                <h3>
+                    روينا عبدالفتاح رحالي
+                </h3>
+
+                <p style="color:#8b9b94;margin-top:10px;font-size:12px;">
+                    للمحاماة والاستشارات القانونية
+                </p>
+
             </div>
 
+
+            <div class="about-text">
+
+                <div class="section-label">
+                    عن المكتب
+                </div>
+
+                <h2>
+                    القانون ليس تعقيدًا...
+                    بل طريق واضح للوصول إلى حقك.
+                </h2>
+
+                <p>
+                    نؤمن أن العمل القانوني الاحترافي يبدأ بالاستماع
+                    والفهم الدقيق للوقائع، ثم تحويلها إلى رؤية قانونية
+                    واضحة تساعد العميل على اتخاذ القرار المناسب.
+                </p>
+
+                <p>
+                    هدفنا تقديم خدمة قانونية تجمع بين الدقة،
+                    السرية، والوضوح، مع الاهتمام الحقيقي بتفاصيل
+                    كل قضية وكل عميل.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= METHOD ================= -->
+
+<section class="section" id="method">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                منهجيتنا
+            </div>
 
             <h2 class="section-title">
-
-                من السؤال
-
-                <br>
-
-                <span>
-                    إلى القرار.
-                </span>
-
+                نفهم أولًا.<br>
+                ثم نبني الحل.
             </h2>
 
-        </div>
-
-
-
-        <div class="process-grid">
-
-
-            <div class="process-item reveal">
-
-                <div class="process-number">
-                    01 — الاستماع
-                </div>
-
-                <h3>
-                    نفهم موقفك
-                </h3>
-
-                <p>
-
-                    نبدأ بالاستماع إلى الوقائع
-                    وفهم تفاصيل الموضوع قبل
-                    اتخاذ أي موقف قانوني.
-
-                </p>
-
-            </div>
-
-
-            <div class="process-item reveal">
-
-                <div class="process-number">
-                    02 — التحليل
-                </div>
-
-                <h3>
-                    نحلل الخيارات
-                </h3>
-
-                <p>
-
-                    نراجع المستندات والوقائع
-                    ونحدد المسارات القانونية
-                    الممكنة بصورة واضحة.
-
-                </p>
-
-            </div>
-
-
-            <div class="process-item reveal">
-
-                <div class="process-number">
-                    03 — التنفيذ
-                </div>
-
-                <h3>
-                    نتحرك معك
-                </h3>
-
-                <p>
-
-                    ننتقل إلى الإجراء المناسب
-                    مع متابعة الملف وإطلاعك
-                    على المستجدات المهمة.
-
-                </p>
-
-            </div>
-
+            <p class="section-description">
+                نعمل وفق منهجية واضحة تبدأ بفهم التفاصيل
+                وتنتهي بتوصية قانونية عملية ومدروسة.
+            </p>
 
         </div>
 
@@ -3881,333 +1491,98 @@ id="process">
 </section>
 
 
+<!-- ================= CONTACT ================= -->
 
-<!-- =================================================
-     CTA
-================================================= -->
+<section class="section" id="contact">
 
-<section class="cta">
+    <div class="section-container">
 
-    <div class="cta-inner container reveal">
+        <div class="contact-box">
 
+            <div>
 
-        <div>
+                <div class="section-label">
+                    تواصل معنا
+                </div>
 
-            <h2>
+                <h2>
+                    لديك مسألة قانونية؟
+                </h2>
 
-                قضيتك تستحق
+                <p>
+                    ابدأ بخطوة واضحة، وتواصل معنا لمناقشة احتياجك.
+                </p>
 
-                <br>
-
-                <span>
-                    رؤية قانونية واضحة.
-                </span>
-
-            </h2>
-
-
-            <p>
-                ابدأ بخطوة بسيطة وتحدث معنا عن موضوعك.
-            </p>
-
-        </div>
-
-
-        <a
-        href="#contact"
-        class="cta-button">
-
-            اطلب استشارتك
-
-            ←
-
-        </a>
-
-    </div>
-
-</section>
-
-
-
-<!-- =================================================
-     CONTACT
-================================================= -->
-
-<section
-class="contact"
-id="contact">
-
-    <div class="contact-grid container">
-
-
-        <div class="reveal">
-
-
-            <div class="eyebrow">
-                تواصل معنا
             </div>
 
 
-            <h2 class="contact-title">
+            <div class="contact-actions">
 
-                خطوتك القادمة
-
-                <br>
-
-                <span>
-                    تبدأ من هنا.
-                </span>
-
-            </h2>
-
-
-            <p class="contact-description">
-
-                اترك بياناتك وسنتواصل معك لتحديد
-                موعد مناسب والاستماع إلى موضوعك.
-
-            </p>
-
-
-
-            <div class="contact-data">
-
-
-                <a href="tel:+966544270651">
-
-                    <span class="contact-icon">
-                        ☎
-                    </span>
-
-                    <span
-                    class="contact-phone"
-                    dir="ltr">
-                        054 427 0651
-                    </span>
-
+                <a
+                    href="https://wa.me/966544270651"
+                    target="_blank"
+                    class="btn btn-gold"
+                >
+                    تواصل عبر واتساب
                 </a>
 
-
-                <div>
-
-                    <span class="contact-icon">
-                        ⌖
-                    </span>
-
-                    أبحر الشمالية – شارع الأمير عبدالمجيد، جدة
-
-                </div>
-
-
-                <div>
-
-                    <span class="contact-icon">
-                        ◷
-                    </span>
-
-                    الأحد – الخميس · 9:00 صباحًا – 5:00 مساءً
-
-                </div>
-
+                <a
+                    href="tel:+966544270651"
+                    class="btn btn-outline"
+                >
+                    اتصل بنا
+                </a>
 
             </div>
 
         </div>
 
-
-
-        <form
-        class="contact-form reveal"
-        id="contactForm">
-
-
-            <div class="form-group">
-
-                <label>
-                    الاسم الكامل
-                </label>
-
-                <input
-                id="name"
-                type="text"
-                required
-                placeholder="اكتب اسمك الكامل">
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    رقم الجوال
-                </label>
-
-                <input
-                id="phone"
-                type="tel"
-                required
-                placeholder="05X XXX XXXX">
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    نوع الاستشارة
-                </label>
-
-                <input
-                id="service"
-                type="text"
-                placeholder="مثال: قضية عمالية / تجارية / عقد">
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    نبذة عن الموضوع
-                </label>
-
-                <textarea
-                id="message"
-                placeholder="اكتب نبذة مختصرة عن موضوعك"></textarea>
-
-            </div>
-
-
-            <button
-            type="submit"
-            class="submit-button">
-
-                إرسال الطلب عبر واتساب ←
-
-            </button>
-
-
-            <p class="form-note">
-
-                تحفظ بياناتك بسرية تامة وتستخدم للتواصل معك
-                بخصوص طلبك فقط.
-
-            </p>
-
-        </form>
-
     </div>
 
 </section>
 
+</main>
 
 
-<!-- =================================================
-     FOOTER
-================================================= -->
+<!-- ================= WHATSAPP ================= -->
+
+<a
+    href="https://wa.me/966544270651"
+    target="_blank"
+    class="whatsapp"
+    aria-label="تواصل عبر واتساب"
+>
+
+<svg viewBox="0 0 24 24" fill="none">
+
+    <path
+        d="M20.5 11.5a8.5 8.5 0 0 1-12.7 7.4L3 20l1.2-4.5A8.5 8.5 0 1 1 20.5 11.5Z"
+        stroke="currentColor"
+        stroke-width="1.7"
+    />
+
+    <path
+        d="M8.7 8.2c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.6.7c.7 1.2 1.6 2 2.8 2.6l.6-.7c.2-.2.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .3 0 .5-.4.7-.5.3-1.1.5-1.7.3-1.6-.4-3.2-1.4-4.5-2.7-1.3-1.3-2.3-2.9-2.7-4.5-.2-.6 0-1.2.3-1.7Z"
+        fill="currentColor"
+    />
+
+</svg>
+
+</a>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer class="footer">
 
-    <div class="container">
+    <div class="footer-inner">
 
+        <p>
+            © 2026 روينا عبدالفتاح رحالي — جميع الحقوق محفوظة
+        </p>
 
-        <div class="footer-grid">
-
-
-            <div class="footer-brand">
-
-                <img
-                class="footer-logo"
-                src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/IMG_20260102_034847.png"
-                alt="شعار روينا عبدالفتاح رحالي">
-
-                <div>
-
-                    <strong>
-                        روينا عبدالفتاح رحالي
-                    </strong>
-
-                    <small>
-                        للمحاماة والاستشارات القانونية والتوثيق
-                    </small>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="footer-column">
-
-                <h4>
-                    روابط سريعة
-                </h4>
-
-                <a href="#about">
-                    عن المكتب
-                </a>
-
-                <a href="#services">
-                    خدماتنا
-                </a>
-
-                <a href="#practice">
-                    مجالات العمل
-                </a>
-
-                <a href="#contact">
-                    تواصل معنا
-                </a>
-
-            </div>
-
-
-
-            <div class="footer-column">
-
-                <h4>
-                    تواصل معنا
-                </h4>
-
-                <a
-                href="tel:+966544270651"
-                dir="ltr">
-
-                    054 427 0651
-
-                </a>
-
-                <a
-                href="https://wa.me/966544270651"
-                target="_blank">
-
-                    واتساب
-
-                </a>
-
-                <a href="#contact">
-
-                    طلب استشارة
-
-                </a>
-
-            </div>
-
-
-        </div>
-
-
-
-        <div class="footer-bottom">
-
-            <span>
-                © 2026 مكتب روينا عبدالفتاح رحالي. جميع الحقوق محفوظة.
-            </span>
-
-            <span>
-                للمحاماة والاستشارات القانونية والتوثيق
-            </span>
-
+        <div class="footer-phone">
+            054 427 0651
         </div>
 
     </div>
@@ -4215,146 +1590,64 @@ id="contact">
 </footer>
 
 
-
-<!-- =================================================
-     WHATSAPP
-================================================= -->
-
-<a
-class="whatsapp"
-href="https://wa.me/966544270651"
-target="_blank"
-aria-label="التواصل عبر واتساب">
-
-<svg
-viewBox="0 0 24 24"
-fill="currentColor">
-
-<path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.5 0 .18 5.32.18 11.86c0 2.09.55 4.13 1.59 5.93L.1 24l6.36-1.66a11.8 11.8 0 0 0 5.58 1.42h.01c6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.24-6.15-3.39-8.42ZM12.05 21.8h-.01a9.84 9.84 0 0 1-5.01-1.37l-.36-.21-3.77.99 1.01-3.67-.23-.38a9.82 9.82 0 0 1-1.51-5.3C2.17 6.43 6.6 2 12.05 2a9.81 9.81 0 0 1 6.97 2.89 9.82 9.82 0 0 1 2.89 6.97c0 5.45-4.43 9.94-9.86 9.94Zm5.42-7.43c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.67-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.11 3.22 5.12 4.52.72.31 1.28.49 1.72.63.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
-
-</svg>
-
-</a>
-
-
-
 <script>
 
-/* =====================================================
-   PRELOADER
-===================================================== */
-
-window.addEventListener(
-    "load",
-    function(){
-
-        setTimeout(
-            function(){
-
-                document
-                .getElementById("preloader")
-                .classList.add("hide");
-
-            },
-            700
-        );
-
-    }
-);
-
-
-/* =====================================================
-   HEADER
-===================================================== */
-
-const header =
-document.getElementById("header");
-
-window.addEventListener(
-    "scroll",
-    function(){
-
-        if(window.scrollY > 60){
-
-            header.classList.add("scrolled");
-
-        }else{
-
-            header.classList.remove("scrolled");
-
-        }
-
-    }
-);
-
-
-/* =====================================================
+/* =========================
    MOBILE MENU
-===================================================== */
+========================= */
 
-const mobileButton =
-document.getElementById("mobileButton");
+const menuBtn = document.getElementById("menuBtn");
+const nav = document.getElementById("nav");
 
-const mobileNav =
-document.getElementById("mobileNav");
+menuBtn.addEventListener("click", () => {
 
+    nav.classList.toggle("active");
 
-mobileButton.addEventListener(
-    "click",
-    function(){
+    menuBtn.textContent =
+        nav.classList.contains("active")
+        ? "×"
+        : "☰";
 
-        mobileNav.classList.toggle("active");
-
-        document.body.classList.toggle("menu-open");
-
-    }
-);
+});
 
 
-document
-.querySelectorAll(".mobile-nav a")
-.forEach(
-    function(link){
+/* CLOSE MENU AFTER CLICK */
 
-        link.addEventListener(
-            "click",
-            function(){
+document.querySelectorAll(".nav a").forEach(link => {
 
-                mobileNav.classList.remove("active");
+    link.addEventListener("click", () => {
 
-                document.body.classList.remove("menu-open");
+        nav.classList.remove("active");
 
-            }
-        );
+        menuBtn.textContent = "☰";
 
-    }
-);
+    });
+
+});
 
 
-/* =====================================================
+/* =========================
    SCROLL REVEAL
-===================================================== */
+========================= */
 
-const revealObserver =
-new IntersectionObserver(
+const revealElements = document.querySelectorAll(
+    ".service,.about-card,.about-text,.contact-box,.section-heading"
+);
 
-    function(entries){
+const observer = new IntersectionObserver(
 
-        entries.forEach(
-            function(entry){
+    entries => {
 
-                if(entry.isIntersecting){
+        entries.forEach(entry => {
 
-                    entry.target.classList.add("visible");
+            if(entry.isIntersecting){
 
-                    revealObserver.unobserve(
-                        entry.target
-                    );
-
-                }
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
 
             }
-        );
+
+        });
 
     },
 
@@ -4365,126 +1658,38 @@ new IntersectionObserver(
 );
 
 
-document
-.querySelectorAll(".reveal")
-.forEach(
-    function(element){
+revealElements.forEach(el => {
 
-        revealObserver.observe(element);
+    el.style.opacity = "0";
+    el.style.transform = "translateY(25px)";
+    el.style.transition = "opacity .8s ease, transform .8s ease";
 
-    }
-);
+    observer.observe(el);
 
-
-/* =====================================================
-   CONTACT FORM
-===================================================== */
-
-document
-.getElementById("contactForm")
-.addEventListener(
-    "submit",
-    function(event){
-
-        event.preventDefault();
+});
 
 
-        const name =
-        document
-        .getElementById("name")
-        .value
-        .trim();
+/* =========================
+   HEADER SCROLL
+========================= */
 
+window.addEventListener("scroll", () => {
 
-        const phone =
-        document
-        .getElementById("phone")
-        .value
-        .trim();
+    const header = document.querySelector(".header");
 
+    if(window.scrollY > 30){
 
-        const service =
-        document
-        .getElementById("service")
-        .value
-        .trim();
+        header.style.background = "rgba(2,20,14,.94)";
 
+    }else{
 
-        const message =
-        document
-        .getElementById("message")
-        .value
-        .trim();
-
-
-        const text =
-
-`السلام عليكم،
-
-أرغب في طلب استشارة قانونية.
-
-الاسم: ${name}
-
-رقم الجوال: ${phone}
-
-نوع الاستشارة: ${service || "غير محدد"}
-
-تفاصيل الموضوع:
-${message || "لم يتم إضافة تفاصيل"}`;
-
-
-        const whatsappURL =
-        "https://wa.me/966544270651?text="
-        +
-        encodeURIComponent(text);
-
-
-        window.open(
-            whatsappURL,
-            "_blank"
-        );
+        header.style.background = "rgba(2,20,14,.78)";
 
     }
-);
 
-
-/* =====================================================
-   SMOOTH SCROLL
-===================================================== */
-
-document
-.querySelectorAll('a[href^="#"]')
-.forEach(
-    function(link){
-
-        link.addEventListener(
-            "click",
-            function(event){
-
-                const target =
-                document.querySelector(
-                    this.getAttribute("href")
-                );
-
-                if(target){
-
-                    event.preventDefault();
-
-                    target.scrollIntoView({
-                        behavior:"smooth",
-                        block:"start"
-                    });
-
-                }
-
-            }
-        );
-
-    }
-);
+});
 
 </script>
-
 
 </body>
 </html>
