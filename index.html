@@ -4,1362 +4,1087 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>روينا عبدالفتاح رحالي | المحاماة والاستشارات القانونية</title>
+<title>روينا عبدالفتاح رحالي | للمحاماة والاستشارات القانونية</title>
 
-<meta name="description" content="روينا عبدالفتاح رحالي للمحاماة والاستشارات القانونية. خدمات قانونية متخصصة وحلول قانونية واضحة وموثوقة.">
+<meta name="description" content="روينا عبدالفتاح رحالي للمحاماة والاستشارات القانونية. حلول قانونية واضحة ودقيقة لحماية حقوقك ومصالحك.">
+<meta name="theme-color" content="#0e2419">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
-/* =========================================================
-   VARIABLES
-========================================================= */
-
-:root {
-    --bg: #0d2419;
-    --bg-dark: #091b14;
-    --bg-card: #10291d;
-
-    --gold: #d9ad4f;
-    --gold-light: #f0cf7b;
-    --gold-dark: #9c772d;
-
-    --white: #f7f7f3;
-    --text: #d9ded9;
-    --muted: #8d9a93;
-
-    --border: rgba(217,173,79,.24);
-
-    --container: 1180px;
-
-    --shadow:
-        0 25px 70px rgba(0,0,0,.28);
-
-    --gold-shadow:
-        0 0 45px rgba(217,173,79,.13);
+:root{
+    --bg:#0e2419;
+    --bg-dark:#091b13;
+    --bg-card:#11291d;
+    --gold:#d7ad54;
+    --gold-light:#efd078;
+    --white:#f7f7f2;
+    --muted:#aab5ad;
+    --line:rgba(215,173,84,.20);
+    --line-light:rgba(255,255,255,.07);
+    --shadow:0 25px 70px rgba(0,0,0,.25);
 }
 
-/* =========================================================
-   RESET
-========================================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    font-family: "Cairo", sans-serif;
-    background: var(--bg);
-    color: var(--white);
-    overflow-x: hidden;
-    line-height: 1.65;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-button {
-    font-family: inherit;
-}
-
-/* =========================================================
-   BACKGROUND
-========================================================= */
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -3;
-
+body{
+    font-family:"Cairo",sans-serif;
     background:
-        linear-gradient(
-            rgba(13,36,25,.97),
-            rgba(13,36,25,.97)
-        ),
-        repeating-linear-gradient(
-            90deg,
-            transparent 0,
-            transparent 79px,
-            rgba(255,255,255,.018) 80px
-        ),
-        repeating-linear-gradient(
-            0deg,
-            transparent 0,
-            transparent 79px,
-            rgba(255,255,255,.018) 80px
-        );
-
-    pointer-events: none;
+        radial-gradient(circle at 80% 20%,rgba(215,173,84,.045),transparent 28%),
+        radial-gradient(circle at 15% 70%,rgba(215,173,84,.035),transparent 25%),
+        var(--bg);
+    color:var(--white);
+    overflow-x:hidden;
 }
 
-body::after {
-    content: "";
-    position: fixed;
-    width: 600px;
-    height: 600px;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/* =========================
+   BACKGROUND GRID
+========================= */
 
-    background: radial-gradient(
-        circle,
-        rgba(217,173,79,.035),
-        transparent 65%
-    );
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
 
-    z-index: -2;
-    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+
+    background-size:75px 75px;
+    mask-image:linear-gradient(to bottom,black,transparent 90%);
 }
 
-/* =========================================================
+/* =========================
    GENERAL
-========================================================= */
+========================= */
 
-.container {
-    width: min(var(--container), calc(100% - 48px));
-    margin-inline: auto;
+.container{
+    width:min(1180px,92%);
+    margin:auto;
 }
 
-section {
-    position: relative;
+section{
+    padding:75px 0;
 }
 
-.section {
-    padding: 72px 0;
+.section-head{
+    max-width:720px;
+    margin:0 auto 42px;
+    text-align:center;
 }
 
-.section-label {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-
-    color: var(--gold-light);
-
-    font-size: 13px;
-    font-weight: 700;
-
-    margin-bottom: 12px;
+.section-label{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    color:var(--gold-light);
+    font-size:14px;
+    font-weight:700;
+    margin-bottom:10px;
 }
 
-.section-label::before {
-    content: "";
-    width: 42px;
-    height: 1px;
-    background: var(--gold);
+.section-label::before,
+.section-label::after{
+    content:"";
+    width:35px;
+    height:1px;
+    background:var(--gold);
+    opacity:.65;
 }
 
-.section-title {
-    font-size: clamp(28px, 3.4vw, 48px);
-    line-height: 1.25;
-    font-weight: 800;
-    margin-bottom: 12px;
+.section-head h2{
+    font-size:clamp(28px,4vw,44px);
+    line-height:1.25;
+    margin-bottom:10px;
 }
 
-.section-title span {
-    color: var(--gold-light);
+.section-head p{
+    color:var(--muted);
+    line-height:1.9;
+    font-size:15px;
 }
 
-.section-text {
-    color: var(--muted);
-    font-size: 14px;
-    line-height: 1.9;
-    max-width: 680px;
-}
-
-/* =========================================================
+/* =========================
    HEADER
-========================================================= */
+========================= */
 
-.header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
 
-    height: 82px;
+    background:rgba(9,27,19,.88);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
 
-    z-index: 1000;
-
-    background: rgba(9,27,20,.82);
-
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-
-    border-bottom: 1px solid rgba(217,173,79,.12);
+    border-bottom:1px solid rgba(215,173,84,.12);
 }
 
-.header-inner {
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 30px;
+.navbar{
+    min-height:88px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
 }
 
-/* Logo */
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    min-width: 220px;
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    color:white;
 }
 
-.brand-logo {
-    width: 48px;
-    height: 48px;
-
-    object-fit: contain;
-
-    border-radius: 8px;
-
-    transition: .4s ease;
-
-    filter:
-        drop-shadow(0 0 12px rgba(217,173,79,.10));
+.brand-logo{
+    width:48px;
+    height:48px;
+    border-radius:10px;
+    object-fit:cover;
+    background:var(--bg);
+    border:1px solid rgba(215,173,84,.18);
 }
 
-.brand:hover .brand-logo {
-    transform: translateY(-2px) scale(1.03);
-
-    filter:
-        drop-shadow(0 0 18px rgba(217,173,79,.25));
+.brand-text strong{
+    display:block;
+    font-size:17px;
+    font-weight:800;
+    line-height:1.2;
 }
 
-.brand-text strong {
-    display: block;
-
-    font-size: 16px;
-    line-height: 1.3;
-
-    color: var(--white);
+.brand-text span{
+    display:block;
+    color:var(--gold-light);
+    font-size:10px;
+    margin-top:4px;
 }
 
-.brand-text small {
-    display: block;
-
-    color: var(--gold-light);
-
-    font-size: 9px;
-
-    margin-top: 2px;
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:27px;
 }
 
-/* Navigation */
-
-.nav {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+.nav-links a{
+    position:relative;
+    color:#d5ddd7;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    transition:.25s;
 }
 
-.nav a {
-    position: relative;
-
-    color: #cbd2cd;
-
-    font-size: 13px;
-    font-weight: 600;
-
-    transition: .3s ease;
+.nav-links a:hover{
+    color:var(--gold-light);
 }
 
-.nav a::after {
-    content: "";
-
-    position: absolute;
-
-    right: 0;
-    bottom: -8px;
-
-    width: 0;
-    height: 1px;
-
-    background: var(--gold);
-
-    transition: .3s ease;
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    right:0;
+    bottom:-8px;
+    width:0;
+    height:1px;
+    background:var(--gold);
+    transition:.3s;
 }
 
-.nav a:hover {
-    color: var(--gold-light);
+.nav-links a:hover::after{
+    width:100%;
 }
 
-.nav a:hover::after {
-    width: 100%;
+/* CALL BOX */
+
+.call-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding:9px 13px;
+    border:1px solid rgba(215,173,84,.28);
+    background:rgba(215,173,84,.045);
+    border-radius:10px;
+
+    color:white;
+    text-decoration:none;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+    transition:.3s;
 }
 
-/* Phone */
-
-.header-phone {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    padding-right: 20px;
-
-    border-right: 1px solid rgba(255,255,255,.12);
-
-    color: var(--gold-light);
-
-    transition: .3s ease;
+.call-box:hover{
+    transform:translateY(-2px);
+    border-color:var(--gold);
+    background:rgba(215,173,84,.09);
+    box-shadow:0 10px 30px rgba(215,173,84,.08);
 }
 
-.header-phone:hover {
-    color: white;
+.call-icon{
+    width:34px;
+    height:34px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:8px;
+    background:var(--gold);
+    color:#112419;
+
+    font-size:17px;
 }
 
-.header-phone small {
-    display: block;
-
-    color: var(--muted);
-
-    font-size: 9px;
-
-    margin-bottom: 1px;
+.call-info small{
+    display:block;
+    color:#929e96;
+    font-size:9px;
+    margin-bottom:2px;
 }
 
-.header-phone strong {
-    font-size: 14px;
-    direction: ltr;
-    display: block;
+.call-info strong{
+    display:block;
+    color:var(--gold-light);
+    font-size:13px;
+    direction:ltr;
+    white-space:nowrap;
 }
 
-.phone-arrow {
-    font-size: 18px;
-    color: var(--gold);
-}
-
-/* =========================================================
+/* =========================
    HERO
-========================================================= */
+========================= */
 
-.hero {
-    min-height: 100vh;
-
-    padding-top: 82px;
-
-    display: flex;
-    align-items: center;
+.hero{
+    min-height:calc(100vh - 88px);
+    display:flex;
+    align-items:center;
+    padding:55px 0 65px;
 }
 
-.hero-grid {
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1.05fr)
-        minmax(380px, .95fr);
-
-    align-items: center;
-
-    gap: 55px;
-
-    min-height: calc(100vh - 82px);
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    align-items:center;
+    gap:70px;
 }
 
-/* Hero text */
+/* HERO TEXT */
 
-.hero-content {
-    max-width: 690px;
+.hero-label{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    color:var(--gold-light);
+    font-size:14px;
+    font-weight:700;
+    margin-bottom:13px;
 }
 
-.hero-label {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-
-    color: var(--gold-light);
-
-    font-size: 14px;
-    font-weight: 700;
-
-    margin-bottom: 14px;
+.hero-label::before{
+    content:"";
+    width:45px;
+    height:1px;
+    background:var(--gold);
 }
 
-.hero-label::before {
-    content: "";
-    width: 42px;
-    height: 1px;
-
-    background: var(--gold);
+.hero h1{
+    font-size:clamp(42px,5.5vw,76px);
+    line-height:1.06;
+    letter-spacing:-2px;
+    margin-bottom:15px;
 }
 
-.hero-title {
-    font-size: clamp(42px, 5.2vw, 76px);
-
-    line-height: 1.05;
-
-    letter-spacing: -1.5px;
-
-    font-weight: 800;
-
-    margin-bottom: 18px;
+.hero h1 span{
+    color:var(--gold-light);
+    display:block;
 }
 
-.hero-title span {
-    color: var(--gold-light);
+.hero-description{
+    max-width:680px;
+    color:#adb8b1;
+    font-size:16px;
+    line-height:1.9;
+    margin-bottom:25px;
 }
 
-.hero-description {
-    color: #aeb9b2;
-
-    font-size: 15px;
-
-    line-height: 1.9;
-
-    max-width: 650px;
-
-    margin-bottom: 24px;
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
 }
 
-/* Buttons */
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
 
-.hero-buttons {
-    display: flex;
-    align-items: center;
+    min-height:53px;
+    padding:0 25px;
 
-    gap: 10px;
+    text-decoration:none;
+    font-family:inherit;
+    font-size:14px;
+    font-weight:700;
 
-    flex-wrap: wrap;
+    border-radius:2px;
+    transition:.3s;
 }
 
-.btn {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    min-height: 50px;
-
-    padding: 0 25px;
-
-    border: 1px solid var(--gold);
-
-    font-size: 13px;
-    font-weight: 700;
-
-    transition: .35s ease;
-
-    cursor: pointer;
+.btn-primary{
+    color:#101f17;
+    background:var(--gold);
+    border:1px solid var(--gold);
 }
 
-.btn-primary {
-    background: var(--gold);
-    color: #122218;
+.btn-primary:hover{
+    background:var(--gold-light);
+    transform:translateY(-3px);
+    box-shadow:0 12px 28px rgba(215,173,84,.16);
 }
 
-.btn-primary:hover {
-    background: var(--gold-light);
+.btn-outline{
+    color:white;
+    border:1px solid rgba(255,255,255,.22);
+    background:rgba(255,255,255,.02);
+}
 
-    transform: translateY(-2px);
+.btn-outline:hover{
+    border-color:var(--gold);
+    color:var(--gold-light);
+    transform:translateY(-3px);
+}
+
+/* =========================
+   LOGO VISUAL
+========================= */
+
+.hero-visual{
+    position:relative;
+    min-height:460px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.logo-stage{
+    position:relative;
+
+    width:min(410px,85%);
+    aspect-ratio:1/1;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid rgba(215,173,84,.18);
+    background:rgba(14,36,25,.42);
 
     box-shadow:
-        0 12px 30px rgba(217,173,79,.18);
-}
+        0 35px 90px rgba(0,0,0,.28),
+        inset 0 0 60px rgba(215,173,84,.025);
 
-.btn-outline {
-    color: var(--white);
-
-    border-color: rgba(255,255,255,.25);
-
-    background: rgba(255,255,255,.015);
-}
-
-.btn-outline:hover {
-    border-color: var(--gold);
-
-    color: var(--gold-light);
-
-    transform: translateY(-2px);
-}
-
-/* =========================================================
-   HERO IMAGE
-========================================================= */
-
-.hero-visual {
-    position: relative;
-
-    min-height: 470px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/*
-   الصورة المستخدمة من GitHub
-*/
-
-.logo-stage {
-    position: relative;
-
-    width: min(500px, 100%);
-    aspect-ratio: 1 / 1;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    isolation: isolate;
-}
-
-/* subtle professional glow */
-
-.logo-stage::before {
-    content: "";
-
-    position: absolute;
-
-    width: 72%;
-    height: 72%;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(217,173,79,.13) 0%,
-            rgba(217,173,79,.055) 35%,
-            transparent 70%
-        );
-
-    filter: blur(20px);
-
-    z-index: -2;
-
-    animation: softGlow 5s ease-in-out infinite;
-}
-
-@keyframes softGlow {
-
-    0%,100% {
-        transform: scale(.94);
-        opacity: .65;
-    }
-
-    50% {
-        transform: scale(1.04);
-        opacity: 1;
-    }
-
-}
-
-/* Image frame */
-
-.logo-frame {
-    position: relative;
-
-    width: 78%;
-    aspect-ratio: 1 / 1;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-
-    border: 1px solid rgba(217,173,79,.22);
-
-    background: #0d2419;
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,.22);
+    overflow:hidden;
 }
 
 /* inner frame */
 
-.logo-frame::before {
-    content: "";
+.logo-stage::before{
+    content:"";
+    position:absolute;
+    inset:17px;
 
-    position: absolute;
-
-    inset: 14px;
-
-    border: 1px solid rgba(217,173,79,.10);
-
-    pointer-events: none;
+    border:1px solid rgba(215,173,84,.11);
+    pointer-events:none;
 }
 
-.logo-frame img {
-    width: 100%;
-    height: 100%;
+/* subtle light */
 
-    object-fit: contain;
+.logo-stage::after{
+    content:"";
+    position:absolute;
 
-    display: block;
+    width:260px;
+    height:260px;
 
-    position: relative;
-    z-index: 2;
+    border-radius:50%;
 
-    transition: transform .6s ease;
+    background:radial-gradient(
+        circle,
+        rgba(215,173,84,.13),
+        transparent 68%
+    );
+
+    filter:blur(12px);
+    pointer-events:none;
 }
 
-.logo-stage:hover .logo-frame img {
-    transform: scale(1.025);
+.main-logo{
+    position:relative;
+    z-index:3;
+
+    width:68%;
+    height:68%;
+
+    object-fit:contain;
+
+    border-radius:6px;
+
+    filter:
+        drop-shadow(0 0 16px rgba(215,173,84,.18))
+        drop-shadow(0 15px 30px rgba(0,0,0,.22));
+
+    transition:.5s;
 }
 
-/* elegant shine */
-
-.logo-frame::after {
-    content: "";
-
-    position: absolute;
-
-    top: -100%;
-    left: -40%;
-
-    width: 45%;
-    height: 300%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,.055),
-            transparent
-        );
-
-    transform: rotate(20deg);
-
-    transition: 1s ease;
-
-    z-index: 3;
-
-    pointer-events: none;
+.logo-stage:hover .main-logo{
+    transform:scale(1.035);
+    filter:
+        drop-shadow(0 0 24px rgba(215,173,84,.28))
+        drop-shadow(0 20px 35px rgba(0,0,0,.25));
 }
 
-.logo-stage:hover .logo-frame::after {
-    left: 120%;
+/* small gold points */
+
+.point{
+    position:absolute;
+    z-index:5;
+
+    width:7px;
+    height:7px;
+
+    background:var(--gold-light);
+    border-radius:50%;
+
+    box-shadow:0 0 12px rgba(215,173,84,.55);
+
+    animation:floatPoint 4s ease-in-out infinite;
 }
 
-/* decorative points */
-
-.orbit-dot {
-    position: absolute;
-
-    width: 8px;
-    height: 8px;
-
-    border-radius: 50%;
-
-    background: var(--gold-light);
-
-    box-shadow:
-        0 0 12px rgba(217,173,79,.5);
-
-    z-index: 5;
+.point.one{
+    top:20px;
+    right:20px;
 }
 
-.dot-one {
-    top: 12%;
-    right: 12%;
+.point.two{
+    bottom:28px;
+    left:25px;
+    animation-delay:1.5s;
 }
 
-.dot-two {
-    bottom: 16%;
-    left: 10%;
+@keyframes floatPoint{
+    0%,100%{
+        transform:translateY(0);
+        opacity:.7;
+    }
+    50%{
+        transform:translateY(-7px);
+        opacity:1;
+    }
 }
 
-.dot-three {
-    top: 28%;
-    left: 5%;
+/* =========================
+   HERO MINI FEATURES
+========================= */
 
-    width: 5px;
-    height: 5px;
+.hero-features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:0;
 
-    opacity: .7;
+    margin-top:32px;
+    max-width:680px;
 }
 
-/* =========================================================
-   TRUST STRIP
-========================================================= */
-
-.trust {
-    margin-top: -5px;
-
-    padding: 0 0 42px;
+.feature{
+    padding:13px 17px;
+    border-top:1px solid var(--line);
 }
 
-.trust-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3,1fr);
-
-    border-top: 1px solid rgba(255,255,255,.09);
+.feature:not(:last-child){
+    border-left:1px solid rgba(215,173,84,.12);
 }
 
-.trust-item {
-    padding: 18px 20px;
-
-    text-align: center;
-
-    border-left: 1px solid rgba(255,255,255,.08);
+.feature strong{
+    color:var(--gold-light);
+    font-size:15px;
 }
 
-.trust-item:last-child {
-    border-left: 0;
+.feature p{
+    color:#84928a;
+    font-size:11px;
+    margin-top:3px;
 }
 
-.trust-item strong {
-    display: block;
-
-    color: var(--gold-light);
-
-    font-size: 16px;
-
-    margin-bottom: 2px;
-}
-
-.trust-item span {
-    color: var(--muted);
-
-    font-size: 11px;
-}
-
-/* =========================================================
+/* =========================
    ABOUT
-========================================================= */
+========================= */
 
-.about {
-    border-top: 1px solid rgba(255,255,255,.04);
+.about{
+    border-top:1px solid rgba(255,255,255,.035);
 }
 
-.about-grid {
-    display: grid;
-
-    grid-template-columns:
-        minmax(0,1fr)
-        minmax(0,1fr);
-
-    gap: 55px;
-
-    align-items: center;
+.about-grid{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    align-items:center;
+    gap:55px;
 }
 
-.about-copy {
-    max-width: 650px;
+.about-card{
+    padding:30px;
+
+    border:1px solid var(--line);
+    background:rgba(17,41,29,.55);
+
+    box-shadow:var(--shadow);
 }
 
-.about-copy p {
-    color: var(--muted);
-
-    font-size: 14px;
-
-    line-height: 1.9;
-
-    margin-top: 10px;
+.about-card h3{
+    color:var(--gold-light);
+    font-size:22px;
+    margin-bottom:10px;
 }
 
-.about-features {
-    display: grid;
-
-    grid-template-columns: repeat(2,1fr);
-
-    gap: 10px;
-
-    margin-top: 22px;
+.about-card p{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.9;
 }
 
-.feature {
-    padding: 18px;
-
-    background: rgba(255,255,255,.018);
-
-    border: 1px solid rgba(217,173,79,.13);
-
-    transition: .3s ease;
+.about-text h2{
+    font-size:clamp(30px,4vw,48px);
+    line-height:1.2;
+    margin-bottom:12px;
 }
 
-.feature:hover {
-    border-color: rgba(217,173,79,.38);
-
-    transform: translateY(-3px);
+.about-text h2 span{
+    color:var(--gold-light);
 }
 
-.feature-number {
-    color: var(--gold);
-
-    font-size: 12px;
-
-    margin-bottom: 6px;
+.about-text p{
+    color:var(--muted);
+    font-size:15px;
+    line-height:1.9;
+    margin-bottom:10px;
 }
 
-.feature h3 {
-    font-size: 15px;
-
-    margin-bottom: 4px;
-}
-
-.feature p {
-    margin: 0;
-
-    font-size: 11px;
-
-    line-height: 1.7;
-}
-
-/* =========================================================
+/* =========================
    SERVICES
-========================================================= */
+========================= */
 
-.services {
-    border-top: 1px solid rgba(255,255,255,.04);
+.services{
+    background:rgba(5,20,13,.18);
 }
 
-.services-head {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: end;
-
-    gap: 30px;
-
-    margin-bottom: 26px;
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
 }
 
-.services-grid {
-    display: grid;
+.service-card{
+    position:relative;
 
-    grid-template-columns:
-        repeat(3,1fr);
+    padding:23px 22px;
 
-    gap: 12px;
+    min-height:185px;
+
+    border:1px solid rgba(215,173,84,.14);
+    background:rgba(17,41,29,.55);
+
+    transition:.3s;
 }
 
-.service {
-    position: relative;
+.service-card:hover{
+    transform:translateY(-5px);
+    border-color:rgba(215,173,84,.42);
+    box-shadow:0 20px 45px rgba(0,0,0,.18);
+}
 
-    padding: 24px 22px;
+.service-number{
+    color:var(--gold);
+    font-size:12px;
+    margin-bottom:12px;
+}
 
-    min-height: 180px;
+.service-card h3{
+    font-size:19px;
+    margin-bottom:7px;
+}
 
-    border: 1px solid rgba(217,173,79,.14);
+.service-card p{
+    color:#98a69d;
+    font-size:13px;
+    line-height:1.8;
+}
 
+/* =========================
+   EXPERTISE
+========================= */
+
+.expertise-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.expertise{
+    padding:20px 17px;
+
+    border-top:1px solid var(--line);
+    border-bottom:1px solid rgba(215,173,84,.08);
+
+    background:rgba(255,255,255,.012);
+
+    transition:.3s;
+}
+
+.expertise:hover{
+    background:rgba(215,173,84,.035);
+    border-color:rgba(215,173,84,.35);
+}
+
+.expertise h3{
+    font-size:16px;
+    margin-bottom:5px;
+}
+
+.expertise p{
+    color:#8f9c94;
+    font-size:11px;
+    line-height:1.7;
+}
+
+/* =========================
+   PROCESS
+========================= */
+
+.process{
+    background:rgba(5,20,13,.18);
+}
+
+.process-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+}
+
+.process-item{
+    text-align:center;
+    padding:24px 16px;
+    border:1px solid rgba(255,255,255,.06);
+}
+
+.process-number{
+    width:38px;
+    height:38px;
+
+    display:grid;
+    place-items:center;
+
+    margin:0 auto 11px;
+
+    border:1px solid var(--gold);
+    border-radius:50%;
+
+    color:var(--gold-light);
+    font-size:13px;
+}
+
+.process-item h3{
+    font-size:16px;
+    margin-bottom:5px;
+}
+
+.process-item p{
+    color:#8d9a92;
+    font-size:11px;
+    line-height:1.7;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-box{
+    position:relative;
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+
+    padding:40px;
+
+    border:1px solid rgba(215,173,84,.25);
     background:
         linear-gradient(
-            145deg,
-            rgba(255,255,255,.025),
-            rgba(255,255,255,.008)
+            135deg,
+            rgba(215,173,84,.06),
+            rgba(17,41,29,.7)
         );
-
-    transition: .35s ease;
-
-    overflow: hidden;
 }
 
-.service::before {
-    content: "";
-
-    position: absolute;
-
-    width: 100px;
-    height: 100px;
-
-    left: -40px;
-    bottom: -50px;
-
-    border-radius: 50%;
-
-    background: rgba(217,173,79,.08);
-
-    filter: blur(20px);
-
-    transition: .4s ease;
+.contact-box h2{
+    font-size:clamp(25px,3vw,38px);
+    margin-bottom:7px;
 }
 
-.service:hover {
-    transform: translateY(-5px);
-
-    border-color: rgba(217,173,79,.4);
-
-    box-shadow:
-        0 18px 40px rgba(0,0,0,.18);
+.contact-box p{
+    color:var(--muted);
+    font-size:14px;
 }
 
-.service:hover::before {
-    transform: scale(1.5);
+.contact-actions{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
 }
 
-.service-icon {
-    width: 38px;
-    height: 38px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border: 1px solid rgba(217,173,79,.35);
-
-    color: var(--gold-light);
-
-    margin-bottom: 14px;
-
-    font-size: 15px;
-}
-
-.service h3 {
-    font-size: 16px;
-
-    margin-bottom: 6px;
-}
-
-.service p {
-    color: var(--muted);
-
-    font-size: 12px;
-
-    line-height: 1.75;
-}
-
-/* =========================================================
-   CTA
-========================================================= */
-
-.cta {
-    padding: 60px 0 75px;
-}
-
-.cta-box {
-    position: relative;
-
-    padding: 42px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 30px;
-
-    border: 1px solid rgba(217,173,79,.25);
-
-    background:
-        linear-gradient(
-            120deg,
-            rgba(217,173,79,.06),
-            rgba(255,255,255,.015)
-        );
-
-    overflow: hidden;
-}
-
-.cta-box::after {
-    content: "";
-
-    position: absolute;
-
-    width: 300px;
-    height: 300px;
-
-    left: -100px;
-    top: -150px;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(217,173,79,.10),
-            transparent 70%
-        );
-
-    pointer-events: none;
-}
-
-.cta h2 {
-    font-size: clamp(25px,3vw,38px);
-
-    line-height: 1.3;
-
-    margin-bottom: 7px;
-}
-
-.cta p {
-    color: var(--muted);
-
-    font-size: 13px;
-}
-
-/* =========================================================
+/* =========================
    FOOTER
-========================================================= */
+========================= */
 
-.footer {
-    border-top: 1px solid rgba(217,173,79,.12);
-
-    padding: 24px 0;
-
-    background: rgba(5,18,13,.25);
+footer{
+    padding:30px 0;
+    border-top:1px solid rgba(255,255,255,.06);
 }
 
-.footer-inner {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 20px;
+.footer-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
 }
 
-.footer p {
-    color: var(--muted);
-
-    font-size: 10px;
+.footer-brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
 }
 
-.footer-phone {
-    color: var(--gold-light);
-
-    font-size: 12px;
-
-    direction: ltr;
+.footer-brand img{
+    width:40px;
+    height:40px;
+    object-fit:cover;
 }
 
-/* =========================================================
+.footer-brand strong{
+    font-size:14px;
+}
+
+.footer-brand span{
+    display:block;
+    color:#78857d;
+    font-size:10px;
+}
+
+.copyright{
+    color:#68766e;
+    font-size:11px;
+}
+
+/* =========================
    WHATSAPP
-========================================================= */
+========================= */
 
-.whatsapp {
-    position: fixed;
+.whatsapp{
+    position:fixed;
 
-    left: 22px;
-    bottom: 22px;
+    left:22px;
+    bottom:22px;
 
-    width: 56px;
-    height: 56px;
+    width:58px;
+    height:58px;
 
-    display: flex;
+    display:grid;
+    place-items:center;
 
-    align-items: center;
-    justify-content: center;
+    border-radius:50%;
 
-    border-radius: 50%;
+    background:#d8b458;
+    color:#092018;
 
-    background: var(--gold);
+    text-decoration:none;
 
-    color: #102318;
-
-    font-size: 26px;
-
-    z-index: 999;
+    font-size:27px;
 
     box-shadow:
-        0 12px 35px rgba(0,0,0,.3);
+        0 10px 30px rgba(0,0,0,.3),
+        0 0 0 5px rgba(216,180,88,.08);
 
-    transition: .3s ease;
+    z-index:999;
+
+    transition:.3s;
 }
 
-.whatsapp:hover {
-    transform: translateY(-4px) scale(1.05);
-
-    background: var(--gold-light);
-
+.whatsapp:hover{
+    transform:translateY(-5px) scale(1.04);
     box-shadow:
-        0 15px 40px rgba(217,173,79,.22);
+        0 15px 35px rgba(0,0,0,.35),
+        0 0 0 7px rgba(216,180,88,.08);
 }
 
-/* =========================================================
+/* =========================
    MOBILE MENU
-========================================================= */
+========================= */
 
-.menu-btn {
-    display: none;
+.menu-btn{
+    display:none;
 
-    width: 42px;
-    height: 42px;
+    width:43px;
+    height:43px;
 
-    border: 1px solid rgba(217,173,79,.25);
+    border:1px solid rgba(215,173,84,.25);
+    background:transparent;
+    color:white;
 
-    background: transparent;
-
-    color: var(--white);
-
-    cursor: pointer;
-
-    font-size: 20px;
+    font-size:22px;
+    cursor:pointer;
 }
 
-/* =========================================================
+/* =========================
    RESPONSIVE
-========================================================= */
+========================= */
 
-@media (max-width: 1050px) {
+@media(max-width:1000px){
 
-    .nav {
-        gap: 18px;
+    .nav-links{
+        gap:17px;
     }
 
-    .brand {
-        min-width: auto;
+    .navbar{
+        gap:15px;
     }
 
-    .header-phone {
-        padding-right: 12px;
+    .hero-grid{
+        gap:35px;
     }
 
-    .hero-grid {
-        gap: 35px;
+    .hero h1{
+        font-size:52px;
     }
 
-    .logo-stage {
-        width: 430px;
+    .expertise-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
+    .process-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 }
 
-@media (max-width: 850px) {
+@media(max-width:780px){
 
-    .header {
-        height: 72px;
+    section{
+        padding:58px 0;
     }
 
-    .container {
-        width: min(100% - 30px, var(--container));
+    .navbar{
+        min-height:74px;
     }
 
-    .nav {
-        display: none;
+    .brand-text strong{
+        font-size:14px;
     }
 
-    .menu-btn {
-        display: block;
+    .brand-text span{
+        font-size:8px;
     }
 
-    .header-phone {
-        margin-right: auto;
-        border-right: 0;
+    .brand-logo{
+        width:42px;
+        height:42px;
     }
 
-    .header-phone small {
-        display: none;
+    .menu-btn{
+        display:block;
     }
 
-    .brand-text {
-        display: none;
+    .nav-links{
+        position:absolute;
+
+        top:74px;
+        right:4%;
+        left:4%;
+
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+
+        padding:15px;
+
+        background:#0d2419;
+        border:1px solid rgba(215,173,84,.18);
+
+        box-shadow:0 20px 40px rgba(0,0,0,.3);
     }
 
-    .brand-logo {
-        width: 42px;
-        height: 42px;
+    .nav-links.active{
+        display:flex;
     }
 
-    .hero {
-        padding-top: 72px;
+    .nav-links a{
+        padding:11px 8px;
+        border-bottom:1px solid rgba(255,255,255,.04);
     }
 
-    .hero-grid {
-        grid-template-columns: 1fr;
-
-        text-align: center;
-
-        min-height: auto;
-
-        padding: 65px 0 40px;
-
-        gap: 28px;
+    .call-box{
+        display:none;
     }
 
-    .hero-content {
-        margin-inline: auto;
-        order: 1;
+    .hero{
+        min-height:auto;
+        padding:55px 0 45px;
     }
 
-    .hero-visual {
-        order: 2;
-
-        min-height: 360px;
+    .hero-grid{
+        grid-template-columns:1fr;
+        text-align:center;
     }
 
-    .hero-label {
-        justify-content: center;
+    .hero-label{
+        justify-content:center;
     }
 
-    .hero-label::before {
-        display: none;
+    .hero-label::before{
+        display:none;
     }
 
-    .hero-description {
-        margin-inline: auto;
+    .hero h1{
+        font-size:clamp(39px,11vw,58px);
+        letter-spacing:-1px;
     }
 
-    .hero-buttons {
-        justify-content: center;
+    .hero-description{
+        font-size:14px;
+        margin-left:auto;
+        margin-right:auto;
     }
 
-    .logo-stage {
-        width: min(390px, 88vw);
+    .hero-buttons{
+        justify-content:center;
     }
 
-    .about-grid {
-        grid-template-columns: 1fr;
-
-        gap: 28px;
+    .hero-visual{
+        order:-1;
+        min-height:340px;
     }
 
-    .services-grid {
-        grid-template-columns: repeat(2,1fr);
+    .logo-stage{
+        width:min(330px,82vw);
     }
 
-    .services-head {
-        display: block;
+    .hero-features{
+        margin:28px auto 0;
     }
 
-    .services-head .section-text {
-        margin-top: 8px;
+    .about-grid{
+        grid-template-columns:1fr;
+        gap:25px;
     }
 
-    .cta-box {
-        display: block;
-
-        padding: 30px;
+    .service-grid{
+        grid-template-columns:1fr 1fr;
     }
 
-    .cta-box .btn {
-        margin-top: 18px;
+    .contact-box{
+        flex-direction:column;
+        align-items:flex-start;
+        padding:28px;
     }
 
+    .footer-inner{
+        flex-direction:column;
+        text-align:center;
+    }
 }
 
-@media (max-width: 560px) {
+@media(max-width:520px){
 
-    .section {
-        padding: 52px 0;
+    .container{
+        width:90%;
     }
 
-    .header-inner {
-        gap: 10px;
+    .hero h1{
+        font-size:40px;
     }
 
-    .header-phone strong {
-        font-size: 12px;
+    .hero-description{
+        font-size:13px;
     }
 
-    .phone-arrow {
-        font-size: 15px;
+    .hero-buttons{
+        flex-direction:column;
     }
 
-    .hero-grid {
-        padding-top: 50px;
+    .btn{
+        width:100%;
     }
 
-    .hero-title {
-        font-size: 40px;
-
-        letter-spacing: -1px;
+    .hero-visual{
+        min-height:300px;
     }
 
-    .hero-description {
-        font-size: 13px;
-
-        line-height: 1.8;
+    .logo-stage{
+        width:290px;
     }
 
-    .hero-buttons {
-        flex-direction: column;
-
-        width: 100%;
+    .hero-features{
+        grid-template-columns:1fr;
     }
 
-    .hero-buttons .btn {
-        width: 100%;
+    .feature{
+        text-align:center;
+        border-left:0!important;
+        border-bottom:1px solid rgba(215,173,84,.08);
     }
 
-    .hero-visual {
-        min-height: 310px;
+    .service-grid{
+        grid-template-columns:1fr;
     }
 
-    .logo-stage {
-        width: min(330px, 92vw);
+    .expertise-grid{
+        grid-template-columns:1fr 1fr;
+        gap:8px;
     }
 
-    .logo-frame {
-        width: 82%;
+    .process-grid{
+        grid-template-columns:1fr 1fr;
+        gap:8px;
     }
 
-    .trust-grid {
-        grid-template-columns: 1fr;
+    .contact-actions{
+        width:100%;
+        flex-direction:column;
     }
 
-    .trust-item {
-        border-left: 0;
-
-        border-bottom: 1px solid rgba(255,255,255,.08);
+    .contact-actions .btn{
+        width:100%;
     }
 
-    .trust-item:last-child {
-        border-bottom: 0;
+    .whatsapp{
+        width:52px;
+        height:52px;
+        left:16px;
+        bottom:16px;
+        font-size:24px;
     }
-
-    .about-features {
-        grid-template-columns: 1fr;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .service {
-        min-height: auto;
-
-        padding: 20px;
-    }
-
-    .cta {
-        padding: 45px 0 55px;
-    }
-
-    .cta-box {
-        padding: 25px 20px;
-    }
-
-    .footer-inner {
-        flex-direction: column;
-
-        text-align: center;
-    }
-
-    .whatsapp {
-        width: 52px;
-        height: 52px;
-
-        left: 16px;
-        bottom: 16px;
-    }
-
-}
-
-/* =========================================================
-   REDUCE MOTION
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-        scroll-behavior: auto !important;
-    }
-
 }
 
 </style>
@@ -1367,833 +1092,614 @@ section {
 
 <body>
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<!-- ================= HEADER ================= -->
 
-<header class="header">
+<header>
 
-    <div class="container header-inner">
+<div class="container navbar">
 
-        <!-- Brand -->
+<a href="#home" class="brand">
 
-        <a href="#home" class="brand">
+<img
+class="brand-logo"
+src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.jpg"
+alt="شعار روينا عبدالفتاح رحالي"
+>
 
-            <img
-                class="brand-logo"
-                src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.jpg"
-                alt="شعار روينا عبدالفتاح رحالي"
-            >
+<div class="brand-text">
+<strong>روينا عبدالفتاح رحالي</strong>
+<span>للمحاماة والاستشارات القانونية</span>
+</div>
 
-            <div class="brand-text">
-
-                <strong>
-                    روينا عبدالفتاح رحالي
-                </strong>
-
-                <small>
-                    للمحاماة والاستشارات القانونية
-                </small>
-
-            </div>
-
-        </a>
+</a>
 
 
-        <!-- Navigation -->
+<nav class="nav-links" id="navLinks">
 
-        <nav class="nav">
+<a href="#about">عن المكتب</a>
+<a href="#services">خدماتنا</a>
+<a href="#expertise">مجالات العمل</a>
+<a href="#process">منهجيتنا</a>
+<a href="#contact">تواصل معنا</a>
 
-            <a href="#about">
-                عن المكتب
-            </a>
-
-            <a href="#services">
-                مجالات العمل
-            </a>
-
-            <a href="#approach">
-                منهجيتنا
-            </a>
-
-            <a href="#contact">
-                تواصل معنا
-            </a>
-
-        </nav>
+</nav>
 
 
-        <!-- Phone -->
+<a
+href="tel:+966544270651"
+class="call-box"
+aria-label="الاتصال بالمكتب"
+>
 
-        <a
-            class="header-phone"
-            href="tel:0544270651"
-            aria-label="الاتصال على 0544270651"
-        >
+<div class="call-icon">☎</div>
 
-            <span class="phone-arrow">
-                ←
-            </span>
+<div class="call-info">
+<small>اتصل بنا</small>
+<strong>054 427 0651</strong>
+</div>
 
-            <span>
-
-                <small>
-                    اتصل بنا
-                </small>
-
-                <strong>
-                    054 427 0651
-                </strong>
-
-            </span>
-
-        </a>
+</a>
 
 
-        <button
-            class="menu-btn"
-            type="button"
-            aria-label="القائمة"
-            onclick="toggleMenu()"
-        >
-            ☰
-        </button>
+<button
+class="menu-btn"
+id="menuBtn"
+aria-label="فتح القائمة"
+>
+☰
+</button>
 
-    </div>
+</div>
 
 </header>
 
 
-<!-- =====================================================
-     MOBILE MENU
-===================================================== -->
+<!-- ================= HERO ================= -->
 
-<div
-    id="mobileMenu"
-    style="
-        display:none;
-        position:fixed;
-        top:72px;
-        right:15px;
-        left:15px;
-        z-index:999;
-        background:#0d2419;
-        border:1px solid rgba(217,173,79,.22);
-        padding:15px;
-        box-shadow:0 20px 50px rgba(0,0,0,.35);
-    "
->
+<main>
 
-    <a
-        href="#about"
-        onclick="closeMenu()"
-        style="display:block;padding:12px;color:#fff;border-bottom:1px solid rgba(255,255,255,.06)"
-    >
-        عن المكتب
-    </a>
+<section class="hero" id="home">
 
-    <a
-        href="#services"
-        onclick="closeMenu()"
-        style="display:block;padding:12px;color:#fff;border-bottom:1px solid rgba(255,255,255,.06)"
-    >
-        مجالات العمل
-    </a>
+<div class="container hero-grid">
 
-    <a
-        href="#approach"
-        onclick="closeMenu()"
-        style="display:block;padding:12px;color:#fff;border-bottom:1px solid rgba(255,255,255,.06)"
-    >
-        منهجيتنا
-    </a>
 
-    <a
-        href="#contact"
-        onclick="closeMenu()"
-        style="display:block;padding:12px;color:#fff"
-    >
-        تواصل معنا
-    </a>
+<div class="hero-content">
+
+<div class="hero-label">
+مكتب محاماة واستشارات قانونية
+</div>
+
+<h1>
+قانون واضح.
+<span>موقف أقوى.</span>
+</h1>
+
+<p class="hero-description">
+نقرأ قضيتك بعمق، ونحوّل التعقيد القانوني إلى خطوات عملية تحمي حقوقك وتدعم قرارك، من خلال رؤية قانونية واضحة ومنهجية دقيقة.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#contact" class="btn btn-primary">
+احجز استشارتك ←
+</a>
+
+<a href="#about" class="btn btn-outline">
+تعرّف على المكتب
+</a>
 
 </div>
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+<div class="hero-features">
 
-<main id="home">
+<div class="feature">
+<strong>وضوح</strong>
+<p>في كل خطوة</p>
+</div>
 
-<section class="hero">
+<div class="feature">
+<strong>دقة</strong>
+<p>في كل قضية</p>
+</div>
 
-    <div class="container hero-grid">
+<div class="feature">
+<strong>سرية</strong>
+<p>في كل ملف</p>
+</div>
 
+</div>
 
-        <!-- Text -->
-
-        <div class="hero-content">
-
-            <div class="hero-label">
-                مكتب محاماة واستشارات قانونية
-            </div>
-
-
-            <h1 class="hero-title">
-
-                قانون واضح.
-                <br>
-
-                <span>
-                    موقف أقوى.
-                </span>
-
-            </h1>
+</div>
 
 
-            <p class="hero-description">
+<div class="hero-visual">
 
-                نقرأ قضيتك بعمق، ونحوّل التعقيد القانوني إلى خطوات
-                عملية تحمي حقوقك وتدعم قرارك، من خلال رؤية قانونية
-                واضحة ومنهجية دقيقة.
+<div class="logo-stage">
 
-            </p>
+<span class="point one"></span>
+<span class="point two"></span>
 
-
-            <div class="hero-buttons">
-
-                <a
-                    href="tel:0544270651"
-                    class="btn btn-primary"
-                >
-                    احجز استشارتك ←
-                </a>
-
-                <a
-                    href="#about"
-                    class="btn btn-outline"
-                >
-                    تعرّف على المكتب
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- Logo / 3D -->
-
-        <div class="hero-visual">
-
-            <div class="logo-stage">
-
-                <span class="orbit-dot dot-one"></span>
-                <span class="orbit-dot dot-two"></span>
-                <span class="orbit-dot dot-three"></span>
-
-                <div class="logo-frame">
-
-                    <img
-                        src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/3d%20%D8%B1%D9%88%D9%8A%D9%86%D8%A7%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%81%D8%AA%D8%A7%D8%AD%20%D8%B1%D8%AD%D8%A7%D9%84%D9%8A.jpg"
-                        alt="روينا عبدالفتاح رحالي للمحاماة والاستشارات القانونية"
-                    >
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     TRUST
-===================================================== -->
-
-<section class="trust">
-
-    <div class="container">
-
-        <div class="trust-grid">
-
-            <div class="trust-item">
-
-                <strong>
-                    وضوح
-                </strong>
-
-                <span>
-                    في كل خطوة
-                </span>
-
-            </div>
-
-
-            <div class="trust-item">
-
-                <strong>
-                    دقة
-                </strong>
-
-                <span>
-                    في كل وثيقة
-                </span>
-
-            </div>
-
-
-            <div class="trust-item">
-
-                <strong>
-                    سرية
-                </strong>
-
-                <span>
-                    في كل ملف
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     ABOUT
-===================================================== -->
-
-<section
-    class="section about"
-    id="about"
+<img
+class="main-logo"
+src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.jpg"
+alt="شعار روينا عبدالفتاح رحالي"
 >
 
-    <div class="container about-grid">
+</div>
+
+</div>
 
 
-        <div class="about-copy">
-
-            <div class="section-label">
-                عن المكتب
-            </div>
-
-            <h2 class="section-title">
-
-                القانون ليس تعقيدًا...
-                <br>
-
-                <span>
-                    بل طريق واضح للوصول إلى حقك.
-                </span>
-
-            </h2>
-
-            <p>
-
-                نؤمن أن العمل القانوني الاحترافي يبدأ بفهم الوقائع
-                والاستماع الدقيق للعميل، ثم بناء رؤية قانونية واضحة
-                تساعد على اتخاذ القرار المناسب.
-
-            </p>
-
-            <p>
-
-                هدفنا تقديم خدمة قانونية تجمع بين الدقة والسرية
-                والوضوح، مع الاهتمام بتفاصيل كل قضية.
-
-            </p>
-
-
-            <div class="about-features">
-
-                <div class="feature">
-
-                    <div class="feature-number">
-                        01
-                    </div>
-
-                    <h3>
-                        فهم القضية
-                    </h3>
-
-                    <p>
-                        تحليل الوقائع وتحديد النقاط القانونية المؤثرة.
-                    </p>
-
-                </div>
-
-
-                <div class="feature">
-
-                    <div class="feature-number">
-                        02
-                    </div>
-
-                    <h3>
-                        رؤية واضحة
-                    </h3>
-
-                    <p>
-                        توضيح الخيارات القانونية المتاحة أمام العميل.
-                    </p>
-
-                </div>
-
-
-                <div class="feature">
-
-                    <div class="feature-number">
-                        03
-                    </div>
-
-                    <h3>
-                        استراتيجية دقيقة
-                    </h3>
-
-                    <p>
-                        بناء المسار القانوني المناسب لكل حالة.
-                    </p>
-
-                </div>
-
-
-                <div class="feature">
-
-                    <div class="feature-number">
-                        04
-                    </div>
-
-                    <h3>
-                        سرية وخصوصية
-                    </h3>
-
-                    <p>
-                        التعامل مع المعلومات والملفات بأعلى درجات الخصوصية.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div
-            class="logo-stage"
-            style="width:min(440px,100%);margin:auto;"
-        >
-
-            <span class="orbit-dot dot-one"></span>
-            <span class="orbit-dot dot-two"></span>
-
-            <div class="logo-frame">
-
-                <img
-                    src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/3d%20%D8%B1%D9%88%D9%8A%D9%86%D8%A7%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%81%D8%AA%D8%A7%D8%AD%20%D8%B1%D8%AD%D8%A7%D9%84%D9%8A.jpg"
-                    alt="روينا عبدالفتاح رحالي"
-                >
-
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =====================================================
-     SERVICES
-===================================================== -->
+<!-- ================= ABOUT ================= -->
 
-<section
-    class="section services"
-    id="services"
->
+<section class="about" id="about">
 
-    <div class="container">
-
-        <div class="services-head">
-
-            <div>
-
-                <div class="section-label">
-                    مجالات العمل
-                </div>
-
-                <h2 class="section-title">
-                    حلول قانونية
-                    <span>
-                        مصممة لقضيتك.
-                    </span>
-                </h2>
-
-            </div>
-
-            <p class="section-text">
-
-                نعمل على تقديم خدمات قانونية متخصصة
-                وفق طبيعة كل قضية واحتياجات كل عميل.
-
-            </p>
-
-        </div>
+<div class="container about-grid">
 
 
-        <div class="services-grid">
+<div class="about-card">
+
+<h3>ثقة تبدأ من الفهم</h3>
+
+<p>
+نؤمن أن العمل القانوني الاحترافي يبدأ بفهم الوقائع والاستماع الدقيق للعميل، ثم بناء رؤية قانونية واضحة تساعد على اتخاذ القرار المناسب.
+</p>
+
+</div>
 
 
-            <article class="service">
+<div class="about-text">
 
-                <div class="service-icon">
-                    01
-                </div>
+<div class="section-label">
+عن المكتب
+</div>
 
-                <h3>
-                    الاستشارات القانونية
-                </h3>
+<h2>
+القانون ليس تعقيدًا...
+<span>بل طريق واضح للوصول إلى حقك.</span>
+</h2>
 
-                <p>
-                    دراسة المسألة القانونية وتقديم الرؤية
-                    والخيارات المناسبة لاتخاذ القرار.
-                </p>
+<p>
+نقدم خدمات قانونية تجمع بين الدقة والسرية والوضوح، مع الاهتمام بتفاصيل كل قضية وفهم احتياجات العميل.
+</p>
 
-            </article>
+<p>
+هدفنا هو تقديم معالجة قانونية احترافية تساعدك على حماية حقوقك ومصالحك بثقة ووضوح.
+</p>
 
-
-            <article class="service">
-
-                <div class="service-icon">
-                    02
-                </div>
-
-                <h3>
-                    القضايا والمرافعات
-                </h3>
-
-                <p>
-                    متابعة الإجراءات القانونية وصياغة المذكرات
-                    والدفوع وفق متطلبات القضية.
-                </p>
-
-            </article>
+</div>
 
 
-            <article class="service">
-
-                <div class="service-icon">
-                    03
-                </div>
-
-                <h3>
-                    صياغة العقود
-                </h3>
-
-                <p>
-                    إعداد ومراجعة العقود والاتفاقيات بما يحفظ
-                    مصالح الأطراف ويقلل المخاطر القانونية.
-                </p>
-
-            </article>
-
-
-            <article class="service">
-
-                <div class="service-icon">
-                    04
-                </div>
-
-                <h3>
-                    الأعمال التجارية
-                </h3>
-
-                <p>
-                    دعم الأعمال والمنشآت في المسائل القانونية
-                    والتنظيمية المرتبطة بالنشاط التجاري.
-                </p>
-
-            </article>
-
-
-            <article class="service">
-
-                <div class="service-icon">
-                    05
-                </div>
-
-                <h3>
-                    المنازعات
-                </h3>
-
-                <p>
-                    دراسة النزاعات وتقييم المراكز القانونية
-                    ووضع المسار الأنسب للتعامل معها.
-                </p>
-
-            </article>
-
-
-            <article class="service">
-
-                <div class="service-icon">
-                    06
-                </div>
-
-                <h3>
-                    الخدمات القانونية
-                </h3>
-
-                <p>
-                    حلول قانونية متكاملة وفق احتياجات الأفراد
-                    والمنشآت وطبيعة كل ملف.
-                </p>
-
-            </article>
-
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =====================================================
-     APPROACH
-===================================================== -->
+<!-- ================= SERVICES ================= -->
 
-<section
-    class="section"
-    id="approach"
->
+<section class="services" id="services">
 
-    <div class="container">
+<div class="container">
 
-        <div
-            style="
-                max-width:760px;
-                margin:auto;
-                text-align:center;
-            "
-        >
+<div class="section-head">
 
-            <div
-                class="section-label"
-                style="justify-content:center;"
-            >
-                منهجيتنا
-            </div>
+<div class="section-label">
+خدماتنا
+</div>
 
-            <h2 class="section-title">
+<h2>حلول قانونية مصممة لاحتياجك</h2>
 
-                من المشكلة
-                <span>
-                    إلى الحل.
-                </span>
+<p>
+خدمات قانونية متكاملة للأفراد والمنشآت وفق منهجية دقيقة وواضحة.
+</p>
 
-            </h2>
+</div>
 
-            <p
-                class="section-text"
-                style="margin:0 auto;"
-            >
 
-                نبدأ بفهم التفاصيل، ثم نحدد الخيارات القانونية،
-                ونبني استراتيجية واضحة تساعدك على اتخاذ القرار
-                بثقة ووعي.
+<div class="service-grid">
 
-            </p>
 
-        </div>
+<div class="service-card">
+<div class="service-number">01</div>
+<h3>الاستشارات القانونية</h3>
+<p>
+تحليل قانوني واضح يساعدك على فهم موقفك واتخاذ القرار المناسب.
+</p>
+</div>
 
-    </div>
+
+<div class="service-card">
+<div class="service-number">02</div>
+<h3>التقاضي والمرافعات</h3>
+<p>
+تمثيل ومتابعة الدعاوى والإجراءات القضائية بمهنية ودقة.
+</p>
+</div>
+
+
+<div class="service-card">
+<div class="service-number">03</div>
+<h3>صياغة العقود</h3>
+<p>
+صياغة ومراجعة العقود بما يحفظ الحقوق ويقلل المخاطر القانونية.
+</p>
+</div>
+
+
+<div class="service-card">
+<div class="service-number">04</div>
+<h3>القضايا التجارية</h3>
+<p>
+حلول قانونية للمنازعات والمسائل المتعلقة بالأعمال والمنشآت.
+</p>
+</div>
+
+
+<div class="service-card">
+<div class="service-number">05</div>
+<h3>القضايا العمالية</h3>
+<p>
+معالجة القضايا والحقوق العمالية وفق الأنظمة واللوائح ذات الصلة.
+</p>
+</div>
+
+
+<div class="service-card">
+<div class="service-number">06</div>
+<h3>التحكيم وتسوية النزاعات</h3>
+<p>
+دعم قانوني في تسوية النزاعات والخيارات البديلة للتقاضي.
+</p>
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- =====================================================
-     CTA
-===================================================== -->
+<!-- ================= EXPERTISE ================= -->
 
-<section
-    class="cta"
-    id="contact"
+<section id="expertise">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-label">
+مجالات العمل
+</div>
+
+<h2>خبرة قانونية في مجالات متعددة</h2>
+
+<p>
+نتعامل مع مختلف الاحتياجات القانونية وفق طبيعة كل ملف ومتطلباته.
+</p>
+
+</div>
+
+
+<div class="expertise-grid">
+
+
+<div class="expertise">
+<h3>القانون التجاري</h3>
+<p>الشركات والمعاملات والمنازعات التجارية.</p>
+</div>
+
+
+<div class="expertise">
+<h3>القانون العمالي</h3>
+<p>الحقوق والالتزامات والمنازعات العمالية.</p>
+</div>
+
+
+<div class="expertise">
+<h3>العقود والاتفاقيات</h3>
+<p>الصياغة والمراجعة والحماية التعاقدية.</p>
+</div>
+
+
+<div class="expertise">
+<h3>المنازعات القضائية</h3>
+<p>المتابعة والمرافعة وتمثيل العملاء.</p>
+</div>
+
+
+<div class="expertise">
+<h3>القضايا المدنية</h3>
+<p>معالجة المطالبات والمنازعات المدنية.</p>
+</div>
+
+
+<div class="expertise">
+<h3>الاستشارات</h3>
+<p>رأي قانوني واضح قبل اتخاذ القرار.</p>
+</div>
+
+
+<div class="expertise">
+<h3>تسوية النزاعات</h3>
+<p>حلول عملية للنزاعات قبل تصعيدها.</p>
+</div>
+
+
+<div class="expertise">
+<h3>الامتثال القانوني</h3>
+<p>دعم المنشآت في فهم الالتزامات النظامية.</p>
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PROCESS ================= -->
+
+<section class="process" id="process">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-label">
+منهجيتنا
+</div>
+
+<h2>من الفهم إلى الحل</h2>
+
+<p>
+نعتمد خطوات واضحة في التعامل مع كل ملف قانوني.
+</p>
+
+</div>
+
+
+<div class="process-grid">
+
+
+<div class="process-item">
+
+<div class="process-number">01</div>
+
+<h3>الاستماع</h3>
+
+<p>
+فهم الوقائع واحتياجات العميل.
+</p>
+
+</div>
+
+
+<div class="process-item">
+
+<div class="process-number">02</div>
+
+<h3>التحليل</h3>
+
+<p>
+دراسة الملف والأنظمة ذات الصلة.
+</p>
+
+</div>
+
+
+<div class="process-item">
+
+<div class="process-number">03</div>
+
+<h3>التخطيط</h3>
+
+<p>
+تحديد الخيارات والخطوات القانونية.
+</p>
+
+</div>
+
+
+<div class="process-item">
+
+<div class="process-number">04</div>
+
+<h3>التنفيذ</h3>
+
+<p>
+متابعة الإجراءات للوصول إلى أفضل نتيجة ممكنة.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="contact-box">
+
+<div>
+
+<div class="section-label">
+تواصل معنا
+</div>
+
+<h2>لديك قضية أو استشارة؟</h2>
+
+<p>
+تواصل معنا لبحث احتياجك القانوني وتحديد الخطوة المناسبة.
+</p>
+
+</div>
+
+
+<div class="contact-actions">
+
+<a
+href="tel:+966544270651"
+class="btn btn-primary"
 >
+☎ اتصل الآن
+</a>
 
-    <div class="container">
+<a
+href="https://wa.me/966544270651"
+target="_blank"
+rel="noopener"
+class="btn btn-outline"
+>
+واتساب
+</a>
 
-        <div class="cta-box">
+</div>
 
-            <div>
+</div>
 
-                <h2>
-                    لديك مسألة قانونية؟
-                </h2>
-
-                <p>
-                    تواصل معنا لمناقشة احتياجك القانوني.
-                </p>
-
-            </div>
-
-
-            <a
-                href="tel:0544270651"
-                class="btn btn-primary"
-            >
-                اتصل الآن ←
-            </a>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 </main>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- ================= FOOTER ================= -->
 
-<footer class="footer">
+<footer>
 
-    <div class="container footer-inner">
+<div class="container footer-inner">
 
-        <p>
-            © 2026 روينا عبدالفتاح رحالي للمحاماة والاستشارات القانونية
-        </p>
 
-        <a
-            href="tel:0544270651"
-            class="footer-phone"
-        >
-            054 427 0651
-        </a>
+<div class="footer-brand">
 
-    </div>
+<img
+src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.jpg"
+alt="الشعار"
+>
+
+<div>
+<strong>روينا عبدالفتاح رحالي</strong>
+<span>للمحاماة والاستشارات القانونية</span>
+</div>
+
+</div>
+
+
+<div class="copyright">
+© 2026 جميع الحقوق محفوظة
+</div>
+
+
+</div>
 
 </footer>
 
 
-<!-- =====================================================
-     WHATSAPP
-===================================================== -->
+<!-- ================= WHATSAPP ================= -->
 
 <a
-    href="https://wa.me/966544270651"
-    class="whatsapp"
-    target="_blank"
-    rel="noopener"
-    aria-label="التواصل عبر واتساب"
+class="whatsapp"
+href="https://wa.me/966544270651"
+target="_blank"
+rel="noopener"
+aria-label="التواصل عبر واتساب"
 >
-    ☎
+◔
 </a>
 
 
 <script>
 
-/* =========================================================
+/* =========================
    MOBILE MENU
-========================================================= */
+========================= */
 
-function toggleMenu() {
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
 
-    const menu = document.getElementById("mobileMenu");
+menuBtn.addEventListener("click", function(){
 
-    if (menu.style.display === "block") {
-        menu.style.display = "none";
-    } else {
-        menu.style.display = "block";
-    }
+    navLinks.classList.toggle("active");
 
-}
-
-function closeMenu() {
-
-    document.getElementById("mobileMenu").style.display = "none";
-
-}
-
-
-/* =========================================================
-   CLOSE MOBILE MENU WHEN CLICK OUTSIDE
-========================================================= */
-
-document.addEventListener("click", function(e) {
-
-    const menu = document.getElementById("mobileMenu");
-    const button = document.querySelector(".menu-btn");
-
-    if (
-        menu &&
-        menu.style.display === "block" &&
-        !menu.contains(e.target) &&
-        !button.contains(e.target)
-    ) {
-
-        menu.style.display = "none";
-
+    if(navLinks.classList.contains("active")){
+        menuBtn.textContent = "×";
+    }else{
+        menuBtn.textContent = "☰";
     }
 
 });
 
 
-/* =========================================================
-   IMAGE FALLBACK
-========================================================= */
+/* close menu after click */
 
-document.querySelectorAll("img").forEach(function(img) {
+document.querySelectorAll(".nav-links a").forEach(link => {
 
-    img.addEventListener("error", function() {
+    link.addEventListener("click", () => {
 
-        console.warn(
-            "تعذر تحميل الصورة:",
-            img.src
-        );
+        navLinks.classList.remove("active");
+        menuBtn.textContent = "☰";
 
     });
 
 });
 
 
-/* =========================================================
-   HEADER SCROLL
-========================================================= */
+/* =========================
+   SIMPLE SCROLL REVEAL
+========================= */
 
-let lastScroll = 0;
+const revealElements = document.querySelectorAll(
+    ".service-card, .expertise, .process-item, .about-card, .logo-stage"
+);
 
-window.addEventListener("scroll", function() {
+const observer = new IntersectionObserver(
 
-    const header = document.querySelector(".header");
+(entries) => {
 
-    const currentScroll = window.scrollY;
+    entries.forEach(entry => {
 
-    if (currentScroll > 30) {
+        if(entry.isIntersecting){
 
-        header.style.background =
-            "rgba(7,23,16,.94)";
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
 
-        header.style.boxShadow =
-            "0 8px 30px rgba(0,0,0,.16)";
+        }
 
-    } else {
+    });
 
-        header.style.background =
-            "rgba(9,27,20,.82)";
+},
 
-        header.style.boxShadow =
-            "none";
+{
+    threshold:.12
+}
 
-    }
+);
 
-    lastScroll = currentScroll;
+
+revealElements.forEach(element => {
+
+    element.style.opacity = "0";
+    element.style.transform = "translateY(18px)";
+    element.style.transition = "opacity .7s ease, transform .7s ease";
+
+    observer.observe(element);
 
 });
 
