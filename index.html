@@ -1,63 +1,59 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
 <title>روينا عبدالفتاح رحالي | للمحاماة والاستشارات القانونية</title>
 
 <meta name="description"
-content="مكتب روينا عبدالفتاح رحالي للمحاماة والاستشارات القانونية والتوثيق في جدة. خدمات قانونية متخصصة للأفراد والمنشآت.">
+content="مكتب روينا عبدالفتاح رحالي للمحاماة والاستشارات القانونية والتوثيق في جدة.">
 
-<meta name="keywords"
-content="محامي جدة, محامية جدة, مكتب محاماة جدة, استشارات قانونية جدة, محاماة, قضايا عمالية, قضايا تجارية, أحوال شخصية, عقود, توثيق">
-
-<meta name="author" content="روينا عبدالفتاح رحالي">
-
-<meta property="og:title"
-content="روينا عبدالفتاح رحالي | للمحاماة والاستشارات القانونية">
-
-<meta property="og:description"
-content="حلول قانونية واضحة. تمثيل مهني. عناية دقيقة بكل قضية.">
-
-<meta property="og:type" content="website">
-
-<meta name="theme-color" content="#071c14">
+<meta name="theme-color" content="#061b13">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
 
 <style>
 
+/* =====================================================
+   ROOT
+===================================================== */
+
 :root{
-    --green:#071c14;
-    --green2:#0d2b20;
-    --green3:#12392a;
 
-    --gold:#c5a15b;
-    --gold2:#e0c583;
+    --green:#061b13;
+    --green-2:#0b281d;
+    --green-3:#123a2b;
 
-    --cream:#f7f4ed;
+    --gold:#c9a45d;
+    --gold-light:#e3c982;
+
+    --cream:#f8f5ee;
+    --paper:#eeeae1;
+
     --white:#ffffff;
-    --black:#111814;
+    --text:#17231d;
+    --muted:#707971;
 
-    --text:#18231d;
-    --muted:#6d766f;
+    --line:rgba(6,27,19,.13);
 
-    --border:rgba(12,43,30,.13);
+    --container:1280px;
 
-    --shadow:0 25px 70px rgba(0,0,0,.12);
-
-    --radius:2px;
 }
 
 
-/* =========================
+/* =====================================================
    RESET
-========================= */
+===================================================== */
 
 *{
     margin:0;
@@ -70,10 +66,17 @@ html{
 }
 
 body{
+
+    margin:0;
+
     background:var(--cream);
+
     color:var(--text);
+
     font-family:'Noto Kufi Arabic',sans-serif;
+
     overflow-x:hidden;
+
 }
 
 body.menu-open{
@@ -81,232 +84,425 @@ body.menu-open{
 }
 
 img{
-    max-width:100%;
     display:block;
+    max-width:100%;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
 }
 
 button,
 input,
 textarea{
-    font:inherit;
+    font-family:inherit;
 }
 
 button{
     cursor:pointer;
 }
 
-a{
-    color:inherit;
-    text-decoration:none;
-}
-
 .container{
-    width:min(1240px,calc(100% - 70px));
-    margin:auto;
+
+    width:min(
+        var(--container),
+        calc(100% - 80px)
+    );
+
+    margin-inline:auto;
+
 }
 
 
-/* =========================
-   PRELOADER
-========================= */
+/* =====================================================
+   LOGO SOURCE
+===================================================== */
+
+.logo-image{
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+}
+
+
+/* =====================================================
+   LOADER
+===================================================== */
 
 .preloader{
+
     position:fixed;
+
     inset:0;
-    z-index:9999;
+
+    z-index:99999;
+
     background:var(--green);
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
-    transition:.8s ease;
+
+    transition:
+        opacity .8s ease,
+        visibility .8s ease;
+
 }
 
 .preloader.hide{
+
     opacity:0;
+
     visibility:hidden;
+
 }
 
-.loader{
-    text-align:center;
-}
-
-.loader-logo{
-    width:85px;
-    height:85px;
-    object-fit:contain;
-    margin:auto auto 22px;
-}
-
-.loader-line{
-    width:120px;
-    height:1px;
-    background:rgba(255,255,255,.2);
-    position:relative;
-    overflow:hidden;
-}
-
-.loader-line span{
-    position:absolute;
-    right:0;
-    top:0;
-    height:100%;
-    width:45%;
-    background:var(--gold2);
-    animation:loader 1.2s infinite;
-}
-
-@keyframes loader{
-    0%{right:100%}
-    100%{right:-45%}
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-.header{
-    position:absolute;
-    top:0;
-    right:0;
-    left:0;
-    z-index:100;
-
-    border-bottom:1px solid rgba(255,255,255,.12);
-
-    transition:.35s ease;
-}
-
-.header.scrolled{
-    position:fixed;
-    background:rgba(7,28,20,.94);
-    backdrop-filter:blur(18px);
-    box-shadow:0 10px 40px rgba(0,0,0,.15);
-}
-
-.header-inner{
-    min-height:88px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    gap:40px;
-}
-
-.brand{
-    display:flex;
-    align-items:center;
-    gap:14px;
-
-    color:white;
-
-    min-width:245px;
-}
-
-.brand-logo{
-    width:53px;
-    height:53px;
-    object-fit:contain;
-}
-
-.brand-name{
-    display:flex;
-    flex-direction:column;
-    gap:4px;
-}
-
-.brand-name strong{
-    font-family:'IBM Plex Sans Arabic';
-    font-size:15px;
-    font-weight:600;
-}
-
-.brand-name span{
-    color:var(--gold2);
-    font-size:7px;
-    letter-spacing:.2px;
-}
-
-
-.nav{
-    display:flex;
-    align-items:center;
-    gap:32px;
-}
-
-.nav a{
-    color:rgba(255,255,255,.78);
-    font-size:10px;
+.loader-box{
 
     position:relative;
 
-    padding:10px 0;
+    width:130px;
 
-    transition:.25s;
+    height:130px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
 }
 
-.nav a::after{
+.loader-ring{
+
+    position:absolute;
+
+    inset:0;
+
+    border:1px solid rgba(201,164,93,.3);
+
+    border-radius:50%;
+
+    animation:loaderRotate 3s linear infinite;
+
+}
+
+.loader-ring::after{
+
     content:"";
 
     position:absolute;
 
-    bottom:0;
+    width:7px;
+
+    height:7px;
+
+    border-radius:50%;
+
+    background:var(--gold-light);
+
+    top:-3px;
+
+    left:50%;
+
+    box-shadow:
+        0 0 12px var(--gold-light),
+        0 0 30px var(--gold);
+
+}
+
+.loader-logo{
+
+    width:70px;
+    height:70px;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(0 0 8px rgba(201,164,93,.4));
+
+}
+
+@keyframes loaderRotate{
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+
+    position:absolute;
+
+    top:0;
     right:0;
+    left:0;
 
-    width:0;
-    height:1px;
+    z-index:1000;
 
-    background:var(--gold2);
+    height:92px;
 
-    transition:.3s;
+    border-bottom:
+        1px solid rgba(255,255,255,.10);
+
+    transition:.35s ease;
+
 }
 
-.nav a:hover{
-    color:white;
+.header.scrolled{
+
+    position:fixed;
+
+    height:76px;
+
+    background:
+        rgba(4,23,16,.94);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,.18);
+
 }
 
-.nav a:hover::after{
-    width:100%;
-}
+.header-inner{
 
-.header-phone{
+    height:100%;
+
     display:flex;
-    align-items:center;
-    gap:12px;
 
-    color:var(--gold2);
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:40px;
+
+}
+
+
+/* LOGO */
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    min-width:270px;
+
+    color:white;
+
+}
+
+.brand-logo{
+
+    width:56px;
+    height:56px;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 0 7px
+            rgba(201,164,93,.22)
+        );
+
+    transition:.35s;
+
+}
+
+.brand:hover .brand-logo{
+
+    filter:
+        drop-shadow(
+            0 0 14px
+            rgba(227,201,130,.5)
+        );
+
+    transform:scale(1.04);
+
+}
+
+.brand-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:4px;
+
+}
+
+.brand-text strong{
+
+    font-family:'IBM Plex Sans Arabic';
+
+    font-size:15px;
+
+    font-weight:600;
+
+    white-space:nowrap;
+
+}
+
+.brand-text small{
+
+    color:var(--gold-light);
+
+    font-size:7px;
+
+    white-space:nowrap;
+
+}
+
+
+/* NAV */
+
+.nav{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:34px;
+
+}
+
+.nav a{
+
+    color:
+        rgba(255,255,255,.78);
 
     font-size:10px;
 
+    padding:10px 0;
+
+    position:relative;
+
+    transition:.25s;
+
+}
+
+.nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:0;
+
+    bottom:0;
+
+    width:0;
+
+    height:1px;
+
+    background:var(--gold-light);
+
+    transition:.3s;
+
+}
+
+.nav a:hover{
+
+    color:white;
+
+}
+
+.nav a:hover::after{
+
+    width:100%;
+
+}
+
+
+/* PHONE */
+
+.header-phone{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
     padding-right:25px;
 
-    border-right:1px solid rgba(255,255,255,.15);
+    border-right:
+        1px solid rgba(255,255,255,.15);
+
+    color:var(--gold-light);
+
+    font-size:11px;
+
+    white-space:nowrap;
+
 }
 
 .header-phone small{
-    color:rgba(255,255,255,.45);
+
     display:block;
+
+    color:rgba(255,255,255,.45);
+
     font-size:7px;
+
+    margin-bottom:3px;
+
 }
 
-.mobile-menu{
+.phone-number{
+
+    direction:ltr;
+
+    unicode-bidi:plaintext;
+
+    display:inline-block;
+
+    font-family:Arial,sans-serif;
+
+    letter-spacing:.3px;
+
+}
+
+
+/* MOBILE BUTTON */
+
+.mobile-button{
+
     display:none;
 
-    width:43px;
-    height:43px;
+    width:44px;
+    height:44px;
 
-    border:1px solid rgba(255,255,255,.25);
+    border:
+        1px solid
+        rgba(255,255,255,.22);
 
-    background:none;
+    background:transparent;
 
-    color:white;
 }
 
-.mobile-menu span{
+.mobile-button span{
+
     display:block;
 
     width:20px;
+
     height:1px;
 
     background:white;
@@ -314,406 +510,688 @@ a{
     margin:5px auto;
 
     transition:.3s;
+
 }
 
 
-/* =========================
+/* =====================================================
    MOBILE NAV
-========================= */
+===================================================== */
 
 .mobile-nav{
-    position:fixed;
-    inset:0;
-    z-index:90;
 
-    background:rgba(7,28,20,.98);
+    position:fixed;
+
+    inset:0;
+
+    z-index:900;
+
+    background:
+        rgba(5,25,17,.98);
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     opacity:0;
+
     visibility:hidden;
 
     transition:.4s;
+
 }
 
-.mobile-nav.open{
+.mobile-nav.active{
+
     opacity:1;
+
     visibility:visible;
+
 }
 
-.mobile-nav-inner{
+.mobile-nav-content{
+
     text-align:center;
+
 }
 
 .mobile-nav a{
+
     display:block;
 
     color:white;
 
-    font-family:'IBM Plex Sans Arabic';
-
-    font-size:27px;
-
-    margin:20px 0;
-
-    transition:.25s;
-}
-
-.mobile-nav a:hover{
-    color:var(--gold2);
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-    min-height:850px;
-
-    background:var(--green);
-
-    position:relative;
-
-    display:flex;
-    align-items:center;
-
-    color:white;
-
-    overflow:hidden;
-}
-
-.hero-image{
-    position:absolute;
-    inset:0;
-
-    background-image:
-        linear-gradient(
-            90deg,
-            rgba(5,22,15,.98) 5%,
-            rgba(5,22,15,.88) 38%,
-            rgba(5,22,15,.58) 75%,
-            rgba(5,22,15,.35)
-        ),
-        url("https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/1-8.jpg");
-
-    background-size:cover;
-    background-position:center;
-
-    transform:scale(1.03);
-
-    animation:heroZoom 12s ease forwards;
-}
-
-@keyframes heroZoom{
-    from{transform:scale(1.03)}
-    to{transform:scale(1)}
-}
-
-.hero-pattern{
-    position:absolute;
-    inset:0;
-
-    opacity:.06;
-
-    background-image:
-        linear-gradient(rgba(255,255,255,.3) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,255,255,.3) 1px,transparent 1px);
-
-    background-size:90px 90px;
-}
-
-.hero-inner{
-    position:relative;
-    z-index:2;
-
-    padding-top:110px;
-
-    display:grid;
-    grid-template-columns:1.1fr .9fr;
-
-    align-items:center;
-
-    gap:100px;
-}
-
-.hero-content{
-    max-width:720px;
-}
-
-.eyebrow{
-    display:flex;
-    align-items:center;
-    gap:13px;
-
-    color:var(--gold2);
-
-    font-size:10px;
-
-    margin-bottom:25px;
-}
-
-.eyebrow::before{
-    content:"";
-
-    width:38px;
-    height:1px;
-
-    background:var(--gold);
-}
-
-.hero h1{
-    font-family:'IBM Plex Sans Arabic';
-
-    font-size:clamp(52px,6.7vw,94px);
-
-    line-height:1.16;
-
-    font-weight:600;
-
-    letter-spacing:-3px;
-}
-
-.hero h1 span{
-    color:var(--gold2);
-}
-
-.hero-description{
-    max-width:560px;
-
-    margin:31px 0;
-
-    font-size:14px;
-
-    line-height:2.15;
-
-    color:rgba(255,255,255,.7);
-}
-
-.hero-buttons{
-    display:flex;
-    gap:13px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    min-height:53px;
-
-    display:inline-flex;
-
-    align-items:center;
-    justify-content:center;
-
-    gap:13px;
-
-    padding:0 25px;
-
-    font-size:10px;
-
-    border:1px solid transparent;
-
-    transition:.3s;
-}
-
-.btn-gold{
-    background:var(--gold);
-    color:var(--green);
-}
-
-.btn-gold:hover{
-    background:var(--gold2);
-    transform:translateY(-3px);
-}
-
-.btn-outline{
-    border-color:rgba(255,255,255,.3);
-    color:white;
-}
-
-.btn-outline:hover{
-    border-color:var(--gold2);
-    color:var(--gold2);
-}
-
-
-/* HERO CARD */
-
-.hero-panel{
-    justify-self:end;
-
-    width:min(390px,100%);
-
-    background:rgba(7,28,20,.72);
-
-    border:1px solid rgba(224,197,131,.35);
-
-    backdrop-filter:blur(15px);
-
-    padding:32px;
-
-    box-shadow:var(--shadow);
-}
-
-.panel-top{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding-bottom:25px;
-
-    border-bottom:1px solid rgba(255,255,255,.13);
-
-    margin-bottom:28px;
-}
-
-.panel-label{
-    color:var(--gold2);
-    font-size:9px;
-}
-
-.panel-seal{
-    width:62px;
-    height:62px;
-
-    border:1px solid var(--gold);
-
-    border-radius:50%;
-
-    display:grid;
-    place-items:center;
-
-    color:var(--gold2);
-
-    font-family:'IBM Plex Sans Arabic';
-
-    font-size:10px;
-
-    line-height:1.5;
-
-    text-align:center;
-}
-
-.hero-panel h2{
     font-family:'IBM Plex Sans Arabic';
 
     font-size:26px;
 
-    margin-bottom:12px;
+    margin:22px 0;
+
+    transition:.25s;
+
 }
 
-.hero-panel p{
-    color:rgba(255,255,255,.62);
+.mobile-nav a:hover{
+
+    color:var(--gold-light);
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    min-height:
+        max(780px,100vh);
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:var(--green);
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+
+/* BACKGROUND IMAGE */
+
+.hero-background{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+        linear-gradient(
+            90deg,
+            rgba(3,20,13,.97) 0%,
+            rgba(3,20,13,.90) 38%,
+            rgba(3,20,13,.66) 72%,
+            rgba(3,20,13,.45) 100%
+        ),
+
+        url(
+        "https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/1-8.jpg"
+        );
+
+    background-size:cover;
+
+    background-position:center;
+
+    transform:scale(1.02);
+
+}
+
+
+/* GRID */
+
+.hero-grid{
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:.055;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,.25) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.25) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        100px 100px;
+
+}
+
+
+/* GOLD LIGHT */
+
+.hero-light{
+
+    position:absolute;
+
+    width:600px;
+
+    height:600px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(201,164,93,.10),
+            transparent 65%
+        );
+
+    left:-180px;
+
+    top:20%;
+
+    pointer-events:none;
+
+}
+
+
+/* HERO CONTENT */
+
+.hero-container{
+
+    position:relative;
+
+    z-index:2;
+
+    width:min(
+        var(--container),
+        calc(100% - 80px)
+    );
+
+    margin-inline:auto;
+
+    padding-top:100px;
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(320px,.72fr)
+        minmax(500px,1.28fr);
+
+    gap:90px;
+
+    align-items:center;
+
+}
+
+
+/* =====================================================
+   PROFESSIONAL LOGO DISPLAY
+===================================================== */
+
+.hero-logo-stage{
+
+    position:relative;
+
+    width:430px;
+
+    height:430px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    justify-self:start;
+
+}
+
+
+/* OUTER RING */
+
+.logo-ring{
+
+    position:absolute;
+
+    width:390px;
+    height:390px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(201,164,93,.25);
+
+    animation:
+        slowRotate 18s linear infinite;
+
+}
+
+.logo-ring::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:10px;
+    height:10px;
+
+    background:var(--gold-light);
+
+    border-radius:50%;
+
+    top:-5px;
+
+    left:50%;
+
+    box-shadow:
+        0 0 15px var(--gold),
+        0 0 35px rgba(201,164,93,.7);
+
+}
+
+
+/* SECOND RING */
+
+.logo-ring-2{
+
+    position:absolute;
+
+    width:310px;
+    height:310px;
+
+    border-radius:50%;
+
+    border:
+        1px dashed
+        rgba(201,164,93,.28);
+
+    animation:
+        slowRotateReverse 24s linear infinite;
+
+}
+
+@keyframes slowRotate{
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+@keyframes slowRotateReverse{
+
+    to{
+        transform:rotate(-360deg);
+    }
+
+}
+
+
+/* LOGO HALO */
+
+.logo-halo{
+
+    position:absolute;
+
+    width:260px;
+    height:260px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(201,164,93,.17),
+            rgba(201,164,93,.04) 45%,
+            transparent 72%
+        );
+
+    filter:blur(2px);
+
+    animation:
+        logoPulse 4s ease-in-out infinite;
+
+}
+
+@keyframes logoPulse{
+
+    0%,100%{
+        transform:scale(.94);
+        opacity:.65;
+    }
+
+    50%{
+        transform:scale(1.06);
+        opacity:1;
+    }
+
+}
+
+
+/* ACTUAL LOGO */
+
+.hero-logo{
+
+    position:relative;
+
+    z-index:3;
+
+    width:190px;
+    height:190px;
+
+    object-fit:contain;
+
+    filter:
+
+        drop-shadow(
+            0 0 5px
+            rgba(255,255,255,.12)
+        )
+
+        drop-shadow(
+            0 0 20px
+            rgba(201,164,93,.28)
+        );
+
+    animation:
+        logoFloat 5s ease-in-out infinite;
+
+}
+
+@keyframes logoFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-9px);
+    }
+
+}
+
+
+/* SHINE */
+
+.logo-shine{
+
+    position:absolute;
+
+    z-index:4;
+
+    width:240px;
+
+    height:80px;
+
+    transform:
+        rotate(-35deg)
+        translateX(-230px);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.22),
+            transparent
+        );
+
+    animation:
+        logoShine 5s ease-in-out infinite;
+
+    pointer-events:none;
+
+}
+
+@keyframes logoShine{
+
+    0%,55%{
+        transform:
+            rotate(-35deg)
+            translateX(-250px);
+    }
+
+    75%,100%{
+        transform:
+            rotate(-35deg)
+            translateX(250px);
+    }
+
+}
+
+
+/* =====================================================
+   HERO TEXT
+===================================================== */
+
+.hero-content{
+
+    max-width:800px;
+
+    justify-self:end;
+
+}
+
+.hero-eyebrow{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    color:var(--gold-light);
 
     font-size:11px;
 
-    line-height:2;
+    margin-bottom:25px;
+
 }
 
-.panel-bottom{
-    margin-top:30px;
+.hero-eyebrow::before{
+
+    content:"";
+
+    width:40px;
+
+    height:1px;
+
+    background:var(--gold);
+
+}
+
+
+/* TITLE */
+
+.hero-title{
+
+    font-family:'IBM Plex Sans Arabic';
+
+    font-size:
+        clamp(
+            48px,
+            6vw,
+            88px
+        );
+
+    line-height:1.15;
+
+    letter-spacing:-3px;
+
+    font-weight:600;
+
+}
+
+.hero-title span{
+
+    color:var(--gold-light);
+
+}
+
+
+/* DESCRIPTION */
+
+.hero-description{
+
+    max-width:590px;
+
+    color:
+        rgba(255,255,255,.68);
+
+    font-size:13px;
+
+    line-height:2.25;
+
+    margin:
+        30px 0 32px;
+
+}
+
+
+/* BUTTONS */
+
+.hero-buttons{
 
     display:flex;
+
+    gap:13px;
+
+    flex-wrap:wrap;
+
+}
+
+.button{
+
+    min-height:54px;
+
+    padding:
+        0 25px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
     gap:12px;
+
+    font-size:10px;
+
+    transition:.3s;
+
 }
 
-.panel-bottom div{
-    flex:1;
+.button-gold{
 
-    border-top:1px solid rgba(255,255,255,.12);
+    background:var(--gold);
 
-    padding-top:13px;
+    color:var(--green);
+
 }
 
-.panel-bottom strong{
-    display:block;
+.button-gold:hover{
 
-    color:var(--gold2);
+    background:var(--gold-light);
 
-    font-family:'IBM Plex Sans Arabic';
+    transform:translateY(-3px);
 
-    font-size:14px;
 }
 
-.panel-bottom span{
-    font-size:7px;
+.button-outline{
 
-    color:rgba(255,255,255,.45);
-}
-
-
-/* =========================
-   TRUST STRIP
-========================= */
-
-.trust-strip{
-    position:relative;
-    z-index:5;
-
-    margin-top:-1px;
-
-    background:var(--green2);
+    border:
+        1px solid
+        rgba(255,255,255,.27);
 
     color:white;
+
 }
 
-.trust-grid{
-    display:grid;
+.button-outline:hover{
 
-    grid-template-columns:repeat(4,1fr);
+    border-color:var(--gold-light);
+
+    color:var(--gold-light);
+
 }
 
-.trust-item{
-    padding:29px 25px;
 
-    border-left:1px solid rgba(255,255,255,.1);
+/* =====================================================
+   HERO INFO
+===================================================== */
 
-    text-align:center;
+.hero-info{
+
+    margin-top:35px;
+
+    display:flex;
+
+    gap:30px;
+
 }
 
-.trust-item:last-child{
-    border-left:0;
+.hero-info-item{
+
+    padding-top:13px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.15);
+
+    min-width:100px;
+
 }
 
-.trust-item strong{
+.hero-info-item strong{
+
     display:block;
 
-    color:var(--gold2);
+    color:var(--gold-light);
 
     font-family:'IBM Plex Sans Arabic';
 
-    font-size:18px;
+    font-size:12px;
 
-    margin-bottom:5px;
+    margin-bottom:3px;
+
 }
 
-.trust-item span{
-    font-size:8px;
+.hero-info-item span{
 
-    color:rgba(255,255,255,.5);
+    color:
+        rgba(255,255,255,.42);
+
+    font-size:7px;
+
 }
 
 
-/* =========================
+/* =====================================================
    ABOUT
-========================= */
+===================================================== */
 
 .about{
-    padding:150px 0;
+
+    padding:
+        150px 0;
 
     background:var(--cream);
+
 }
 
 .about-grid{
+
     display:grid;
 
-    grid-template-columns:100px 1fr 1fr;
+    grid-template-columns:
+        80px
+        1fr
+        1fr;
 
-    gap:60px;
+    gap:65px;
+
 }
 
-.number{
+.side-number{
+
     color:var(--gold);
 
     font-family:'IBM Plex Sans Arabic';
@@ -721,162 +1199,205 @@ a{
     font-size:12px;
 
     display:flex;
+
     flex-direction:column;
 
     align-items:center;
 
     gap:17px;
+
 }
 
-.number::after{
+.side-number::after{
+
     content:"";
 
     width:1px;
+
     height:150px;
 
     background:var(--gold);
 
     opacity:.5;
+
 }
 
-.section-title{
-    font-family:'IBM Plex Sans Arabic';
+.eyebrow{
 
-    font-size:clamp(42px,5vw,70px);
-
-    line-height:1.25;
-
-    letter-spacing:-2px;
-}
-
-.section-title span{
-    color:var(--gold);
-}
-
-.about-copy{
-    padding-top:58px;
-
-    max-width:500px;
-}
-
-.about-copy p{
-    font-size:13px;
-
-    line-height:2.3;
-
-    color:var(--muted);
-
-    margin-bottom:20px;
-}
-
-.gold-link{
-    display:inline-flex;
+    display:flex;
 
     align-items:center;
 
     gap:12px;
 
-    color:var(--green);
+    color:var(--gold);
 
     font-size:10px;
 
-    border-bottom:1px solid var(--gold);
+    margin-bottom:22px;
 
-    padding:10px 0;
-
-    transition:.25s;
 }
 
-.gold-link:hover{
+.eyebrow::before{
+
+    content:"";
+
+    width:35px;
+
+    height:1px;
+
+    background:var(--gold);
+
+}
+
+.section-title{
+
+    font-family:'IBM Plex Sans Arabic';
+
+    font-size:
+        clamp(42px,5vw,68px);
+
+    line-height:1.3;
+
+    letter-spacing:-2px;
+
+}
+
+.section-title span{
+
     color:var(--gold);
+
+}
+
+.about-text{
+
+    padding-top:50px;
+
+    max-width:480px;
+
+}
+
+.about-text p{
+
+    color:var(--muted);
+
+    font-size:12px;
+
+    line-height:2.3;
+
+    margin-bottom:18px;
+
 }
 
 
-/* =========================
+/* =====================================================
    SERVICES
-========================= */
+===================================================== */
 
 .services{
-    background:#eeeae1;
 
-    padding:135px 0;
+    background:var(--paper);
+
+    padding:
+        135px 0;
+
 }
 
-.section-head{
-    display:flex;
+.section-heading{
 
-    justify-content:space-between;
+    display:flex;
 
     align-items:end;
 
-    gap:40px;
+    justify-content:space-between;
+
+    gap:50px;
 
     margin-bottom:60px;
+
 }
 
-.section-head-note{
-    max-width:390px;
+.section-description{
+
+    max-width:380px;
 
     color:var(--muted);
 
     font-size:11px;
 
     line-height:2.2;
+
 }
 
-.services-list{
-    border-top:1px solid var(--border);
+.service-list{
+
+    border-top:
+        1px solid
+        var(--line);
+
 }
 
 .service{
-    display:grid;
-
-    grid-template-columns:65px 55px 1fr 360px 25px;
-
-    align-items:center;
-
-    gap:18px;
 
     width:100%;
 
-    padding:28px 0;
+    display:grid;
 
-    background:none;
+    grid-template-columns:
+        65px
+        55px
+        1fr
+        340px
+        20px;
 
-    border:0;
+    gap:18px;
 
-    border-bottom:1px solid var(--border);
+    align-items:center;
 
-    text-align:right;
+    padding:
+        27px 0;
+
+    border-bottom:
+        1px solid
+        var(--line);
 
     transition:.3s;
+
 }
 
 .service:hover{
-    background:rgba(197,161,91,.09);
 
-    padding-right:20px;
+    background:
+        rgba(201,164,93,.08);
 
-    padding-left:20px;
+    padding-inline:
+        20px;
+
 }
 
 .service-number{
+
     color:var(--gold);
 
     font-family:'IBM Plex Sans Arabic';
 
     font-size:12px;
+
 }
 
 .service-icon{
+
     width:42px;
     height:42px;
 
-    border:1px solid rgba(197,161,91,.7);
+    border:
+        1px solid
+        rgba(201,164,93,.7);
 
     border-radius:50%;
 
     display:grid;
+
     place-items:center;
 
     color:var(--gold);
@@ -884,349 +1405,426 @@ a{
     font-family:serif;
 
     font-size:18px;
+
 }
 
 .service h3{
+
     font-family:'IBM Plex Sans Arabic';
 
-    font-size:20px;
+    font-size:19px;
 
     font-weight:500;
+
 }
 
 .service p{
+
     color:var(--muted);
 
     font-size:9px;
 
     line-height:1.9;
+
 }
 
 .service-arrow{
+
     color:var(--gold);
 
-    font-size:19px;
-
     transition:.3s;
+
 }
 
 .service:hover .service-arrow{
-    transform:translate(-5px,-5px);
+
+    transform:
+        translate(-5px,-5px);
+
 }
 
 
-/* =========================
+/* =====================================================
    FEATURE
-========================= */
+===================================================== */
 
 .feature{
-    min-height:700px;
 
     display:grid;
 
     grid-template-columns:1fr 1fr;
 
+    min-height:650px;
+
     background:var(--green);
 
     color:white;
+
 }
 
 .feature-image{
+
     min-height:600px;
 
     background:
+
         linear-gradient(
-            rgba(7,28,20,.2),
-            rgba(7,28,20,.45)
+            rgba(6,27,19,.18),
+            rgba(6,27,19,.55)
         ),
-        url("https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/1-8.jpg")
+
+        url(
+        "https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/1-8.jpg"
+        )
         center/cover;
+
 }
 
 .feature-content{
-    padding:120px 11%;
+
+    padding:
+        110px 11%;
 
     display:flex;
 
     flex-direction:column;
 
     justify-content:center;
+
 }
 
 .feature-quote{
+
     font-family:'IBM Plex Sans Arabic';
 
-    font-size:clamp(29px,3.2vw,48px);
+    font-size:
+        clamp(27px,3.2vw,45px);
 
-    line-height:1.6;
+    line-height:1.65;
 
-    margin:35px 0;
+    margin:
+        30px 0;
+
 }
 
 .feature-quote span{
-    color:var(--gold2);
+
+    color:var(--gold-light);
+
 }
 
 .gold-line{
-    width:60px;
+
+    width:55px;
 
     height:2px;
 
     background:var(--gold);
 
-    margin-bottom:28px;
+    margin-bottom:25px;
+
 }
 
-.feature-content>p:last-of-type{
+.feature-description{
+
     max-width:480px;
 
-    color:rgba(255,255,255,.62);
+    color:
+        rgba(255,255,255,.60);
 
-    font-size:12px;
+    font-size:11px;
 
-    line-height:2.25;
+    line-height:2.2;
+
 }
 
 .feature-points{
+
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:
+        repeat(3,1fr);
 
     gap:20px;
 
-    border-top:1px solid rgba(255,255,255,.13);
+    border-top:
+        1px solid
+        rgba(255,255,255,.13);
 
-    margin-top:55px;
+    margin-top:50px;
 
-    padding-top:25px;
+    padding-top:23px;
+
 }
 
-.feature-point strong{
+.feature-points strong{
+
     display:block;
 
-    color:var(--gold2);
+    color:var(--gold-light);
 
     font-family:'IBM Plex Sans Arabic';
 
-    font-size:15px;
+    font-size:14px;
 
-    margin-bottom:5px;
 }
 
-.feature-point span{
-    color:rgba(255,255,255,.45);
+.feature-points span{
 
-    font-size:8px;
+    color:
+        rgba(255,255,255,.40);
+
+    font-size:7px;
+
 }
 
 
-/* =========================
-   PRACTICE AREAS
-========================= */
+/* =====================================================
+   PRACTICE
+===================================================== */
 
 .practice{
-    padding:140px 0;
 
-    background:var(--green2);
+    padding:
+        140px 0;
+
+    background:var(--green-2);
 
     color:white;
+
 }
 
 .practice-grid{
+
     display:grid;
 
     grid-template-columns:1fr 1fr;
 
     gap:100px;
+
 }
 
 .practice-title{
+
     font-family:'IBM Plex Sans Arabic';
 
-    font-size:clamp(43px,5vw,70px);
+    font-size:
+        clamp(42px,5vw,68px);
 
-    line-height:1.25;
+    line-height:1.3;
 
     letter-spacing:-2px;
+
 }
 
 .practice-title span{
-    color:var(--gold2);
+
+    color:var(--gold-light);
+
 }
 
 .practice-description{
-    max-width:440px;
 
-    margin-top:28px;
+    max-width:410px;
 
-    color:rgba(255,255,255,.62);
+    color:
+        rgba(255,255,255,.60);
 
-    font-size:12px;
+    font-size:11px;
 
     line-height:2.2;
+
+    margin-top:25px;
+
 }
 
 .practice-list{
-    border-top:1px solid rgba(255,255,255,.17);
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.15);
+
 }
 
 .practice-item{
+
     display:flex;
 
     align-items:center;
 
-    gap:20px;
+    gap:18px;
 
-    padding:22px 0;
+    padding:
+        21px 0;
 
-    border-bottom:1px solid rgba(255,255,255,.14);
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.13);
 
     transition:.3s;
+
 }
 
 .practice-item span{
-    color:var(--gold2);
+
+    color:var(--gold-light);
+
+    width:25px;
 
     font-size:9px;
 
-    width:25px;
 }
 
 .practice-item strong{
+
     flex:1;
 
     font-family:'IBM Plex Sans Arabic';
 
-    font-size:16px;
+    font-size:15px;
 
     font-weight:500;
+
 }
 
 .practice-item i{
+
+    color:var(--gold-light);
+
     font-style:normal;
 
-    color:var(--gold2);
-
     transition:.3s;
+
 }
 
 .practice-item:hover{
+
     padding-right:12px;
+
 }
 
 .practice-item:hover i{
-    transform:translate(-5px,-5px);
+
+    transform:
+        translate(-5px,-5px);
+
 }
 
 
-/* =========================
+/* =====================================================
    PROCESS
-========================= */
+===================================================== */
 
 .process{
-    padding:135px 0;
+
+    padding:
+        135px 0;
 
     background:var(--cream);
+
 }
 
 .process-grid{
+
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:
+        repeat(3,1fr);
 
-    gap:0;
+    margin-top:60px;
 
-    margin-top:65px;
+    border-top:
+        1px solid
+        var(--line);
 
-    border-top:1px solid var(--border);
+    border-right:
+        1px solid
+        var(--line);
 
-    border-right:1px solid var(--border);
 }
 
 .process-item{
-    padding:42px 32px;
 
-    border-left:1px solid var(--border);
+    padding:
+        40px 30px;
 
-    border-bottom:1px solid var(--border);
+    border-left:
+        1px solid
+        var(--line);
+
+    border-bottom:
+        1px solid
+        var(--line);
 
     transition:.3s;
+
 }
 
 .process-item:hover{
+
     background:white;
 
-    box-shadow:var(--shadow);
+    transform:translateY(-4px);
 
-    transform:translateY(-5px);
+    box-shadow:
+        0 25px 60px
+        rgba(0,0,0,.08);
+
 }
 
 .process-number{
+
     color:var(--gold);
 
-    font-family:'IBM Plex Sans Arabic';
+    font-size:9px;
 
-    font-size:11px;
+    margin-bottom:30px;
 
-    margin-bottom:35px;
 }
 
 .process-item h3{
+
     font-family:'IBM Plex Sans Arabic';
 
-    font-size:21px;
+    font-size:20px;
 
     margin-bottom:13px;
+
 }
 
 .process-item p{
+
     color:var(--muted);
 
     font-size:10px;
 
     line-height:2;
+
 }
 
 
-/* =========================
+/* =====================================================
    CTA
-========================= */
+===================================================== */
 
 .cta{
-    padding:115px 0;
+
+    padding:
+        105px 0;
 
     background:
+
         linear-gradient(
             100deg,
-            rgba(7,28,20,.98),
-            rgba(13,43,32,.92)
+            #061b13,
+            #0d3022
         );
 
     color:white;
 
-    position:relative;
-
-    overflow:hidden;
-}
-
-.cta::before{
-    content:"";
-
-    position:absolute;
-
-    width:500px;
-    height:500px;
-
-    border:1px solid rgba(197,161,91,.15);
-
-    border-radius:50%;
-
-    left:-220px;
-    top:-180px;
 }
 
 .cta-inner{
-    position:relative;
 
     display:flex;
 
@@ -1235,177 +1833,239 @@ a{
     justify-content:space-between;
 
     gap:50px;
+
 }
 
 .cta h2{
+
     font-family:'IBM Plex Sans Arabic';
 
-    font-size:clamp(38px,4.5vw,63px);
+    font-size:
+        clamp(38px,4.5vw,60px);
 
     line-height:1.35;
+
 }
 
 .cta h2 span{
-    color:var(--gold2);
+
+    color:var(--gold-light);
+
 }
 
 .cta p{
-    margin-top:18px;
 
-    color:rgba(255,255,255,.58);
+    color:
+        rgba(255,255,255,.55);
 
-    font-size:11px;
+    font-size:10px;
+
+    margin-top:15px;
+
 }
 
 .cta-button{
+
     flex-shrink:0;
 
     background:var(--gold);
 
     color:var(--green);
 
-    padding:19px 32px;
+    padding:
+        18px 30px;
 
     font-size:10px;
 
     transition:.3s;
+
 }
 
 .cta-button:hover{
-    background:var(--gold2);
+
+    background:var(--gold-light);
 
     transform:translateY(-4px);
+
 }
 
 
-/* =========================
+/* =====================================================
    CONTACT
-========================= */
+===================================================== */
 
 .contact{
-    padding:145px 0;
+
+    padding:
+        140px 0;
 
     background:var(--cream);
+
 }
 
 .contact-grid{
+
     display:grid;
 
     grid-template-columns:1fr 1fr;
 
-    gap:120px;
+    gap:110px;
+
 }
 
-.contact h2{
+.contact-title{
+
     font-family:'IBM Plex Sans Arabic';
 
-    font-size:clamp(42px,5vw,68px);
+    font-size:
+        clamp(42px,5vw,68px);
 
     line-height:1.3;
+
 }
 
-.contact h2 span{
+.contact-title span{
+
     color:var(--gold);
+
 }
 
 .contact-description{
+
     max-width:420px;
 
     color:var(--muted);
 
-    font-size:12px;
+    font-size:11px;
 
     line-height:2.2;
 
-    margin-top:25px;
+    margin-top:23px;
+
 }
 
 .contact-data{
+
     display:grid;
 
-    gap:17px;
+    gap:16px;
 
-    margin-top:42px;
+    margin-top:40px;
+
 }
 
 .contact-data a,
 .contact-data div{
+
     display:flex;
 
     align-items:center;
 
-    gap:13px;
+    gap:12px;
 
     font-size:10px;
+
 }
 
 .contact-icon{
+
     width:34px;
     height:34px;
 
-    display:grid;
-    place-items:center;
-
-    border:1px solid rgba(197,161,91,.55);
+    border:
+        1px solid
+        rgba(201,164,93,.55);
 
     color:var(--gold);
 
-    font-family:serif;
+    display:grid;
+
+    place-items:center;
+
 }
 
-.contact-form{
-    border-top:1px solid var(--border);
+.contact-phone{
 
-    padding-top:14px;
+    direction:ltr;
+
+    unicode-bidi:plaintext;
+
+    display:inline-block;
+
+    font-family:Arial,sans-serif;
+
+}
+
+
+/* FORM */
+
+.contact-form{
+
+    border-top:
+        1px solid
+        var(--line);
+
+    padding-top:15px;
+
 }
 
 .form-group{
-    margin-bottom:22px;
+
+    margin-bottom:21px;
+
 }
 
 .form-group label{
+
     display:block;
 
     font-size:9px;
 
     margin-bottom:7px;
+
 }
 
 .form-group input,
 .form-group textarea{
+
     width:100%;
 
     background:none;
 
     border:0;
 
-    border-bottom:1px solid var(--border);
+    border-bottom:
+        1px solid
+        var(--line);
+
+    padding:
+        12px 0;
 
     outline:none;
 
-    padding:12px 0;
+    font-size:11px;
 
     color:var(--green);
 
-    font-family:'Noto Kufi Arabic';
-
-    font-size:11px;
-
-    transition:.3s;
-}
-
-.form-group textarea{
-    resize:vertical;
-
-    min-height:110px;
 }
 
 .form-group input:focus,
 .form-group textarea:focus{
+
     border-color:var(--gold);
+
 }
 
-.submit{
+.form-group textarea{
+
+    min-height:110px;
+
+    resize:vertical;
+
+}
+
+.submit-button{
+
     width:100%;
 
     min-height:54px;
@@ -1419,479 +2079,934 @@ a{
     font-size:10px;
 
     transition:.3s;
+
 }
 
-.submit:hover{
-    background:var(--green3);
+.submit-button:hover{
+
+    background:var(--green-3);
 
     transform:translateY(-2px);
+
 }
 
 .form-note{
+
     color:var(--muted);
 
-    font-size:8px;
+    font-size:7px;
 
-    line-height:1.8;
+    margin-top:11px;
 
-    margin-top:12px;
 }
 
 
-/* =========================
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 .footer{
-    background:#05150e;
+
+    background:#04140d;
 
     color:white;
 
-    padding:60px 0 25px;
+    padding:
+        60px 0 25px;
+
 }
 
 .footer-grid{
+
     display:grid;
 
-    grid-template-columns:1.5fr 1fr 1fr;
+    grid-template-columns:
+        1.5fr
+        1fr
+        1fr;
 
     gap:50px;
+
 }
 
 .footer-brand{
+
     display:flex;
+
+    align-items:center;
 
     gap:14px;
 
-    align-items:center;
 }
 
 .footer-logo{
-    width:52px;
-    height:52px;
+
+    width:55px;
+    height:55px;
 
     object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(201,164,93,.25)
+        );
+
 }
 
 .footer-brand strong{
+
     display:block;
 
     font-family:'IBM Plex Sans Arabic';
 
     font-size:14px;
+
 }
 
-.footer-brand span{
+.footer-brand small{
+
     display:block;
 
-    color:var(--gold2);
+    color:var(--gold-light);
 
     font-size:7px;
 
     margin-top:5px;
+
 }
 
 .footer-column h4{
-    color:var(--gold2);
+
+    color:var(--gold-light);
 
     font-family:'IBM Plex Sans Arabic';
 
-    font-size:11px;
+    font-size:10px;
 
     margin-bottom:18px;
+
 }
 
 .footer-column a{
+
     display:block;
 
-    color:rgba(255,255,255,.5);
+    color:
+        rgba(255,255,255,.48);
 
-    font-size:9px;
+    font-size:8px;
 
     margin-bottom:10px;
 
     transition:.25s;
+
 }
 
 .footer-column a:hover{
+
     color:white;
+
 }
 
 .footer-bottom{
+
     margin-top:45px;
 
     padding-top:20px;
 
-    border-top:1px solid rgba(255,255,255,.1);
-
-    color:rgba(255,255,255,.35);
-
-    font-size:8px;
+    border-top:
+        1px solid
+        rgba(255,255,255,.10);
 
     display:flex;
 
     justify-content:space-between;
 
     gap:20px;
+
+    color:
+        rgba(255,255,255,.32);
+
+    font-size:7px;
+
 }
 
 
-/* =========================
+/* =====================================================
    WHATSAPP
-========================= */
+===================================================== */
 
 .whatsapp{
+
     position:fixed;
 
-    z-index:200;
+    left:22px;
+    bottom:22px;
 
-    left:24px;
-    bottom:24px;
+    z-index:500;
 
     width:58px;
     height:58px;
 
     border-radius:50%;
 
-    background:#c5a15b;
+    background:#c9a45d;
 
-    color:var(--green);
+    color:#071b13;
 
     display:grid;
+
     place-items:center;
 
-    box-shadow:0 12px 35px rgba(0,0,0,.28);
+    box-shadow:
+        0 12px 35px
+        rgba(0,0,0,.30);
 
     transition:.3s;
+
 }
 
 .whatsapp:hover{
-    transform:translateY(-6px) scale(1.04);
+
+    transform:
+        translateY(-5px)
+        scale(1.05);
+
 }
 
 .whatsapp svg{
+
     width:27px;
     height:27px;
+
 }
 
 
-/* =========================
-   REVEAL
-========================= */
+/* =====================================================
+   ANIMATION
+===================================================== */
 
 .reveal{
+
     opacity:0;
 
-    transform:translateY(35px);
+    transform:translateY(28px);
 
-    transition:opacity .8s ease,transform .8s ease;
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
 }
 
 .reveal.visible{
+
     opacity:1;
 
     transform:none;
+
 }
 
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* =====================================================
+   TABLET
+===================================================== */
 
-@media(max-width:1050px){
+@media(max-width:1100px){
+
+    .container,
+    .hero-container{
+
+        width:
+            calc(100% - 50px);
+
+    }
 
     .nav{
+
         gap:20px;
+
+    }
+
+    .brand{
+
+        min-width:auto;
+
     }
 
     .header-phone{
+
         display:none;
+
     }
 
-    .hero-inner{
-        gap:50px;
+    .hero-container{
+
+        grid-template-columns:
+            .8fr
+            1.2fr;
+
+        gap:40px;
+
+    }
+
+    .hero-logo-stage{
+
+        width:350px;
+        height:350px;
+
+    }
+
+    .logo-ring{
+
+        width:320px;
+        height:320px;
+
+    }
+
+    .logo-ring-2{
+
+        width:260px;
+        height:260px;
+
+    }
+
+    .hero-logo{
+
+        width:155px;
+        height:155px;
+
     }
 
     .service{
-        grid-template-columns:55px 50px 1fr 260px 20px;
-    }
 
-    .contact-grid{
-        gap:70px;
+        grid-template-columns:
+            50px
+            45px
+            1fr
+            260px
+            20px;
+
     }
 
 }
 
+
+/* =====================================================
+   TABLET / MOBILE
+===================================================== */
 
 @media(max-width:850px){
 
-    .container{
-        width:min(100% - 40px,680px);
+    .container,
+    .hero-container{
+
+        width:
+            calc(100% - 40px);
+
+    }
+
+    .header{
+
+        height:76px;
+
     }
 
     .nav{
+
         display:none;
+
     }
 
-    .mobile-menu{
+    .mobile-button{
+
         display:block;
-    }
 
-    .header-inner{
-        min-height:76px;
     }
 
     .brand-logo{
-        width:45px;
-        height:45px;
+
+        width:46px;
+        height:46px;
+
     }
 
-    .brand-name strong{
+    .brand-text strong{
+
         font-size:13px;
+
     }
+
+    .brand-text small{
+
+        font-size:6px;
+
+    }
+
+
+    /* HERO */
 
     .hero{
-        min-height:850px;
+
+        min-height:
+            900px;
+
     }
 
-    .hero-inner{
+    .hero-container{
+
+        padding-top:115px;
+
         grid-template-columns:1fr;
 
-        padding-top:125px;
+        gap:30px;
+
+        text-align:right;
+
     }
 
-    .hero-panel{
-        justify-self:start;
+    .hero-content{
 
-        max-width:410px;
+        justify-self:stretch;
+
+        order:1;
+
     }
 
-    .trust-grid{
-        grid-template-columns:repeat(2,1fr);
+    .hero-logo-stage{
+
+        order:2;
+
+        justify-self:center;
+
+        width:300px;
+        height:300px;
+
+        margin-top:5px;
+
     }
 
-    .trust-item{
-        border-bottom:1px solid rgba(255,255,255,.1);
+    .logo-ring{
+
+        width:280px;
+        height:280px;
+
+    }
+
+    .logo-ring-2{
+
+        width:220px;
+        height:220px;
+
+    }
+
+    .logo-halo{
+
+        width:210px;
+        height:210px;
+
+    }
+
+    .hero-logo{
+
+        width:135px;
+        height:135px;
+
+    }
+
+    .hero-title{
+
+        font-size:
+            clamp(43px,10vw,68px);
+
+        letter-spacing:-1.5px;
+
+    }
+
+    .hero-description{
+
+        font-size:11px;
+
+    }
+
+    .hero-info{
+
+        margin-top:27px;
+
+    }
+
+
+    /* ABOUT */
+
+    .about{
+
+        padding:
+            95px 0;
+
     }
 
     .about-grid{
+
         grid-template-columns:1fr;
+
         gap:25px;
+
     }
 
-    .number{
+    .side-number{
+
         display:none;
+
     }
 
-    .about-copy{
+    .about-text{
+
         padding-top:0;
+
     }
 
-    .section-head{
+
+    /* SERVICES */
+
+    .services{
+
+        padding:
+            95px 0;
+
+    }
+
+    .section-heading{
+
         display:block;
+
+        margin-bottom:40px;
+
     }
 
-    .section-head-note{
+    .section-description{
+
         margin-top:20px;
+
     }
 
     .service{
-        grid-template-columns:40px 45px 1fr 20px;
-        gap:10px;
+
+        grid-template-columns:
+            38px
+            42px
+            1fr
+            18px;
+
+        gap:9px;
+
+        padding:
+            20px 0;
+
+    }
+
+    .service h3{
+
+        font-size:14px;
+
     }
 
     .service p{
-        grid-column:3/5;
-        margin-top:5px;
+
+        grid-column:
+            3 / 5;
+
+        margin-top:4px;
+
+        font-size:8px;
+
     }
 
+
+    /* FEATURE */
+
     .feature{
+
         grid-template-columns:1fr;
+
     }
 
     .feature-image{
-        min-height:430px;
+
+        min-height:380px;
+
     }
 
     .feature-content{
-        padding:80px 30px;
+
+        padding:
+            80px 30px;
+
+    }
+
+
+    /* PRACTICE */
+
+    .practice{
+
+        padding:
+            95px 0;
+
     }
 
     .practice-grid{
+
         grid-template-columns:1fr;
-        gap:60px;
+
+        gap:55px;
+
+    }
+
+
+    /* PROCESS */
+
+    .process{
+
+        padding:
+            95px 0;
+
     }
 
     .process-grid{
+
         grid-template-columns:1fr;
+
+    }
+
+
+    /* CTA */
+
+    .cta{
+
+        padding:
+            85px 0;
+
     }
 
     .cta-inner{
+
         display:block;
+
     }
 
     .cta-button{
+
         display:inline-flex;
 
-        margin-top:30px;
+        margin-top:28px;
+
+    }
+
+
+    /* CONTACT */
+
+    .contact{
+
+        padding:
+            95px 0;
+
     }
 
     .contact-grid{
+
         grid-template-columns:1fr;
 
-        gap:65px;
+        gap:60px;
+
     }
 
+
+    /* FOOTER */
+
     .footer-grid{
-        grid-template-columns:1fr 1fr;
+
+        grid-template-columns:
+            1fr 1fr;
+
     }
 
 }
 
 
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
 @media(max-width:520px){
 
-    .container{
-        width:calc(100% - 32px);
+    .container,
+    .hero-container{
+
+        width:
+            calc(100% - 30px);
+
     }
 
     .hero{
-        min-height:790px;
+
+        min-height:
+            850px;
+
     }
 
-    .hero h1{
-        font-size:47px;
+    .hero-container{
 
-        letter-spacing:-1.5px;
+        padding-top:105px;
+
+    }
+
+    .brand-text strong{
+
+        font-size:11px;
+
+    }
+
+    .brand-text small{
+
+        font-size:5px;
+
+    }
+
+    .brand-logo{
+
+        width:40px;
+        height:40px;
+
+    }
+
+    .hero-title{
+
+        font-size:
+            44px;
+
     }
 
     .hero-description{
-        font-size:11px;
+
+        font-size:10px;
+
+        line-height:2.1;
+
     }
 
     .hero-buttons{
+
+        width:100%;
+
         flex-direction:column;
 
-        width:210px;
     }
 
-    .btn{
+    .button{
+
         width:100%;
+
     }
 
-    .hero-panel{
-        padding:23px;
+    .hero-logo-stage{
+
+        width:250px;
+        height:250px;
+
     }
 
-    .panel-bottom{
-        gap:8px;
+    .logo-ring{
+
+        width:235px;
+        height:235px;
+
     }
 
-    .trust-item{
-        padding:24px 10px;
+    .logo-ring-2{
+
+        width:185px;
+        height:185px;
+
     }
 
-    .about,
-    .services,
-    .practice,
-    .process,
-    .contact{
-        padding:90px 0;
+    .logo-halo{
+
+        width:180px;
+        height:180px;
+
     }
+
+    .hero-logo{
+
+        width:110px;
+        height:110px;
+
+    }
+
+    .hero-info{
+
+        gap:15px;
+
+    }
+
+    .hero-info-item{
+
+        min-width:80px;
+
+    }
+
 
     .section-title,
-    .practice-title{
-        font-size:41px;
-    }
+    .practice-title,
+    .contact-title{
 
-    .service{
-        padding:21px 0;
+        font-size:
+            40px;
 
-        grid-template-columns:35px 40px 1fr 18px;
-    }
+        letter-spacing:-1px;
 
-    .service h3{
-        font-size:14px;
-    }
-
-    .service p{
-        font-size:8px;
-    }
-
-    .service-icon{
-        width:36px;
-        height:36px;
-    }
-
-    .feature-image{
-        min-height:350px;
     }
 
     .feature-content{
-        padding:70px 22px;
+
+        padding:
+            70px 20px;
+
     }
 
     .feature-quote{
-        font-size:28px;
+
+        font-size:
+            27px;
+
     }
 
     .feature-points{
-        gap:12px;
+
+        gap:10px;
+
     }
 
-    .cta{
-        padding:80px 0;
-    }
+    .feature-points strong{
 
-    .cta h2{
-        font-size:37px;
+        font-size:12px;
+
     }
 
     .footer-grid{
+
         grid-template-columns:1fr;
+
     }
 
     .footer-bottom{
-        display:block;
-    }
 
-    .footer-bottom span{
         display:block;
 
-        margin-bottom:8px;
+        line-height:2;
+
     }
 
     .whatsapp{
+
         width:52px;
         height:52px;
 
         left:15px;
         bottom:15px;
+
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL
+===================================================== */
+
+@media(max-width:360px){
+
+    .hero-title{
+
+        font-size:
+            38px;
+
+    }
+
+    .hero-logo-stage{
+
+        width:220px;
+        height:220px;
+
+    }
+
+    .logo-ring{
+
+        width:205px;
+        height:205px;
+
+    }
+
+    .logo-ring-2{
+
+        width:160px;
+        height:160px;
+
+    }
+
+    .hero-logo{
+
+        width:95px;
+        height:95px;
+
+    }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:.01ms !important;
+
+        animation-iteration-count:1 !important;
+
+        scroll-behavior:auto !important;
+
+        transition-duration:.01ms !important;
+
     }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- PRELOADER -->
+<!-- =================================================
+     PRELOADER
+================================================= -->
 
 <div class="preloader" id="preloader">
 
-    <div class="loader">
+    <div class="loader-box">
+
+        <div class="loader-ring"></div>
 
         <img
         class="loader-logo"
         src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/IMG_20260102_034847.png"
-        alt="روينا عبدالفتاح رحالي">
-
-        <div class="loader-line">
-            <span></span>
-        </div>
+        alt="شعار روينا عبدالفتاح رحالي">
 
     </div>
 
@@ -1899,68 +3014,96 @@ a{
 
 
 
-<!-- HEADER -->
+<!-- =================================================
+     HEADER
+================================================= -->
 
 <header class="header" id="header">
 
     <div class="header-inner container">
 
-        <a href="#home" class="brand">
+
+        <a
+        href="#home"
+        class="brand">
 
             <img
             class="brand-logo"
             src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/IMG_20260102_034847.png"
-            alt="شعار روينا عبدالفتاح رحالي">
+            alt="شعار مكتب روينا عبدالفتاح رحالي">
 
-            <div class="brand-name">
+            <div class="brand-text">
 
-                <strong>روينا عبدالفتاح رحالي</strong>
+                <strong>
+                    روينا عبدالفتاح رحالي
+                </strong>
 
-                <span>
+                <small>
                     للمحاماة والاستشارات القانونية والتوثيق
-                </span>
+                </small>
 
             </div>
 
         </a>
+
 
 
         <nav class="nav">
 
-            <a href="#about">عن المكتب</a>
+            <a href="#about">
+                عن المكتب
+            </a>
 
-            <a href="#services">خدماتنا</a>
+            <a href="#services">
+                خدماتنا
+            </a>
 
-            <a href="#practice">مجالات العمل</a>
+            <a href="#practice">
+                مجالات العمل
+            </a>
 
-            <a href="#process">منهجيتنا</a>
+            <a href="#process">
+                منهجيتنا
+            </a>
 
-            <a href="#contact">تواصل معنا</a>
+            <a href="#contact">
+                تواصل معنا
+            </a>
 
         </nav>
 
 
+
         <a
-        class="header-phone"
-        href="tel:+966544270651">
+        href="tel:+966544270651"
+        class="header-phone">
 
             <div>
 
-                <small>اتصل بنا</small>
+                <small>
+                    اتصل بنا
+                </small>
 
-                054 427 0651
+                <span
+                class="phone-number"
+                dir="ltr">
+                    054 427 0651
+                </span>
 
             </div>
 
-            <span>←</span>
+            <span>
+                ←
+            </span>
 
         </a>
 
 
+
         <button
-        class="mobile-menu"
-        id="mobileMenu"
-        aria-label="القائمة">
+        class="mobile-button"
+        id="mobileButton"
+        aria-label="فتح القائمة">
 
             <span></span>
             <span></span>
@@ -1974,21 +3117,35 @@ a{
 
 
 
-<!-- MOBILE NAV -->
+<!-- =================================================
+     MOBILE MENU
+================================================= -->
 
-<div class="mobile-nav" id="mobileNav">
+<div
+class="mobile-nav"
+id="mobileNav">
 
-    <div class="mobile-nav-inner">
+    <div class="mobile-nav-content">
 
-        <a href="#about">عن المكتب</a>
+        <a href="#about">
+            عن المكتب
+        </a>
 
-        <a href="#services">خدماتنا</a>
+        <a href="#services">
+            خدماتنا
+        </a>
 
-        <a href="#practice">مجالات العمل</a>
+        <a href="#practice">
+            مجالات العمل
+        </a>
 
-        <a href="#process">منهجيتنا</a>
+        <a href="#process">
+            منهجيتنا
+        </a>
 
-        <a href="#contact">تواصل معنا</a>
+        <a href="#contact">
+            تواصل معنا
+        </a>
 
     </div>
 
@@ -1996,32 +3153,73 @@ a{
 
 
 
-<!-- HERO -->
+<!-- =================================================
+     HERO
+================================================= -->
 
-<section class="hero" id="home">
-
-    <div class="hero-image"></div>
-
-    <div class="hero-pattern"></div>
-
-
-    <div class="hero-inner container">
+<section
+class="hero"
+id="home">
 
 
-        <div class="hero-content reveal">
+    <div class="hero-background"></div>
 
-            <div class="eyebrow">
+    <div class="hero-grid"></div>
+
+    <div class="hero-light"></div>
+
+
+
+    <div class="hero-container">
+
+
+        <!-- LOGO -->
+
+        <div
+        class="hero-logo-stage reveal">
+
+
+            <div class="logo-ring"></div>
+
+            <div class="logo-ring-2"></div>
+
+            <div class="logo-halo"></div>
+
+
+            <img
+            class="hero-logo"
+            src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/IMG_20260102_034847.png"
+            alt="شعار روينا عبدالفتاح رحالي">
+
+
+            <div class="logo-shine"></div>
+
+        </div>
+
+
+
+        <!-- TEXT -->
+
+        <div
+        class="hero-content reveal">
+
+
+            <div class="hero-eyebrow">
+
                 مكتب محاماة واستشارات قانونية
+
             </div>
 
 
-            <h1>
+            <h1 class="hero-title">
 
                 قانون واضح.
 
                 <br>
 
-                <span>موقف أقوى.</span>
+                <span>
+                    موقف أقوى.
+                </span>
 
             </h1>
 
@@ -2034,22 +3232,26 @@ a{
             </p>
 
 
+
             <div class="hero-buttons">
 
+
                 <a
-                class="btn btn-gold"
-                href="#contact">
+                href="#contact"
+                class="button button-gold">
 
                     احجز استشارتك
 
-                    <span>←</span>
+                    <span>
+                        ←
+                    </span>
 
                 </a>
 
 
                 <a
-                class="btn btn-outline"
-                href="#about">
+                href="#about"
+                class="button button-outline">
 
                     تعرّف على المكتب
 
@@ -2057,121 +3259,51 @@ a{
 
             </div>
 
-        </div>
 
 
+            <div class="hero-info">
 
-        <aside class="hero-panel reveal">
 
-            <div class="panel-top">
+                <div class="hero-info-item">
 
-                <span class="panel-label">
-                    روينا عبدالفتاح رحالي
-                </span>
+                    <strong>
+                        وضوح
+                    </strong>
 
-                <div class="panel-seal">
-
-                    ثقة
-
-                    <br>
-
-                    ودقة
+                    <span>
+                        في كل توصية
+                    </span>
 
                 </div>
+
+
+                <div class="hero-info-item">
+
+                    <strong>
+                        دقة
+                    </strong>
+
+                    <span>
+                        في كل وثيقة
+                    </span>
+
+                </div>
+
+
+                <div class="hero-info-item">
+
+                    <strong>
+                        سرية
+                    </strong>
+
+                    <span>
+                        في كل ملف
+                    </span>
+
+                </div>
+
 
             </div>
-
-
-            <h2>
-                نبدأ بالإنصات.
-            </h2>
-
-
-            <p>
-
-                ثم نضع لك الصورة القانونية كما هي،
-                والخيارات التي يمكنك البناء عليها،
-                بخطوات واضحة ومدروسة.
-
-            </p>
-
-
-            <div class="panel-bottom">
-
-                <div>
-
-                    <strong>وضوح</strong>
-
-                    <span>في كل توصية</span>
-
-                </div>
-
-
-                <div>
-
-                    <strong>دقة</strong>
-
-                    <span>في كل وثيقة</span>
-
-                </div>
-
-
-                <div>
-
-                    <strong>سرية</strong>
-
-                    <span>في كل ملف</span>
-
-                </div>
-
-            </div>
-
-        </aside>
-
-    </div>
-
-</section>
-
-
-
-<!-- TRUST -->
-
-<section class="trust-strip">
-
-    <div class="trust-grid container">
-
-        <div class="trust-item">
-
-            <strong>01</strong>
-
-            <span>فهم دقيق للوقائع</span>
-
-        </div>
-
-
-        <div class="trust-item">
-
-            <strong>02</strong>
-
-            <span>رأي قانوني واضح</span>
-
-        </div>
-
-
-        <div class="trust-item">
-
-            <strong>03</strong>
-
-            <span>تمثيل مهني</span>
-
-        </div>
-
-
-        <div class="trust-item">
-
-            <strong>04</strong>
-
-            <span>سرية تامة</span>
 
         </div>
 
@@ -2181,13 +3313,18 @@ a{
 
 
 
-<!-- ABOUT -->
+<!-- =================================================
+     ABOUT
+================================================= -->
 
-<section class="about" id="about">
+<section
+class="about"
+id="about">
 
     <div class="about-grid container">
 
-        <div class="number">
+
+        <div class="side-number">
             01
         </div>
 
@@ -2204,14 +3341,17 @@ a{
 
                 <br>
 
-                <span>تقرأ التفاصيل.</span>
+                <span>
+                    تقرأ التفاصيل.
+                </span>
 
             </h2>
 
         </div>
 
 
-        <div class="about-copy reveal">
+        <div
+        class="about-text reveal">
 
             <p>
 
@@ -2221,24 +3361,12 @@ a{
 
             </p>
 
-
             <p>
 
                 نقدّم رأيًا قانونيًا واضحًا، وصياغة دقيقة،
                 وتمثيلًا مهنيًا يضع مصلحتك في مقدمة كل خطوة.
 
             </p>
-
-
-            <a
-            href="#contact"
-            class="gold-link">
-
-                ابدأ حديثك معنا
-
-                <span>←</span>
-
-            </a>
 
         </div>
 
@@ -2248,14 +3376,19 @@ a{
 
 
 
-<!-- SERVICES -->
+<!-- =================================================
+     SERVICES
+================================================= -->
 
-<section class="services" id="services">
+<section
+class="services"
+id="services">
 
     <div class="container">
 
 
-        <div class="section-head reveal">
+        <div class="section-heading reveal">
+
 
             <div>
 
@@ -2269,14 +3402,16 @@ a{
 
                     <br>
 
-                    <span>تخدم قرارك.</span>
+                    <span>
+                        تخدم قرارك.
+                    </span>
 
                 </h2>
 
             </div>
 
 
-            <p class="section-head-note">
+            <p class="section-description">
 
                 من الاستشارة الأولى إلى إتمام الإجراء،
                 نرافقك بمنهج عملي ولغة مفهومة،
@@ -2288,10 +3423,12 @@ a{
 
 
 
-        <div class="services-list">
+        <div class="service-list">
 
 
-            <a href="#contact" class="service reveal">
+            <a
+            href="#contact"
+            class="service reveal">
 
                 <span class="service-number">
                     01
@@ -2318,7 +3455,9 @@ a{
 
 
 
-            <a href="#contact" class="service reveal">
+            <a
+            href="#contact"
+            class="service reveal">
 
                 <span class="service-number">
                     02
@@ -2334,7 +3473,7 @@ a{
 
                 <p>
                     عقود واضحة ومتوازنة تحفظ الحقوق
-                    وتحدّد الالتزامات بدقة.
+                    وتحدد الالتزامات بدقة.
                 </p>
 
                 <span class="service-arrow">
@@ -2345,7 +3484,9 @@ a{
 
 
 
-            <a href="#contact" class="service reveal">
+            <a
+            href="#contact"
+            class="service reveal">
 
                 <span class="service-number">
                     03
@@ -2372,7 +3513,9 @@ a{
 
 
 
-            <a href="#contact" class="service reveal">
+            <a
+            href="#contact"
+            class="service reveal">
 
                 <span class="service-number">
                     04
@@ -2387,8 +3530,8 @@ a{
                 </h3>
 
                 <p>
-                    خدمات قانونية عملية للأفراد والمنشآت
-                    والمعاملات التجارية.
+                    خدمات قانونية عملية للأفراد
+                    والمنشآت والمعاملات التجارية.
                 </p>
 
                 <span class="service-arrow">
@@ -2406,14 +3549,19 @@ a{
 
 
 
-<!-- FEATURE -->
+<!-- =================================================
+     FEATURE
+================================================= -->
 
 <section class="feature">
+
 
     <div class="feature-image"></div>
 
 
-    <div class="feature-content reveal">
+    <div
+    class="feature-content reveal">
+
 
         <div class="eyebrow">
             منهجنا
@@ -2436,10 +3584,10 @@ a{
         <div class="gold-line"></div>
 
 
-        <p>
+        <p class="feature-description">
 
             نختصر عليك المسافة بين السؤال والقرار.
-            نوضح الاحتمالات، نرتّب الأولويات،
+            نوضح الاحتمالات، نرتب الأولويات،
             ونبقيك على اطلاع بما يهم في كل مرحلة.
 
         </p>
@@ -2447,31 +3595,45 @@ a{
 
         <div class="feature-points">
 
-            <div class="feature-point">
 
-                <strong>وضوح</strong>
+            <div>
 
-                <span>في كل توصية</span>
+                <strong>
+                    وضوح
+                </strong>
 
-            </div>
-
-
-            <div class="feature-point">
-
-                <strong>دقة</strong>
-
-                <span>في كل وثيقة</span>
+                <span>
+                    في كل توصية
+                </span>
 
             </div>
 
 
-            <div class="feature-point">
+            <div>
 
-                <strong>سرية</strong>
+                <strong>
+                    دقة
+                </strong>
 
-                <span>في كل ملف</span>
+                <span>
+                    في كل وثيقة
+                </span>
 
             </div>
+
+
+            <div>
+
+                <strong>
+                    سرية
+                </strong>
+
+                <span>
+                    في كل ملف
+                </span>
+
+            </div>
+
 
         </div>
 
@@ -2481,9 +3643,13 @@ a{
 
 
 
-<!-- PRACTICE -->
+<!-- =================================================
+     PRACTICE
+================================================= -->
 
-<section class="practice" id="practice">
+<section
+class="practice"
+id="practice">
 
     <div class="practice-grid container">
 
@@ -2501,7 +3667,9 @@ a{
 
                 <br>
 
-                <span>لقضيتك.</span>
+                <span>
+                    لقضيتك.
+                </span>
 
             </h2>
 
@@ -2509,8 +3677,7 @@ a{
             <p class="practice-description">
 
                 نخدم الأفراد والمنشآت في مجالات قانونية
-                متعددة، مع عناية خاصة بطبيعة كل موقف
-                وأثره.
+                متعددة، مع عناية خاصة بطبيعة كل موقف وأثره.
 
             </p>
 
@@ -2607,9 +3774,13 @@ a{
 
 
 
-<!-- PROCESS -->
+<!-- =================================================
+     PROCESS
+================================================= -->
 
-<section class="process" id="process">
+<section
+class="process"
+id="process">
 
     <div class="container">
 
@@ -2627,7 +3798,9 @@ a{
 
                 <br>
 
-                <span>إلى القرار.</span>
+                <span>
+                    إلى القرار.
+                </span>
 
             </h2>
 
@@ -2659,7 +3832,6 @@ a{
             </div>
 
 
-
             <div class="process-item reveal">
 
                 <div class="process-number">
@@ -2679,7 +3851,6 @@ a{
                 </p>
 
             </div>
-
 
 
             <div class="process-item reveal">
@@ -2711,7 +3882,9 @@ a{
 
 
 
-<!-- CTA -->
+<!-- =================================================
+     CTA
+================================================= -->
 
 <section class="cta">
 
@@ -2726,7 +3899,9 @@ a{
 
                 <br>
 
-                <span>رؤية قانونية واضحة.</span>
+                <span>
+                    رؤية قانونية واضحة.
+                </span>
 
             </h2>
 
@@ -2754,27 +3929,34 @@ a{
 
 
 
-<!-- CONTACT -->
+<!-- =================================================
+     CONTACT
+================================================= -->
 
-<section class="contact" id="contact">
+<section
+class="contact"
+id="contact">
 
     <div class="contact-grid container">
 
 
         <div class="reveal">
 
+
             <div class="eyebrow">
                 تواصل معنا
             </div>
 
 
-            <h2>
+            <h2 class="contact-title">
 
                 خطوتك القادمة
 
                 <br>
 
-                <span>تبدأ من هنا.</span>
+                <span>
+                    تبدأ من هنا.
+                </span>
 
             </h2>
 
@@ -2787,6 +3969,7 @@ a{
             </p>
 
 
+
             <div class="contact-data">
 
 
@@ -2796,7 +3979,11 @@ a{
                         ☎
                     </span>
 
-                    054 427 0651
+                    <span
+                    class="contact-phone"
+                    dir="ltr">
+                        054 427 0651
+                    </span>
 
                 </a>
 
@@ -2841,8 +4028,8 @@ a{
                 </label>
 
                 <input
-                type="text"
                 id="name"
+                type="text"
                 required
                 placeholder="اكتب اسمك الكامل">
 
@@ -2856,8 +4043,8 @@ a{
                 </label>
 
                 <input
-                type="tel"
                 id="phone"
+                type="tel"
                 required
                 placeholder="05X XXX XXXX">
 
@@ -2871,8 +4058,8 @@ a{
                 </label>
 
                 <input
-                type="text"
                 id="service"
+                type="text"
                 placeholder="مثال: قضية عمالية / تجارية / عقد">
 
             </div>
@@ -2893,7 +4080,7 @@ a{
 
             <button
             type="submit"
-            class="submit">
+            class="submit-button">
 
                 إرسال الطلب عبر واتساب ←
 
@@ -2902,8 +4089,8 @@ a{
 
             <p class="form-note">
 
-                تُستخدم بياناتك للتواصل معك بخصوص طلبك
-                وتحفظ بسرية تامة.
+                تحفظ بياناتك بسرية تامة وتستخدم للتواصل معك
+                بخصوص طلبك فقط.
 
             </p>
 
@@ -2915,7 +4102,9 @@ a{
 
 
 
-<!-- FOOTER -->
+<!-- =================================================
+     FOOTER
+================================================= -->
 
 <footer class="footer">
 
@@ -2930,7 +4119,7 @@ a{
                 <img
                 class="footer-logo"
                 src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/IMG_20260102_034847.png"
-                alt="روينا عبدالفتاح رحالي">
+                alt="شعار روينا عبدالفتاح رحالي">
 
                 <div>
 
@@ -2938,9 +4127,9 @@ a{
                         روينا عبدالفتاح رحالي
                     </strong>
 
-                    <span>
+                    <small>
                         للمحاماة والاستشارات القانونية والتوثيق
-                    </span>
+                    </small>
 
                 </div>
 
@@ -2977,19 +4166,29 @@ a{
             <div class="footer-column">
 
                 <h4>
-                    تواصل
+                    تواصل معنا
                 </h4>
 
-                <a href="tel:+966544270651">
+                <a
+                href="tel:+966544270651"
+                dir="ltr">
+
                     054 427 0651
+
                 </a>
 
-                <a href="https://wa.me/966544270651">
+                <a
+                href="https://wa.me/966544270651"
+                target="_blank">
+
                     واتساب
+
                 </a>
 
                 <a href="#contact">
+
                     طلب استشارة
+
                 </a>
 
             </div>
@@ -3017,11 +4216,13 @@ a{
 
 
 
-<!-- WHATSAPP -->
+<!-- =================================================
+     WHATSAPP
+================================================= -->
 
 <a
-href="https://wa.me/966544270651"
 class="whatsapp"
+href="https://wa.me/966544270651"
 target="_blank"
 aria-label="التواصل عبر واتساب">
 
@@ -3039,144 +4240,188 @@ fill="currentColor">
 
 <script>
 
-/* =========================
+/* =====================================================
    PRELOADER
-========================= */
+===================================================== */
 
-window.addEventListener("load",function(){
+window.addEventListener(
+    "load",
+    function(){
 
-    setTimeout(function(){
+        setTimeout(
+            function(){
 
-        document
-        .getElementById("preloader")
-        .classList.add("hide");
+                document
+                .getElementById("preloader")
+                .classList.add("hide");
 
-    },700);
+            },
+            700
+        );
 
-});
+    }
+);
 
 
-/* =========================
-   HEADER SCROLL
-========================= */
+/* =====================================================
+   HEADER
+===================================================== */
 
 const header =
 document.getElementById("header");
 
-window.addEventListener("scroll",function(){
+window.addEventListener(
+    "scroll",
+    function(){
 
-    if(window.scrollY > 60){
+        if(window.scrollY > 60){
 
-        header.classList.add("scrolled");
+            header.classList.add("scrolled");
 
-    }else{
+        }else{
 
-        header.classList.remove("scrolled");
+            header.classList.remove("scrolled");
+
+        }
 
     }
+);
 
-});
 
-
-/* =========================
+/* =====================================================
    MOBILE MENU
-========================= */
+===================================================== */
 
-const mobileMenu =
-document.getElementById("mobileMenu");
+const mobileButton =
+document.getElementById("mobileButton");
 
 const mobileNav =
 document.getElementById("mobileNav");
 
-mobileMenu.addEventListener("click",function(){
 
-    mobileNav.classList.toggle("open");
+mobileButton.addEventListener(
+    "click",
+    function(){
 
-    document.body.classList.toggle("menu-open");
+        mobileNav.classList.toggle("active");
 
-});
+        document.body.classList.toggle("menu-open");
+
+    }
+);
 
 
 document
 .querySelectorAll(".mobile-nav a")
-.forEach(function(link){
+.forEach(
+    function(link){
 
-    link.addEventListener("click",function(){
+        link.addEventListener(
+            "click",
+            function(){
 
-        mobileNav.classList.remove("open");
+                mobileNav.classList.remove("active");
 
-        document.body.classList.remove("menu-open");
+                document.body.classList.remove("menu-open");
 
-    });
+            }
+        );
 
-});
+    }
+);
 
 
-/* =========================
-   REVEAL ANIMATION
-========================= */
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
 
-const observer =
+const revealObserver =
 new IntersectionObserver(
-function(entries){
 
-    entries.forEach(function(entry){
+    function(entries){
 
-        if(entry.isIntersecting){
+        entries.forEach(
+            function(entry){
 
-            entry.target.classList.add("visible");
+                if(entry.isIntersecting){
 
-            observer.unobserve(entry.target);
+                    entry.target.classList.add("visible");
 
-        }
+                    revealObserver.unobserve(
+                        entry.target
+                    );
 
-    });
+                }
 
-},
-{
-    threshold:.12
-});
+            }
+        );
+
+    },
+
+    {
+        threshold:.12
+    }
+
+);
 
 
 document
 .querySelectorAll(".reveal")
-.forEach(function(element){
+.forEach(
+    function(element){
 
-    observer.observe(element);
+        revealObserver.observe(element);
 
-});
+    }
+);
 
 
-/* =========================
-   CONTACT -> WHATSAPP
-========================= */
+/* =====================================================
+   CONTACT FORM
+===================================================== */
 
 document
 .getElementById("contactForm")
-.addEventListener("submit",function(event){
+.addEventListener(
+    "submit",
+    function(event){
 
-    event.preventDefault();
-
-
-    const name =
-    document.getElementById("name").value.trim();
+        event.preventDefault();
 
 
-    const phone =
-    document.getElementById("phone").value.trim();
+        const name =
+        document
+        .getElementById("name")
+        .value
+        .trim();
 
 
-    const service =
-    document.getElementById("service").value.trim();
+        const phone =
+        document
+        .getElementById("phone")
+        .value
+        .trim();
 
 
-    const message =
-    document.getElementById("message").value.trim();
+        const service =
+        document
+        .getElementById("service")
+        .value
+        .trim();
 
 
-    const whatsappMessage =
+        const message =
+        document
+        .getElementById("message")
+        .value
+        .trim();
 
-`السلام عليكم، أرغب في طلب استشارة قانونية.
+
+        const text =
+
+`السلام عليكم،
+
+أرغب في طلب استشارة قانونية.
 
 الاسم: ${name}
 
@@ -3184,81 +4429,59 @@ document
 
 نوع الاستشارة: ${service || "غير محدد"}
 
-نبذة عن الموضوع:
+تفاصيل الموضوع:
 ${message || "لم يتم إضافة تفاصيل"}`;
 
 
-    const url =
-    "https://wa.me/966544270651?text="
-    + encodeURIComponent(whatsappMessage);
+        const whatsappURL =
+        "https://wa.me/966544270651?text="
+        +
+        encodeURIComponent(text);
 
 
-    window.open(url,"_blank");
+        window.open(
+            whatsappURL,
+            "_blank"
+        );
 
-});
+    }
+);
 
 
-/* =========================
-   SMOOTH LINKS
-========================= */
+/* =====================================================
+   SMOOTH SCROLL
+===================================================== */
 
 document
 .querySelectorAll('a[href^="#"]')
-.forEach(function(link){
+.forEach(
+    function(link){
 
-    link.addEventListener("click",function(event){
+        link.addEventListener(
+            "click",
+            function(event){
 
-        const target =
-        document.querySelector(
-            this.getAttribute("href")
+                const target =
+                document.querySelector(
+                    this.getAttribute("href")
+                );
+
+                if(target){
+
+                    event.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior:"smooth",
+                        block:"start"
+                    });
+
+                }
+
+            }
         );
 
-        if(target){
-
-            event.preventDefault();
-
-            target.scrollIntoView({
-                behavior:"smooth",
-                block:"start"
-            });
-
-        }
-
-    });
-
-});
-
-</script>
-
-
-
-<!-- STRUCTURED DATA -->
-
-<script type="application/ld+json">
-
-{
-    "@context":"https://schema.org",
-    "@type":"LegalService",
-
-    "name":"روينا عبدالفتاح رحالي للمحاماة والاستشارات القانونية والتوثيق",
-
-    "telephone":"+966544270651",
-
-    "address":{
-        "@type":"PostalAddress",
-        "addressLocality":"جدة",
-        "addressCountry":"SA"
-    },
-
-    "areaServed":{
-        "@type":"City",
-        "name":"جدة"
-    },
-
-    "url":"https://aledini-law.sa/",
-
-    "priceRange":"$$"
-}
+    }
+);
 
 </script>
 
