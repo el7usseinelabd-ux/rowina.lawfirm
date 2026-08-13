@@ -6,8 +6,8 @@
 
 <title>روينا عبدالفتاح رحالي | للمحاماة والاستشارات القانونية</title>
 
-<meta name="description" content="مكتب روينا عبدالفتاح رحالي للمحاماة والاستشارات القانونية. خدمات قانونية متخصصة في جدة والطائف وجميع مناطق المملكة العربية السعودية.">
-<meta name="theme-color" content="#08130f">
+<meta name="description" content="مكتب روينا عبدالفتاح رحالي للمحاماة والاستشارات القانونية. خدمات قانونية متخصصة في جدة وجميع مناطق المملكة العربية السعودية.">
+<meta name="theme-color" content="#08120e">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,11 +38,11 @@
 
     --line:rgba(214,174,78,.14);
 
-    --shadow:0 22px 60px rgba(0,0,0,.28);
+    --shadow:0 25px 70px rgba(0,0,0,.30);
 
-    --radius:18px;
+    --radius:20px;
 
-    --container:1160px;
+    --container:1180px;
 }
 
 
@@ -58,7 +58,6 @@
 
 html{
     scroll-behavior:smooth;
-    scroll-padding-top:80px;
 }
 
 body{
@@ -66,27 +65,20 @@ body{
 
     background:
         radial-gradient(
-            circle at 50% -12%,
-            rgba(201,157,61,.075),
-            transparent 34%
-        ),
-        radial-gradient(
-            circle at 10% 45%,
-            rgba(21,61,44,.12),
-            transparent 30%
+            circle at 50% -10%,
+            rgba(201,157,61,.08),
+            transparent 35%
         ),
         linear-gradient(
             180deg,
             #07110d 0%,
-            #08140f 48%,
+            #08130f 45%,
             #06100c 100%
         );
 
     color:var(--text);
-
     overflow-x:hidden;
-
-    line-height:1.75;
+    line-height:1.8;
 }
 
 body::before{
@@ -99,13 +91,13 @@ body::before{
 
     background-image:
         radial-gradient(
-            rgba(225,194,106,.07) 1px,
+            rgba(225,194,106,.08) 1px,
             transparent 1px
         );
 
-    background-size:58px 58px;
+    background-size:55px 55px;
 
-    opacity:.09;
+    opacity:.12;
 
     z-index:-1;
 }
@@ -131,7 +123,7 @@ button{
 
 .container{
     width:min(
-        calc(100% - 34px),
+        calc(100% - 40px),
         var(--container)
     );
 
@@ -150,26 +142,19 @@ header{
     right:0;
     left:0;
 
-    height:74px;
+    height:78px;
 
     z-index:1000;
 
     background:
-        linear-gradient(
-            180deg,
-            rgba(8,19,14,.94),
-            rgba(7,17,13,.88)
-        );
+        rgba(5,13,10,.78);
 
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
 
     border-bottom:
         1px solid
-        rgba(213,172,73,.12);
-
-    box-shadow:
-        0 8px 35px rgba(0,0,0,.12);
+        rgba(213,172,73,.10);
 
     transition:
         background .35s ease,
@@ -190,26 +175,26 @@ header{
 .brand{
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:12px;
 
     min-width:0;
 }
 
 .brand img{
-    width:43px;
-    height:43px;
+    width:47px;
+    height:47px;
 
     object-fit:contain;
 
     filter:
         drop-shadow(
-            0 5px 15px
-            rgba(215,174,71,.18)
+            0 4px 14px
+            rgba(215,174,71,.16)
         );
 }
 
 .brand-text{
-    line-height:1.15;
+    line-height:1.25;
 }
 
 .brand-text strong{
@@ -217,7 +202,7 @@ header{
 
     color:var(--white);
 
-    font-size:13px;
+    font-size:14px;
 
     font-weight:700;
 
@@ -229,29 +214,36 @@ header{
 
     color:var(--gold-light);
 
-    font-size:8px;
+    font-size:9px;
 
-    margin-top:3px;
+    margin-top:2px;
+
+    white-space:nowrap;
 }
 
 .nav-actions{
     display:flex;
     align-items:center;
-    gap:9px;
+    gap:10px;
 }
+
+
+/* رقم الهاتف */
 
 .phone-top{
     display:flex;
 
     align-items:center;
-    gap:7px;
+    justify-content:center;
 
-    padding:8px 13px;
+    gap:8px;
+
+    padding:9px 15px;
 
     border:1px solid
-        rgba(213,173,74,.24);
+        rgba(213,173,74,.22);
 
-    border-radius:11px;
+    border-radius:12px;
 
     color:var(--gold-light);
 
@@ -260,19 +252,32 @@ header{
 
     transition:.35s ease;
 
-    font-size:11px;
-
+    font-size:12px;
     font-weight:700;
+
+    direction:ltr;
+
+    white-space:nowrap;
 }
 
 .phone-top svg{
-    width:16px;
-    height:16px;
+    width:17px;
+    height:17px;
 
     stroke:currentColor;
     fill:none;
 
     stroke-width:1.7;
+
+    flex-shrink:0;
+}
+
+.phone-top span,
+.phone-number{
+    direction:ltr !important;
+    unicode-bidi:embed;
+    display:inline-block;
+    white-space:nowrap;
 }
 
 .phone-top:hover{
@@ -280,13 +285,9 @@ header{
         rgba(213,173,74,.12);
 
     border-color:
-        rgba(213,173,74,.46);
+        rgba(213,173,74,.45);
 
     transform:translateY(-2px);
-
-    box-shadow:
-        0 8px 25px
-        rgba(197,151,53,.10);
 }
 
 
@@ -297,7 +298,7 @@ header{
 .hero{
     min-height:100vh;
 
-    padding-top:74px;
+    padding-top:78px;
 
     display:flex;
     align-items:center;
@@ -312,25 +313,27 @@ header{
 
     position:absolute;
 
-    width:680px;
-    height:680px;
+    width:650px;
+    height:650px;
 
     right:50%;
-    top:48%;
+    top:45%;
 
-    transform:
-        translate(50%,-50%);
+    transform:translate(
+        50%,
+        -50%
+    );
 
     border-radius:50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(211,169,66,.085),
-            transparent 67%
+            rgba(211,169,66,.09),
+            transparent 68%
         );
 
-    filter:blur(8px);
+    filter:blur(10px);
 
     pointer-events:none;
 }
@@ -355,11 +358,11 @@ header{
     display:inline-flex;
 
     align-items:center;
-    gap:8px;
+    gap:9px;
 
     color:var(--gold-light);
 
-    font-size:11px;
+    font-size:12px;
     font-weight:700;
 
     margin-bottom:12px;
@@ -368,7 +371,7 @@ header{
 .kicker::before{
     content:"";
 
-    width:25px;
+    width:27px;
     height:1px;
 
     background:
@@ -386,27 +389,24 @@ header{
 
     font-size:
         clamp(
-            38px,
-            5vw,
-            64px
+            34px,
+            4.1vw,
+            58px
         );
 
-    line-height:1.08;
+    line-height:1.18;
 
     margin-bottom:12px;
 
-    text-shadow:
-        0 8px 30px rgba(0,0,0,.25);
+    white-space:nowrap;
 }
 
 .hero h1 span{
     color:var(--gold-light);
-
-    display:inline-block;
 }
 
 .hero-subtitle{
-    color:#d1cec4;
+    color:#d8d4ca;
 
     font-size:
         clamp(
@@ -415,16 +415,14 @@ header{
             17px
         );
 
-    max-width:600px;
+    max-width:610px;
 
-    margin-bottom:21px;
-
-    line-height:1.9;
+    margin-bottom:22px;
 }
 
 .hero-buttons{
     display:flex;
-    gap:10px;
+    gap:12px;
 
     flex-wrap:wrap;
 }
@@ -435,16 +433,16 @@ header{
     align-items:center;
     justify-content:center;
 
-    gap:8px;
+    gap:9px;
 
-    min-height:45px;
+    min-height:46px;
 
     padding:
-        9px 18px;
+        9px 19px;
 
-    border-radius:11px;
+    border-radius:12px;
 
-    font-size:11px;
+    font-size:12px;
 
     font-weight:700;
 
@@ -456,8 +454,8 @@ header{
 }
 
 .btn svg{
-    width:16px;
-    height:16px;
+    width:17px;
+    height:17px;
 
     stroke:currentColor;
     fill:none;
@@ -476,26 +474,26 @@ header{
         );
 
     box-shadow:
-        0 10px 30px
-        rgba(194,147,51,.15);
+        0 12px 35px
+        rgba(194,147,51,.17);
 }
 
 .btn-primary:hover{
     transform:translateY(-3px);
 
     box-shadow:
-        0 17px 38px
-        rgba(194,147,51,.25);
+        0 18px 45px
+        rgba(194,147,51,.28);
 }
 
 .btn-outline{
     color:var(--gold-light);
 
     border:1px solid
-        rgba(212,173,73,.27);
+        rgba(212,173,73,.28);
 
     background:
-        rgba(212,173,73,.035);
+        rgba(212,173,73,.04);
 }
 
 .btn-outline:hover{
@@ -505,12 +503,12 @@ header{
         rgba(212,173,73,.55);
 
     background:
-        rgba(212,173,73,.08);
+        rgba(212,173,73,.09);
 }
 
 
 /* =========================================================
-   PROFESSIONAL LOGO STAGE
+   LOGO STAGE
 ========================================================= */
 
 .logo-wrap{
@@ -519,12 +517,12 @@ header{
     align-items:center;
     justify-content:center;
 
-    min-height:450px;
+    min-height:430px;
 }
 
 .logo-stage{
-    width:350px;
-    height:350px;
+    width:360px;
+    height:360px;
 
     position:relative;
 
@@ -533,61 +531,45 @@ header{
     justify-content:center;
 
     border-radius:50%;
-
-    isolation:isolate;
 }
-
-/* glow behind the logo */
 
 .logo-stage::before{
     content:"";
 
     position:absolute;
 
-    inset:24px;
+    inset:28px;
 
     border-radius:50%;
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(216,177,79,.10),
-            transparent 65%
-        );
+    border:
+        1px solid
+        rgba(220,181,83,.26);
 
-    filter:blur(7px);
+    box-shadow:
+        0 0 60px
+        rgba(212,169,67,.07);
 
     animation:
-        logoGlow 4s ease-in-out infinite;
-
-    z-index:-2;
+        stagePulse 4.5s ease-in-out infinite;
 }
-
-/* main elegant circle */
 
 .logo-stage::after{
     content:"";
 
     position:absolute;
 
-    inset:9px;
+    inset:5px;
 
     border-radius:50%;
 
     border:
-        1px solid
-        rgba(220,181,83,.32);
+        1px dashed
+        rgba(215,175,75,.20);
 
-    box-shadow:
-        inset 0 0 30px
-        rgba(213,173,72,.035),
-        0 0 40px
-        rgba(213,173,72,.055);
-
-    z-index:-1;
+    animation:
+        orbitRotate 22s linear infinite;
 }
-
-/* rotating fine orbit */
 
 .logo-orbit{
     position:absolute;
@@ -596,21 +578,9 @@ header{
 
     border-radius:50%;
 
-    border:
-        1px solid
-        rgba(218,181,82,.13);
-
-    border-left-color:
-        transparent;
-
-    border-bottom-color:
-        rgba(218,181,82,.04);
-
     animation:
-        orbitRotate 20s linear infinite;
+        orbitRotate 18s linear infinite;
 }
-
-/* gold particles */
 
 .logo-orbit::before,
 .logo-orbit::after{
@@ -618,147 +588,112 @@ header{
 
     position:absolute;
 
-    width:6px;
-    height:6px;
+    width:7px;
+    height:7px;
 
     border-radius:50%;
 
     background:
         radial-gradient(
             circle,
-            #fff8ce 0%,
-            #e5c66c 42%,
-            #a87825 100%
+            #fff4bb 0%,
+            var(--gold-light) 40%,
+            #a87522 100%
         );
 
     box-shadow:
-        0 0 10px
-        rgba(228,198,109,.95),
-        0 0 24px
-        rgba(205,157,50,.48);
+        0 0 12px
+        rgba(228,198,109,.9),
+        0 0 25px
+        rgba(205,157,50,.45);
 }
 
 .logo-orbit::before{
-    top:7px;
+    top:3px;
     left:50%;
-
-    transform:translateX(-50%);
 }
 
 .logo-orbit::after{
-    bottom:18px;
-    right:20px;
-
-    width:5px;
-    height:5px;
+    bottom:42px;
+    right:9px;
 }
-
-/* second orbit */
 
 .logo-orbit-2{
     position:absolute;
 
-    inset:31px;
+    inset:43px;
 
     border-radius:50%;
 
     border:
-        1px dashed
-        rgba(217,176,75,.14);
+        1px solid
+        rgba(217,176,75,.09);
 
     animation:
-        orbitRotateReverse 15s linear infinite;
+        orbitRotateReverse 13s linear infinite;
 }
 
-.logo-orbit-2::before,
-.logo-orbit-2::after{
+.logo-orbit-2::before{
     content:"";
 
     position:absolute;
 
-    width:4px;
-    height:4px;
+    top:20px;
+    right:12px;
+
+    width:5px;
+    height:5px;
 
     border-radius:50%;
 
     background:var(--gold-light);
 
     box-shadow:
-        0 0 13px
+        0 0 16px
         var(--gold-light);
 }
-
-.logo-orbit-2::before{
-    top:20px;
-    right:7px;
-}
-
-.logo-orbit-2::after{
-    bottom:18px;
-    left:12px;
-}
-
-/* tiny third ring */
-
-.logo-orbit-3{
-    position:absolute;
-
-    inset:55px;
-
-    border-radius:50%;
-
-    border:
-        1px solid
-        rgba(228,198,109,.07);
-
-    animation:
-        orbitRotate 28s linear infinite;
-}
-
-/* logo itself */
 
 .logo-main{
     position:relative;
 
     z-index:5;
 
-    width:170px;
-    height:170px;
+    width:190px;
+
+    height:auto;
 
     object-fit:contain;
 
-    border-radius:50%;
-
     filter:
         drop-shadow(
-            0 14px 30px
+            0 18px 35px
             rgba(0,0,0,.34)
         )
         drop-shadow(
-            0 0 22px
-            rgba(212,170,75,.10)
+            0 0 25px
+            rgba(212,170,75,.11)
         );
 
     animation:
         logoFloat 5s ease-in-out infinite;
 
     transition:
-        transform .6s cubic-bezier(.2,.8,.2,1),
-        filter .6s ease;
+        transform .5s ease,
+        filter .5s ease;
 }
 
 .logo-stage:hover .logo-main{
     transform:
-        scale(1.045);
+        scale(1.035);
 
     filter:
         drop-shadow(
-            0 20px 40px
+            0 22px 42px
             rgba(0,0,0,.38)
         )
         drop-shadow(
-            0 0 32px
-            rgba(212,170,75,.22)
+            0 0 35px
+            rgba(212,170,75,.20)
         );
 }
 
@@ -768,7 +703,7 @@ header{
     }
 
     50%{
-        transform:translateY(-5px);
+        transform:translateY(-7px);
     }
 }
 
@@ -792,15 +727,15 @@ header{
     }
 }
 
-@keyframes logoGlow{
+@keyframes stagePulse{
     0%,100%{
-        opacity:.55;
-        transform:scale(.98);
+        opacity:.65;
+        transform:scale(1);
     }
 
     50%{
         opacity:1;
-        transform:scale(1.03);
+        transform:scale(1.015);
     }
 }
 
@@ -815,10 +750,10 @@ section{
 }
 
 .section-head{
-    max-width:700px;
+    max-width:720px;
 
     margin:
-        0 auto 25px;
+        0 auto 26px;
 
     text-align:center;
 }
@@ -826,9 +761,11 @@ section{
 .section-label{
     color:var(--gold-light);
 
-    font-size:10px;
+    font-size:11px;
 
     font-weight:700;
+
+    letter-spacing:.3px;
 
     margin-bottom:5px;
 }
@@ -840,22 +777,20 @@ section{
 
     font-size:
         clamp(
-            28px,
-            3.7vw,
+            29px,
+            3.6vw,
             40px
         );
 
-    line-height:1.2;
+    line-height:1.25;
 
-    margin-bottom:6px;
+    margin-bottom:7px;
 }
 
 .section-head p{
     color:var(--muted);
 
     font-size:12px;
-
-    line-height:1.8;
 }
 
 
@@ -873,12 +808,63 @@ section{
         );
 }
 
-.about-content{
-    max-width:900px;
+.about-grid{
+    display:grid;
 
-    margin:auto;
+    grid-template-columns:
+        .9fr 1.1fr;
 
-    text-align:center;
+    gap:35px;
+
+    align-items:center;
+}
+
+.about-image{
+    position:relative;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        rgba(213,173,72,.15);
+
+    background:#0a1510;
+
+    box-shadow:var(--shadow);
+}
+
+.about-image::after{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 60%,
+            rgba(0,0,0,.42)
+        );
+
+    pointer-events:none;
+}
+
+.about-image img{
+    width:100%;
+
+    aspect-ratio:4/4.4;
+
+    object-fit:cover;
+
+    transition:
+        transform .7s ease;
+}
+
+.about-image:hover img{
+    transform:scale(1.025);
 }
 
 .about-content h3{
@@ -886,7 +872,7 @@ section{
 
     font-family:"Amiri",serif;
 
-    font-size:28px;
+    font-size:29px;
 
     margin-bottom:10px;
 }
@@ -898,29 +884,28 @@ section{
 
     line-height:2;
 
-    margin-bottom:10px;
+    margin-bottom:12px;
 }
 
 .about-points{
     display:grid;
 
     grid-template-columns:
-        repeat(4,1fr);
+        repeat(2,1fr);
 
-    gap:10px;
+    gap:9px;
 
-    margin-top:18px;
+    margin-top:17px;
 }
 
 .about-point{
     display:flex;
 
     align-items:center;
-    justify-content:center;
 
-    gap:8px;
+    gap:9px;
 
-    padding:11px 9px;
+    padding:11px;
 
     border:
         1px solid
@@ -929,33 +914,25 @@ section{
     background:
         rgba(255,255,255,.025);
 
-    border-radius:11px;
+    border-radius:12px;
 
-    font-size:10px;
+    font-size:10.5px;
 
     color:#d8d5cd;
 
-    transition:
-        transform .35s ease,
-        border-color .35s ease,
-        background .35s ease;
+    transition:.35s ease;
 }
 
 .about-point:hover{
-    transform:translateY(-4px);
+    transform:translateY(-3px);
 
     border-color:
-        rgba(213,173,72,.28);
-
-    background:
-        rgba(213,173,72,.04);
+        rgba(213,173,72,.25);
 }
 
 .about-point span{
-    width:6px;
-    height:6px;
-
-    flex-shrink:0;
+    width:8px;
+    height:8px;
 
     border-radius:50%;
 
@@ -963,7 +940,9 @@ section{
 
     box-shadow:
         0 0 10px
-        rgba(228,198,109,.5);
+        rgba(228,198,109,.45);
+
+    flex-shrink:0;
 }
 
 
@@ -972,7 +951,7 @@ section{
 ========================================================= */
 
 #services{
-    padding-top:48px;
+    padding-top:50px;
 }
 
 .services-grid{
@@ -981,15 +960,15 @@ section{
     grid-template-columns:
         repeat(3,1fr);
 
-    gap:12px;
+    gap:13px;
 }
 
 .service-card{
     position:relative;
 
-    padding:19px;
+    padding:20px;
 
-    min-height:172px;
+    min-height:180px;
 
     border:
         1px solid
@@ -1002,7 +981,7 @@ section{
             rgba(255,255,255,.015)
         );
 
-    border-radius:16px;
+    border-radius:18px;
 
     overflow:hidden;
 
@@ -1021,7 +1000,7 @@ section{
     right:0;
     top:0;
 
-    width:2px;
+    width:3px;
     height:0;
 
     background:
@@ -1035,26 +1014,6 @@ section{
         height .5s ease;
 }
 
-.service-card::after{
-    content:"";
-
-    position:absolute;
-
-    width:90px;
-    height:90px;
-
-    left:-55px;
-    bottom:-55px;
-
-    border-radius:50%;
-
-    background:
-        rgba(213,173,72,.035);
-
-    transition:
-        transform .5s ease;
-}
-
 .service-card:hover{
     transform:
         translateY(-6px);
@@ -1063,8 +1022,8 @@ section{
         rgba(213,173,72,.28);
 
     box-shadow:
-        0 18px 42px
-        rgba(0,0,0,.21);
+        0 20px 45px
+        rgba(0,0,0,.22);
 
     background:
         linear-gradient(
@@ -1078,27 +1037,21 @@ section{
     height:100%;
 }
 
-.service-card:hover::after{
-    transform:scale(1.5);
+.service-number{
+    display:none;
 }
 
 .service-card h3{
-    position:relative;
-    z-index:2;
-
     color:var(--white);
 
     font-family:"Amiri",serif;
 
-    font-size:21px;
+    font-size:22px;
 
     margin-bottom:6px;
 }
 
 .service-card p{
-    position:relative;
-    z-index:2;
-
     color:#929c95;
 
     font-size:10.5px;
@@ -1112,12 +1065,12 @@ section{
 ========================================================= */
 
 #cases{
-    padding-top:50px;
+    padding-top:52px;
 }
 
 .cases{
     background:
-        rgba(0,0,0,.075);
+        rgba(0,0,0,.08);
 }
 
 .cases-grid{
@@ -1126,11 +1079,11 @@ section{
     grid-template-columns:
         repeat(3,1fr);
 
-    gap:11px;
+    gap:12px;
 }
 
 .case-card{
-    padding:17px;
+    padding:18px;
 
     border:
         1px solid
@@ -1139,13 +1092,9 @@ section{
     background:
         rgba(255,255,255,.025);
 
-    border-radius:15px;
+    border-radius:17px;
 
-    transition:
-        transform .4s ease,
-        border-color .4s ease,
-        box-shadow .4s ease,
-        background .4s ease;
+    transition:.4s ease;
 }
 
 .case-card:hover{
@@ -1155,46 +1104,30 @@ section{
     border-color:
         rgba(213,173,72,.28);
 
-    background:
-        rgba(213,173,72,.025);
-
     box-shadow:
-        0 16px 36px
+        0 18px 40px
         rgba(0,0,0,.20);
 }
 
 .case-icon{
-    width:37px;
-    height:37px;
+    width:38px;
+    height:38px;
 
     display:grid;
     place-items:center;
 
-    border-radius:10px;
+    border-radius:11px;
 
     color:var(--gold-light);
 
     background:
-        rgba(213,173,72,.06);
+        rgba(213,173,72,.065);
 
     border:
         1px solid
         rgba(213,173,72,.14);
 
     margin-bottom:10px;
-
-    transition:
-        transform .35s ease,
-        background .35s ease;
-}
-
-.case-card:hover .case-icon{
-    transform:
-        translateY(-2px)
-        scale(1.05);
-
-    background:
-        rgba(213,173,72,.10);
 }
 
 .case-icon svg{
@@ -1228,23 +1161,19 @@ section{
    WHY US
 ========================================================= */
 
-#why{
-    padding-top:48px;
-}
-
 .why-grid{
     display:grid;
 
     grid-template-columns:
         repeat(4,1fr);
 
-    gap:11px;
+    gap:12px;
 }
 
 .why-card{
     text-align:center;
 
-    padding:20px 13px;
+    padding:20px 14px;
 
     border:
         1px solid
@@ -1253,28 +1182,23 @@ section{
     background:
         rgba(255,255,255,.025);
 
-    border-radius:15px;
+    border-radius:16px;
 
-    transition:
-        transform .4s ease,
-        border-color .4s ease,
-        background .4s ease,
-        box-shadow .4s ease;
+    transition:.4s ease;
 }
 
 .why-card:hover{
-    transform:
-        translateY(-5px);
+    transform:translateY(-6px);
 
     border-color:
-        rgba(213,173,72,.27);
+        rgba(213,173,72,.26);
 
     background:
         rgba(213,173,72,.035);
+}
 
-    box-shadow:
-        0 15px 34px
-        rgba(0,0,0,.18);
+.why-number{
+    display:none;
 }
 
 .why-card h3{
@@ -1282,13 +1206,13 @@ section{
 
     font-size:13px;
 
-    margin-bottom:4px;
+    margin-bottom:5px;
 }
 
 .why-card p{
     color:#838d87;
 
-    font-size:9.5px;
+    font-size:10px;
 
     line-height:1.8;
 }
@@ -1299,11 +1223,11 @@ section{
 ========================================================= */
 
 #faq{
-    padding-top:48px;
+    padding-top:50px;
 }
 
 .faq-list{
-    max-width:880px;
+    max-width:900px;
 
     margin:auto;
 
@@ -1319,30 +1243,19 @@ section{
         1px solid
         rgba(213,173,72,.10);
 
-    border-radius:14px;
+    border-radius:15px;
 
     overflow:hidden;
 
     background:
         rgba(255,255,255,.025);
 
-    transition:
-        border-color .35s ease,
-        background .35s ease,
-        transform .35s ease;
+    transition:.35s ease;
 }
 
 .faq-item:hover{
     border-color:
-        rgba(213,173,72,.22);
-}
-
-.faq-item.active{
-    background:
-        rgba(213,173,72,.035);
-
-    border-color:
-        rgba(213,173,72,.24);
+        rgba(213,173,72,.25);
 }
 
 .faq-question{
@@ -1355,7 +1268,7 @@ section{
 
     gap:15px;
 
-    padding:15px 17px;
+    padding:15px 18px;
 
     background:none;
 
@@ -1410,13 +1323,21 @@ section{
     line-height:2;
 
     padding:
-        0 17px;
+        0 18px 0;
+}
+
+.faq-item.active{
+    background:
+        rgba(213,173,72,.035);
+
+    border-color:
+        rgba(213,173,72,.24);
 }
 
 .faq-item.active .faq-answer{
     max-height:250px;
 
-    padding-bottom:14px;
+    padding-bottom:15px;
 }
 
 .faq-item.active .faq-plus{
@@ -1431,9 +1352,8 @@ section{
    SOCIAL
 ========================================================= */
 
-#social{
+.social-section{
     padding-top:48px;
-    padding-bottom:48px;
 }
 
 .social-grid{
@@ -1442,9 +1362,9 @@ section{
     grid-template-columns:
         repeat(4,1fr);
 
-    gap:10px;
+    gap:11px;
 
-    max-width:1040px;
+    max-width:1050px;
 
     margin:auto;
 }
@@ -1452,19 +1372,19 @@ section{
 .social-card{
     position:relative;
 
-    min-height:72px;
+    min-height:82px;
 
     display:flex;
 
     align-items:center;
 
-    gap:11px;
+    gap:12px;
 
-    padding:12px;
+    padding:13px 14px;
 
     border:
         1px solid
-        rgba(213,173,72,.10);
+        rgba(213,173,72,.11);
 
     background:
         linear-gradient(
@@ -1473,7 +1393,7 @@ section{
             rgba(255,255,255,.008)
         );
 
-    border-radius:13px;
+    border-radius:15px;
 
     overflow:hidden;
 
@@ -1509,9 +1429,28 @@ section{
     transition:.45s ease;
 }
 
+.social-card::after{
+    content:"";
+
+    position:absolute;
+
+    width:100px;
+    height:100px;
+
+    right:-60px;
+    bottom:-70px;
+
+    border-radius:50%;
+
+    background:
+        rgba(213,173,72,.045);
+
+    transition:.5s ease;
+}
+
 .social-card:hover{
     transform:
-        translateY(-4px);
+        translateY(-5px);
 
     border-color:
         rgba(213,173,72,.30);
@@ -1524,12 +1463,16 @@ section{
         );
 
     box-shadow:
-        0 15px 32px
-        rgba(0,0,0,.18);
+        0 18px 40px
+        rgba(0,0,0,.20);
 }
 
 .social-card:hover::before{
     transform:scaleY(1);
+}
+
+.social-card:hover::after{
+    transform:scale(1.5);
 }
 
 .social-icon{
@@ -1537,8 +1480,8 @@ section{
 
     z-index:2;
 
-    width:37px;
-    height:37px;
+    width:40px;
+    height:40px;
 
     flex-shrink:0;
 
@@ -1547,21 +1490,21 @@ section{
 
     border:
         1px solid
-        rgba(213,173,72,.17);
+        rgba(213,173,72,.19);
 
     background:
-        rgba(213,173,72,.045);
+        rgba(213,173,72,.055);
 
     color:var(--gold-light);
 
-    border-radius:10px;
+    border-radius:11px;
 
     transition:.4s ease;
 }
 
 .social-icon svg{
-    width:17px;
-    height:17px;
+    width:18px;
+    height:18px;
 
     fill:none;
 
@@ -1577,21 +1520,24 @@ section{
 
 .social-card:hover .social-icon{
     background:
-        rgba(213,173,72,.11);
+        linear-gradient(
+            135deg,
+            rgba(213,173,72,.19),
+            rgba(213,173,72,.05)
+        );
 
     border-color:
-        rgba(213,173,72,.40);
+        rgba(213,173,72,.42);
 
     transform:
-        scale(1.05);
+        translateY(-1px)
+        scale(1.06);
 }
 
 .social-info{
     position:relative;
 
     z-index:2;
-
-    min-width:0;
 }
 
 .social-info strong{
@@ -1599,7 +1545,7 @@ section{
 
     color:#eeeae1;
 
-    font-size:10.5px;
+    font-size:11px;
 
     font-weight:700;
 }
@@ -1612,8 +1558,6 @@ section{
     font-size:8px;
 
     margin-top:1px;
-
-    white-space:nowrap;
 }
 
 
@@ -1622,8 +1566,11 @@ section{
 ========================================================= */
 
 #contact{
-    padding-top:40px;
-    padding-bottom:45px;
+    padding-top:48px;
+}
+
+.contact{
+    padding-bottom:48px;
 }
 
 .contact-box{
@@ -1631,11 +1578,7 @@ section{
 
     overflow:hidden;
 
-    max-width:850px;
-
-    margin:auto;
-
-    padding:28px 25px;
+    padding:32px;
 
     border:
         1px solid
@@ -1644,8 +1587,8 @@ section{
     background:
         radial-gradient(
             circle at 80% 20%,
-            rgba(213,173,72,.075),
-            transparent 32%
+            rgba(213,173,72,.08),
+            transparent 30%
         ),
         linear-gradient(
             135deg,
@@ -1653,13 +1596,29 @@ section{
             rgba(255,255,255,.012)
         );
 
-    border-radius:20px;
+    border-radius:24px;
 
     text-align:center;
 
-    box-shadow:
-        0 20px 55px
-        rgba(0,0,0,.20);
+    box-shadow:var(--shadow);
+}
+
+.contact-box::before{
+    content:"";
+
+    position:absolute;
+
+    width:240px;
+    height:240px;
+
+    left:-130px;
+    bottom:-160px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(213,173,72,.10);
 }
 
 .contact-box h2{
@@ -1667,9 +1626,9 @@ section{
 
     font-family:"Amiri",serif;
 
-    font-size:29px;
+    font-size:32px;
 
-    margin-bottom:5px;
+    margin-bottom:6px;
 }
 
 .contact-box p{
@@ -1677,7 +1636,7 @@ section{
 
     font-size:11px;
 
-    margin-bottom:15px;
+    margin-bottom:17px;
 }
 
 .contact-actions{
@@ -1688,7 +1647,7 @@ section{
 
     flex-wrap:wrap;
 
-    gap:8px;
+    gap:9px;
 }
 
 
@@ -1702,10 +1661,10 @@ footer{
         rgba(213,173,72,.10);
 
     padding:
-        21px 0 18px;
+        23px 0 20px;
 
     background:
-        rgba(0,0,0,.13);
+        rgba(0,0,0,.12);
 }
 
 .footer-main{
@@ -1714,7 +1673,7 @@ footer{
     align-items:center;
     justify-content:space-between;
 
-    gap:15px;
+    gap:18px;
 
     flex-wrap:wrap;
 }
@@ -1724,18 +1683,14 @@ footer{
 
     align-items:center;
 
-    gap:8px;
+    gap:9px;
 }
 
 .footer-brand img{
-    width:37px;
-    height:37px;
+    width:38px;
+    height:38px;
 
     object-fit:contain;
-}
-
-.footer-brand-text{
-    line-height:1.15;
 }
 
 .footer-brand-text strong{
@@ -1745,17 +1700,17 @@ footer{
 
     font-size:11px;
 
-    line-height:1.25;
+    line-height:1.3;
+
+    white-space:nowrap;
 }
 
 .footer-brand-text span{
-    display:block;
-
     color:var(--gold-light);
 
-    font-size:7.5px;
+    font-size:8px;
 
-    margin-top:2px;
+    white-space:nowrap;
 }
 
 .footer-links{
@@ -1785,11 +1740,11 @@ footer{
 
     color:#69736d;
 
-    font-size:8px;
+    font-size:8.5px;
 
-    margin-top:13px;
+    margin-top:14px;
 
-    padding-top:11px;
+    padding-top:12px;
 
     border-top:
         1px solid
@@ -1798,17 +1753,17 @@ footer{
 
 
 /* =========================================================
-   WHATSAPP FLOATING
+   WHATSAPP
 ========================================================= */
 
 .whatsapp{
     position:fixed;
 
-    left:18px;
-    bottom:18px;
+    left:22px;
+    bottom:22px;
 
-    width:53px;
-    height:53px;
+    width:58px;
+    height:58px;
 
     display:grid;
     place-items:center;
@@ -1831,10 +1786,10 @@ footer{
         rgba(255,255,255,.20);
 
     box-shadow:
-        0 9px 27px
+        0 10px 30px
         rgba(0,0,0,.35),
-        0 0 0 6px
-        rgba(212,170,75,.05);
+        0 0 0 7px
+        rgba(212,170,75,.055);
 
     transition:
         transform .35s ease,
@@ -1846,13 +1801,13 @@ footer{
 
     position:absolute;
 
-    inset:-6px;
+    inset:-7px;
 
     border-radius:50%;
 
     border:
         1px solid
-        rgba(212,170,75,.17);
+        rgba(212,170,75,.18);
 
     animation:
         whatsappPulse 2.8s ease-out infinite;
@@ -1873,6 +1828,7 @@ footer{
     100%{
         opacity:0;
     }
+
 }
 
 .whatsapp svg{
@@ -1880,8 +1836,8 @@ footer{
 
     z-index:2;
 
-    width:23px;
-    height:23px;
+    width:25px;
+    height:25px;
 
     fill:none;
 
@@ -1895,13 +1851,13 @@ footer{
 
 .whatsapp:hover{
     transform:
-        translateY(-4px)
-        scale(1.06);
+        translateY(-5px)
+        scale(1.07);
 
     box-shadow:
-        0 16px 36px
+        0 18px 40px
         rgba(0,0,0,.38),
-        0 0 0 8px
+        0 0 0 9px
         rgba(212,170,75,.07);
 }
 
@@ -1950,7 +1906,7 @@ footer{
     .logo-wrap{
         order:0;
 
-        min-height:350px;
+        min-height:360px;
     }
 
     .hero-subtitle{
@@ -1962,14 +1918,13 @@ footer{
         justify-content:center;
     }
 
-    .logo-stage{
-        width:320px;
-        height:320px;
+    .hero h1{
+        white-space:normal;
     }
 
-    .logo-main{
-        width:155px;
-        height:155px;
+    .logo-stage{
+        width:330px;
+        height:330px;
     }
 
     .services-grid{
@@ -1992,9 +1947,16 @@ footer{
             repeat(2,1fr);
     }
 
-    .about-points{
-        grid-template-columns:
-            repeat(2,1fr);
+    .about-grid{
+        grid-template-columns:1fr;
+
+        gap:24px;
+    }
+
+    .about-image{
+        max-width:550px;
+
+        margin:auto;
     }
 }
 
@@ -2003,11 +1965,11 @@ footer{
 
     .container{
         width:
-            calc(100% - 26px);
+            calc(100% - 28px);
     }
 
     header{
-        height:68px;
+        height:70px;
     }
 
     .brand-text{
@@ -2015,70 +1977,57 @@ footer{
     }
 
     .brand img{
-        width:41px;
-        height:41px;
+        width:43px;
+        height:43px;
     }
 
     .phone-top{
         padding:
-            7px 10px;
+            8px 11px;
 
-        font-size:9px;
+        font-size:10px;
     }
 
     .phone-top span{
-        display:none;
+        display:inline-block;
     }
 
     .hero{
-        padding-top:68px;
+        padding-top:70px;
     }
 
     .hero h1{
         font-size:38px;
 
-        line-height:1.08;
+        white-space:normal;
     }
 
     .hero-subtitle{
-        font-size:12px;
+        font-size:13px;
 
         line-height:1.9;
     }
 
     .logo-wrap{
-        min-height:300px;
+        min-height:315px;
     }
 
     .logo-stage{
-        width:275px;
-        height:275px;
+        width:285px;
+        height:285px;
     }
 
     .logo-stage::before{
-        inset:20px;
-    }
-
-    .logo-stage::after{
-        inset:7px;
-    }
-
-    .logo-orbit-2{
-        inset:27px;
-    }
-
-    .logo-orbit-3{
-        inset:48px;
+        inset:22px;
     }
 
     .logo-main{
-        width:135px;
-        height:135px;
+        width:160px;
     }
 
     section{
         padding:
-            47px 0;
+            48px 0;
     }
 
     .section-head{
@@ -2086,11 +2035,7 @@ footer{
     }
 
     .section-head h2{
-        font-size:29px;
-    }
-
-    .section-head p{
-        font-size:10.5px;
+        font-size:30px;
     }
 
     .services-grid,
@@ -2108,24 +2053,12 @@ footer{
         grid-template-columns:1fr;
     }
 
-    .about-content h3{
-        font-size:26px;
-    }
-
-    .about-content p{
-        font-size:11px;
-    }
-
     .contact-box{
-        padding:23px 15px;
+        padding:25px 17px;
     }
 
     .contact-box h2{
-        font-size:26px;
-    }
-
-    .contact-box p{
-        font-size:10px;
+        font-size:28px;
     }
 
     .footer-main{
@@ -2142,16 +2075,43 @@ footer{
 
     .footer-links{
         justify-content:center;
-
-        gap:9px 12px;
     }
 
     .whatsapp{
-        width:51px;
-        height:51px;
+        width:54px;
+        height:54px;
 
-        left:13px;
-        bottom:13px;
+        left:15px;
+        bottom:15px;
+    }
+}
+
+
+@media(max-width:450px){
+
+    .phone-top{
+        padding:7px 9px;
+    }
+
+    .phone-top span{
+        font-size:9px;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero-subtitle{
+        font-size:12px;
+    }
+
+    .logo-stage{
+        width:265px;
+        height:265px;
+    }
+
+    .logo-main{
+        width:145px;
     }
 }
 
@@ -2159,7 +2119,7 @@ footer{
 @media(max-width:380px){
 
     .hero h1{
-        font-size:33px;
+        font-size:31px;
     }
 
     .logo-stage{
@@ -2168,8 +2128,7 @@ footer{
     }
 
     .logo-main{
-        width:125px;
-        height:125px;
+        width:137px;
     }
 
     .why-grid{
@@ -2177,11 +2136,11 @@ footer{
     }
 
     .phone-top{
-        display:none;
+        display:flex;
     }
 
-    .social-card{
-        min-height:68px;
+    .phone-top span{
+        display:none;
     }
 }
 
@@ -2223,7 +2182,8 @@ alt="شعار روينا عبدالفتاح رحالي"
 <a
 href="tel:+966544270651"
 class="phone-top"
-aria-label="الاتصال بالمكتب"
+dir="ltr"
+aria-label="الاتصال بمكتب روينا عبدالفتاح رحالي"
 >
 
 <svg viewBox="0 0 24 24">
@@ -2232,7 +2192,7 @@ aria-label="الاتصال بالمكتب"
 
 </svg>
 
-<span>054 427 0651</span>
+<span class="phone-number">054 427 0651</span>
 
 </a>
 
@@ -2258,13 +2218,11 @@ aria-label="الاتصال بالمكتب"
 <div class="hero-text reveal">
 
 <div class="kicker">
-مكتب قانوني
+مكتب قانوني مرخص
 </div>
 
 <h1>
-روينا عبدالفتاح
-<br>
-<span>رحالي</span>
+روينا عبدالفتاح <span>رحالي</span>
 </h1>
 
 <p class="hero-subtitle">
@@ -2280,6 +2238,7 @@ aria-label="الاتصال بالمكتب"
 <a
 href="tel:+966544270651"
 class="btn btn-primary"
+dir="ltr"
 >
 
 <svg viewBox="0 0 24 24">
@@ -2288,7 +2247,7 @@ class="btn btn-primary"
 
 </svg>
 
-اتصل بنا
+<span>054 427 0651</span>
 
 </a>
 
@@ -2323,8 +2282,6 @@ class="btn btn-outline"
 <div class="logo-orbit"></div>
 
 <div class="logo-orbit-2"></div>
-
-<div class="logo-orbit-3"></div>
 
 <img
 class="logo-main"
@@ -2368,6 +2325,20 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 </div>
 
 
+<div class="about-grid">
+
+
+<div class="about-image reveal">
+
+<img
+src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.jpg"
+alt="شعار مكتب روينا عبدالفتاح رحالي"
+loading="lazy"
+>
+
+</div>
+
+
 <div class="about-content reveal">
 
 <h3>
@@ -2407,6 +2378,8 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <div class="about-point">
 <span></span>
 سرية وخصوصية المعلومات
+</div>
+
 </div>
 
 </div>
@@ -2557,21 +2530,17 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
-
 <rect x="3" y="5" width="18" height="14" rx="2"/>
 <path d="M8 5V3h8v2"/>
 <path d="M3 10h18"/>
-
 </svg>
-
 </div>
 
 <h3>القضايا التجارية</h3>
 
 <p>
-المنازعات التجارية، والحقوق والالتزامات التعاقدية،
+المنازعات التجارية، الحقوق والالتزامات التعاقدية،
 والقضايا المرتبطة بالأنشطة والمنشآت التجارية.
 </p>
 
@@ -2581,17 +2550,13 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
-
 <path d="M4 19h16"/>
 <path d="M6 17V9"/>
 <path d="M10 17V6"/>
 <path d="M14 17V11"/>
 <path d="M18 17V4"/>
-
 </svg>
-
 </div>
 
 <h3>القضايا العمالية</h3>
@@ -2607,16 +2572,12 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
-
 <path d="M12 3v18"/>
 <path d="M5 7h14"/>
 <path d="M6 7l-3 6h6L6 7Z"/>
 <path d="M18 7l-3 6h6l-3-6Z"/>
-
 </svg>
-
 </div>
 
 <h3>الأحوال الشخصية</h3>
@@ -2632,9 +2593,7 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
-
 <path d="M3 10h18"/>
 <path d="M5 10v9"/>
 <path d="M9 10v9"/>
@@ -2642,9 +2601,7 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <path d="M19 10v9"/>
 <path d="M3 19h18"/>
 <path d="M4 10l8-6 8 6"/>
-
 </svg>
-
 </div>
 
 <h3>القضايا العقارية</h3>
@@ -2660,14 +2617,10 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
-
 <path d="M12 3l8 4v5c0 4.8-3.4 7.7-8 9-4.6-1.3-8-4.2-8-9V7l8-4Z"/>
 <path d="M9 12l2 2 4-4"/>
-
 </svg>
-
 </div>
 
 <h3>القضايا الجنائية</h3>
@@ -2683,16 +2636,12 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
-
 <path d="M5 4h14v16H5z"/>
 <path d="M8 8h8"/>
 <path d="M8 12h8"/>
 <path d="M8 16h5"/>
-
 </svg>
-
 </div>
 
 <h3>القضايا الإدارية</h3>
@@ -2708,15 +2657,11 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
-
 <circle cx="12" cy="12" r="8"/>
 <path d="M12 8v8"/>
 <path d="M8 12h8"/>
-
 </svg>
-
 </div>
 
 <h3>التحكيم وتسوية النزاعات</h3>
@@ -2732,16 +2677,12 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
-
 <path d="M7 3h10v18H7z"/>
 <path d="M9 7h6"/>
 <path d="M9 11h6"/>
 <path d="M9 15h4"/>
-
 </svg>
-
 </div>
 
 <h3>العقود والاتفاقيات</h3>
@@ -2757,14 +2698,10 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
-
 <circle cx="12" cy="8" r="3"/>
 <path d="M5 20c.7-3.4 3-5 7-5s6.3 1.6 7 5"/>
-
 </svg>
-
 </div>
 
 <h3>الخدمات القانونية للأفراد</h3>
@@ -2788,7 +2725,7 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
      WHY US
 ========================================================= -->
 
-<section id="why">
+<section>
 
 <div class="container">
 
@@ -2801,10 +2738,6 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <h2>
 شراكة قانونية تقوم على الثقة
 </h2>
-
-<p>
-نحرص على بناء علاقة مهنية واضحة ومستقرة مع عملائنا.
-</p>
 
 </div>
 
@@ -2932,7 +2865,7 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 
 <p>
 يمكنك التواصل معنا مباشرة عبر الاتصال أو عبر واتساب،
-أو زيارة أحد فروعنا في جدة أو الطائف خلال أوقات العمل
+أو زيارة فرعنا الرئيسي في جدة خلال أوقات العمل
 من 8 صباحاً حتى 9 مساءً.
 </p>
 
@@ -3019,7 +2952,7 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <button class="faq-question">
 
 <span>
-هل تقدمون خدماتكم خارج جدة والطائف؟
+هل تقدمون خدماتكم خارج جدة؟
 </span>
 
 <span class="faq-plus">+</span>
@@ -3030,7 +2963,7 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 
 <p>
 نعم، نقدم خدماتنا في جميع مناطق المملكة العربية السعودية،
-ويمكن التنسيق عبر فروعنا الرئيسية في جدة والطائف.
+ويمكن التنسيق عبر فرعنا الرئيسي في جدة.
 </p>
 
 </div>
@@ -3050,7 +2983,7 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
      SOCIAL
 ========================================================= -->
 
-<section id="social">
+<section class="social-section">
 
 <div class="container">
 
@@ -3073,8 +3006,6 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 
 <div class="social-grid">
 
-
-<!-- SNAPCHAT -->
 
 <a
 href="https://snapchat.com/t/dl9ibhPp"
@@ -3103,8 +3034,6 @@ class="social-card reveal"
 
 </a>
 
-
-<!-- INSTAGRAM -->
 
 <a
 href="https://www.instagram.com/rowinarahali?igsh=MW1vbnFjeW56NDgzbA%3D%3D&utm_source=qr"
@@ -3136,8 +3065,6 @@ class="social-card reveal"
 </a>
 
 
-<!-- X -->
-
 <a
 href="https://x.com/rowinarahali?s=21"
 target="_blank"
@@ -3167,8 +3094,6 @@ class="social-card reveal"
 </a>
 
 
-<!-- TIKTOK -->
-
 <a
 href="https://www.tiktok.com/@rowina_ar?_r=1&_t=ZS-927I2h5U5xt"
 target="_blank"
@@ -3197,8 +3122,6 @@ class="social-card reveal"
 
 </a>
 
-
-<!-- LINKEDIN -->
 
 <a
 href="https://www.linkedin.com/in/rowina-rahali-43a83b352?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
@@ -3231,8 +3154,6 @@ class="social-card reveal"
 </a>
 
 
-<!-- YOUTUBE -->
-
 <a
 href="https://www.youtube.com/@Rowinarahali.lawfirm"
 target="_blank"
@@ -3262,8 +3183,6 @@ class="social-card reveal"
 </a>
 
 
-<!-- GOOGLE MAPS -->
-
 <a
 href="https://maps.app.goo.gl/4i7e5cZeRJaVCS8NA?g_st=ipc"
 target="_blank"
@@ -3292,8 +3211,6 @@ class="social-card reveal"
 
 </a>
 
-
-<!-- WHATSAPP -->
 
 <a
 href="https://wa.me/966544270651"
@@ -3337,7 +3254,7 @@ class="social-card reveal"
      CONTACT
 ========================================================= -->
 
-<section id="contact">
+<section class="contact" id="contact">
 
 <div class="container">
 
@@ -3357,6 +3274,7 @@ class="social-card reveal"
 <a
 href="tel:+966544270651"
 class="btn btn-primary"
+dir="ltr"
 >
 
 <svg viewBox="0 0 24 24">
@@ -3365,7 +3283,7 @@ class="btn btn-primary"
 
 </svg>
 
-054 427 0651
+<span class="phone-number">054 427 0651</span>
 
 </a>
 
@@ -3448,11 +3366,7 @@ alt="شعار المكتب"
 
 <a href="#cases">التخصصات</a>
 
-<a href="#why">لماذا نحن</a>
-
 <a href="#faq">الأسئلة الشائعة</a>
-
-<a href="#social">حساباتنا</a>
 
 <a href="#contact">تواصل معنا</a>
 
@@ -3577,21 +3491,21 @@ window.addEventListener(
     "scroll",
     () => {
 
-        if(window.scrollY > 25){
+        if(window.scrollY > 30){
 
             header.style.background =
-                "rgba(6,16,12,.97)";
+                "rgba(4,11,8,.93)";
 
             header.style.boxShadow =
-                "0 10px 35px rgba(0,0,0,.20)";
+                "0 10px 35px rgba(0,0,0,.18)";
 
         }else{
 
             header.style.background =
-                "linear-gradient(180deg,rgba(8,19,14,.94),rgba(7,17,13,.88))";
+                "rgba(5,13,10,.78)";
 
             header.style.boxShadow =
-                "0 8px 35px rgba(0,0,0,.12)";
+                "none";
 
         }
 
@@ -3600,43 +3514,6 @@ window.addEventListener(
         passive:true
     }
 );
-
-
-/* =========================================================
-   SMALL PARALLAX EFFECT FOR LOGO
-========================================================= */
-
-const logoStage =
-    document.querySelector(".logo-stage");
-
-if(logoStage && window.matchMedia("(pointer:fine)").matches){
-
-    logoStage.addEventListener("mousemove", e => {
-
-        const rect =
-            logoStage.getBoundingClientRect();
-
-        const x =
-            (e.clientX - rect.left) / rect.width - .5;
-
-        const y =
-            (e.clientY - rect.top) / rect.height - .5;
-
-        logoStage.style.transform =
-            `perspective(800px)
-             rotateY(${x * 5}deg)
-             rotateX(${y * -5}deg)`;
-
-    });
-
-    logoStage.addEventListener("mouseleave", () => {
-
-        logoStage.style.transform =
-            "perspective(800px) rotateY(0deg) rotateX(0deg)";
-
-    });
-
-}
 
 </script>
 
