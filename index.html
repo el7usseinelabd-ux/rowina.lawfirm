@@ -7,7 +7,7 @@
 <title>روينا عبدالفتاح رحالي | للمحاماة والاستشارات القانونية</title>
 
 <meta name="description" content="مكتب روينا عبدالفتاح رحالي للمحاماة والاستشارات القانونية. خدمات قانونية متخصصة في جدة وجميع مناطق المملكة العربية السعودية.">
-<meta name="theme-color" content="#08120e">
+<meta name="theme-color" content="#08130e">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,8 +22,8 @@
 
 :root{
     --bg:#07110d;
-    --bg2:#0a1712;
-    --bg3:#0d1d17;
+    --bg2:#091610;
+    --bg3:#0d1b15;
 
     --card:rgba(255,255,255,.035);
     --card2:rgba(255,255,255,.055);
@@ -38,9 +38,9 @@
 
     --line:rgba(214,174,78,.14);
 
-    --shadow:0 25px 70px rgba(0,0,0,.30);
+    --shadow:0 20px 55px rgba(0,0,0,.28);
 
-    --radius:20px;
+    --radius:18px;
 
     --container:1180px;
 }
@@ -65,39 +65,42 @@ body{
 
     background:
         radial-gradient(
-            circle at 50% -10%,
+            circle at 50% -12%,
             rgba(201,157,61,.08),
-            transparent 35%
+            transparent 32%
         ),
         linear-gradient(
             180deg,
             #07110d 0%,
-            #08130f 45%,
+            #08140f 50%,
             #06100c 100%
         );
 
     color:var(--text);
+
     overflow-x:hidden;
-    line-height:1.8;
+
+    line-height:1.75;
 }
 
 body::before{
     content:"";
 
     position:fixed;
+
     inset:0;
 
     pointer-events:none;
 
     background-image:
         radial-gradient(
-            rgba(225,194,106,.08) 1px,
+            rgba(225,194,106,.07) 1px,
             transparent 1px
         );
 
     background-size:55px 55px;
 
-    opacity:.12;
+    opacity:.10;
 
     z-index:-1;
 }
@@ -123,7 +126,7 @@ button{
 
 .container{
     width:min(
-        calc(100% - 40px),
+        calc(100% - 36px),
         var(--container)
     );
 
@@ -142,12 +145,12 @@ header{
     right:0;
     left:0;
 
-    height:78px;
+    height:76px;
 
     z-index:1000;
 
     background:
-        rgba(5,13,10,.78);
+        rgba(6,15,11,.84);
 
     backdrop-filter:blur(18px);
     -webkit-backdrop-filter:blur(18px);
@@ -169,32 +172,36 @@ header{
     align-items:center;
     justify-content:space-between;
 
-    gap:20px;
+    gap:18px;
 }
 
 .brand{
     display:flex;
+
     align-items:center;
-    gap:12px;
+
+    gap:10px;
 
     min-width:0;
 }
 
 .brand img{
-    width:47px;
-    height:47px;
+    width:46px;
+    height:46px;
 
     object-fit:contain;
 
     filter:
         drop-shadow(
-            0 4px 14px
+            0 5px 15px
             rgba(215,174,71,.16)
         );
 }
 
 .brand-text{
-    line-height:1.25;
+    line-height:1.2;
+
+    white-space:nowrap;
 }
 
 .brand-text strong{
@@ -202,11 +209,9 @@ header{
 
     color:var(--white);
 
-    font-size:14px;
+    font-size:13px;
 
     font-weight:700;
-
-    white-space:nowrap;
 }
 
 .brand-text span{
@@ -214,23 +219,24 @@ header{
 
     color:var(--gold-light);
 
-    font-size:9px;
+    font-size:8px;
 
-    margin-top:2px;
-
-    white-space:nowrap;
+    margin-top:3px;
 }
 
 .nav-actions{
     display:flex;
+
     align-items:center;
-    gap:10px;
+
+    gap:8px;
 }
 
-
-/* رقم الهاتف */
-
 .phone-top{
+    direction:ltr;
+
+    unicode-bidi:isolate;
+
     display:flex;
 
     align-items:center;
@@ -238,12 +244,13 @@ header{
 
     gap:8px;
 
-    padding:9px 15px;
+    padding:8px 14px;
 
-    border:1px solid
+    border:
+        1px solid
         rgba(213,173,74,.22);
 
-    border-radius:12px;
+    border-radius:11px;
 
     color:var(--gold-light);
 
@@ -252,32 +259,24 @@ header{
 
     transition:.35s ease;
 
-    font-size:12px;
-    font-weight:700;
+    font-size:11px;
 
-    direction:ltr;
+    font-weight:700;
 
     white-space:nowrap;
 }
 
 .phone-top svg{
-    width:17px;
-    height:17px;
+    width:16px;
+    height:16px;
 
     stroke:currentColor;
+
     fill:none;
 
     stroke-width:1.7;
 
     flex-shrink:0;
-}
-
-.phone-top span,
-.phone-number{
-    direction:ltr !important;
-    unicode-bidi:embed;
-    display:inline-block;
-    white-space:nowrap;
 }
 
 .phone-top:hover{
@@ -296,11 +295,12 @@ header{
 ========================================================= */
 
 .hero{
-    min-height:100vh;
+    min-height:calc(100vh - 20px);
 
-    padding-top:78px;
+    padding-top:76px;
 
     display:flex;
+
     align-items:center;
 
     position:relative;
@@ -313,27 +313,25 @@ header{
 
     position:absolute;
 
-    width:650px;
-    height:650px;
+    width:620px;
+    height:620px;
 
     right:50%;
-    top:45%;
+    top:48%;
 
-    transform:translate(
-        50%,
-        -50%
-    );
+    transform:
+        translate(50%,-50%);
 
     border-radius:50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(211,169,66,.09),
+            rgba(211,169,66,.075),
             transparent 68%
         );
 
-    filter:blur(10px);
+    filter:blur(8px);
 
     pointer-events:none;
 }
@@ -351,6 +349,7 @@ header{
 
 .hero-text{
     position:relative;
+
     z-index:2;
 }
 
@@ -358,20 +357,22 @@ header{
     display:inline-flex;
 
     align-items:center;
-    gap:9px;
+
+    gap:8px;
 
     color:var(--gold-light);
 
-    font-size:12px;
+    font-size:11px;
+
     font-weight:700;
 
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
 
 .kicker::before{
     content:"";
 
-    width:27px;
+    width:25px;
     height:1px;
 
     background:
@@ -382,6 +383,9 @@ header{
         );
 }
 
+
+/* الاسم في سطر واحد */
+
 .hero h1{
     color:var(--white);
 
@@ -390,39 +394,47 @@ header{
     font-size:
         clamp(
             34px,
-            4.1vw,
+            4.2vw,
             58px
         );
 
-    line-height:1.18;
+    line-height:1.2;
 
     margin-bottom:12px;
 
     white-space:nowrap;
+
+    letter-spacing:-.3px;
 }
 
 .hero h1 span{
     color:var(--gold-light);
 }
 
+
+/* لا يوجد br بصري بين الاسم */
+
 .hero-subtitle{
     color:#d8d4ca;
 
     font-size:
         clamp(
-            14px,
+            13px,
             1.4vw,
-            17px
+            16px
         );
 
-    max-width:610px;
+    max-width:600px;
 
-    margin-bottom:22px;
+    margin-bottom:20px;
+
+    line-height:1.9;
 }
 
 .hero-buttons{
     display:flex;
-    gap:12px;
+
+    gap:10px;
 
     flex-wrap:wrap;
 }
@@ -433,16 +445,16 @@ header{
     align-items:center;
     justify-content:center;
 
-    gap:9px;
+    gap:8px;
 
-    min-height:46px;
+    min-height:44px;
 
     padding:
-        9px 19px;
+        9px 18px;
 
-    border-radius:12px;
+    border-radius:11px;
 
-    font-size:12px;
+    font-size:11px;
 
     font-weight:700;
 
@@ -454,10 +466,11 @@ header{
 }
 
 .btn svg{
-    width:17px;
-    height:17px;
+    width:16px;
+    height:16px;
 
     stroke:currentColor;
+
     fill:none;
 
     stroke-width:1.7;
@@ -474,26 +487,27 @@ header{
         );
 
     box-shadow:
-        0 12px 35px
-        rgba(194,147,51,.17);
+        0 10px 30px
+        rgba(194,147,51,.16);
 }
 
 .btn-primary:hover{
     transform:translateY(-3px);
 
     box-shadow:
-        0 18px 45px
-        rgba(194,147,51,.28);
+        0 15px 38px
+        rgba(194,147,51,.27);
 }
 
 .btn-outline{
     color:var(--gold-light);
 
-    border:1px solid
+    border:
+        1px solid
         rgba(212,173,73,.28);
 
     background:
-        rgba(212,173,73,.04);
+        rgba(212,173,73,.035);
 }
 
 .btn-outline:hover{
@@ -503,12 +517,13 @@ header{
         rgba(212,173,73,.55);
 
     background:
-        rgba(212,173,73,.09);
+        rgba(212,173,73,.08);
 }
 
 
 /* =========================================================
    LOGO STAGE
+   خلفية متناسقة مع الشعار
 ========================================================= */
 
 .logo-wrap{
@@ -518,6 +533,10 @@ header{
     justify-content:center;
 
     min-height:430px;
+
+    position:relative;
+
+    border-radius:50%;
 }
 
 .logo-stage{
@@ -527,10 +546,31 @@ header{
     position:relative;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
     border-radius:50%;
+
+    /*
+       الخلفية أصبحت امتداداً للون الشعار
+       بدل خلفية مختلفة حوله
+    */
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            #0d1d17 0%,
+            #0a1712 48%,
+            #08130f 78%,
+            #07110d 100%
+        );
+
+    box-shadow:
+        0 0 90px
+        rgba(202,157,57,.055),
+        inset 0 0 70px
+        rgba(0,0,0,.18);
 }
 
 .logo-stage::before{
@@ -538,17 +578,17 @@ header{
 
     position:absolute;
 
-    inset:28px;
+    inset:25px;
 
     border-radius:50%;
 
     border:
         1px solid
-        rgba(220,181,83,.26);
+        rgba(220,181,83,.27);
 
     box-shadow:
-        0 0 60px
-        rgba(212,169,67,.07);
+        0 0 45px
+        rgba(212,169,67,.055);
 
     animation:
         stagePulse 4.5s ease-in-out infinite;
@@ -559,7 +599,7 @@ header{
 
     position:absolute;
 
-    inset:5px;
+    inset:4px;
 
     border-radius:50%;
 
@@ -568,7 +608,7 @@ header{
         rgba(215,175,75,.20);
 
     animation:
-        orbitRotate 22s linear infinite;
+        orbitRotate 24s linear infinite;
 }
 
 .logo-orbit{
@@ -588,8 +628,8 @@ header{
 
     position:absolute;
 
-    width:7px;
-    height:7px;
+    width:6px;
+    height:6px;
 
     border-radius:50%;
 
@@ -602,9 +642,9 @@ header{
         );
 
     box-shadow:
-        0 0 12px
+        0 0 11px
         rgba(228,198,109,.9),
-        0 0 25px
+        0 0 22px
         rgba(205,157,50,.45);
 }
 
@@ -614,20 +654,20 @@ header{
 }
 
 .logo-orbit::after{
-    bottom:42px;
-    right:9px;
+    bottom:40px;
+    right:8px;
 }
 
 .logo-orbit-2{
     position:absolute;
 
-    inset:43px;
+    inset:40px;
 
     border-radius:50%;
 
     border:
         1px solid
-        rgba(217,176,75,.09);
+        rgba(217,176,75,.085);
 
     animation:
         orbitRotateReverse 13s linear infinite;
@@ -638,8 +678,8 @@ header{
 
     position:absolute;
 
-    top:20px;
-    right:12px;
+    top:18px;
+    right:10px;
 
     width:5px;
     height:5px;
@@ -649,7 +689,7 @@ header{
     background:var(--gold-light);
 
     box-shadow:
-        0 0 16px
+        0 0 14px
         var(--gold-light);
 }
 
@@ -664,14 +704,18 @@ header{
 
     object-fit:contain;
 
+    /*
+       لا نغيّر شكل الشعار
+    */
+
     filter:
         drop-shadow(
-            0 18px 35px
-            rgba(0,0,0,.34)
+            0 15px 30px
+            rgba(0,0,0,.32)
         )
         drop-shadow(
-            0 0 25px
-            rgba(212,170,75,.11)
+            0 0 22px
+            rgba(212,170,75,.10)
         );
 
     animation:
@@ -688,26 +732,29 @@ header{
 
     filter:
         drop-shadow(
-            0 22px 42px
+            0 20px 38px
             rgba(0,0,0,.38)
         )
         drop-shadow(
-            0 0 35px
-            rgba(212,170,75,.20)
+            0 0 32px
+            rgba(212,170,75,.18)
         );
 }
 
 @keyframes logoFloat{
+
     0%,100%{
         transform:translateY(0);
     }
 
     50%{
-        transform:translateY(-7px);
+        transform:translateY(-6px);
     }
+
 }
 
 @keyframes orbitRotate{
+
     from{
         transform:rotate(0);
     }
@@ -715,9 +762,11 @@ header{
     to{
         transform:rotate(360deg);
     }
+
 }
 
 @keyframes orbitRotateReverse{
+
     from{
         transform:rotate(360deg);
     }
@@ -725,9 +774,11 @@ header{
     to{
         transform:rotate(0);
     }
+
 }
 
 @keyframes stagePulse{
+
     0%,100%{
         opacity:.65;
         transform:scale(1);
@@ -735,25 +786,26 @@ header{
 
     50%{
         opacity:1;
-        transform:scale(1.015);
+        transform:scale(1.012);
     }
+
 }
 
 
 /* =========================================================
-   SECTIONS
+   SECTION
 ========================================================= */
 
 section{
     padding:
-        58px 0;
+        54px 0;
 }
 
 .section-head{
     max-width:720px;
 
     margin:
-        0 auto 26px;
+        0 auto 24px;
 
     text-align:center;
 }
@@ -761,13 +813,11 @@ section{
 .section-label{
     color:var(--gold-light);
 
-    font-size:11px;
+    font-size:10px;
 
     font-weight:700;
 
-    letter-spacing:.3px;
-
-    margin-bottom:5px;
+    margin-bottom:4px;
 }
 
 .section-head h2{
@@ -777,25 +827,26 @@ section{
 
     font-size:
         clamp(
-            29px,
-            3.6vw,
-            40px
+            27px,
+            3.4vw,
+            39px
         );
 
     line-height:1.25;
 
-    margin-bottom:7px;
+    margin-bottom:5px;
 }
 
 .section-head p{
     color:var(--muted);
 
-    font-size:12px;
+    font-size:11px;
 }
 
 
 /* =========================================================
    ABOUT
+   بدون صورة 3D
 ========================================================= */
 
 .about{
@@ -803,68 +854,20 @@ section{
         linear-gradient(
             180deg,
             transparent,
-            rgba(255,255,255,.012),
+            rgba(255,255,255,.010),
             transparent
         );
 }
 
-.about-grid{
-    display:grid;
+.about-content{
+    max-width:900px;
 
-    grid-template-columns:
-        .9fr 1.1fr;
+    margin:auto;
 
-    gap:35px;
+    text-align:center;
 
-    align-items:center;
-}
-
-.about-image{
-    position:relative;
-
-    border-radius:22px;
-
-    overflow:hidden;
-
-    border:
-        1px solid
-        rgba(213,173,72,.15);
-
-    background:#0a1510;
-
-    box-shadow:var(--shadow);
-}
-
-.about-image::after{
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-        linear-gradient(
-            180deg,
-            transparent 60%,
-            rgba(0,0,0,.42)
-        );
-
-    pointer-events:none;
-}
-
-.about-image img{
-    width:100%;
-
-    aspect-ratio:4/4.4;
-
-    object-fit:cover;
-
-    transition:
-        transform .7s ease;
-}
-
-.about-image:hover img{
-    transform:scale(1.025);
+    padding:
+        5px 20px 0;
 }
 
 .about-content h3{
@@ -872,9 +875,9 @@ section{
 
     font-family:"Amiri",serif;
 
-    font-size:29px;
+    font-size:27px;
 
-    margin-bottom:10px;
+    margin-bottom:9px;
 }
 
 .about-content p{
@@ -884,14 +887,14 @@ section{
 
     line-height:2;
 
-    margin-bottom:12px;
+    margin-bottom:9px;
 }
 
 .about-points{
     display:grid;
 
     grid-template-columns:
-        repeat(2,1fr);
+        repeat(4,1fr);
 
     gap:9px;
 
@@ -903,9 +906,11 @@ section{
 
     align-items:center;
 
-    gap:9px;
+    justify-content:center;
 
-    padding:11px;
+    gap:7px;
+
+    padding:10px 8px;
 
     border:
         1px solid
@@ -914,9 +919,9 @@ section{
     background:
         rgba(255,255,255,.025);
 
-    border-radius:12px;
+    border-radius:11px;
 
-    font-size:10.5px;
+    font-size:10px;
 
     color:#d8d5cd;
 
@@ -928,21 +933,24 @@ section{
 
     border-color:
         rgba(213,173,72,.25);
+
+    background:
+        rgba(213,173,72,.035);
 }
 
 .about-point span{
-    width:8px;
-    height:8px;
+    width:6px;
+    height:6px;
+
+    flex-shrink:0;
 
     border-radius:50%;
 
     background:var(--gold-light);
 
     box-shadow:
-        0 0 10px
+        0 0 9px
         rgba(228,198,109,.45);
-
-    flex-shrink:0;
 }
 
 
@@ -950,25 +958,21 @@ section{
    SERVICES
 ========================================================= */
 
-#services{
-    padding-top:50px;
-}
-
 .services-grid{
     display:grid;
 
     grid-template-columns:
         repeat(3,1fr);
 
-    gap:13px;
+    gap:11px;
 }
 
 .service-card{
     position:relative;
 
-    padding:20px;
+    padding:18px 19px;
 
-    min-height:180px;
+    min-height:170px;
 
     border:
         1px solid
@@ -981,15 +985,15 @@ section{
             rgba(255,255,255,.015)
         );
 
-    border-radius:18px;
+    border-radius:15px;
 
     overflow:hidden;
 
     transition:
-        transform .45s cubic-bezier(.2,.8,.2,1),
-        border-color .4s ease,
-        box-shadow .4s ease,
-        background .4s ease;
+        transform .4s cubic-bezier(.2,.8,.2,1),
+        border-color .35s ease,
+        box-shadow .35s ease,
+        background .35s ease;
 }
 
 .service-card::before{
@@ -1000,7 +1004,7 @@ section{
     right:0;
     top:0;
 
-    width:3px;
+    width:2px;
     height:0;
 
     background:
@@ -1011,19 +1015,19 @@ section{
         );
 
     transition:
-        height .5s ease;
+        height .45s ease;
 }
 
 .service-card:hover{
     transform:
-        translateY(-6px);
+        translateY(-5px);
 
     border-color:
         rgba(213,173,72,.28);
 
     box-shadow:
-        0 20px 45px
-        rgba(0,0,0,.22);
+        0 17px 38px
+        rgba(0,0,0,.20);
 
     background:
         linear-gradient(
@@ -1037,18 +1041,14 @@ section{
     height:100%;
 }
 
-.service-number{
-    display:none;
-}
-
 .service-card h3{
     color:var(--white);
 
     font-family:"Amiri",serif;
 
-    font-size:22px;
+    font-size:21px;
 
-    margin-bottom:6px;
+    margin-bottom:5px;
 }
 
 .service-card p{
@@ -1064,13 +1064,9 @@ section{
    CASES
 ========================================================= */
 
-#cases{
-    padding-top:52px;
-}
-
 .cases{
     background:
-        rgba(0,0,0,.08);
+        rgba(0,0,0,.07);
 }
 
 .cases-grid{
@@ -1079,11 +1075,11 @@ section{
     grid-template-columns:
         repeat(3,1fr);
 
-    gap:12px;
+    gap:10px;
 }
 
 .case-card{
-    padding:18px;
+    padding:17px;
 
     border:
         1px solid
@@ -1092,31 +1088,35 @@ section{
     background:
         rgba(255,255,255,.025);
 
-    border-radius:17px;
+    border-radius:14px;
 
-    transition:.4s ease;
+    transition:
+        transform .4s ease,
+        border-color .4s ease,
+        box-shadow .4s ease;
 }
 
 .case-card:hover{
     transform:
-        translateY(-5px);
+        translateY(-4px);
 
     border-color:
         rgba(213,173,72,.28);
 
     box-shadow:
-        0 18px 40px
-        rgba(0,0,0,.20);
+        0 15px 34px
+        rgba(0,0,0,.19);
 }
 
 .case-icon{
-    width:38px;
-    height:38px;
+    width:36px;
+    height:36px;
 
     display:grid;
+
     place-items:center;
 
-    border-radius:11px;
+    border-radius:10px;
 
     color:var(--gold-light);
 
@@ -1127,14 +1127,26 @@ section{
         1px solid
         rgba(213,173,72,.14);
 
-    margin-bottom:10px;
+    margin-bottom:9px;
+
+    transition:.35s ease;
+}
+
+.case-card:hover .case-icon{
+    transform:
+        translateY(-2px)
+        scale(1.04);
+
+    background:
+        rgba(213,173,72,.10);
 }
 
 .case-icon svg{
-    width:18px;
-    height:18px;
+    width:17px;
+    height:17px;
 
     stroke:currentColor;
+
     fill:none;
 
     stroke-width:1.5;
@@ -1153,7 +1165,7 @@ section{
 
     font-size:10px;
 
-    line-height:1.9;
+    line-height:1.85;
 }
 
 
@@ -1167,13 +1179,13 @@ section{
     grid-template-columns:
         repeat(4,1fr);
 
-    gap:12px;
+    gap:10px;
 }
 
 .why-card{
     text-align:center;
 
-    padding:20px 14px;
+    padding:18px 13px;
 
     border:
         1px solid
@@ -1182,13 +1194,13 @@ section{
     background:
         rgba(255,255,255,.025);
 
-    border-radius:16px;
+    border-radius:14px;
 
     transition:.4s ease;
 }
 
 .why-card:hover{
-    transform:translateY(-6px);
+    transform:translateY(-5px);
 
     border-color:
         rgba(213,173,72,.26);
@@ -1197,22 +1209,43 @@ section{
         rgba(213,173,72,.035);
 }
 
-.why-number{
-    display:none;
+.why-symbol{
+    width:30px;
+    height:30px;
+
+    margin:
+        0 auto 8px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    color:var(--gold-light);
+
+    border:
+        1px solid
+        rgba(213,173,72,.18);
+
+    background:
+        rgba(213,173,72,.055);
+
+    font-size:13px;
 }
 
 .why-card h3{
     color:#eeeae0;
 
-    font-size:13px;
+    font-size:12px;
 
-    margin-bottom:5px;
+    margin-bottom:4px;
 }
 
 .why-card p{
     color:#838d87;
 
-    font-size:10px;
+    font-size:9.5px;
 
     line-height:1.8;
 }
@@ -1222,12 +1255,8 @@ section{
    FAQ
 ========================================================= */
 
-#faq{
-    padding-top:50px;
-}
-
 .faq-list{
-    max-width:900px;
+    max-width:850px;
 
     margin:auto;
 
@@ -1235,7 +1264,7 @@ section{
 
     flex-direction:column;
 
-    gap:8px;
+    gap:7px;
 }
 
 .faq-item{
@@ -1243,7 +1272,7 @@ section{
         1px solid
         rgba(213,173,72,.10);
 
-    border-radius:15px;
+    border-radius:13px;
 
     overflow:hidden;
 
@@ -1268,7 +1297,7 @@ section{
 
     gap:15px;
 
-    padding:15px 18px;
+    padding:14px 17px;
 
     background:none;
 
@@ -1280,21 +1309,22 @@ section{
 
     cursor:pointer;
 
-    font-size:12px;
+    font-size:11px;
 
     font-weight:700;
 }
 
 .faq-plus{
-    width:27px;
-    height:27px;
+    width:25px;
+    height:25px;
 
     flex-shrink:0;
 
     display:grid;
+
     place-items:center;
 
-    border-radius:8px;
+    border-radius:7px;
 
     color:var(--gold-light);
 
@@ -1303,6 +1333,8 @@ section{
         rgba(213,173,72,.14);
 
     transition:.35s ease;
+
+    font-size:15px;
 }
 
 .faq-answer{
@@ -1318,12 +1350,12 @@ section{
 .faq-answer p{
     color:#969f99;
 
-    font-size:10.5px;
+    font-size:10px;
 
-    line-height:2;
+    line-height:1.9;
 
     padding:
-        0 18px 0;
+        0 17px;
 }
 
 .faq-item.active{
@@ -1335,9 +1367,9 @@ section{
 }
 
 .faq-item.active .faq-answer{
-    max-height:250px;
+    max-height:220px;
 
-    padding-bottom:15px;
+    padding-bottom:13px;
 }
 
 .faq-item.active .faq-plus{
@@ -1362,9 +1394,9 @@ section{
     grid-template-columns:
         repeat(4,1fr);
 
-    gap:11px;
+    gap:9px;
 
-    max-width:1050px;
+    max-width:1000px;
 
     margin:auto;
 }
@@ -1372,15 +1404,15 @@ section{
 .social-card{
     position:relative;
 
-    min-height:82px;
+    min-height:76px;
 
     display:flex;
 
     align-items:center;
 
-    gap:12px;
+    gap:11px;
 
-    padding:13px 14px;
+    padding:12px;
 
     border:
         1px solid
@@ -1393,7 +1425,7 @@ section{
             rgba(255,255,255,.008)
         );
 
-    border-radius:15px;
+    border-radius:13px;
 
     overflow:hidden;
 
@@ -1410,6 +1442,7 @@ section{
     position:absolute;
 
     right:0;
+
     top:0;
     bottom:0;
 
@@ -1429,28 +1462,9 @@ section{
     transition:.45s ease;
 }
 
-.social-card::after{
-    content:"";
-
-    position:absolute;
-
-    width:100px;
-    height:100px;
-
-    right:-60px;
-    bottom:-70px;
-
-    border-radius:50%;
-
-    background:
-        rgba(213,173,72,.045);
-
-    transition:.5s ease;
-}
-
 .social-card:hover{
     transform:
-        translateY(-5px);
+        translateY(-4px);
 
     border-color:
         rgba(213,173,72,.30);
@@ -1463,16 +1477,12 @@ section{
         );
 
     box-shadow:
-        0 18px 40px
-        rgba(0,0,0,.20);
+        0 15px 32px
+        rgba(0,0,0,.18);
 }
 
 .social-card:hover::before{
     transform:scaleY(1);
-}
-
-.social-card:hover::after{
-    transform:scale(1.5);
 }
 
 .social-icon{
@@ -1480,12 +1490,13 @@ section{
 
     z-index:2;
 
-    width:40px;
-    height:40px;
+    width:38px;
+    height:38px;
 
     flex-shrink:0;
 
     display:grid;
+
     place-items:center;
 
     border:
@@ -1497,14 +1508,14 @@ section{
 
     color:var(--gold-light);
 
-    border-radius:11px;
+    border-radius:10px;
 
     transition:.4s ease;
 }
 
 .social-icon svg{
-    width:18px;
-    height:18px;
+    width:17px;
+    height:17px;
 
     fill:none;
 
@@ -1514,30 +1525,25 @@ section{
 
     stroke-linecap:round;
     stroke-linejoin:round;
-
-    transition:.4s ease;
 }
 
 .social-card:hover .social-icon{
     background:
-        linear-gradient(
-            135deg,
-            rgba(213,173,72,.19),
-            rgba(213,173,72,.05)
-        );
+        rgba(213,173,72,.13);
 
     border-color:
         rgba(213,173,72,.42);
 
     transform:
-        translateY(-1px)
-        scale(1.06);
+        scale(1.05);
 }
 
 .social-info{
     position:relative;
 
     z-index:2;
+
+    min-width:0;
 }
 
 .social-info strong{
@@ -1545,7 +1551,7 @@ section{
 
     color:#eeeae1;
 
-    font-size:11px;
+    font-size:10px;
 
     font-weight:700;
 }
@@ -1562,15 +1568,12 @@ section{
 
 
 /* =========================================================
-   CONTACT
+   CONTACT - تصميم جديد أصغر
 ========================================================= */
 
-#contact{
-    padding-top:48px;
-}
-
 .contact{
-    padding-bottom:48px;
+    padding:
+        45px 0 50px;
 }
 
 .contact-box{
@@ -1578,29 +1581,29 @@ section{
 
     overflow:hidden;
 
-    padding:32px;
+    max-width:850px;
+
+    margin:auto;
+
+    padding:
+        25px 28px;
 
     border:
         1px solid
-        rgba(213,173,72,.17);
+        rgba(213,173,72,.18);
 
     background:
-        radial-gradient(
-            circle at 80% 20%,
-            rgba(213,173,72,.08),
-            transparent 30%
-        ),
         linear-gradient(
             135deg,
-            rgba(255,255,255,.045),
-            rgba(255,255,255,.012)
+            rgba(13,29,23,.95),
+            rgba(8,18,13,.92)
         );
 
-    border-radius:24px;
+    border-radius:18px;
 
-    text-align:center;
-
-    box-shadow:var(--shadow);
+    box-shadow:
+        0 18px 45px
+        rgba(0,0,0,.22);
 }
 
 .contact-box::before{
@@ -1608,17 +1611,41 @@ section{
 
     position:absolute;
 
-    width:240px;
-    height:240px;
+    width:200px;
+    height:200px;
 
-    left:-130px;
-    bottom:-160px;
+    left:-100px;
+    top:-110px;
 
     border-radius:50%;
 
     border:
         1px solid
         rgba(213,173,72,.10);
+
+    box-shadow:
+        0 0 60px
+        rgba(213,173,72,.04);
+}
+
+.contact-inner{
+    position:relative;
+
+    z-index:2;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:25px;
+}
+
+.contact-title{
+    text-align:right;
+
+    min-width:0;
 }
 
 .contact-box h2{
@@ -1626,28 +1653,44 @@ section{
 
     font-family:"Amiri",serif;
 
-    font-size:32px;
+    font-size:27px;
 
-    margin-bottom:6px;
+    line-height:1.3;
+
+    margin-bottom:3px;
 }
 
 .contact-box p{
     color:#929b95;
 
-    font-size:11px;
+    font-size:10px;
 
-    margin-bottom:17px;
+    line-height:1.7;
 }
 
 .contact-actions{
     display:flex;
 
     align-items:center;
-    justify-content:center;
+
+    justify-content:flex-end;
 
     flex-wrap:wrap;
 
-    gap:9px;
+    gap:7px;
+
+    flex-shrink:0;
+}
+
+.contact-actions .btn{
+    min-height:39px;
+
+    padding:
+        8px 13px;
+
+    font-size:9.5px;
+
+    border-radius:9px;
 }
 
 
@@ -1661,7 +1704,7 @@ footer{
         rgba(213,173,72,.10);
 
     padding:
-        23px 0 20px;
+        22px 0 19px;
 
     background:
         rgba(0,0,0,.12);
@@ -1671,9 +1714,10 @@ footer{
     display:flex;
 
     align-items:center;
+
     justify-content:space-between;
 
-    gap:18px;
+    gap:20px;
 
     flex-wrap:wrap;
 }
@@ -1693,24 +1737,22 @@ footer{
     object-fit:contain;
 }
 
+.footer-brand-text{
+    line-height:1.25;
+}
+
 .footer-brand-text strong{
     display:block;
 
     color:#eeeae1;
 
     font-size:11px;
-
-    line-height:1.3;
-
-    white-space:nowrap;
 }
 
 .footer-brand-text span{
     color:var(--gold-light);
 
-    font-size:8px;
-
-    white-space:nowrap;
+    font-size:7.5px;
 }
 
 .footer-links{
@@ -1740,7 +1782,7 @@ footer{
 
     color:#69736d;
 
-    font-size:8.5px;
+    font-size:8px;
 
     margin-top:14px;
 
@@ -1753,19 +1795,20 @@ footer{
 
 
 /* =========================================================
-   WHATSAPP
+   WHATSAPP FLOATING
 ========================================================= */
 
 .whatsapp{
     position:fixed;
 
-    left:22px;
-    bottom:22px;
+    left:19px;
+    bottom:19px;
 
-    width:58px;
-    height:58px;
+    width:54px;
+    height:54px;
 
     display:grid;
+
     place-items:center;
 
     border-radius:50%;
@@ -1786,9 +1829,9 @@ footer{
         rgba(255,255,255,.20);
 
     box-shadow:
-        0 10px 30px
+        0 10px 28px
         rgba(0,0,0,.35),
-        0 0 0 7px
+        0 0 0 6px
         rgba(212,170,75,.055);
 
     transition:
@@ -1801,7 +1844,7 @@ footer{
 
     position:absolute;
 
-    inset:-7px;
+    inset:-6px;
 
     border-radius:50%;
 
@@ -1836,8 +1879,8 @@ footer{
 
     z-index:2;
 
-    width:25px;
-    height:25px;
+    width:23px;
+    height:23px;
 
     fill:none;
 
@@ -1851,13 +1894,13 @@ footer{
 
 .whatsapp:hover{
     transform:
-        translateY(-5px)
-        scale(1.07);
+        translateY(-4px)
+        scale(1.06);
 
     box-shadow:
-        0 18px 40px
+        0 17px 36px
         rgba(0,0,0,.38),
-        0 0 0 9px
+        0 0 0 8px
         rgba(212,170,75,.07);
 }
 
@@ -1873,8 +1916,8 @@ footer{
         translateY(22px);
 
     transition:
-        opacity .7s ease,
-        transform .7s cubic-bezier(.2,.7,.2,1);
+        opacity .65s ease,
+        transform .65s cubic-bezier(.2,.7,.2,1);
 }
 
 .reveal.show{
@@ -1886,7 +1929,7 @@ footer{
 
 
 /* =========================================================
-   MOBILE
+   MOBILE / TABLET
 ========================================================= */
 
 @media(max-width:1000px){
@@ -1906,7 +1949,7 @@ footer{
     .logo-wrap{
         order:0;
 
-        min-height:360px;
+        min-height:350px;
     }
 
     .hero-subtitle{
@@ -1916,10 +1959,6 @@ footer{
 
     .hero-buttons{
         justify-content:center;
-    }
-
-    .hero h1{
-        white-space:normal;
     }
 
     .logo-stage{
@@ -1947,19 +1986,32 @@ footer{
             repeat(2,1fr);
     }
 
-    .about-grid{
-        grid-template-columns:1fr;
-
-        gap:24px;
+    .about-points{
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
-    .about-image{
-        max-width:550px;
+    .contact-inner{
+        flex-direction:column;
 
-        margin:auto;
+        text-align:center;
+
+        gap:14px;
+    }
+
+    .contact-title{
+        text-align:center;
+    }
+
+    .contact-actions{
+        justify-content:center;
     }
 }
 
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media(max-width:650px){
 
@@ -1969,7 +2021,7 @@ footer{
     }
 
     header{
-        height:70px;
+        height:68px;
     }
 
     .brand-text{
@@ -1977,65 +2029,80 @@ footer{
     }
 
     .brand img{
-        width:43px;
-        height:43px;
+        width:42px;
+        height:42px;
     }
 
     .phone-top{
         padding:
-            8px 11px;
+            7px 10px;
 
         font-size:10px;
     }
 
     .phone-top span{
-        display:inline-block;
+        display:inline;
     }
 
     .hero{
-        padding-top:70px;
+        padding-top:68px;
+
+        min-height:auto;
+
+        padding-bottom:25px;
     }
 
     .hero h1{
-        font-size:38px;
+        font-size:
+            clamp(
+                27px,
+                8.5vw,
+                39px
+            );
 
-        white-space:normal;
+        white-space:nowrap;
+
+        letter-spacing:-.5px;
     }
 
     .hero-subtitle{
-        font-size:13px;
+        font-size:11.5px;
 
         line-height:1.9;
     }
 
     .logo-wrap{
-        min-height:315px;
+        min-height:285px;
     }
 
     .logo-stage{
-        width:285px;
-        height:285px;
+        width:275px;
+        height:275px;
     }
 
     .logo-stage::before{
-        inset:22px;
+        inset:20px;
     }
 
     .logo-main{
-        width:160px;
+        width:158px;
     }
 
     section{
         padding:
-            48px 0;
+            43px 0;
     }
 
     .section-head{
-        margin-bottom:20px;
+        margin-bottom:19px;
     }
 
     .section-head h2{
-        font-size:30px;
+        font-size:28px;
+    }
+
+    .section-head p{
+        font-size:10px;
     }
 
     .services-grid,
@@ -2053,12 +2120,45 @@ footer{
         grid-template-columns:1fr;
     }
 
+    .about-content{
+        padding:
+            0 5px;
+    }
+
+    .about-content h3{
+        font-size:25px;
+    }
+
+    .about-content p{
+        font-size:10.5px;
+    }
+
+    .contact{
+        padding:
+            35px 0 42px;
+    }
+
     .contact-box{
-        padding:25px 17px;
+        padding:
+            22px 15px;
     }
 
     .contact-box h2{
-        font-size:28px;
+        font-size:25px;
+    }
+
+    .contact-box p{
+        font-size:9.5px;
+    }
+
+    .contact-actions{
+        width:100%;
+    }
+
+    .contact-actions .btn{
+        flex:1;
+
+        min-width:95px;
     }
 
     .footer-main{
@@ -2078,48 +2178,30 @@ footer{
     }
 
     .whatsapp{
-        width:54px;
-        height:54px;
+        width:51px;
+        height:51px;
 
-        left:15px;
-        bottom:15px;
+        left:14px;
+        bottom:14px;
     }
 }
 
 
-@media(max-width:450px){
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media(max-width:390px){
+
+    .hero h1{
+        font-size:26px;
+    }
 
     .phone-top{
-        padding:7px 9px;
-    }
+        padding:
+            7px 9px;
 
-    .phone-top span{
         font-size:9px;
-    }
-
-    .hero h1{
-        font-size:34px;
-    }
-
-    .hero-subtitle{
-        font-size:12px;
-    }
-
-    .logo-stage{
-        width:265px;
-        height:265px;
-    }
-
-    .logo-main{
-        width:145px;
-    }
-}
-
-
-@media(max-width:380px){
-
-    .hero h1{
-        font-size:31px;
     }
 
     .logo-stage{
@@ -2128,19 +2210,19 @@ footer{
     }
 
     .logo-main{
-        width:137px;
+        width:143px;
     }
 
     .why-grid{
         grid-template-columns:1fr;
     }
 
-    .phone-top{
-        display:flex;
+    .contact-actions{
+        flex-direction:column;
     }
 
-    .phone-top span{
-        display:none;
+    .contact-actions .btn{
+        width:100%;
     }
 }
 
@@ -2183,7 +2265,6 @@ alt="شعار روينا عبدالفتاح رحالي"
 href="tel:+966544270651"
 class="phone-top"
 dir="ltr"
-aria-label="الاتصال بمكتب روينا عبدالفتاح رحالي"
 >
 
 <svg viewBox="0 0 24 24">
@@ -2192,7 +2273,7 @@ aria-label="الاتصال بمكتب روينا عبدالفتاح رحالي"
 
 </svg>
 
-<span class="phone-number">054 427 0651</span>
+<span>054 427 0651</span>
 
 </a>
 
@@ -2238,7 +2319,7 @@ aria-label="الاتصال بمكتب روينا عبدالفتاح رحالي"
 <a
 href="tel:+966544270651"
 class="btn btn-primary"
-dir="ltr"
+dir="rtl"
 >
 
 <svg viewBox="0 0 24 24">
@@ -2247,7 +2328,7 @@ dir="ltr"
 
 </svg>
 
-<span>054 427 0651</span>
+اتصل بنا
 
 </a>
 
@@ -2274,6 +2355,8 @@ class="btn btn-outline"
 </div>
 
 
+
+<!-- الشعار فقط بدون صورة 3D -->
 
 <div class="logo-wrap reveal">
 
@@ -2325,20 +2408,6 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 </div>
 
 
-<div class="about-grid">
-
-
-<div class="about-image reveal">
-
-<img
-src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.jpg"
-alt="شعار مكتب روينا عبدالفتاح رحالي"
-loading="lazy"
->
-
-</div>
-
-
 <div class="about-content reveal">
 
 <h3>
@@ -2378,8 +2447,6 @@ loading="lazy"
 <div class="about-point">
 <span></span>
 سرية وخصوصية المعلومات
-</div>
-
 </div>
 
 </div>
@@ -2530,17 +2597,21 @@ loading="lazy"
 <div class="case-card reveal">
 
 <div class="case-icon">
+
 <svg viewBox="0 0 24 24">
+
 <rect x="3" y="5" width="18" height="14" rx="2"/>
 <path d="M8 5V3h8v2"/>
 <path d="M3 10h18"/>
+
 </svg>
+
 </div>
 
 <h3>القضايا التجارية</h3>
 
 <p>
-المنازعات التجارية، الحقوق والالتزامات التعاقدية،
+المنازعات التجارية، والحقوق والالتزامات التعاقدية،
 والقضايا المرتبطة بالأنشطة والمنشآت التجارية.
 </p>
 
@@ -2550,13 +2621,17 @@ loading="lazy"
 <div class="case-card reveal">
 
 <div class="case-icon">
+
 <svg viewBox="0 0 24 24">
+
 <path d="M4 19h16"/>
 <path d="M6 17V9"/>
 <path d="M10 17V6"/>
 <path d="M14 17V11"/>
 <path d="M18 17V4"/>
+
 </svg>
+
 </div>
 
 <h3>القضايا العمالية</h3>
@@ -2572,12 +2647,16 @@ loading="lazy"
 <div class="case-card reveal">
 
 <div class="case-icon">
+
 <svg viewBox="0 0 24 24">
+
 <path d="M12 3v18"/>
 <path d="M5 7h14"/>
 <path d="M6 7l-3 6h6L6 7Z"/>
 <path d="M18 7l-3 6h6l-3-6Z"/>
+
 </svg>
+
 </div>
 
 <h3>الأحوال الشخصية</h3>
@@ -2593,7 +2672,9 @@ loading="lazy"
 <div class="case-card reveal">
 
 <div class="case-icon">
+
 <svg viewBox="0 0 24 24">
+
 <path d="M3 10h18"/>
 <path d="M5 10v9"/>
 <path d="M9 10v9"/>
@@ -2601,7 +2682,9 @@ loading="lazy"
 <path d="M19 10v9"/>
 <path d="M3 19h18"/>
 <path d="M4 10l8-6 8 6"/>
+
 </svg>
+
 </div>
 
 <h3>القضايا العقارية</h3>
@@ -2617,10 +2700,14 @@ loading="lazy"
 <div class="case-card reveal">
 
 <div class="case-icon">
+
 <svg viewBox="0 0 24 24">
+
 <path d="M12 3l8 4v5c0 4.8-3.4 7.7-8 9-4.6-1.3-8-4.2-8-9V7l8-4Z"/>
 <path d="M9 12l2 2 4-4"/>
+
 </svg>
+
 </div>
 
 <h3>القضايا الجنائية</h3>
@@ -2636,12 +2723,16 @@ loading="lazy"
 <div class="case-card reveal">
 
 <div class="case-icon">
+
 <svg viewBox="0 0 24 24">
+
 <path d="M5 4h14v16H5z"/>
 <path d="M8 8h8"/>
 <path d="M8 12h8"/>
 <path d="M8 16h5"/>
+
 </svg>
+
 </div>
 
 <h3>القضايا الإدارية</h3>
@@ -2657,11 +2748,15 @@ loading="lazy"
 <div class="case-card reveal">
 
 <div class="case-icon">
+
 <svg viewBox="0 0 24 24">
+
 <circle cx="12" cy="12" r="8"/>
 <path d="M12 8v8"/>
 <path d="M8 12h8"/>
+
 </svg>
+
 </div>
 
 <h3>التحكيم وتسوية النزاعات</h3>
@@ -2677,12 +2772,16 @@ loading="lazy"
 <div class="case-card reveal">
 
 <div class="case-icon">
+
 <svg viewBox="0 0 24 24">
+
 <path d="M7 3h10v18H7z"/>
 <path d="M9 7h6"/>
 <path d="M9 11h6"/>
 <path d="M9 15h4"/>
+
 </svg>
+
 </div>
 
 <h3>العقود والاتفاقيات</h3>
@@ -2698,10 +2797,14 @@ loading="lazy"
 <div class="case-card reveal">
 
 <div class="case-icon">
+
 <svg viewBox="0 0 24 24">
+
 <circle cx="12" cy="8" r="3"/>
 <path d="M5 20c.7-3.4 3-5 7-5s6.3 1.6 7 5"/>
+
 </svg>
+
 </div>
 
 <h3>الخدمات القانونية للأفراد</h3>
@@ -2747,6 +2850,8 @@ loading="lazy"
 
 <div class="why-card reveal">
 
+<div class="why-symbol">✦</div>
+
 <h3>المهنية</h3>
 
 <p>
@@ -2757,6 +2862,8 @@ loading="lazy"
 
 
 <div class="why-card reveal">
+
+<div class="why-symbol">◈</div>
 
 <h3>السرية</h3>
 
@@ -2769,6 +2876,8 @@ loading="lazy"
 
 <div class="why-card reveal">
 
+<div class="why-symbol">◆</div>
+
 <h3>الوضوح</h3>
 
 <p>
@@ -2779,6 +2888,8 @@ loading="lazy"
 
 
 <div class="why-card reveal">
+
+<div class="why-symbol">↻</div>
 
 <h3>المتابعة</h3>
 
@@ -2963,7 +3074,7 @@ loading="lazy"
 
 <p>
 نعم، نقدم خدماتنا في جميع مناطق المملكة العربية السعودية،
-ويمكن التنسيق عبر فرعنا الرئيسي في جدة.
+ويمكن التنسيق من خلال فرعنا الرئيسي في جدة.
 </p>
 
 </div>
@@ -3035,6 +3146,7 @@ class="social-card reveal"
 </a>
 
 
+
 <a
 href="https://www.instagram.com/rowinarahali?igsh=MW1vbnFjeW56NDgzbA%3D%3D&utm_source=qr"
 target="_blank"
@@ -3063,6 +3175,7 @@ class="social-card reveal"
 </div>
 
 </a>
+
 
 
 <a
@@ -3094,6 +3207,7 @@ class="social-card reveal"
 </a>
 
 
+
 <a
 href="https://www.tiktok.com/@rowina_ar?_r=1&_t=ZS-927I2h5U5xt"
 target="_blank"
@@ -3121,6 +3235,7 @@ class="social-card reveal"
 </div>
 
 </a>
+
 
 
 <a
@@ -3154,6 +3269,7 @@ class="social-card reveal"
 </a>
 
 
+
 <a
 href="https://www.youtube.com/@Rowinarahali.lawfirm"
 target="_blank"
@@ -3183,6 +3299,7 @@ class="social-card reveal"
 </a>
 
 
+
 <a
 href="https://maps.app.goo.gl/4i7e5cZeRJaVCS8NA?g_st=ipc"
 target="_blank"
@@ -3210,6 +3327,7 @@ class="social-card reveal"
 </div>
 
 </a>
+
 
 
 <a
@@ -3260,6 +3378,10 @@ class="social-card reveal"
 
 <div class="contact-box reveal">
 
+<div class="contact-inner">
+
+<div class="contact-title">
+
 <h2>
 هل تحتاج إلى استشارة قانونية؟
 </h2>
@@ -3267,6 +3389,8 @@ class="social-card reveal"
 <p>
 تواصل معنا لمناقشة احتياجك القانوني ومعرفة الخيارات المتاحة.
 </p>
+
+</div>
 
 
 <div class="contact-actions">
@@ -3283,7 +3407,7 @@ dir="ltr"
 
 </svg>
 
-<span class="phone-number">054 427 0651</span>
+054 427 0651
 
 </a>
 
@@ -3310,6 +3434,8 @@ class="btn btn-outline"
 موقع المكتب
 
 </a>
+
+</div>
 
 </div>
 
@@ -3418,7 +3544,9 @@ aria-label="التواصل عبر واتساب"
    FAQ
 ========================================================= */
 
-document.querySelectorAll(".faq-question").forEach(button => {
+document
+.querySelectorAll(".faq-question")
+.forEach(button => {
 
     button.addEventListener("click", () => {
 
@@ -3426,14 +3554,16 @@ document.querySelectorAll(".faq-question").forEach(button => {
             button.closest(".faq-item");
 
         document
-            .querySelectorAll(".faq-item")
-            .forEach(other => {
+        .querySelectorAll(".faq-item")
+        .forEach(other => {
 
-                if(other !== item){
-                    other.classList.remove("active");
-                }
+            if(other !== item){
 
-            });
+                other.classList.remove("active");
+
+            }
+
+        });
 
         item.classList.toggle("active");
 
@@ -3474,10 +3604,11 @@ const observer =
 
 
 document
-    .querySelectorAll(".reveal")
-    .forEach(
-        element => observer.observe(element)
-    );
+.querySelectorAll(".reveal")
+.forEach(
+    element =>
+    observer.observe(element)
+);
 
 
 /* =========================================================
@@ -3494,15 +3625,15 @@ window.addEventListener(
         if(window.scrollY > 30){
 
             header.style.background =
-                "rgba(4,11,8,.93)";
+                "rgba(4,11,8,.94)";
 
             header.style.boxShadow =
-                "0 10px 35px rgba(0,0,0,.18)";
+                "0 8px 30px rgba(0,0,0,.16)";
 
         }else{
 
             header.style.background =
-                "rgba(5,13,10,.78)";
+                "rgba(6,15,11,.84)";
 
             header.style.boxShadow =
                 "none";
