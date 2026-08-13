@@ -1,49 +1,52 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>روينا عبدالفتاح رحالي | للمحاماة والاستشارات القانونية</title>
 
 <meta name="description" content="مكتب روينا عبدالفتاح رحالي للمحاماة والاستشارات القانونية. خدمات قانونية متخصصة في جدة وجميع مناطق المملكة العربية السعودية.">
-<meta name="theme-color" content="#07110d">
+<meta name="theme-color" content="#07120e">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* =========================================================
+/* =====================================================
    ROOT
-========================================================= */
+===================================================== */
 
 :root{
-    --bg:#07110d;
-    --bg2:#09150f;
-    --bg3:#0b1912;
+    --bg:#07120e;
+    --bg2:#091610;
+    --bg3:#0c1b15;
 
     --gold:#c89b3c;
-    --gold-light:#e4c66d;
-    --gold-soft:#ad8130;
+    --gold-light:#e5c86d;
+    --gold-dark:#a97925;
 
-    --white:#f5f2e9;
-    --text:#ddd9cf;
+    --white:#f5f1e8;
+    --text:#d9d6cd;
     --muted:#8f9992;
 
-    --line:rgba(214,174,78,.13);
+    --line:rgba(213,173,72,.14);
 
-    --radius:18px;
-    --container:1180px;
+    --card:rgba(255,255,255,.035);
 
     --shadow:0 22px 60px rgba(0,0,0,.28);
+
+    --container:1160px;
 }
 
 
-/* =========================================================
+/* =====================================================
    RESET
-========================================================= */
+===================================================== */
 
 *{
     margin:0;
@@ -57,41 +60,52 @@ html{
 
 body{
     font-family:"Cairo",sans-serif;
+
+    color:var(--text);
+
     background:
         radial-gradient(
-            circle at 50% -15%,
-            rgba(200,155,60,.065),
-            transparent 32%
+            circle at 50% -5%,
+            rgba(200,155,60,.10),
+            transparent 34%
         ),
         linear-gradient(
             180deg,
-            #07110d 0%,
+            #07120e 0%,
             #08140f 50%,
             #06100c 100%
         );
-    color:var(--text);
-    overflow-x:hidden;
+
     line-height:1.8;
+
+    overflow-x:hidden;
 }
 
 body::before{
     content:"";
+
     position:fixed;
+
     inset:0;
+
     pointer-events:none;
+
+    opacity:.08;
+
     background-image:
         radial-gradient(
-            rgba(225,194,106,.07) 1px,
+            rgba(229,200,109,.8) 1px,
             transparent 1px
         );
-    background-size:55px 55px;
-    opacity:.10;
+
+    background-size:60px 60px;
+
     z-index:-1;
 }
 
 a{
-    text-decoration:none;
     color:inherit;
+    text-decoration:none;
 }
 
 img{
@@ -105,217 +119,275 @@ button{
 
 .container{
     width:min(
-        calc(100% - 40px),
+        calc(100% - 34px),
         var(--container)
     );
+
     margin:auto;
 }
 
 
-/* =========================================================
+/* =====================================================
    HEADER
-========================================================= */
+===================================================== */
 
 header{
     position:fixed;
+
     top:0;
-    right:0;
     left:0;
+    right:0;
+
     height:76px;
+
     z-index:1000;
 
     background:
-        rgba(5,13,10,.82);
+        rgba(5,14,10,.82);
 
     backdrop-filter:blur(18px);
     -webkit-backdrop-filter:blur(18px);
 
     border-bottom:
         1px solid
-        rgba(213,172,73,.10);
+        rgba(213,173,72,.10);
 
-    transition:
-        background .35s ease,
-        box-shadow .35s ease;
-}
-
-header.scrolled{
-    background:rgba(4,11,8,.95);
-    box-shadow:0 10px 35px rgba(0,0,0,.22);
+    transition:.35s ease;
 }
 
 .nav{
     height:100%;
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     gap:20px;
 }
 
 .brand{
     display:flex;
+
     align-items:center;
+
     gap:10px;
+
     min-width:0;
 }
 
 .brand img{
     width:45px;
     height:45px;
-    object-fit:contain;
+
     border-radius:50%;
 
-    filter:
-        drop-shadow(
-            0 5px 15px
-            rgba(215,174,71,.14)
-        );
+    object-fit:cover;
+
+    border:
+        1px solid
+        rgba(229,200,109,.28);
+
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,.30);
+
+    flex-shrink:0;
 }
 
 .brand-text{
-    min-width:0;
-    line-height:1.2;
+    line-height:1.25;
+
+    white-space:nowrap;
 }
 
 .brand-text strong{
     display:block;
+
     color:var(--white);
+
     font-size:13px;
+
     font-weight:700;
-    white-space:nowrap;
 }
 
 .brand-text span{
     display:block;
+
     color:var(--gold-light);
-    font-size:8px;
-    margin-top:3px;
-    white-space:nowrap;
+
+    font-size:8.5px;
+
+    margin-top:2px;
 }
 
 .nav-actions{
     display:flex;
+
     align-items:center;
-    gap:10px;
 }
 
 .phone-top{
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
     direction:ltr;
 
-    display:flex;
-    align-items:center;
-    gap:8px;
-
-    padding:8px 14px;
+    padding:8px 13px;
 
     border:
         1px solid
-        rgba(213,173,74,.22);
+        rgba(213,173,72,.22);
 
     border-radius:11px;
 
+    background:
+        rgba(213,173,72,.045);
+
     color:var(--gold-light);
 
-    background:
-        rgba(213,173,74,.055);
+    font-size:11px;
 
-    transition:.35s ease;
-
-    font-size:12px;
     font-weight:700;
 
-    white-space:nowrap;
+    transition:.3s ease;
 }
 
 .phone-top svg{
     width:16px;
     height:16px;
-    stroke:currentColor;
+
     fill:none;
+
+    stroke:currentColor;
+
     stroke-width:1.7;
 }
 
 .phone-top:hover{
-    background:rgba(213,173,74,.11);
-    border-color:rgba(213,173,74,.45);
     transform:translateY(-2px);
+
+    background:
+        rgba(213,173,72,.10);
+
+    border-color:
+        rgba(213,173,72,.42);
 }
 
 
-/* =========================================================
+/* =====================================================
    HERO
-========================================================= */
+===================================================== */
 
 .hero{
     min-height:100vh;
+
     padding-top:76px;
 
     display:flex;
+
     align-items:center;
 
     position:relative;
+
     overflow:hidden;
 }
 
+/* خلفية متدرجة من نفس هوية الشعار */
+
 .hero::before{
     content:"";
+
     position:absolute;
 
     width:700px;
     height:700px;
 
-    right:50%;
+    left:50%;
     top:48%;
 
-    transform:translate(
-        50%,
-        -50%
-    );
+    transform:
+        translate(-50%,-50%);
 
     border-radius:50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(205,160,62,.065) 0%,
-            rgba(17,47,34,.16) 35%,
-            transparent 70%
+            rgba(201,157,61,.14) 0%,
+            rgba(123,93,37,.07) 28%,
+            rgba(7,18,14,0) 68%
         );
 
-    filter:blur(8px);
+    filter:blur(5px);
+
+    pointer-events:none;
+}
+
+.hero::after{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(200,155,60,.045),
+            transparent 30%
+        );
 
     pointer-events:none;
 }
 
 .hero-content{
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        1fr 1fr;
+
     align-items:center;
-    gap:30px;
+
+    gap:45px;
+
+    position:relative;
+
+    z-index:2;
 }
 
 .hero-text{
     position:relative;
-    z-index:2;
+
+    z-index:3;
 }
 
 .kicker{
     display:inline-flex;
+
     align-items:center;
+
     gap:8px;
 
     color:var(--gold-light);
 
     font-size:11px;
+
     font-weight:700;
 
-    margin-bottom:10px;
+    margin-bottom:12px;
 }
 
 .kicker::before{
     content:"";
+
     width:25px;
     height:1px;
+
     background:
         linear-gradient(
             90deg,
@@ -330,15 +402,11 @@ header.scrolled{
     font-family:"Amiri",serif;
 
     font-size:
-        clamp(
-            37px,
-            4.6vw,
-            62px
-        );
+        clamp(38px,4.8vw,62px);
 
     line-height:1.12;
 
-    margin-bottom:12px;
+    margin-bottom:14px;
 
     white-space:nowrap;
 }
@@ -348,73 +416,74 @@ header.scrolled{
 }
 
 .hero-subtitle{
-    color:#d3d0c7;
+    color:#c9c6bd;
 
-    font-size:
-        clamp(
-            14px,
-            1.35vw,
-            17px
-        );
+    max-width:600px;
 
-    max-width:590px;
+    font-size:14px;
 
-    line-height:1.9;
+    line-height:2;
 
     margin-bottom:21px;
 }
 
 .hero-buttons{
     display:flex;
+
+    align-items:center;
+
     gap:10px;
+
     flex-wrap:wrap;
 }
 
 .btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-
-    min-height:46px;
+    min-height:45px;
 
     padding:
         9px 18px;
 
     border-radius:11px;
 
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
     font-size:11px;
+
     font-weight:700;
 
-    transition:
-        transform .35s ease,
-        box-shadow .35s ease,
-        background .35s ease,
-        border-color .35s ease;
+    transition:.35s ease;
 }
 
 .btn svg{
     width:16px;
     height:16px;
 
-    stroke:currentColor;
     fill:none;
+
+    stroke:currentColor;
+
     stroke-width:1.7;
 }
 
 .btn-primary{
-    color:#08110c;
+    color:#08120d;
 
     background:
         linear-gradient(
             135deg,
-            #e3c46a,
-            #bd8f32
+            #e6c96e,
+            #bd8d30
         );
 
     box-shadow:
-        0 10px 30px
-        rgba(194,147,51,.15);
+        0 10px 28px
+        rgba(194,147,51,.17);
 }
 
 .btn-primary:hover{
@@ -430,69 +499,40 @@ header.scrolled{
 
     border:
         1px solid
-        rgba(212,173,73,.27);
+        rgba(213,173,72,.27);
 
     background:
-        rgba(212,173,73,.035);
+        rgba(213,173,72,.035);
 }
 
 .btn-outline:hover{
     transform:translateY(-3px);
 
-    border-color:
-        rgba(212,173,73,.52);
-
     background:
-        rgba(212,173,73,.08);
+        rgba(213,173,72,.09);
+
+    border-color:
+        rgba(213,173,72,.50);
 }
 
 
-/* =========================================================
-   LOGO AREA
-   الخلفية مدمجة مع ألوان الهوية
-========================================================= */
+/* =====================================================
+   LOGO
+===================================================== */
 
 .logo-wrap{
+    min-height:470px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
-
-    min-height:430px;
-
-    position:relative;
 }
 
 /*
-   لا توجد خلفية منفصلة خلف الصورة.
-   هذه المنطقة تستخدم نفس درجات الأخضر الداكن
-   والذهبي الموجودة في هوية الشعار.
+   الدائرة الخارجية كاملة وغير مقصوصة
 */
-
-.logo-wrap::before{
-    content:"";
-
-    position:absolute;
-
-    width:500px;
-    height:500px;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(8,24,17,.95) 0%,
-            rgba(8,24,17,.82) 35%,
-            rgba(11,31,21,.45) 58%,
-            transparent 73%
-        );
-
-    box-shadow:
-        inset 0 0 80px
-        rgba(0,0,0,.12);
-
-    pointer-events:none;
-}
 
 .logo-stage{
     width:390px;
@@ -501,7 +541,9 @@ header.scrolled{
     position:relative;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     border-radius:50%;
@@ -509,171 +551,128 @@ header.scrolled{
     background:
         radial-gradient(
             circle,
-            rgba(8,23,16,.90) 0%,
-            rgba(8,23,16,.45) 55%,
-            transparent 73%
+            rgba(206,164,69,.13) 0%,
+            rgba(125,94,38,.08) 38%,
+            rgba(7,18,14,.02) 70%,
+            transparent 72%
         );
+
+    box-shadow:
+        0 0 90px
+        rgba(196,151,57,.08);
+
+    isolation:isolate;
 }
+
+/* دائرة ذهبية داخلية */
 
 .logo-stage::before{
     content:"";
 
     position:absolute;
 
-    inset:30px;
+    inset:23px;
 
     border-radius:50%;
 
     border:
         1px solid
-        rgba(220,181,83,.20);
+        rgba(229,200,109,.32);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(213,173,72,.055),
+            rgba(7,18,14,.01)
+        );
 
     box-shadow:
-        0 0 55px
-        rgba(212,169,67,.045);
+        inset 0 0 50px
+        rgba(213,173,72,.035),
+        0 0 45px
+        rgba(213,173,72,.06);
 
-    animation:
-        stagePulse 4.5s ease-in-out infinite;
+    animation:pulse 5s ease-in-out infinite;
 }
+
+/* دائرة خارجية */
 
 .logo-stage::after{
     content:"";
 
     position:absolute;
 
-    inset:7px;
+    inset:3px;
 
-    border-radius:50%;
-
-    border:
-        1px dashed
-        rgba(215,175,75,.15);
-
-    animation:
-        orbitRotate 22s linear infinite;
-}
-
-.logo-orbit{
-    position:absolute;
-    inset:0;
-    border-radius:50%;
-    animation:
-        orbitRotate 18s linear infinite;
-}
-
-.logo-orbit::before,
-.logo-orbit::after{
-    content:"";
-
-    position:absolute;
-
-    width:6px;
-    height:6px;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            #fff4bb 0%,
-            var(--gold-light) 42%,
-            #a87522 100%
-        );
-
-    box-shadow:
-        0 0 11px
-        rgba(228,198,109,.8);
-}
-
-.logo-orbit::before{
-    top:4px;
-    left:50%;
-}
-
-.logo-orbit::after{
-    bottom:43px;
-    right:10px;
-}
-
-.logo-orbit-2{
-    position:absolute;
-    inset:45px;
     border-radius:50%;
 
     border:
         1px solid
-        rgba(217,176,75,.075);
-
-    animation:
-        orbitRotateReverse 13s linear infinite;
-}
-
-.logo-orbit-2::before{
-    content:"";
-
-    position:absolute;
-
-    top:20px;
-    right:12px;
-
-    width:5px;
-    height:5px;
-
-    border-radius:50%;
-
-    background:var(--gold-light);
+        rgba(229,200,109,.17);
 
     box-shadow:
-        0 0 14px
-        var(--gold-light);
+        0 0 30px
+        rgba(213,173,72,.035);
+
+    animation:rotateCircle 24s linear infinite;
 }
+
+/*
+   الشعار نفسه داخل دائرة كاملة
+   object-fit:contain حتى لا يتم قصه من الجوانب
+*/
 
 .logo-main{
     position:relative;
+
     z-index:5;
 
-    width:205px;
-    height:205px;
-
-    object-fit:contain;
+    width:215px;
+    height:215px;
 
     border-radius:50%;
 
-    /*
-       يمنع ظهور حواف الصورة وكأنها مقصوصة.
-    */
+    object-fit:contain;
 
-    filter:
-        drop-shadow(
-            0 16px 30px
-            rgba(0,0,0,.28)
-        )
-        drop-shadow(
-            0 0 22px
-            rgba(212,170,75,.09)
+    background:
+        radial-gradient(
+            circle,
+            #101b14 0%,
+            #0b1711 65%,
+            #07120e 100%
         );
 
-    animation:
-        logoFloat 5s ease-in-out infinite;
+    padding:7px;
 
-    transition:
-        transform .5s ease,
-        filter .5s ease;
+    border:
+        1px solid
+        rgba(229,200,109,.20);
+
+    box-shadow:
+        0 18px 45px
+        rgba(0,0,0,.32),
+        0 0 30px
+        rgba(213,173,72,.08);
+
+    animation:logoFloat 5s ease-in-out infinite;
+
+    transition:.5s ease;
 }
 
 .logo-stage:hover .logo-main{
     transform:scale(1.035);
 
-    filter:
-        drop-shadow(
-            0 20px 38px
-            rgba(0,0,0,.32)
-        )
-        drop-shadow(
-            0 0 30px
-            rgba(212,170,75,.17)
-        );
+    box-shadow:
+        0 22px 50px
+        rgba(0,0,0,.38),
+        0 0 42px
+        rgba(213,173,72,.14);
 }
+
+
+/* =====================================================
+   ANIMATION
+===================================================== */
 
 @keyframes logoFloat{
     0%,100%{
@@ -685,52 +684,44 @@ header.scrolled{
     }
 }
 
-@keyframes orbitRotate{
-    from{
-        transform:rotate(0);
-    }
-
-    to{
-        transform:rotate(360deg);
-    }
-}
-
-@keyframes orbitRotateReverse{
-    from{
-        transform:rotate(360deg);
-    }
-
-    to{
-        transform:rotate(0);
-    }
-}
-
-@keyframes stagePulse{
+@keyframes pulse{
     0%,100%{
-        opacity:.55;
         transform:scale(1);
+
+        opacity:.65;
     }
 
     50%{
-        opacity:.85;
         transform:scale(1.012);
+
+        opacity:1;
+    }
+}
+
+@keyframes rotateCircle{
+    from{
+        transform:rotate(0);
+    }
+
+    to{
+        transform:rotate(360deg);
     }
 }
 
 
-/* =========================================================
+/* =====================================================
    SECTIONS
-========================================================= */
+===================================================== */
 
 section{
-    padding:48px 0;
+    padding:58px 0;
 }
 
 .section-head{
     max-width:700px;
 
     margin:
-        0 auto 25px;
+        0 auto 27px;
 
     text-align:center;
 }
@@ -739,9 +730,10 @@ section{
     color:var(--gold-light);
 
     font-size:10px;
+
     font-weight:700;
 
-    margin-bottom:4px;
+    margin-bottom:5px;
 }
 
 .section-head h2{
@@ -750,94 +742,42 @@ section{
     font-family:"Amiri",serif;
 
     font-size:
-        clamp(
-            28px,
-            3.5vw,
-            39px
-        );
+        clamp(29px,3.6vw,40px);
 
     line-height:1.25;
 
-    margin-bottom:5px;
+    margin-bottom:6px;
 }
 
 .section-head p{
     color:var(--muted);
-    font-size:12px;
+
+    font-size:11.5px;
 }
 
 
-/* =========================================================
+/* =====================================================
    ABOUT
-========================================================= */
+===================================================== */
 
 .about{
+    padding-top:48px;
+
     background:
         linear-gradient(
             180deg,
             transparent,
-            rgba(255,255,255,.009),
+            rgba(255,255,255,.012),
             transparent
         );
 }
 
-.about-grid{
-    display:grid;
+.about-content{
+    max-width:900px;
 
-    grid-template-columns:
-        .9fr 1.1fr;
+    margin:auto;
 
-    gap:35px;
-
-    align-items:center;
-}
-
-.about-image{
-    position:relative;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    border:
-        1px solid
-        rgba(213,173,72,.14);
-
-    background:#0a1510;
-
-    box-shadow:var(--shadow);
-}
-
-.about-image::after{
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-        linear-gradient(
-            180deg,
-            transparent 58%,
-            rgba(0,0,0,.42)
-        );
-
-    pointer-events:none;
-}
-
-.about-image img{
-    width:100%;
-
-    aspect-ratio:4/4.4;
-
-    object-fit:cover;
-
-    transition:
-        transform .7s ease;
-}
-
-.about-image:hover img{
-    transform:scale(1.025);
+    text-align:center;
 }
 
 .about-content h3{
@@ -845,7 +785,7 @@ section{
 
     font-family:"Amiri",serif;
 
-    font-size:29px;
+    font-size:30px;
 
     margin-bottom:10px;
 }
@@ -853,73 +793,78 @@ section{
 .about-content p{
     color:#aeb5af;
 
-    font-size:12px;
+    font-size:12.5px;
 
-    line-height:1.95;
+    line-height:2;
 
-    margin-bottom:10px;
+    max-width:850px;
+
+    margin:
+        0 auto 10px;
 }
 
 .about-points{
     display:grid;
 
     grid-template-columns:
-        repeat(2,1fr);
+        repeat(4,1fr);
 
-    gap:8px;
+    gap:10px;
 
-    margin-top:15px;
+    margin-top:18px;
 }
 
 .about-point{
     display:flex;
-    align-items:center;
-    gap:8px;
 
-    padding:10px;
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+
+    padding:11px 8px;
 
     border:
         1px solid
-        rgba(213,173,72,.09);
+        rgba(213,173,72,.10);
 
     background:
-        rgba(255,255,255,.022);
+        rgba(255,255,255,.025);
 
     border-radius:11px;
 
-    font-size:10px;
-
     color:#d8d5cd;
 
-    transition:.35s ease;
+    font-size:10px;
+
+    transition:.3s ease;
 }
 
 .about-point:hover{
     transform:translateY(-3px);
 
     border-color:
-        rgba(213,173,72,.23);
+        rgba(213,173,72,.25);
 }
 
 .about-point span{
-    width:7px;
-    height:7px;
-
-    flex-shrink:0;
+    width:6px;
+    height:6px;
 
     border-radius:50%;
 
     background:var(--gold-light);
 
     box-shadow:
-        0 0 9px
-        rgba(228,198,109,.42);
+        0 0 8px
+        rgba(229,200,109,.5);
 }
 
 
-/* =========================================================
+/* =====================================================
    SERVICES
-========================================================= */
+===================================================== */
 
 .services-grid{
     display:grid;
@@ -927,24 +872,24 @@ section{
     grid-template-columns:
         repeat(3,1fr);
 
-    gap:12px;
+    gap:13px;
 }
 
 .service-card{
     position:relative;
 
-    padding:19px;
+    min-height:178px;
 
-    min-height:170px;
+    padding:21px;
 
     border:
         1px solid
-        rgba(213,173,72,.09);
+        rgba(213,173,72,.10);
 
     background:
         linear-gradient(
             145deg,
-            rgba(255,255,255,.04),
+            rgba(255,255,255,.045),
             rgba(255,255,255,.012)
         );
 
@@ -952,11 +897,7 @@ section{
 
     overflow:hidden;
 
-    transition:
-        transform .45s cubic-bezier(.2,.8,.2,1),
-        border-color .4s ease,
-        box-shadow .4s ease,
-        background .4s ease;
+    transition:.4s ease;
 }
 
 .service-card::before{
@@ -967,7 +908,7 @@ section{
     right:0;
     top:0;
 
-    width:3px;
+    width:2px;
     height:0;
 
     background:
@@ -977,26 +918,18 @@ section{
             transparent
         );
 
-    transition:
-        height .5s ease;
+    transition:.45s ease;
 }
 
 .service-card:hover{
     transform:translateY(-6px);
 
     border-color:
-        rgba(213,173,72,.25);
+        rgba(213,173,72,.27);
 
     box-shadow:
-        0 18px 38px
+        0 18px 40px
         rgba(0,0,0,.20);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(213,173,72,.05),
-            rgba(255,255,255,.015)
-        );
 }
 
 .service-card:hover::before{
@@ -1008,9 +941,9 @@ section{
 
     font-family:"Amiri",serif;
 
-    font-size:21px;
+    font-size:22px;
 
-    margin-bottom:5px;
+    margin-bottom:6px;
 }
 
 .service-card p{
@@ -1018,17 +951,17 @@ section{
 
     font-size:10.5px;
 
-    line-height:1.85;
+    line-height:1.9;
 }
 
 
-/* =========================================================
+/* =====================================================
    CASES
-========================================================= */
+===================================================== */
 
 .cases{
     background:
-        rgba(0,0,0,.07);
+        rgba(0,0,0,.08);
 }
 
 .cases-grid{
@@ -1037,7 +970,7 @@ section{
     grid-template-columns:
         repeat(3,1fr);
 
-    gap:11px;
+    gap:12px;
 }
 
 .case-card{
@@ -1045,21 +978,21 @@ section{
 
     border:
         1px solid
-        rgba(213,173,72,.09);
+        rgba(213,173,72,.10);
 
     background:
-        rgba(255,255,255,.022);
+        rgba(255,255,255,.025);
 
     border-radius:15px;
 
-    transition:.4s ease;
+    transition:.35s ease;
 }
 
 .case-card:hover{
     transform:translateY(-5px);
 
     border-color:
-        rgba(213,173,72,.25);
+        rgba(213,173,72,.26);
 
     box-shadow:
         0 16px 35px
@@ -1071,6 +1004,7 @@ section{
     height:38px;
 
     display:grid;
+
     place-items:center;
 
     border-radius:10px;
@@ -1078,21 +1012,23 @@ section{
     color:var(--gold-light);
 
     background:
-        rgba(213,173,72,.06);
+        rgba(213,173,72,.055);
 
     border:
         1px solid
-        rgba(213,173,72,.12);
+        rgba(213,173,72,.13);
 
-    margin-bottom:9px;
+    margin-bottom:10px;
 }
 
 .case-icon svg{
     width:18px;
     height:18px;
 
-    stroke:currentColor;
     fill:none;
+
+    stroke:currentColor;
+
     stroke-width:1.5;
 }
 
@@ -1101,7 +1037,7 @@ section{
 
     font-size:14px;
 
-    margin-bottom:4px;
+    margin-bottom:5px;
 }
 
 .case-card p{
@@ -1113,9 +1049,9 @@ section{
 }
 
 
-/* =========================================================
+/* =====================================================
    WHY
-========================================================= */
+===================================================== */
 
 .why-grid{
     display:grid;
@@ -1123,34 +1059,31 @@ section{
     grid-template-columns:
         repeat(4,1fr);
 
-    gap:11px;
+    gap:12px;
 }
 
 .why-card{
     text-align:center;
 
-    padding:20px 13px;
+    padding:20px 14px;
 
     border:
         1px solid
-        rgba(213,173,72,.09);
+        rgba(213,173,72,.10);
 
     background:
-        rgba(255,255,255,.022);
+        rgba(255,255,255,.025);
 
     border-radius:15px;
 
-    transition:.4s ease;
+    transition:.35s ease;
 }
 
 .why-card:hover{
     transform:translateY(-5px);
 
     border-color:
-        rgba(213,173,72,.24);
-
-    background:
-        rgba(213,173,72,.03);
+        rgba(213,173,72,.25);
 }
 
 .why-card h3{
@@ -1158,7 +1091,7 @@ section{
 
     font-size:13px;
 
-    margin-bottom:4px;
+    margin-bottom:5px;
 }
 
 .why-card p{
@@ -1170,12 +1103,12 @@ section{
 }
 
 
-/* =========================================================
+/* =====================================================
    FAQ
-========================================================= */
+===================================================== */
 
 .faq-list{
-    max-width:880px;
+    max-width:850px;
 
     margin:auto;
 
@@ -1189,16 +1122,16 @@ section{
 .faq-item{
     border:
         1px solid
-        rgba(213,173,72,.09);
+        rgba(213,173,72,.10);
 
-    border-radius:14px;
+    border-radius:13px;
 
     overflow:hidden;
 
     background:
-        rgba(255,255,255,.022);
+        rgba(255,255,255,.025);
 
-    transition:.35s ease;
+    transition:.3s ease;
 }
 
 .faq-item:hover{
@@ -1212,11 +1145,12 @@ section{
     display:flex;
 
     align-items:center;
+
     justify-content:space-between;
 
     gap:15px;
 
-    padding:14px 17px;
+    padding:15px 17px;
 
     background:none;
 
@@ -1240,6 +1174,7 @@ section{
     flex-shrink:0;
 
     display:grid;
+
     place-items:center;
 
     border-radius:8px;
@@ -1248,7 +1183,7 @@ section{
 
     border:
         1px solid
-        rgba(213,173,72,.13);
+        rgba(213,173,72,.14);
 
     transition:.35s ease;
 }
@@ -1259,8 +1194,8 @@ section{
     overflow:hidden;
 
     transition:
-        max-height .45s ease,
-        padding .45s ease;
+        max-height .4s ease,
+        padding .4s ease;
 }
 
 .faq-answer p{
@@ -1268,21 +1203,20 @@ section{
 
     font-size:10.5px;
 
-    line-height:1.95;
+    line-height:2;
 
-    padding:0 17px;
+    padding:
+        0 17px;
 }
 
 .faq-item.active{
-    background:
-        rgba(213,173,72,.03);
-
     border-color:
-        rgba(213,173,72,.22);
+        rgba(213,173,72,.23);
 }
 
 .faq-item.active .faq-answer{
-    max-height:250px;
+    max-height:230px;
+
     padding-bottom:14px;
 }
 
@@ -1290,22 +1224,16 @@ section{
     transform:rotate(45deg);
 
     background:
-        rgba(213,173,72,.09);
+        rgba(213,173,72,.08);
 }
 
 
-/* =========================================================
+/* =====================================================
    CLIENTS
-========================================================= */
+===================================================== */
 
 .clients{
-    padding-top:42px;
-    padding-bottom:42px;
-}
-
-.clients-wrapper{
-    max-width:1050px;
-    margin:auto;
+    padding-top:48px;
 }
 
 .clients-grid{
@@ -1316,19 +1244,19 @@ section{
 
     gap:12px;
 
-    align-items:stretch;
+    align-items:center;
 }
 
 .client-card{
-    position:relative;
-
-    height:135px;
+    height:125px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
-    padding:10px;
+    padding:13px;
 
     border:
         1px solid
@@ -1339,67 +1267,35 @@ section{
     background:
         linear-gradient(
             145deg,
-            rgba(255,255,255,.04),
+            rgba(255,255,255,.045),
             rgba(255,255,255,.012)
         );
 
     overflow:hidden;
 
-    transition:
-        transform .4s ease,
-        border-color .4s ease,
-        box-shadow .4s ease,
-        background .4s ease;
-}
-
-.client-card::before{
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(213,173,72,.06),
-            transparent 65%
-        );
-
-    opacity:0;
-
     transition:.4s ease;
 }
 
 .client-card:hover{
-    transform:translateY(-6px);
+    transform:translateY(-5px);
 
     border-color:
         rgba(213,173,72,.28);
 
     box-shadow:
-        0 18px 40px
+        0 18px 38px
         rgba(0,0,0,.20);
 }
 
-.client-card:hover::before{
-    opacity:1;
-}
-
 .client-card img{
-    position:relative;
-    z-index:2;
-
     width:100%;
     height:100%;
 
     object-fit:contain;
 
-    border-radius:9px;
+    border-radius:10px;
 
-    transition:
-        transform .5s ease,
-        filter .5s ease;
+    transition:.45s ease;
 }
 
 .client-card:hover img{
@@ -1407,13 +1303,12 @@ section{
 }
 
 
-/* =========================================================
+/* =====================================================
    SOCIAL
-========================================================= */
+===================================================== */
 
 .social-section{
-    padding-top:42px;
-    padding-bottom:42px;
+    padding-top:48px;
 }
 
 .social-grid{
@@ -1422,29 +1317,33 @@ section{
     grid-template-columns:
         repeat(4,1fr);
 
-    gap:10px;
+    gap:11px;
 
-    max-width:1000px;
+    max-width:1050px;
 
     margin:auto;
 }
 
 .social-card{
-    position:relative;
-
-    min-height:78px;
+    min-height:76px;
 
     display:flex;
 
     align-items:center;
 
-    gap:11px;
+    gap:12px;
 
     padding:12px 13px;
+
+    position:relative;
+
+    overflow:hidden;
 
     border:
         1px solid
         rgba(213,173,72,.10);
+
+    border-radius:13px;
 
     background:
         linear-gradient(
@@ -1453,39 +1352,7 @@ section{
             rgba(255,255,255,.008)
         );
 
-    border-radius:14px;
-
-    overflow:hidden;
-
-    transition:
-        transform .4s ease,
-        border-color .4s ease,
-        background .4s ease,
-        box-shadow .4s ease;
-}
-
-.social-card::before{
-    content:"";
-
-    position:absolute;
-
-    right:0;
-    top:0;
-    bottom:0;
-
-    width:2px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            transparent,
-            var(--gold-light),
-            transparent
-        );
-
-    transform:scaleY(0);
-
-    transition:.45s ease;
+    transition:.35s ease;
 }
 
 .social-card:hover{
@@ -1494,46 +1361,33 @@ section{
     border-color:
         rgba(213,173,72,.28);
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(213,173,72,.05),
-            rgba(255,255,255,.008)
-        );
-
     box-shadow:
         0 15px 32px
         rgba(0,0,0,.18);
 }
 
-.social-card:hover::before{
-    transform:scaleY(1);
-}
-
 .social-icon{
-    position:relative;
-    z-index:2;
-
-    width:38px;
-    height:38px;
+    width:39px;
+    height:39px;
 
     flex-shrink:0;
 
     display:grid;
+
     place-items:center;
-
-    border:
-        1px solid
-        rgba(213,173,72,.17);
-
-    background:
-        rgba(213,173,72,.045);
 
     color:var(--gold-light);
 
+    border:
+        1px solid
+        rgba(213,173,72,.16);
+
+    background:
+        rgba(213,173,72,.05);
+
     border-radius:10px;
 
-    transition:.4s ease;
+    transition:.35s ease;
 }
 
 .social-icon svg{
@@ -1541,27 +1395,24 @@ section{
     height:18px;
 
     fill:none;
+
     stroke:currentColor;
 
     stroke-width:1.6;
 
     stroke-linecap:round;
+
     stroke-linejoin:round;
 }
 
 .social-card:hover .social-icon{
     background:
-        rgba(213,173,72,.13);
+        rgba(213,173,72,.11);
 
     border-color:
-        rgba(213,173,72,.38);
+        rgba(213,173,72,.35);
 
     transform:scale(1.05);
-}
-
-.social-info{
-    position:relative;
-    z-index:2;
 }
 
 .social-info strong{
@@ -1570,8 +1421,6 @@ section{
     color:#eeeae1;
 
     font-size:10.5px;
-
-    font-weight:700;
 }
 
 .social-info span{
@@ -1585,35 +1434,34 @@ section{
 }
 
 
-/* =========================================================
+/* =====================================================
    CONTACT
-========================================================= */
+===================================================== */
 
 .contact{
-    padding-top:38px;
-    padding-bottom:42px;
+    padding-top:45px;
+
+    padding-bottom:48px;
 }
 
 .contact-box{
-    position:relative;
-
-    overflow:hidden;
-
-    max-width:920px;
+    max-width:850px;
 
     margin:auto;
 
-    padding:30px 35px;
+    padding:27px 28px;
 
     border:
         1px solid
-        rgba(213,173,72,.16);
+        rgba(213,173,72,.17);
+
+    border-radius:20px;
 
     background:
         radial-gradient(
             circle at 80% 20%,
-            rgba(213,173,72,.065),
-            transparent 32%
+            rgba(213,173,72,.075),
+            transparent 35%
         ),
         linear-gradient(
             135deg,
@@ -1621,13 +1469,11 @@ section{
             rgba(255,255,255,.012)
         );
 
-    border-radius:20px;
+    box-shadow:
+        0 20px 55px
+        rgba(0,0,0,.23);
 
     text-align:center;
-
-    box-shadow:
-        0 20px 50px
-        rgba(0,0,0,.20);
 }
 
 .contact-box h2{
@@ -1635,34 +1481,43 @@ section{
 
     font-family:"Amiri",serif;
 
-    font-size:31px;
+    font-size:29px;
 
-    margin-bottom:5px;
+    margin-bottom:4px;
 }
 
 .contact-box p{
     color:#929b95;
 
-    font-size:11px;
+    font-size:10.5px;
 
-    margin-bottom:16px;
+    margin-bottom:14px;
 }
 
 .contact-actions{
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
-    flex-wrap:wrap;
-
     gap:8px;
+
+    flex-wrap:wrap;
+}
+
+.contact-actions .btn{
+    min-width:125px;
+
+    min-height:42px;
+
+    padding:8px 15px;
 }
 
 
-/* =========================================================
+/* =====================================================
    FOOTER
-========================================================= */
+===================================================== */
 
 footer{
     border-top:
@@ -1670,7 +1525,7 @@ footer{
         rgba(213,173,72,.09);
 
     padding:
-        22px 0 19px;
+        23px 0 20px;
 
     background:
         rgba(0,0,0,.12);
@@ -1680,16 +1535,19 @@ footer{
     display:flex;
 
     align-items:center;
+
     justify-content:space-between;
 
-    gap:20px;
+    gap:18px;
 
     flex-wrap:wrap;
 }
 
 .footer-brand{
     display:flex;
+
     align-items:center;
+
     gap:9px;
 }
 
@@ -1697,8 +1555,13 @@ footer{
     width:38px;
     height:38px;
 
-    object-fit:contain;
     border-radius:50%;
+
+    object-fit:cover;
+
+    border:
+        1px solid
+        rgba(229,200,109,.20);
 }
 
 .footer-brand-text strong{
@@ -1722,7 +1585,7 @@ footer{
 
     align-items:center;
 
-    gap:13px;
+    gap:12px;
 
     flex-wrap:wrap;
 }
@@ -1752,24 +1615,25 @@ footer{
 
     border-top:
         1px solid
-        rgba(255,255,255,.03);
+        rgba(255,255,255,.035);
 }
 
 
-/* =========================================================
+/* =====================================================
    WHATSAPP
-========================================================= */
+===================================================== */
 
 .whatsapp{
     position:fixed;
 
-    left:20px;
-    bottom:20px;
+    left:18px;
+    bottom:18px;
 
-    width:55px;
-    height:55px;
+    width:54px;
+    height:54px;
 
     display:grid;
+
     place-items:center;
 
     border-radius:50%;
@@ -1777,8 +1641,8 @@ footer{
     background:
         linear-gradient(
             145deg,
-            #e9c96c,
-            #c69a38
+            #e8c86b,
+            #c49637
         );
 
     color:#07150e;
@@ -1787,65 +1651,27 @@ footer{
 
     border:
         1px solid
-        rgba(255,255,255,.18);
+        rgba(255,255,255,.20);
 
     box-shadow:
-        0 10px 28px
-        rgba(0,0,0,.32),
-        0 0 0 7px
-        rgba(212,170,75,.045);
+        0 10px 30px
+        rgba(0,0,0,.35);
 
-    transition:
-        transform .35s ease,
-        box-shadow .35s ease;
-}
-
-.whatsapp::before{
-    content:"";
-
-    position:absolute;
-
-    inset:-7px;
-
-    border-radius:50%;
-
-    border:
-        1px solid
-        rgba(212,170,75,.16);
-
-    animation:
-        whatsappPulse 2.8s ease-out infinite;
-}
-
-@keyframes whatsappPulse{
-    0%{
-        transform:scale(.92);
-        opacity:.7;
-    }
-
-    70%{
-        transform:scale(1.18);
-        opacity:0;
-    }
-
-    100%{
-        opacity:0;
-    }
+    transition:.35s ease;
 }
 
 .whatsapp svg{
-    position:relative;
-    z-index:2;
-
-    width:24px;
-    height:24px;
+    width:23px;
+    height:23px;
 
     fill:none;
+
     stroke:currentColor;
 
     stroke-width:1.7;
 
     stroke-linecap:round;
+
     stroke-linejoin:round;
 }
 
@@ -1855,16 +1681,14 @@ footer{
         scale(1.06);
 
     box-shadow:
-        0 16px 35px
-        rgba(0,0,0,.36),
-        0 0 0 9px
-        rgba(212,170,75,.06);
+        0 17px 38px
+        rgba(0,0,0,.38);
 }
 
 
-/* =========================================================
+/* =====================================================
    REVEAL
-========================================================= */
+===================================================== */
 
 .reveal{
     opacity:0;
@@ -1885,18 +1709,18 @@ footer{
 }
 
 
-/* =========================================================
+/* =====================================================
    TABLET
-========================================================= */
+===================================================== */
 
 @media(max-width:1000px){
 
     .hero-content{
         grid-template-columns:1fr;
 
-        text-align:center;
+        gap:10px;
 
-        gap:0;
+        text-align:center;
     }
 
     .hero-text{
@@ -1919,13 +1743,8 @@ footer{
     }
 
     .logo-stage{
-        width:330px;
-        height:330px;
-    }
-
-    .logo-wrap::before{
-        width:430px;
-        height:430px;
+        width:340px;
+        height:340px;
     }
 
     .services-grid{
@@ -1953,28 +1772,18 @@ footer{
             repeat(3,1fr);
     }
 
-    .about-grid{
-        grid-template-columns:1fr;
-
-        gap:25px;
-    }
-
-    .about-image{
-        max-width:550px;
-        margin:auto;
-    }
 }
 
 
-/* =========================================================
+/* =====================================================
    MOBILE
-========================================================= */
+===================================================== */
 
 @media(max-width:650px){
 
     .container{
         width:
-            calc(100% - 28px);
+            calc(100% - 26px);
     }
 
     header{
@@ -1994,12 +1803,11 @@ footer{
         padding:
             7px 10px;
 
-        font-size:10px;
+        font-size:9px;
     }
 
     .phone-top span{
-        display:inline;
-        direction:ltr;
+        display:block;
     }
 
     .hero{
@@ -2007,29 +1815,19 @@ footer{
     }
 
     .hero h1{
-        font-size:37px;
+        font-size:38px;
 
-        /*
-           يمنع انقسام الاسم إلى
-           "روينا عبدالفتاح"
-           "رحالي"
-        */
-        white-space:nowrap;
+        white-space:normal;
     }
 
     .hero-subtitle{
-        font-size:12.5px;
+        font-size:12px;
 
         line-height:1.9;
     }
 
     .logo-wrap{
-        min-height:300px;
-    }
-
-    .logo-wrap::before{
-        width:330px;
-        height:330px;
+        min-height:310px;
     }
 
     .logo-stage{
@@ -2038,17 +1836,16 @@ footer{
     }
 
     .logo-stage::before{
-        inset:21px;
+        inset:18px;
     }
 
     .logo-main{
-        width:160px;
-        height:160px;
+        width:180px;
+        height:180px;
     }
 
     section{
-        padding:
-            40px 0;
+        padding:46px 0;
     }
 
     .section-head{
@@ -2057,10 +1854,6 @@ footer{
 
     .section-head h2{
         font-size:29px;
-    }
-
-    .section-head p{
-        font-size:10.5px;
     }
 
     .services-grid,
@@ -2073,30 +1866,9 @@ footer{
             repeat(2,1fr);
     }
 
-    .social-grid{
+    .about-points{
         grid-template-columns:
             repeat(2,1fr);
-
-        gap:8px;
-    }
-
-    .social-card{
-        min-height:72px;
-        padding:10px;
-        gap:8px;
-    }
-
-    .social-icon{
-        width:35px;
-        height:35px;
-    }
-
-    .social-info strong{
-        font-size:9px;
-    }
-
-    .social-info span{
-        font-size:7px;
     }
 
     .clients-grid{
@@ -2107,28 +1879,47 @@ footer{
     }
 
     .client-card{
-        height:125px;
+        height:110px;
     }
 
-    .about-points{
-        grid-template-columns:1fr;
+    .social-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:8px;
+    }
+
+    .social-card{
+        min-height:70px;
+
+        padding:9px;
+    }
+
+    .social-icon{
+        width:35px;
+        height:35px;
+    }
+
+    .social-info strong{
+        font-size:9.5px;
+    }
+
+    .social-info span{
+        font-size:7px;
     }
 
     /*
-       قسم التواصل على الجوال
-       يبقى مرتب في صفوف وليس عمودياً بشكل ضخم.
+       التواصل على الجوال يظل مرتبًا
+       وليس كل زر في سطر منفصل
     */
 
     .contact-box{
-        padding:25px 14px;
+        padding:
+            23px 14px;
     }
 
     .contact-box h2{
-        font-size:27px;
-    }
-
-    .contact-box p{
-        font-size:10px;
+        font-size:26px;
     }
 
     .contact-actions{
@@ -2143,14 +1934,16 @@ footer{
     }
 
     .contact-actions .btn{
-        min-height:43px;
+        width:100%;
+
+        min-width:0;
+
+        min-height:40px;
 
         padding:
-            8px 5px;
+            7px 5px;
 
         font-size:9px;
-
-        white-space:nowrap;
     }
 
     .contact-actions .btn svg{
@@ -2175,56 +1968,56 @@ footer{
     }
 
     .whatsapp{
-        width:52px;
-        height:52px;
+        width:51px;
+        height:51px;
 
-        left:14px;
-        bottom:14px;
+        left:13px;
+        bottom:13px;
     }
+
 }
 
 
-/* =========================================================
+/* =====================================================
    SMALL MOBILE
-========================================================= */
+===================================================== */
 
-@media(max-width:390px){
+@media(max-width:380px){
 
     .hero h1{
-        font-size:32px;
+        font-size:34px;
     }
 
     .logo-stage{
-        width:255px;
-        height:255px;
-    }
-
-    .logo-wrap::before{
-        width:300px;
-        height:300px;
+        width:260px;
+        height:260px;
     }
 
     .logo-main{
-        width:145px;
-        height:145px;
+        width:165px;
+        height:165px;
+    }
+
+    .about-points{
+        grid-template-columns:1fr;
     }
 
     .why-grid{
         grid-template-columns:1fr;
     }
 
-    .phone-top{
-        padding:6px 8px;
+    .social-grid{
+        grid-template-columns:1fr;
     }
 
     .contact-actions{
-        grid-template-columns:
-            repeat(3,1fr);
+        grid-template-columns:1fr;
     }
 
     .contact-actions .btn{
-        font-size:8px;
+        min-height:41px;
     }
+
 }
 
 </style>
@@ -2234,11 +2027,11 @@ footer{
 <body>
 
 
-<!-- =========================================================
+<!-- =====================================================
      HEADER
-========================================================= -->
+===================================================== -->
 
-<header id="header">
+<header>
 
 <div class="container nav">
 
@@ -2265,7 +2058,6 @@ alt="شعار روينا عبدالفتاح رحالي"
 <a
 href="tel:+966544270651"
 class="phone-top"
-aria-label="الاتصال بمكتب روينا عبدالفتاح رحالي"
 >
 
 <svg viewBox="0 0 24 24">
@@ -2286,9 +2078,9 @@ aria-label="الاتصال بمكتب روينا عبدالفتاح رحالي"
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      HERO
-========================================================= -->
+===================================================== -->
 
 <main id="home">
 
@@ -2355,14 +2147,9 @@ class="btn btn-outline"
 </div>
 
 
-
 <div class="logo-wrap reveal">
 
 <div class="logo-stage">
-
-<div class="logo-orbit"></div>
-
-<div class="logo-orbit-2"></div>
 
 <img
 class="logo-main"
@@ -2381,9 +2168,9 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      ABOUT
-========================================================= -->
+===================================================== -->
 
 <section class="about" id="about">
 
@@ -2402,20 +2189,6 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <p>
 نضع خبرتنا القانونية في خدمة عملائنا للوصول إلى حلول عملية ومدروسة.
 </p>
-
-</div>
-
-
-<div class="about-grid">
-
-
-<div class="about-image reveal">
-
-<img
-src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/3d%20%D8%B1%D9%88%D9%8A%D9%86%D8%A7%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%81%D8%AA%D8%A7%D8%AD%20%D8%B1%D8%AD%D8%A7%D9%84%D9%8A.jpg"
-alt="روينا عبدالفتاح رحالي"
-loading="lazy"
->
 
 </div>
 
@@ -2467,15 +2240,13 @@ loading="lazy"
 
 </div>
 
-</div>
-
 </section>
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      SERVICES
-========================================================= -->
+===================================================== -->
 
 <section id="services">
 
@@ -2580,9 +2351,9 @@ loading="lazy"
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      CASES
-========================================================= -->
+===================================================== -->
 
 <section class="cases" id="cases">
 
@@ -2611,13 +2382,11 @@ loading="lazy"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
 <rect x="3" y="5" width="18" height="14" rx="2"/>
 <path d="M8 5V3h8v2"/>
 <path d="M3 10h18"/>
 </svg>
-
 </div>
 
 <h3>القضايا التجارية</h3>
@@ -2633,7 +2402,6 @@ loading="lazy"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
 <path d="M4 19h16"/>
 <path d="M6 17V9"/>
@@ -2641,7 +2409,6 @@ loading="lazy"
 <path d="M14 17V11"/>
 <path d="M18 17V4"/>
 </svg>
-
 </div>
 
 <h3>القضايا العمالية</h3>
@@ -2657,14 +2424,12 @@ loading="lazy"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
 <path d="M12 3v18"/>
 <path d="M5 7h14"/>
 <path d="M6 7l-3 6h6L6 7Z"/>
 <path d="M18 7l-3 6h6l-3-6Z"/>
 </svg>
-
 </div>
 
 <h3>الأحوال الشخصية</h3>
@@ -2680,7 +2445,6 @@ loading="lazy"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
 <path d="M3 10h18"/>
 <path d="M5 10v9"/>
@@ -2690,7 +2454,6 @@ loading="lazy"
 <path d="M3 19h18"/>
 <path d="M4 10l8-6 8 6"/>
 </svg>
-
 </div>
 
 <h3>القضايا العقارية</h3>
@@ -2706,12 +2469,10 @@ loading="lazy"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
 <path d="M12 3l8 4v5c0 4.8-3.4 7.7-8 9-4.6-1.3-8-4.2-8-9V7l8-4Z"/>
 <path d="M9 12l2 2 4-4"/>
 </svg>
-
 </div>
 
 <h3>القضايا الجنائية</h3>
@@ -2727,14 +2488,12 @@ loading="lazy"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
 <path d="M5 4h14v16H5z"/>
 <path d="M8 8h8"/>
 <path d="M8 12h8"/>
 <path d="M8 16h5"/>
 </svg>
-
 </div>
 
 <h3>القضايا الإدارية</h3>
@@ -2750,13 +2509,11 @@ loading="lazy"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
 <circle cx="12" cy="12" r="8"/>
 <path d="M12 8v8"/>
 <path d="M8 12h8"/>
 </svg>
-
 </div>
 
 <h3>التحكيم وتسوية النزاعات</h3>
@@ -2772,14 +2529,12 @@ loading="lazy"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
 <path d="M7 3h10v18H7z"/>
 <path d="M9 7h6"/>
 <path d="M9 11h6"/>
 <path d="M9 15h4"/>
 </svg>
-
 </div>
 
 <h3>العقود والاتفاقيات</h3>
@@ -2795,12 +2550,10 @@ loading="lazy"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
 <circle cx="12" cy="8" r="3"/>
 <path d="M5 20c.7-3.4 3-5 7-5s6.3 1.6 7 5"/>
 </svg>
-
 </div>
 
 <h3>الخدمات القانونية للأفراد</h3>
@@ -2820,9 +2573,9 @@ loading="lazy"
 
 
 
-<!-- =========================================================
-     WHY US
-========================================================= -->
+<!-- =====================================================
+     WHY
+===================================================== -->
 
 <section>
 
@@ -2895,9 +2648,9 @@ loading="lazy"
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      FAQ
-========================================================= -->
+===================================================== -->
 
 <section id="faq">
 
@@ -2938,9 +2691,9 @@ loading="lazy"
 <div class="faq-answer">
 
 <p>
-نقدم خدمات قانونية شاملة تشمل: القضايا التجارية، العمالية،
-الأحوال الشخصية، العقارية، الجنائية، الإدارية، التحكيم،
-الاستشارات القانونية، صياغة العقود والتوثيق.
+نقدم خدمات قانونية شاملة تشمل القضايا التجارية والعمالية
+والأحوال الشخصية والعقارية والجنائية والإدارية والتحكيم
+والاستشارات القانونية وصياغة العقود والتوثيق.
 </p>
 
 </div>
@@ -2963,8 +2716,8 @@ loading="lazy"
 <div class="faq-answer">
 
 <p>
-يمكنك التواصل معنا مباشرة عبر الاتصال أو عبر واتساب،
-أو زيارة فرعنا الرئيسي في جدة خلال أوقات العمل.
+يمكنك التواصل معنا مباشرة عبر الاتصال أو واتساب
+أو التواصل معنا من خلال وسائل التواصل الرسمية الموجودة بالموقع.
 </p>
 
 </div>
@@ -2987,9 +2740,8 @@ loading="lazy"
 <div class="faq-answer">
 
 <p>
-نعم، نلتزم بأعلى معايير السرية المهنية، وجميع المعلومات
-والوثائق المتعلقة بقضاياكم محفوظة بسرية تامة وفقاً لقواعد
-المهنة وأنظمة المملكة.
+نعم، نلتزم بالسرية المهنية والمحافظة على المعلومات
+والوثائق المتعلقة بالعملاء وفق الأنظمة والقواعد المهنية.
 </p>
 
 </div>
@@ -3012,8 +2764,8 @@ loading="lazy"
 <div class="faq-answer">
 
 <p>
-نعم، فريقنا من المحامين المرخصين رسمياً من وزارة العدل
-يترافع أمام الجهات والمحاكم المختصة وفقاً للأنظمة المعمول بها.
+يتم تقديم التمثيل والمرافعة القانونية وفق نطاق الترخيص
+والاختصاص والإجراءات النظامية المعمول بها في المملكة.
 </p>
 
 </div>
@@ -3037,7 +2789,7 @@ loading="lazy"
 
 <p>
 تختلف المدة باختلاف نوع القضية ودرجة تعقيدها وإجراءات المحكمة،
-ويمكن تحديد إطار زمني تقريبي بعد دراسة القضية.
+ويمكن إعطاء تصور تقريبي بعد دراسة القضية ومستنداتها.
 </p>
 
 </div>
@@ -3061,7 +2813,7 @@ loading="lazy"
 
 <p>
 نعم، نقدم خدماتنا في جميع مناطق المملكة العربية السعودية،
-ويمكن التنسيق عبر فرعنا الرئيسي في جدة.
+ويمكن التنسيق والتواصل من خلال فرعنا الرئيسي في جدة.
 </p>
 
 </div>
@@ -3077,9 +2829,9 @@ loading="lazy"
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      CLIENTS
-========================================================= -->
+===================================================== -->
 
 <section class="clients" id="clients">
 
@@ -3092,76 +2844,85 @@ loading="lazy"
 </div>
 
 <h2>
-نفخر بثقة عملائنا
+ثقة نعتز بها
 </h2>
 
 <p>
-نماذج من الجهات والعلامات التي نعتز بثقتها بخدماتنا القانونية.
+نفخر بثقة عملائنا ونسعى دائمًا إلى تقديم خدمة قانونية
+تواكب احتياجاتهم وتحافظ على مصالحهم.
 </p>
 
 </div>
 
 
-<div class="clients-wrapper">
-
 <div class="clients-grid">
 
 
 <div class="client-card reveal">
+
 <img
 src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/2616d6fa-87cf-4c20-ad48-d609a840cc6c-300x291.jpg"
-alt="عميل من عملائنا"
+alt="عميل"
 loading="lazy"
 >
+
 </div>
 
 
 <div class="client-card reveal">
+
 <img
 src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/2b9fe5ec-d597-40e3-ae57-eb5dccc1425c-300x289.jpg"
-alt="عميل من عملائنا"
+alt="عميل"
 loading="lazy"
 >
+
 </div>
 
 
 <div class="client-card reveal">
+
 <img
 src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/583be57b-cd94-4856-85fc-2f17cbab10c1-300x210.jpg"
-alt="عميل من عملائنا"
+alt="عميل"
 loading="lazy"
 >
+
 </div>
 
 
 <div class="client-card reveal">
+
 <img
 src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/8204fbf0-dcde-4553-8814-632826555ab1-300x300.jpg"
-alt="عميل من عملائنا"
+alt="عميل"
 loading="lazy"
 >
+
 </div>
 
 
 <div class="client-card reveal">
+
 <img
 src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/f2998560-3d61-4aa2-9fcd-250459a5e98c-300x201.jpg"
-alt="عميل من عملائنا"
+alt="عميل"
 loading="lazy"
 >
+
 </div>
 
 
 <div class="client-card reveal">
+
 <img
 src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/fcb8a7ab-ea93-40c5-a61e-23abb697ce40-288x300.jpg"
-alt="عميل من عملائنا"
+alt="عميل"
 loading="lazy"
 >
-</div>
-
 
 </div>
+
 
 </div>
 
@@ -3171,11 +2932,11 @@ loading="lazy"
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      SOCIAL
-========================================================= -->
+===================================================== -->
 
-<section class="social-section" id="social">
+<section class="social-section">
 
 <div class="container">
 
@@ -3235,9 +2996,11 @@ class="social-card reveal"
 <div class="social-icon">
 
 <svg viewBox="0 0 24 24">
+
 <rect x="3" y="3" width="18" height="18" rx="5"/>
 <circle cx="12" cy="12" r="4"/>
 <circle cx="17.5" cy="6.5" r=".7" fill="currentColor" stroke="none"/>
+
 </svg>
 
 </div>
@@ -3263,8 +3026,10 @@ class="social-card reveal"
 <div class="social-icon">
 
 <svg viewBox="0 0 24 24">
+
 <path d="M5 4l14 16"/>
 <path d="M19 4L5 20"/>
+
 </svg>
 
 </div>
@@ -3290,8 +3055,10 @@ class="social-card reveal"
 <div class="social-icon">
 
 <svg viewBox="0 0 24 24">
+
 <path d="M14 5v9.2a4 4 0 1 1-3-3.9"/>
 <path d="M14 5c.6 2.1 1.8 3.3 4 3.6"/>
+
 </svg>
 
 </div>
@@ -3317,10 +3084,12 @@ class="social-card reveal"
 <div class="social-icon">
 
 <svg viewBox="0 0 24 24">
+
 <path d="M7 9v8"/>
 <path d="M7 6.5v.1"/>
 <path d="M11 17v-5"/>
 <path d="M11 14.2c0-2.2 1.2-3.2 2.7-3.2 1.6 0 2.3 1 2.3 3v3"/>
+
 </svg>
 
 </div>
@@ -3346,8 +3115,10 @@ class="social-card reveal"
 <div class="social-icon">
 
 <svg viewBox="0 0 24 24">
+
 <rect x="3" y="6" width="18" height="12" rx="4"/>
 <path d="M10 9l5 3-5 3Z" fill="currentColor" stroke="none"/>
+
 </svg>
 
 </div>
@@ -3373,8 +3144,10 @@ class="social-card reveal"
 <div class="social-icon">
 
 <svg viewBox="0 0 24 24">
+
 <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/>
 <circle cx="12" cy="10" r="2.3"/>
+
 </svg>
 
 </div>
@@ -3400,8 +3173,11 @@ class="social-card reveal"
 <div class="social-icon">
 
 <svg viewBox="0 0 24 24">
+
 <path d="M20.5 11.2a8.5 8.5 0 0 1-12.6 7.4L4 20l1.4-3.7A8.5 8.5 0 1 1 20.5 11.2Z"/>
+
 <path d="M8.8 8.2c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.8 1.8c.1.3.1.5-.1.7l-.6.7c-.1.1-.1.3 0 .5.4.8 1.1 1.5 1.9 1.9.2.1.4.1.5 0l.7-.6c.2-.2.4-.2.7-.1l1.8.8c.3.1.4.3.4.5v.5c0 .3 0 .5-.4.7-.4.2-1.2.4-2.1.1-1.2-.4-2.4-1.1-3.4-2.1-1-1-1.7-2.2-2.1-3.4-.3-.9-.1-1.7.1-2.1Z"/>
+
 </svg>
 
 </div>
@@ -3425,9 +3201,9 @@ class="social-card reveal"
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      CONTACT
-========================================================= -->
+===================================================== -->
 
 <section class="contact" id="contact">
 
@@ -3497,9 +3273,9 @@ class="btn btn-outline"
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      FOOTER
-========================================================= -->
+===================================================== -->
 
 <footer>
 
@@ -3564,9 +3340,9 @@ alt="شعار المكتب"
 
 
 
-<!-- =========================================================
-     FLOATING WHATSAPP
-========================================================= -->
+<!-- =====================================================
+     WHATSAPP FLOATING
+===================================================== -->
 
 <a
 href="https://wa.me/966544270651"
@@ -3590,9 +3366,9 @@ aria-label="التواصل عبر واتساب"
 
 <script>
 
-/* =========================================================
+/* =====================================================
    FAQ
-========================================================= */
+===================================================== */
 
 document.querySelectorAll(".faq-question").forEach(button => {
 
@@ -3618,29 +3394,27 @@ document.querySelectorAll(".faq-question").forEach(button => {
 });
 
 
-/* =========================================================
+/* =====================================================
    SCROLL REVEAL
-========================================================= */
+===================================================== */
 
 const observer =
     new IntersectionObserver(
         entries => {
 
-            entries.forEach(
-                entry => {
+            entries.forEach(entry => {
 
-                    if(entry.isIntersecting){
+                if(entry.isIntersecting){
 
-                        entry.target.classList.add("show");
+                    entry.target.classList.add("show");
 
-                        observer.unobserve(
-                            entry.target
-                        );
-
-                    }
+                    observer.unobserve(
+                        entry.target
+                    );
 
                 }
-            );
+
+            });
 
         },
         {
@@ -3651,17 +3425,19 @@ const observer =
 
 document
     .querySelectorAll(".reveal")
-    .forEach(
-        element => observer.observe(element)
-    );
+    .forEach(element => {
+
+        observer.observe(element);
+
+    });
 
 
-/* =========================================================
+/* =====================================================
    HEADER SCROLL
-========================================================= */
+===================================================== */
 
 const header =
-    document.querySelector("#header");
+    document.querySelector("header");
 
 window.addEventListener(
     "scroll",
@@ -3669,11 +3445,13 @@ window.addEventListener(
 
         if(window.scrollY > 30){
 
-            header.classList.add("scrolled");
+            header.style.background =
+                "rgba(4,11,8,.94)";
 
         }else{
 
-            header.classList.remove("scrolled");
+            header.style.background =
+                "rgba(5,14,10,.82)";
 
         }
 
@@ -3682,22 +3460,6 @@ window.addEventListener(
         passive:true
     }
 );
-
-
-/* =========================================================
-   PHONE DIRECTION
-========================================================= */
-
-document
-    .querySelectorAll(
-        '.phone-top span, .contact-actions span[dir="ltr"]'
-    )
-    .forEach(element => {
-
-        element.style.direction = "ltr";
-        element.style.unicodeBidi = "embed";
-
-    });
 
 </script>
 
