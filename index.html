@@ -7,48 +7,27 @@
 <title>روينا عبدالفتاح رحالي | للمحاماة والاستشارات القانونية</title>
 
 <meta name="description" content="مكتب روينا عبدالفتاح رحالي للمحاماة والاستشارات القانونية. خدمات قانونية متخصصة في جدة وجميع مناطق المملكة العربية السعودية.">
-<meta name="theme-color" content="#08130e">
+<meta name="theme-color" content="#07130e">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-
-/* =========================================================
-   ROOT
-========================================================= */
-
 :root{
-    --bg:#07110d;
-    --bg2:#091610;
-    --bg3:#0d1b15;
-
-    --card:rgba(255,255,255,.035);
-    --card2:rgba(255,255,255,.055);
-
-    --gold:#c89b3c;
-    --gold-light:#e4c66d;
-    --gold-soft:#b98a31;
-
-    --white:#f5f2e9;
-    --text:#ddd9cf;
-    --muted:#8f9992;
-
-    --line:rgba(214,174,78,.14);
-
-    --shadow:0 20px 55px rgba(0,0,0,.28);
-
-    --radius:18px;
-
-    --container:1180px;
+    --bg:#07130e;
+    --bg2:#0a1812;
+    --bg3:#0d2118;
+    --gold:#c99a3d;
+    --gold2:#e2c36b;
+    --gold3:#9d7125;
+    --white:#f5f1e7;
+    --text:#d8d5cc;
+    --muted:#89948d;
+    --line:rgba(213,173,72,.14);
+    --container:1160px;
+    --shadow:0 22px 60px rgba(0,0,0,.28);
 }
-
-
-/* =========================================================
-   RESET
-========================================================= */
 
 *{
     margin:0;
@@ -62,52 +41,46 @@ html{
 
 body{
     font-family:"Cairo",sans-serif;
-
+    color:var(--text);
+    line-height:1.8;
+    overflow-x:hidden;
     background:
         radial-gradient(
-            circle at 50% -12%,
-            rgba(201,157,61,.08),
-            transparent 32%
+            ellipse at 50% -10%,
+            rgba(201,154,61,.10),
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 50% 35%,
+            rgba(22,73,50,.16),
+            transparent 45%
         ),
         linear-gradient(
             180deg,
-            #07110d 0%,
-            #08140f 50%,
+            #07130e 0%,
+            #081710 48%,
             #06100c 100%
         );
-
-    color:var(--text);
-
-    overflow-x:hidden;
-
-    line-height:1.75;
 }
 
 body::before{
     content:"";
-
     position:fixed;
-
     inset:0;
-
     pointer-events:none;
-
+    z-index:-1;
+    opacity:.09;
     background-image:
         radial-gradient(
-            rgba(225,194,106,.07) 1px,
+            rgba(226,195,107,.65) 1px,
             transparent 1px
         );
-
-    background-size:55px 55px;
-
-    opacity:.10;
-
-    z-index:-1;
+    background-size:58px 58px;
 }
 
 a{
-    text-decoration:none;
     color:inherit;
+    text-decoration:none;
 }
 
 img{
@@ -119,922 +92,562 @@ button{
     font-family:inherit;
 }
 
-
-/* =========================================================
-   CONTAINER
-========================================================= */
-
 .container{
-    width:min(
-        calc(100% - 36px),
-        var(--container)
-    );
-
+    width:min(calc(100% - 34px),var(--container));
     margin:auto;
 }
 
 
-/* =========================================================
+/* =========================
    HEADER
-========================================================= */
+========================= */
 
 header{
     position:fixed;
-
-    top:0;
-    right:0;
-    left:0;
-
-    height:76px;
-
+    inset:0 0 auto 0;
+    height:74px;
     z-index:1000;
-
-    background:
-        rgba(6,15,11,.84);
-
+    background:rgba(5,16,11,.80);
     backdrop-filter:blur(18px);
     -webkit-backdrop-filter:blur(18px);
-
-    border-bottom:
-        1px solid
-        rgba(213,172,73,.10);
-
-    transition:
-        background .35s ease,
-        box-shadow .35s ease;
+    border-bottom:1px solid rgba(213,173,72,.10);
+    transition:.35s ease;
 }
 
 .nav{
     height:100%;
-
     display:flex;
-
     align-items:center;
     justify-content:space-between;
-
-    gap:18px;
+    gap:20px;
 }
 
 .brand{
     display:flex;
-
     align-items:center;
-
     gap:10px;
-
     min-width:0;
 }
 
 .brand img{
-    width:46px;
-    height:46px;
-
+    width:45px;
+    height:45px;
     object-fit:contain;
-
-    filter:
-        drop-shadow(
-            0 5px 15px
-            rgba(215,174,71,.16)
-        );
+    flex-shrink:0;
+    filter:drop-shadow(0 5px 14px rgba(212,171,70,.16));
 }
 
 .brand-text{
-    line-height:1.2;
-
+    min-width:0;
     white-space:nowrap;
+    line-height:1.25;
 }
 
 .brand-text strong{
     display:block;
-
     color:var(--white);
-
     font-size:13px;
-
     font-weight:700;
 }
 
 .brand-text span{
     display:block;
-
-    color:var(--gold-light);
-
-    font-size:8px;
-
-    margin-top:3px;
+    color:var(--gold2);
+    font-size:8.5px;
+    margin-top:1px;
 }
 
 .nav-actions{
     display:flex;
-
     align-items:center;
-
-    gap:8px;
 }
 
 .phone-top{
-    direction:ltr;
-
-    unicode-bidi:isolate;
-
     display:flex;
-
     align-items:center;
-    justify-content:center;
-
-    gap:8px;
-
-    padding:8px 14px;
-
-    border:
-        1px solid
-        rgba(213,173,74,.22);
-
+    gap:7px;
+    direction:ltr;
+    padding:8px 13px;
+    border:1px solid rgba(213,173,72,.22);
     border-radius:11px;
-
-    color:var(--gold-light);
-
-    background:
-        rgba(213,173,74,.055);
-
-    transition:.35s ease;
-
+    color:var(--gold2);
+    background:rgba(213,173,72,.045);
     font-size:11px;
-
     font-weight:700;
-
-    white-space:nowrap;
+    transition:.35s ease;
 }
 
 .phone-top svg{
     width:16px;
     height:16px;
-
-    stroke:currentColor;
-
     fill:none;
-
+    stroke:currentColor;
     stroke-width:1.7;
-
-    flex-shrink:0;
 }
 
 .phone-top:hover{
-    background:
-        rgba(213,173,74,.12);
-
-    border-color:
-        rgba(213,173,74,.45);
-
     transform:translateY(-2px);
+    border-color:rgba(213,173,72,.48);
+    background:rgba(213,173,72,.10);
 }
 
 
-/* =========================================================
+/* =========================
    HERO
-========================================================= */
+========================= */
 
 .hero{
-    min-height:calc(100vh - 20px);
-
-    padding-top:76px;
-
+    min-height:92vh;
+    padding-top:74px;
     display:flex;
-
     align-items:center;
-
     position:relative;
-
     overflow:hidden;
+    background:
+        radial-gradient(
+            circle at 72% 50%,
+            rgba(201,154,61,.055),
+            transparent 30%
+        );
 }
 
-.hero::before{
+.hero::after{
     content:"";
-
     position:absolute;
-
     width:620px;
     height:620px;
-
     right:50%;
-    top:48%;
-
-    transform:
-        translate(50%,-50%);
-
+    top:52%;
+    transform:translate(50%,-50%);
     border-radius:50%;
-
     background:
         radial-gradient(
             circle,
-            rgba(211,169,66,.075),
-            transparent 68%
+            rgba(19,61,42,.34) 0%,
+            rgba(201,154,61,.065) 42%,
+            transparent 72%
         );
-
     filter:blur(8px);
-
     pointer-events:none;
 }
 
 .hero-content{
     display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
+    grid-template-columns:1fr 1fr;
     align-items:center;
-
-    gap:35px;
+    gap:45px;
+    position:relative;
+    z-index:2;
 }
 
 .hero-text{
     position:relative;
-
-    z-index:2;
+    z-index:3;
 }
 
 .kicker{
     display:inline-flex;
-
     align-items:center;
-
     gap:8px;
-
-    color:var(--gold-light);
-
+    color:var(--gold2);
     font-size:11px;
-
     font-weight:700;
-
-    margin-bottom:10px;
+    margin-bottom:11px;
 }
 
 .kicker::before{
     content:"";
-
-    width:25px;
+    width:24px;
     height:1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--gold)
-        );
+    background:linear-gradient(90deg,transparent,var(--gold));
 }
-
-
-/* الاسم في سطر واحد */
 
 .hero h1{
     color:var(--white);
-
     font-family:"Amiri",serif;
-
-    font-size:
-        clamp(
-            34px,
-            4.2vw,
-            58px
-        );
-
-    line-height:1.2;
-
-    margin-bottom:12px;
-
+    font-size:clamp(39px,4.8vw,62px);
+    line-height:1.18;
+    margin-bottom:10px;
     white-space:nowrap;
-
-    letter-spacing:-.3px;
 }
 
 .hero h1 span{
-    color:var(--gold-light);
+    color:var(--gold2);
 }
 
-
-/* لا يوجد br بصري بين الاسم */
-
 .hero-subtitle{
-    color:#d8d4ca;
-
-    font-size:
-        clamp(
-            13px,
-            1.4vw,
-            16px
-        );
-
-    max-width:600px;
-
+    max-width:590px;
+    color:#c7c8c1;
+    font-size:14px;
+    line-height:2;
     margin-bottom:20px;
-
-    line-height:1.9;
 }
 
 .hero-buttons{
     display:flex;
-
-    gap:10px;
-
     flex-wrap:wrap;
+    gap:10px;
 }
 
 .btn{
+    min-height:45px;
     display:inline-flex;
-
     align-items:center;
     justify-content:center;
-
     gap:8px;
-
-    min-height:44px;
-
-    padding:
-        9px 18px;
-
+    padding:9px 18px;
     border-radius:11px;
-
     font-size:11px;
-
     font-weight:700;
-
-    transition:
-        transform .35s ease,
-        box-shadow .35s ease,
-        background .35s ease,
-        border-color .35s ease;
+    transition:.35s ease;
 }
 
 .btn svg{
     width:16px;
     height:16px;
-
-    stroke:currentColor;
-
     fill:none;
-
+    stroke:currentColor;
     stroke-width:1.7;
 }
 
 .btn-primary{
-    color:#08110c;
-
-    background:
-        linear-gradient(
-            135deg,
-            #e3c46a,
-            #bd8f32
-        );
-
-    box-shadow:
-        0 10px 30px
-        rgba(194,147,51,.16);
+    color:#07120d;
+    background:linear-gradient(135deg,#e5c86f,#bc8d32);
+    box-shadow:0 10px 30px rgba(194,147,51,.16);
 }
 
 .btn-primary:hover{
     transform:translateY(-3px);
-
-    box-shadow:
-        0 15px 38px
-        rgba(194,147,51,.27);
+    box-shadow:0 16px 38px rgba(194,147,51,.27);
 }
 
 .btn-outline{
-    color:var(--gold-light);
-
-    border:
-        1px solid
-        rgba(212,173,73,.28);
-
-    background:
-        rgba(212,173,73,.035);
+    color:var(--gold2);
+    border:1px solid rgba(213,173,72,.28);
+    background:rgba(213,173,72,.035);
 }
 
 .btn-outline:hover{
     transform:translateY(-3px);
-
-    border-color:
-        rgba(212,173,73,.55);
-
-    background:
-        rgba(212,173,73,.08);
+    border-color:rgba(213,173,72,.55);
+    background:rgba(213,173,72,.09);
 }
 
 
-/* =========================================================
-   LOGO STAGE
-   خلفية متناسقة مع الشعار
-========================================================= */
+/* =========================
+   LOGO
+========================= */
 
 .logo-wrap{
     display:flex;
-
-    align-items:center;
     justify-content:center;
-
-    min-height:430px;
-
-    position:relative;
-
-    border-radius:50%;
+    align-items:center;
+    min-height:420px;
 }
 
 .logo-stage{
-    width:360px;
-    height:360px;
-
+    width:355px;
+    height:355px;
     position:relative;
-
     display:flex;
-
     align-items:center;
     justify-content:center;
-
     border-radius:50%;
-
-    /*
-       الخلفية أصبحت امتداداً للون الشعار
-       بدل خلفية مختلفة حوله
-    */
-
-    background:
-        radial-gradient(
-            circle at 50% 45%,
-            #0d1d17 0%,
-            #0a1712 48%,
-            #08130f 78%,
-            #07110d 100%
-        );
-
-    box-shadow:
-        0 0 90px
-        rgba(202,157,57,.055),
-        inset 0 0 70px
-        rgba(0,0,0,.18);
+    isolation:isolate;
 }
 
 .logo-stage::before{
     content:"";
-
     position:absolute;
-
-    inset:25px;
-
+    inset:18px;
     border-radius:50%;
-
-    border:
-        1px solid
-        rgba(220,181,83,.27);
-
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(19,61,42,.88) 0%,
+            rgba(11,40,27,.80) 48%,
+            rgba(7,24,16,.92) 78%,
+            rgba(5,18,12,.96) 100%
+        );
+    border:1px solid rgba(218,183,88,.30);
     box-shadow:
-        0 0 45px
-        rgba(212,169,67,.055);
-
-    animation:
-        stagePulse 4.5s ease-in-out infinite;
+        inset 0 0 55px rgba(201,154,61,.08),
+        0 0 55px rgba(201,154,61,.08);
+    z-index:-2;
+    animation:stagePulse 5s ease-in-out infinite;
 }
 
 .logo-stage::after{
     content:"";
-
     position:absolute;
-
-    inset:4px;
-
+    inset:3px;
     border-radius:50%;
-
-    border:
-        1px dashed
-        rgba(215,175,75,.20);
-
-    animation:
-        orbitRotate 24s linear infinite;
+    border:1px solid rgba(218,183,88,.19);
+    box-shadow:
+        0 0 25px rgba(201,154,61,.07),
+        inset 0 0 25px rgba(201,154,61,.04);
+    z-index:-1;
 }
 
 .logo-orbit{
     position:absolute;
-
-    inset:0;
-
+    inset:8px;
     border-radius:50%;
-
-    animation:
-        orbitRotate 18s linear infinite;
+    border:1px dashed rgba(221,185,88,.22);
+    animation:rotate 20s linear infinite;
 }
 
 .logo-orbit::before,
 .logo-orbit::after{
     content:"";
-
     position:absolute;
-
     width:6px;
     height:6px;
-
     border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            #fff4bb 0%,
-            var(--gold-light) 40%,
-            #a87522 100%
-        );
-
+    background:radial-gradient(circle,#fff5c0 0%,#dfbd5b 45%,#9d7125 100%);
     box-shadow:
-        0 0 11px
-        rgba(228,198,109,.9),
-        0 0 22px
-        rgba(205,157,50,.45);
+        0 0 10px rgba(228,198,109,.95),
+        0 0 22px rgba(205,157,50,.48);
 }
 
 .logo-orbit::before{
-    top:3px;
+    top:0;
     left:50%;
 }
 
 .logo-orbit::after{
-    bottom:40px;
-    right:8px;
+    bottom:20px;
+    right:7px;
 }
 
 .logo-orbit-2{
     position:absolute;
-
-    inset:40px;
-
+    inset:35px;
     border-radius:50%;
+    border:1px solid rgba(218,183,88,.10);
+    animation:rotateReverse 13s linear infinite;
+}
 
-    border:
-        1px solid
-        rgba(217,176,75,.085);
-
-    animation:
-        orbitRotateReverse 13s linear infinite;
+.logo-orbit-2::before,
+.logo-orbit-2::after{
+    content:"";
+    position:absolute;
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background:var(--gold2);
+    box-shadow:0 0 13px var(--gold2);
 }
 
 .logo-orbit-2::before{
-    content:"";
+    top:15px;
+    right:17px;
+}
 
-    position:absolute;
-
-    top:18px;
-    right:10px;
-
-    width:5px;
-    height:5px;
-
-    border-radius:50%;
-
-    background:var(--gold-light);
-
-    box-shadow:
-        0 0 14px
-        var(--gold-light);
+.logo-orbit-2::after{
+    bottom:15px;
+    left:18px;
 }
 
 .logo-main{
-    position:relative;
-
-    z-index:5;
-
-    width:190px;
-
+    width:185px;
     height:auto;
-
     object-fit:contain;
-
-    /*
-       لا نغيّر شكل الشعار
-    */
-
+    position:relative;
+    z-index:5;
     filter:
-        drop-shadow(
-            0 15px 30px
-            rgba(0,0,0,.32)
-        )
-        drop-shadow(
-            0 0 22px
-            rgba(212,170,75,.10)
-        );
-
-    animation:
-        logoFloat 5s ease-in-out infinite;
-
-    transition:
-        transform .5s ease,
-        filter .5s ease;
+        drop-shadow(0 18px 30px rgba(0,0,0,.35))
+        drop-shadow(0 0 22px rgba(213,173,72,.12));
+    animation:logoFloat 5s ease-in-out infinite;
+    transition:.5s ease;
 }
 
 .logo-stage:hover .logo-main{
-    transform:
-        scale(1.035);
-
+    transform:scale(1.035);
     filter:
-        drop-shadow(
-            0 20px 38px
-            rgba(0,0,0,.38)
-        )
-        drop-shadow(
-            0 0 32px
-            rgba(212,170,75,.18)
-        );
+        drop-shadow(0 22px 40px rgba(0,0,0,.38))
+        drop-shadow(0 0 32px rgba(213,173,72,.22));
+}
+
+@keyframes rotate{
+    to{transform:rotate(360deg);}
+}
+
+@keyframes rotateReverse{
+    from{transform:rotate(360deg);}
+    to{transform:rotate(0);}
 }
 
 @keyframes logoFloat{
-
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-6px);
-    }
-
-}
-
-@keyframes orbitRotate{
-
-    from{
-        transform:rotate(0);
-    }
-
-    to{
-        transform:rotate(360deg);
-    }
-
-}
-
-@keyframes orbitRotateReverse{
-
-    from{
-        transform:rotate(360deg);
-    }
-
-    to{
-        transform:rotate(0);
-    }
-
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-6px);}
 }
 
 @keyframes stagePulse{
-
-    0%,100%{
-        opacity:.65;
-        transform:scale(1);
-    }
-
-    50%{
-        opacity:1;
-        transform:scale(1.012);
-    }
-
+    0%,100%{transform:scale(1);opacity:.9;}
+    50%{transform:scale(1.015);opacity:1;}
 }
 
 
-/* =========================================================
-   SECTION
-========================================================= */
+/* =========================
+   SECTIONS
+========================= */
 
 section{
-    padding:
-        54px 0;
+    padding:55px 0;
 }
 
 .section-head{
-    max-width:720px;
-
-    margin:
-        0 auto 24px;
-
+    max-width:700px;
+    margin:0 auto 25px;
     text-align:center;
 }
 
 .section-label{
-    color:var(--gold-light);
-
+    color:var(--gold2);
     font-size:10px;
-
     font-weight:700;
-
     margin-bottom:4px;
 }
 
 .section-head h2{
     color:var(--white);
-
     font-family:"Amiri",serif;
-
-    font-size:
-        clamp(
-            27px,
-            3.4vw,
-            39px
-        );
-
-    line-height:1.25;
-
+    font-size:clamp(29px,3.5vw,39px);
+    line-height:1.3;
     margin-bottom:5px;
 }
 
 .section-head p{
     color:var(--muted);
-
-    font-size:11px;
+    font-size:11.5px;
 }
 
 
-/* =========================================================
+/* =========================
    ABOUT
-   بدون صورة 3D
-========================================================= */
+========================= */
 
 .about{
-    background:
-        linear-gradient(
-            180deg,
-            transparent,
-            rgba(255,255,255,.010),
-            transparent
-        );
+    padding-top:45px;
+    padding-bottom:52px;
+    background:linear-gradient(
+        180deg,
+        transparent,
+        rgba(255,255,255,.012),
+        transparent
+    );
 }
 
-.about-content{
-    max-width:900px;
+.about-grid{
+    display:grid;
+    grid-template-columns:.82fr 1.18fr;
+    gap:35px;
+    align-items:center;
+}
 
-    margin:auto;
-
-    text-align:center;
-
-    padding:
-        5px 20px 0;
+.about-image{
+    display:none;
 }
 
 .about-content h3{
     color:var(--white);
-
     font-family:"Amiri",serif;
-
-    font-size:27px;
-
-    margin-bottom:9px;
+    font-size:28px;
+    margin-bottom:10px;
 }
 
 .about-content p{
     color:#aeb5af;
-
     font-size:12px;
-
     line-height:2;
-
-    margin-bottom:9px;
+    margin-bottom:11px;
 }
 
 .about-points{
     display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
+    grid-template-columns:repeat(2,1fr);
     gap:9px;
-
-    margin-top:17px;
+    margin-top:16px;
 }
 
 .about-point{
     display:flex;
-
     align-items:center;
-
-    justify-content:center;
-
-    gap:7px;
-
-    padding:10px 8px;
-
-    border:
-        1px solid
-        rgba(213,173,72,.10);
-
-    background:
-        rgba(255,255,255,.025);
-
+    gap:8px;
+    padding:10px 11px;
+    border:1px solid rgba(213,173,72,.10);
+    background:rgba(255,255,255,.022);
     border-radius:11px;
-
-    font-size:10px;
-
+    font-size:10.5px;
     color:#d8d5cd;
-
     transition:.35s ease;
 }
 
 .about-point:hover{
     transform:translateY(-3px);
-
-    border-color:
-        rgba(213,173,72,.25);
-
-    background:
-        rgba(213,173,72,.035);
+    border-color:rgba(213,173,72,.25);
 }
 
 .about-point span{
-    width:6px;
-    height:6px;
-
-    flex-shrink:0;
-
+    width:7px;
+    height:7px;
     border-radius:50%;
-
-    background:var(--gold-light);
-
-    box-shadow:
-        0 0 9px
-        rgba(228,198,109,.45);
+    flex-shrink:0;
+    background:var(--gold2);
+    box-shadow:0 0 9px rgba(228,198,109,.45);
 }
 
 
-/* =========================================================
+/* =========================
    SERVICES
-========================================================= */
+========================= */
 
 .services-grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:11px;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
 }
 
 .service-card{
     position:relative;
-
-    padding:18px 19px;
-
-    min-height:170px;
-
-    border:
-        1px solid
-        rgba(213,173,72,.10);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.045),
-            rgba(255,255,255,.015)
-        );
-
+    padding:19px;
+    min-height:165px;
+    border:1px solid rgba(213,173,72,.10);
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.042),
+        rgba(255,255,255,.012)
+    );
     border-radius:15px;
-
     overflow:hidden;
-
-    transition:
-        transform .4s cubic-bezier(.2,.8,.2,1),
-        border-color .35s ease,
-        box-shadow .35s ease,
-        background .35s ease;
+    transition:.4s cubic-bezier(.2,.8,.2,1);
 }
 
 .service-card::before{
     content:"";
-
     position:absolute;
-
     right:0;
     top:0;
-
     width:2px;
     height:0;
-
-    background:
-        linear-gradient(
-            180deg,
-            var(--gold-light),
-            transparent
-        );
-
-    transition:
-        height .45s ease;
+    background:linear-gradient(
+        180deg,
+        var(--gold2),
+        transparent
+    );
+    transition:.45s ease;
 }
 
 .service-card:hover{
-    transform:
-        translateY(-5px);
-
-    border-color:
-        rgba(213,173,72,.28);
-
-    box-shadow:
-        0 17px 38px
-        rgba(0,0,0,.20);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(213,173,72,.055),
-            rgba(255,255,255,.018)
-        );
+    transform:translateY(-6px);
+    border-color:rgba(213,173,72,.28);
+    box-shadow:0 18px 38px rgba(0,0,0,.21);
+    background:linear-gradient(
+        145deg,
+        rgba(213,173,72,.05),
+        rgba(255,255,255,.015)
+    );
 }
 
 .service-card:hover::before{
@@ -1043,442 +656,260 @@ section{
 
 .service-card h3{
     color:var(--white);
-
     font-family:"Amiri",serif;
-
     font-size:21px;
-
     margin-bottom:5px;
 }
 
 .service-card p{
-    color:#929c95;
-
+    color:#919b94;
     font-size:10.5px;
-
     line-height:1.9;
 }
 
 
-/* =========================================================
+/* =========================
    CASES
-========================================================= */
+========================= */
 
 .cases{
-    background:
-        rgba(0,0,0,.07);
+    padding-top:50px;
+    padding-bottom:52px;
+    background:rgba(0,0,0,.07);
 }
 
 .cases-grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:10px;
+    grid-template-columns:repeat(3,1fr);
+    gap:11px;
 }
 
 .case-card{
     padding:17px;
-
-    border:
-        1px solid
-        rgba(213,173,72,.10);
-
-    background:
-        rgba(255,255,255,.025);
-
+    border:1px solid rgba(213,173,72,.10);
+    background:rgba(255,255,255,.022);
     border-radius:14px;
-
-    transition:
-        transform .4s ease,
-        border-color .4s ease,
-        box-shadow .4s ease;
+    transition:.4s ease;
 }
 
 .case-card:hover{
-    transform:
-        translateY(-4px);
-
-    border-color:
-        rgba(213,173,72,.28);
-
-    box-shadow:
-        0 15px 34px
-        rgba(0,0,0,.19);
+    transform:translateY(-5px);
+    border-color:rgba(213,173,72,.27);
+    box-shadow:0 16px 35px rgba(0,0,0,.19);
 }
 
 .case-icon{
-    width:36px;
-    height:36px;
-
+    width:37px;
+    height:37px;
     display:grid;
-
     place-items:center;
-
     border-radius:10px;
-
-    color:var(--gold-light);
-
-    background:
-        rgba(213,173,72,.065);
-
-    border:
-        1px solid
-        rgba(213,173,72,.14);
-
+    color:var(--gold2);
+    background:rgba(213,173,72,.055);
+    border:1px solid rgba(213,173,72,.13);
     margin-bottom:9px;
-
-    transition:.35s ease;
-}
-
-.case-card:hover .case-icon{
-    transform:
-        translateY(-2px)
-        scale(1.04);
-
-    background:
-        rgba(213,173,72,.10);
 }
 
 .case-icon svg{
-    width:17px;
-    height:17px;
-
-    stroke:currentColor;
-
+    width:18px;
+    height:18px;
     fill:none;
-
+    stroke:currentColor;
     stroke-width:1.5;
+    stroke-linecap:round;
+    stroke-linejoin:round;
 }
 
 .case-card h3{
     color:#f0eee7;
-
     font-size:14px;
-
-    margin-bottom:5px;
+    margin-bottom:4px;
 }
 
 .case-card p{
-    color:#8f9892;
-
+    color:#8e9891;
     font-size:10px;
-
     line-height:1.85;
 }
 
 
-/* =========================================================
-   WHY US
-========================================================= */
+/* =========================
+   WHY
+========================= */
 
 .why-grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:10px;
+    grid-template-columns:repeat(4,1fr);
+    gap:11px;
 }
 
 .why-card{
     text-align:center;
-
-    padding:18px 13px;
-
-    border:
-        1px solid
-        rgba(213,173,72,.10);
-
-    background:
-        rgba(255,255,255,.025);
-
+    padding:19px 13px;
+    border:1px solid rgba(213,173,72,.10);
+    background:rgba(255,255,255,.022);
     border-radius:14px;
-
     transition:.4s ease;
 }
 
 .why-card:hover{
     transform:translateY(-5px);
-
-    border-color:
-        rgba(213,173,72,.26);
-
-    background:
-        rgba(213,173,72,.035);
-}
-
-.why-symbol{
-    width:30px;
-    height:30px;
-
-    margin:
-        0 auto 8px;
-
-    display:grid;
-
-    place-items:center;
-
-    border-radius:50%;
-
-    color:var(--gold-light);
-
-    border:
-        1px solid
-        rgba(213,173,72,.18);
-
-    background:
-        rgba(213,173,72,.055);
-
-    font-size:13px;
+    border-color:rgba(213,173,72,.25);
+    background:rgba(213,173,72,.035);
 }
 
 .why-card h3{
     color:#eeeae0;
-
-    font-size:12px;
-
+    font-size:12.5px;
     margin-bottom:4px;
 }
 
 .why-card p{
     color:#838d87;
-
     font-size:9.5px;
-
     line-height:1.8;
 }
 
 
-/* =========================================================
+/* =========================
    FAQ
-========================================================= */
+========================= */
 
 .faq-list{
     max-width:850px;
-
     margin:auto;
-
     display:flex;
-
     flex-direction:column;
-
-    gap:7px;
+    gap:8px;
 }
 
 .faq-item{
-    border:
-        1px solid
-        rgba(213,173,72,.10);
-
+    border:1px solid rgba(213,173,72,.10);
     border-radius:13px;
-
     overflow:hidden;
-
-    background:
-        rgba(255,255,255,.025);
-
+    background:rgba(255,255,255,.022);
     transition:.35s ease;
 }
 
 .faq-item:hover{
-    border-color:
-        rgba(213,173,72,.25);
+    border-color:rgba(213,173,72,.24);
 }
 
 .faq-question{
     width:100%;
-
     display:flex;
-
     align-items:center;
     justify-content:space-between;
-
     gap:15px;
-
-    padding:14px 17px;
-
-    background:none;
-
+    padding:15px 17px;
     border:0;
-
+    background:none;
     color:#eeeae0;
-
     text-align:right;
-
     cursor:pointer;
-
-    font-size:11px;
-
+    font-size:11.5px;
     font-weight:700;
 }
 
 .faq-plus{
-    width:25px;
-    height:25px;
-
-    flex-shrink:0;
-
+    width:26px;
+    height:26px;
     display:grid;
-
     place-items:center;
-
-    border-radius:7px;
-
-    color:var(--gold-light);
-
-    border:
-        1px solid
-        rgba(213,173,72,.14);
-
+    flex-shrink:0;
+    border-radius:8px;
+    color:var(--gold2);
+    border:1px solid rgba(213,173,72,.14);
     transition:.35s ease;
-
-    font-size:15px;
+    font-size:17px;
+    line-height:1;
 }
 
 .faq-answer{
     max-height:0;
-
     overflow:hidden;
-
-    transition:
-        max-height .45s ease,
-        padding .45s ease;
+    transition:max-height .45s ease,padding .45s ease;
 }
 
 .faq-answer p{
     color:#969f99;
-
-    font-size:10px;
-
-    line-height:1.9;
-
-    padding:
-        0 17px;
+    font-size:10.5px;
+    line-height:2;
+    padding:0 17px;
 }
 
 .faq-item.active{
-    background:
-        rgba(213,173,72,.035);
-
-    border-color:
-        rgba(213,173,72,.24);
+    background:rgba(213,173,72,.032);
+    border-color:rgba(213,173,72,.24);
 }
 
 .faq-item.active .faq-answer{
-    max-height:220px;
-
-    padding-bottom:13px;
+    max-height:250px;
+    padding-bottom:14px;
 }
 
 .faq-item.active .faq-plus{
     transform:rotate(45deg);
-
-    background:
-        rgba(213,173,72,.10);
+    background:rgba(213,173,72,.10);
 }
 
 
-/* =========================================================
+/* =========================
    SOCIAL
-========================================================= */
+========================= */
 
 .social-section{
     padding-top:48px;
+    padding-bottom:48px;
 }
 
 .social-grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:9px;
-
-    max-width:1000px;
-
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+    max-width:1050px;
     margin:auto;
 }
 
 .social-card{
-    position:relative;
-
     min-height:76px;
-
+    position:relative;
     display:flex;
-
     align-items:center;
-
     gap:11px;
-
-    padding:12px;
-
-    border:
-        1px solid
-        rgba(213,173,72,.11);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.035),
-            rgba(255,255,255,.008)
-        );
-
+    padding:12px 13px;
+    border:1px solid rgba(213,173,72,.10);
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.032),
+        rgba(255,255,255,.008)
+    );
     border-radius:13px;
-
     overflow:hidden;
-
-    transition:
-        transform .4s cubic-bezier(.2,.7,.2,1),
-        border-color .4s ease,
-        background .4s ease,
-        box-shadow .4s ease;
+    transition:.4s ease;
 }
 
 .social-card::before{
     content:"";
-
     position:absolute;
-
     right:0;
-
     top:0;
     bottom:0;
-
     width:2px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            transparent,
-            var(--gold-light),
-            transparent
-        );
-
-    transform:
-        scaleY(0);
-
-    transition:.45s ease;
+    background:linear-gradient(
+        to bottom,
+        transparent,
+        var(--gold2),
+        transparent
+    );
+    transform:scaleY(0);
+    transition:.4s ease;
 }
 
 .social-card:hover{
-    transform:
-        translateY(-4px);
-
-    border-color:
-        rgba(213,173,72,.30);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(213,173,72,.055),
-            rgba(255,255,255,.008)
-        );
-
-    box-shadow:
-        0 15px 32px
-        rgba(0,0,0,.18);
+    transform:translateY(-4px);
+    border-color:rgba(213,173,72,.29);
+    box-shadow:0 15px 32px rgba(0,0,0,.18);
 }
 
 .social-card:hover::before{
@@ -1486,460 +917,285 @@ section{
 }
 
 .social-icon{
-    position:relative;
-
-    z-index:2;
-
     width:38px;
     height:38px;
-
     flex-shrink:0;
-
     display:grid;
-
     place-items:center;
-
-    border:
-        1px solid
-        rgba(213,173,72,.19);
-
-    background:
-        rgba(213,173,72,.055);
-
-    color:var(--gold-light);
-
+    border:1px solid rgba(213,173,72,.17);
+    background:rgba(213,173,72,.045);
+    color:var(--gold2);
     border-radius:10px;
-
-    transition:.4s ease;
+    transition:.35s ease;
 }
 
 .social-icon svg{
-    width:17px;
-    height:17px;
-
+    width:18px;
+    height:18px;
     fill:none;
-
     stroke:currentColor;
-
     stroke-width:1.6;
-
     stroke-linecap:round;
     stroke-linejoin:round;
 }
 
 .social-card:hover .social-icon{
-    background:
-        rgba(213,173,72,.13);
-
-    border-color:
-        rgba(213,173,72,.42);
-
-    transform:
-        scale(1.05);
+    transform:scale(1.06);
+    background:rgba(213,173,72,.11);
+    border-color:rgba(213,173,72,.39);
 }
 
 .social-info{
-    position:relative;
-
-    z-index:2;
-
     min-width:0;
 }
 
 .social-info strong{
     display:block;
-
     color:#eeeae1;
-
-    font-size:10px;
-
+    font-size:10.5px;
     font-weight:700;
 }
 
 .social-info span{
     display:block;
-
     color:#78827c;
-
     font-size:8px;
-
     margin-top:1px;
 }
 
 
-/* =========================================================
-   CONTACT - تصميم جديد أصغر
-========================================================= */
+/* =========================
+   CONTACT
+========================= */
 
 .contact{
-    padding:
-        45px 0 50px;
+    padding-top:42px;
+    padding-bottom:42px;
 }
 
 .contact-box{
     position:relative;
-
-    overflow:hidden;
-
     max-width:850px;
-
     margin:auto;
-
-    padding:
-        25px 28px;
-
-    border:
-        1px solid
-        rgba(213,173,72,.18);
-
+    overflow:hidden;
+    padding:28px 30px;
+    border:1px solid rgba(213,173,72,.17);
+    border-radius:20px;
     background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(213,173,72,.075),
+            transparent 32%
+        ),
         linear-gradient(
             135deg,
-            rgba(13,29,23,.95),
-            rgba(8,18,13,.92)
+            rgba(255,255,255,.04),
+            rgba(255,255,255,.012)
         );
-
-    border-radius:18px;
-
-    box-shadow:
-        0 18px 45px
-        rgba(0,0,0,.22);
+    box-shadow:var(--shadow);
+    text-align:center;
 }
 
 .contact-box::before{
     content:"";
-
     position:absolute;
-
     width:200px;
     height:200px;
-
-    left:-100px;
-    top:-110px;
-
+    left:-110px;
+    bottom:-140px;
     border-radius:50%;
-
-    border:
-        1px solid
-        rgba(213,173,72,.10);
-
-    box-shadow:
-        0 0 60px
-        rgba(213,173,72,.04);
-}
-
-.contact-inner{
-    position:relative;
-
-    z-index:2;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:25px;
-}
-
-.contact-title{
-    text-align:right;
-
-    min-width:0;
+    border:1px solid rgba(213,173,72,.09);
 }
 
 .contact-box h2{
     color:#f5f1e7;
-
     font-family:"Amiri",serif;
-
-    font-size:27px;
-
-    line-height:1.3;
-
-    margin-bottom:3px;
+    font-size:30px;
+    line-height:1.35;
+    margin-bottom:5px;
 }
 
 .contact-box p{
     color:#929b95;
-
-    font-size:10px;
-
-    line-height:1.7;
+    font-size:10.5px;
+    margin-bottom:15px;
 }
 
 .contact-actions{
     display:flex;
-
+    justify-content:center;
     align-items:center;
-
-    justify-content:flex-end;
-
     flex-wrap:wrap;
-
-    gap:7px;
-
-    flex-shrink:0;
+    gap:8px;
 }
 
 .contact-actions .btn{
-    min-height:39px;
-
-    padding:
-        8px 13px;
-
-    font-size:9.5px;
-
-    border-radius:9px;
+    min-width:135px;
 }
 
 
-/* =========================================================
+/* =========================
    FOOTER
-========================================================= */
+========================= */
 
 footer{
-    border-top:
-        1px solid
-        rgba(213,173,72,.10);
-
-    padding:
-        22px 0 19px;
-
-    background:
-        rgba(0,0,0,.12);
+    border-top:1px solid rgba(213,173,72,.10);
+    padding:22px 0 19px;
+    background:rgba(0,0,0,.12);
 }
 
 .footer-main{
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
-    gap:20px;
-
+    gap:15px;
     flex-wrap:wrap;
 }
 
 .footer-brand{
     display:flex;
-
     align-items:center;
-
     gap:9px;
 }
 
 .footer-brand img{
-    width:38px;
-    height:38px;
-
+    width:37px;
+    height:37px;
     object-fit:contain;
 }
 
 .footer-brand-text{
+    white-space:nowrap;
     line-height:1.25;
 }
 
 .footer-brand-text strong{
     display:block;
-
     color:#eeeae1;
-
     font-size:11px;
 }
 
 .footer-brand-text span{
-    color:var(--gold-light);
-
+    color:var(--gold2);
     font-size:7.5px;
 }
 
 .footer-links{
     display:flex;
-
     align-items:center;
-
     gap:12px;
-
     flex-wrap:wrap;
 }
 
 .footer-links a{
     color:#7e8982;
-
     font-size:8.5px;
-
     transition:.3s ease;
 }
 
 .footer-links a:hover{
-    color:var(--gold-light);
+    color:var(--gold2);
 }
 
 .copyright{
     text-align:center;
-
     color:#69736d;
-
     font-size:8px;
-
-    margin-top:14px;
-
+    margin-top:13px;
     padding-top:12px;
-
-    border-top:
-        1px solid
-        rgba(255,255,255,.035);
+    border-top:1px solid rgba(255,255,255,.035);
 }
 
 
-/* =========================================================
-   WHATSAPP FLOATING
-========================================================= */
+/* =========================
+   WHATSAPP
+========================= */
 
 .whatsapp{
     position:fixed;
-
     left:19px;
     bottom:19px;
-
     width:54px;
     height:54px;
-
     display:grid;
-
     place-items:center;
-
     border-radius:50%;
-
-    background:
-        linear-gradient(
-            145deg,
-            #e9c96c,
-            #c69a38
-        );
-
+    background:linear-gradient(145deg,#e7c76b,#bd8e32);
     color:#07150e;
-
     z-index:999;
-
-    border:
-        1px solid
-        rgba(255,255,255,.20);
-
+    border:1px solid rgba(255,255,255,.18);
     box-shadow:
-        0 10px 28px
-        rgba(0,0,0,.35),
-        0 0 0 6px
-        rgba(212,170,75,.055);
-
-    transition:
-        transform .35s ease,
-        box-shadow .35s ease;
+        0 10px 28px rgba(0,0,0,.34),
+        0 0 0 6px rgba(212,170,75,.05);
+    transition:.35s ease;
 }
 
 .whatsapp::before{
     content:"";
-
     position:absolute;
-
     inset:-6px;
-
     border-radius:50%;
-
-    border:
-        1px solid
-        rgba(212,170,75,.18);
-
-    animation:
-        whatsappPulse 2.8s ease-out infinite;
-}
-
-@keyframes whatsappPulse{
-
-    0%{
-        transform:scale(.92);
-        opacity:.7;
-    }
-
-    70%{
-        transform:scale(1.18);
-        opacity:0;
-    }
-
-    100%{
-        opacity:0;
-    }
-
+    border:1px solid rgba(212,170,75,.18);
+    animation:whatsappPulse 2.8s ease-out infinite;
 }
 
 .whatsapp svg{
+    width:24px;
+    height:24px;
     position:relative;
-
     z-index:2;
-
-    width:23px;
-    height:23px;
-
     fill:none;
-
     stroke:currentColor;
-
     stroke-width:1.7;
-
     stroke-linecap:round;
     stroke-linejoin:round;
 }
 
 .whatsapp:hover{
-    transform:
-        translateY(-4px)
-        scale(1.06);
+    transform:translateY(-4px) scale(1.06);
+}
 
-    box-shadow:
-        0 17px 36px
-        rgba(0,0,0,.38),
-        0 0 0 8px
-        rgba(212,170,75,.07);
+@keyframes whatsappPulse{
+    0%{transform:scale(.92);opacity:.7;}
+    70%{transform:scale(1.18);opacity:0;}
+    100%{opacity:0;}
 }
 
 
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
+/* =========================
+   REVEAL
+========================= */
 
 .reveal{
     opacity:0;
-
-    transform:
-        translateY(22px);
-
+    transform:translateY(22px);
     transition:
-        opacity .65s ease,
-        transform .65s cubic-bezier(.2,.7,.2,1);
+        opacity .7s ease,
+        transform .7s cubic-bezier(.2,.7,.2,1);
 }
 
 .reveal.show{
     opacity:1;
-
-    transform:
-        translateY(0);
+    transform:translateY(0);
 }
 
 
-/* =========================================================
-   MOBILE / TABLET
-========================================================= */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:1000px){
 
+    .hero{
+        min-height:auto;
+        padding-top:100px;
+        padding-bottom:45px;
+    }
+
     .hero-content{
         grid-template-columns:1fr;
-
+        gap:10px;
         text-align:center;
-
-        gap:5px;
     }
 
     .hero-text{
@@ -1948,8 +1204,7 @@ footer{
 
     .logo-wrap{
         order:0;
-
-        min-height:350px;
+        min-height:330px;
     }
 
     .hero-subtitle{
@@ -1962,112 +1217,86 @@ footer{
     }
 
     .logo-stage{
-        width:330px;
-        height:330px;
+        width:315px;
+        height:315px;
     }
 
-    .services-grid{
-        grid-template-columns:
-            repeat(2,1fr);
+    .logo-main{
+        width:165px;
     }
 
+    .services-grid,
     .cases-grid{
-        grid-template-columns:
-            repeat(2,1fr);
+        grid-template-columns:repeat(2,1fr);
     }
 
     .why-grid{
-        grid-template-columns:
-            repeat(2,1fr);
+        grid-template-columns:repeat(2,1fr);
     }
 
     .social-grid{
-        grid-template-columns:
-            repeat(2,1fr);
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .about-points{
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .contact-inner{
-        flex-direction:column;
-
-        text-align:center;
-
-        gap:14px;
-    }
-
-    .contact-title{
-        text-align:center;
-    }
-
-    .contact-actions{
-        justify-content:center;
+    .about-grid{
+        grid-template-columns:1fr;
     }
 }
 
 
-/* =========================================================
-   MOBILE
-========================================================= */
-
 @media(max-width:650px){
 
     .container{
-        width:
-            calc(100% - 28px);
+        width:calc(100% - 26px);
     }
 
     header{
         height:68px;
     }
 
-    .brand-text{
-        display:none;
+    .brand img{
+        width:41px;
+        height:41px;
     }
 
-    .brand img{
-        width:42px;
-        height:42px;
+    .brand-text{
+        display:block;
+    }
+
+    .brand-text strong{
+        font-size:10.5px;
+    }
+
+    .brand-text span{
+        font-size:7px;
     }
 
     .phone-top{
-        padding:
-            7px 10px;
-
-        font-size:10px;
+        padding:7px 9px;
+        font-size:9px;
     }
 
     .phone-top span{
         display:inline;
     }
 
+    .phone-top svg{
+        width:14px;
+        height:14px;
+    }
+
     .hero{
-        padding-top:68px;
-
-        min-height:auto;
-
-        padding-bottom:25px;
+        padding-top:82px;
+        padding-bottom:30px;
     }
 
     .hero h1{
-        font-size:
-            clamp(
-                27px,
-                8.5vw,
-                39px
-            );
-
-        white-space:nowrap;
-
-        letter-spacing:-.5px;
+        font-size:38px;
+        white-space:normal;
     }
 
     .hero-subtitle{
-        font-size:11.5px;
-
+        font-size:12px;
         line-height:1.9;
     }
 
@@ -2076,132 +1305,187 @@ footer{
     }
 
     .logo-stage{
-        width:275px;
-        height:275px;
+        width:270px;
+        height:270px;
     }
 
     .logo-stage::before{
-        inset:20px;
+        inset:15px;
+    }
+
+    .logo-orbit{
+        inset:5px;
+    }
+
+    .logo-orbit-2{
+        inset:29px;
     }
 
     .logo-main{
-        width:158px;
+        width:145px;
     }
 
     section{
-        padding:
-            43px 0;
+        padding:43px 0;
+    }
+
+    .about{
+        padding-top:38px;
+        padding-bottom:42px;
     }
 
     .section-head{
-        margin-bottom:19px;
+        margin-bottom:20px;
     }
 
     .section-head h2{
-        font-size:28px;
+        font-size:29px;
     }
 
     .section-head p{
-        font-size:10px;
-    }
-
-    .services-grid,
-    .cases-grid,
-    .social-grid{
-        grid-template-columns:1fr;
-    }
-
-    .why-grid{
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .about-points{
-        grid-template-columns:1fr;
-    }
-
-    .about-content{
-        padding:
-            0 5px;
-    }
-
-    .about-content h3{
-        font-size:25px;
-    }
-
-    .about-content p{
         font-size:10.5px;
     }
 
+    .services-grid,
+    .cases-grid{
+        grid-template-columns:1fr;
+        gap:9px;
+    }
+
+    .service-card{
+        min-height:auto;
+        padding:17px;
+    }
+
+    .case-card{
+        padding:16px;
+    }
+
+    .why-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:9px;
+    }
+
+    .why-card{
+        padding:17px 9px;
+    }
+
+    .social-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:8px;
+    }
+
+    .social-card{
+        min-height:70px;
+        padding:10px;
+        gap:8px;
+    }
+
+    .social-icon{
+        width:34px;
+        height:34px;
+    }
+
+    .social-icon svg{
+        width:16px;
+        height:16px;
+    }
+
+    .social-info strong{
+        font-size:9px;
+    }
+
+    .social-info span{
+        font-size:7px;
+    }
+
+    /*
+       التواصل على الجوال:
+       صفين منظمين بدل تكدس رأسي
+    */
     .contact{
-        padding:
-            35px 0 42px;
+        padding-top:34px;
+        padding-bottom:35px;
     }
 
     .contact-box{
-        padding:
-            22px 15px;
+        padding:23px 13px;
+        border-radius:17px;
     }
 
     .contact-box h2{
-        font-size:25px;
+        font-size:26px;
     }
 
     .contact-box p{
         font-size:9.5px;
+        line-height:1.8;
     }
 
     .contact-actions{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
         width:100%;
+        gap:8px;
     }
 
     .contact-actions .btn{
-        flex:1;
+        min-width:0;
+        width:100%;
+        padding:9px 7px;
+        font-size:9px;
+    }
 
-        min-width:95px;
+    .contact-actions .btn:last-child{
+        grid-column:1 / -1;
+        width:70%;
+        justify-self:center;
     }
 
     .footer-main{
         justify-content:center;
-
         text-align:center;
     }
 
     .footer-brand{
-        justify-content:center;
-
         width:100%;
+        justify-content:center;
     }
 
     .footer-links{
         justify-content:center;
+        gap:9px;
     }
 
     .whatsapp{
         width:51px;
         height:51px;
-
-        left:14px;
-        bottom:14px;
+        left:13px;
+        bottom:13px;
     }
 }
 
 
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
 @media(max-width:390px){
 
-    .hero h1{
-        font-size:26px;
+    .brand-text strong{
+        font-size:9.5px;
+    }
+
+    .brand-text span{
+        font-size:6.5px;
     }
 
     .phone-top{
-        padding:
-            7px 9px;
+        padding:6px 7px;
+    }
 
-        font-size:9px;
+    .phone-top span{
+        font-size:8px;
+    }
+
+    .hero h1{
+        font-size:34px;
     }
 
     .logo-stage{
@@ -2210,22 +1494,17 @@ footer{
     }
 
     .logo-main{
-        width:143px;
+        width:135px;
     }
 
     .why-grid{
-        grid-template-columns:1fr;
+        grid-template-columns:1fr 1fr;
     }
 
     .contact-actions{
-        flex-direction:column;
-    }
-
-    .contact-actions .btn{
-        width:100%;
+        grid-template-columns:1fr 1fr;
     }
 }
-
 </style>
 </head>
 
@@ -2233,11 +1512,11 @@ footer{
 <body>
 
 
-<!-- =========================================================
+<!-- =========================
      HEADER
-========================================================= -->
+========================= -->
 
-<header>
+<header id="header">
 
 <div class="container nav">
 
@@ -2268,9 +1547,7 @@ dir="ltr"
 >
 
 <svg viewBox="0 0 24 24">
-
 <path d="M6.5 3.5h3l1.5 4-2 1.5a15 15 0 0 0 6 6l1.5-2 4 1.5v3c0 .8-.7 1.5-1.5 1.5C11.3 19 5 12.7 5 5c0-.8.7-1.5 1.5-1.5Z"/>
-
 </svg>
 
 <span>054 427 0651</span>
@@ -2284,12 +1561,12 @@ dir="ltr"
 </header>
 
 
-
-<!-- =========================================================
-     HERO
-========================================================= -->
-
 <main id="home">
+
+
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
@@ -2307,31 +1584,25 @@ dir="ltr"
 </h1>
 
 <p class="hero-subtitle">
-
 للمحاماة والاستشارات القانونية، نقدم خدمات قانونية متخصصة
 بمنهج مهني يركز على حماية حقوق عملائنا وتحقيق أفضل الحلول القانونية.
-
 </p>
-
 
 <div class="hero-buttons">
 
 <a
 href="tel:+966544270651"
 class="btn btn-primary"
-dir="rtl"
+dir="ltr"
 >
 
 <svg viewBox="0 0 24 24">
-
 <path d="M6.5 3.5h3l1.5 4-2 1.5a15 15 0 0 0 6 6l1.5-2 4 1.5v3c0 .8-.7 1.5-1.5 1.5C11.3 19 5 12.7 5 5c0-.8.7-1.5 1.5-1.5Z"/>
-
 </svg>
 
-اتصل بنا
+<span>اتصل بنا</span>
 
 </a>
-
 
 <a
 href="https://wa.me/966544270651"
@@ -2341,9 +1612,7 @@ class="btn btn-outline"
 >
 
 <svg viewBox="0 0 24 24">
-
 <path d="M20.5 11.2a8.5 8.5 0 0 1-12.6 7.4L4 20l1.4-3.7A8.5 8.5 0 1 1 20.5 11.2Z"/>
-
 </svg>
 
 واتساب
@@ -2354,9 +1623,6 @@ class="btn btn-outline"
 
 </div>
 
-
-
-<!-- الشعار فقط بدون صورة 3D -->
 
 <div class="logo-wrap reveal">
 
@@ -2382,10 +1648,9 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 </section>
 
 
-
-<!-- =========================================================
+<!-- =========================
      ABOUT
-========================================================= -->
+========================= -->
 
 <section class="about" id="about">
 
@@ -2393,13 +1658,9 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 
 <div class="section-head reveal">
 
-<div class="section-label">
-عن المكتب
-</div>
+<div class="section-label">عن المكتب</div>
 
-<h2>
-خبرة قانونية برؤية مهنية
-</h2>
+<h2>خبرة قانونية برؤية مهنية</h2>
 
 <p>
 نضع خبرتنا القانونية في خدمة عملائنا للوصول إلى حلول عملية ومدروسة.
@@ -2408,11 +1669,13 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 </div>
 
 
+<div class="about-grid">
+
+<div></div>
+
 <div class="about-content reveal">
 
-<h3>
-روينا عبدالفتاح رحالي
-</h3>
+<h3>روينا عبدالفتاح رحالي</h3>
 
 <p>
 مكتب متخصص في المحاماة والاستشارات القانونية، يعمل على تقديم
@@ -2425,7 +1688,6 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 السرية المهنية والالتزام بالأنظمة واللوائح المعمول بها في المملكة
 العربية السعودية.
 </p>
-
 
 <div class="about-points">
 
@@ -2455,13 +1717,14 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 
 </div>
 
+</div>
+
 </section>
 
 
-
-<!-- =========================================================
+<!-- =========================
      SERVICES
-========================================================= -->
+========================= -->
 
 <section id="services">
 
@@ -2469,13 +1732,9 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 
 <div class="section-head reveal">
 
-<div class="section-label">
-خدماتنا
-</div>
+<div class="section-label">خدماتنا</div>
 
-<h2>
-حلول قانونية متكاملة
-</h2>
+<h2>حلول قانونية متكاملة</h2>
 
 <p>
 مجموعة من الخدمات القانونية التي تلبي احتياجات الأفراد والمنشآت.
@@ -2485,7 +1744,6 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 
 
 <div class="services-grid">
-
 
 <div class="service-card reveal">
 
@@ -2565,10 +1823,9 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 </section>
 
 
-
-<!-- =========================================================
+<!-- =========================
      CASES
-========================================================= -->
+========================= -->
 
 <section class="cases" id="cases">
 
@@ -2576,13 +1833,9 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 
 <div class="section-head reveal">
 
-<div class="section-label">
-التخصصات والقضايا
-</div>
+<div class="section-label">التخصصات والقضايا</div>
 
-<h2>
-مجالات قانونية متعددة
-</h2>
+<h2>مجالات قانونية متعددة</h2>
 
 <p>
 نتعامل مع مجموعة متنوعة من القضايا والخدمات القانونية.
@@ -2597,15 +1850,11 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
-
 <rect x="3" y="5" width="18" height="14" rx="2"/>
 <path d="M8 5V3h8v2"/>
 <path d="M3 10h18"/>
-
 </svg>
-
 </div>
 
 <h3>القضايا التجارية</h3>
@@ -2621,17 +1870,13 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
-
 <path d="M4 19h16"/>
 <path d="M6 17V9"/>
 <path d="M10 17V6"/>
 <path d="M14 17V11"/>
 <path d="M18 17V4"/>
-
 </svg>
-
 </div>
 
 <h3>القضايا العمالية</h3>
@@ -2647,16 +1892,12 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
-
 <path d="M12 3v18"/>
 <path d="M5 7h14"/>
 <path d="M6 7l-3 6h6L6 7Z"/>
 <path d="M18 7l-3 6h6l-3-6Z"/>
-
 </svg>
-
 </div>
 
 <h3>الأحوال الشخصية</h3>
@@ -2672,9 +1913,7 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
-
 <path d="M3 10h18"/>
 <path d="M5 10v9"/>
 <path d="M9 10v9"/>
@@ -2682,9 +1921,7 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <path d="M19 10v9"/>
 <path d="M3 19h18"/>
 <path d="M4 10l8-6 8 6"/>
-
 </svg>
-
 </div>
 
 <h3>القضايا العقارية</h3>
@@ -2700,14 +1937,10 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
-
 <path d="M12 3l8 4v5c0 4.8-3.4 7.7-8 9-4.6-1.3-8-4.2-8-9V7l8-4Z"/>
 <path d="M9 12l2 2 4-4"/>
-
 </svg>
-
 </div>
 
 <h3>القضايا الجنائية</h3>
@@ -2723,16 +1956,12 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
-
 <path d="M5 4h14v16H5z"/>
 <path d="M8 8h8"/>
 <path d="M8 12h8"/>
 <path d="M8 16h5"/>
-
 </svg>
-
 </div>
 
 <h3>القضايا الإدارية</h3>
@@ -2748,15 +1977,11 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
-
 <circle cx="12" cy="12" r="8"/>
 <path d="M12 8v8"/>
 <path d="M8 12h8"/>
-
 </svg>
-
 </div>
 
 <h3>التحكيم وتسوية النزاعات</h3>
@@ -2772,16 +1997,12 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
-
 <path d="M7 3h10v18H7z"/>
 <path d="M9 7h6"/>
 <path d="M9 11h6"/>
 <path d="M9 15h4"/>
-
 </svg>
-
 </div>
 
 <h3>العقود والاتفاقيات</h3>
@@ -2797,14 +2018,10 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <div class="case-card reveal">
 
 <div class="case-icon">
-
 <svg viewBox="0 0 24 24">
-
 <circle cx="12" cy="8" r="3"/>
 <path d="M5 20c.7-3.4 3-5 7-5s6.3 1.6 7 5"/>
-
 </svg>
-
 </div>
 
 <h3>الخدمات القانونية للأفراد</h3>
@@ -2823,10 +2040,9 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 </section>
 
 
-
-<!-- =========================================================
+<!-- =========================
      WHY US
-========================================================= -->
+========================= -->
 
 <section>
 
@@ -2834,13 +2050,9 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 
 <div class="section-head reveal">
 
-<div class="section-label">
-لماذا نحن
-</div>
+<div class="section-label">لماذا نحن</div>
 
-<h2>
-شراكة قانونية تقوم على الثقة
-</h2>
+<h2>شراكة قانونية تقوم على الثقة</h2>
 
 </div>
 
@@ -2849,8 +2061,6 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 
 
 <div class="why-card reveal">
-
-<div class="why-symbol">✦</div>
 
 <h3>المهنية</h3>
 
@@ -2863,8 +2073,6 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 
 <div class="why-card reveal">
 
-<div class="why-symbol">◈</div>
-
 <h3>السرية</h3>
 
 <p>
@@ -2876,8 +2084,6 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 
 <div class="why-card reveal">
 
-<div class="why-symbol">◆</div>
-
 <h3>الوضوح</h3>
 
 <p>
@@ -2888,8 +2094,6 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 
 
 <div class="why-card reveal">
-
-<div class="why-symbol">↻</div>
 
 <h3>المتابعة</h3>
 
@@ -2906,10 +2110,9 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 </section>
 
 
-
-<!-- =========================================================
+<!-- =========================
      FAQ
-========================================================= -->
+========================= -->
 
 <section id="faq">
 
@@ -2917,13 +2120,9 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 
 <div class="section-head reveal">
 
-<div class="section-label">
-الأسئلة الشائعة
-</div>
+<div class="section-label">الأسئلة الشائعة</div>
 
-<h2>
-إجابات لأكثر الاستفسارات تكراراً
-</h2>
+<h2>إجابات لأكثر الاستفسارات تكراراً</h2>
 
 <p>
 أهم المعلومات التي يحتاجها عملاؤنا قبل بدء الإجراءات القانونية.
@@ -2938,23 +2137,16 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <div class="faq-item reveal">
 
 <button class="faq-question">
-
-<span>
-ما هي مجالات الخدمات القانونية التي تقدمونها؟
-</span>
-
+<span>ما هي مجالات الخدمات القانونية التي تقدمونها؟</span>
 <span class="faq-plus">+</span>
-
 </button>
 
 <div class="faq-answer">
-
 <p>
 نقدم خدمات قانونية شاملة تشمل: القضايا التجارية، العمالية،
 الأحوال الشخصية، العقارية، الجنائية، الإدارية، التحكيم،
 الاستشارات القانونية، صياغة العقود والتوثيق.
 </p>
-
 </div>
 
 </div>
@@ -2963,23 +2155,16 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <div class="faq-item reveal">
 
 <button class="faq-question">
-
-<span>
-كيف يمكنني حجز استشارة قانونية؟
-</span>
-
+<span>كيف يمكنني حجز استشارة قانونية؟</span>
 <span class="faq-plus">+</span>
-
 </button>
 
 <div class="faq-answer">
-
 <p>
 يمكنك التواصل معنا مباشرة عبر الاتصال أو عبر واتساب،
 أو زيارة فرعنا الرئيسي في جدة خلال أوقات العمل
 من 8 صباحاً حتى 9 مساءً.
 </p>
-
 </div>
 
 </div>
@@ -2988,23 +2173,16 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <div class="faq-item reveal">
 
 <button class="faq-question">
-
-<span>
-هل تضمنون سرية المعلومات؟
-</span>
-
+<span>هل تضمنون سرية المعلومات؟</span>
 <span class="faq-plus">+</span>
-
 </button>
 
 <div class="faq-answer">
-
 <p>
 نعم، نلتزم بأعلى معايير السرية المهنية، وجميع المعلومات
 والوثائق المتعلقة بقضاياكم محفوظة بسرية تامة وفقاً لقواعد
 المهنة وأنظمة المملكة.
 </p>
-
 </div>
 
 </div>
@@ -3013,22 +2191,15 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <div class="faq-item reveal">
 
 <button class="faq-question">
-
-<span>
-هل تترافعون أمام جميع المحاكم في المملكة؟
-</span>
-
+<span>هل تترافعون أمام جميع المحاكم في المملكة؟</span>
 <span class="faq-plus">+</span>
-
 </button>
 
 <div class="faq-answer">
-
 <p>
 نعم، فريقنا من المحامين المرخصين رسمياً من وزارة العدل
 يترافع أمام جميع درجات المحاكم في المملكة العربية السعودية.
 </p>
-
 </div>
 
 </div>
@@ -3037,22 +2208,15 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <div class="faq-item reveal">
 
 <button class="faq-question">
-
-<span>
-كم تستغرق القضية عادةً حتى صدور الحكم؟
-</span>
-
+<span>كم تستغرق القضية عادةً حتى صدور الحكم؟</span>
 <span class="faq-plus">+</span>
-
 </button>
 
 <div class="faq-answer">
-
 <p>
 تختلف المدة باختلاف نوع القضية ودرجة تعقيدها وإجراءات المحكمة،
 ويمكن تحديد إطار زمني تقريبي بعد دراسة القضية في الاستشارة الأولى.
 </p>
-
 </div>
 
 </div>
@@ -3061,22 +2225,15 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 <div class="faq-item reveal">
 
 <button class="faq-question">
-
-<span>
-هل تقدمون خدماتكم خارج جدة؟
-</span>
-
+<span>هل تقدمون خدماتكم خارج جدة؟</span>
 <span class="faq-plus">+</span>
-
 </button>
 
 <div class="faq-answer">
-
 <p>
 نعم، نقدم خدماتنا في جميع مناطق المملكة العربية السعودية،
-ويمكن التنسيق من خلال فرعنا الرئيسي في جدة.
+ويمكن التنسيق عبر فرعنا الرئيسي في جدة.
 </p>
-
 </div>
 
 </div>
@@ -3089,10 +2246,9 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 </section>
 
 
-
-<!-- =========================================================
+<!-- =========================
      SOCIAL
-========================================================= -->
+========================= -->
 
 <section class="social-section">
 
@@ -3100,13 +2256,9 @@ alt="شعار مكتب روينا عبدالفتاح رحالي"
 
 <div class="section-head reveal">
 
-<div class="section-label">
-حساباتنا وروابطنا
-</div>
+<div class="section-label">حساباتنا وروابطنا</div>
 
-<h2>
-تابعنا وتواصل معنا
-</h2>
+<h2>تابعنا وتواصل معنا</h2>
 
 <p>
 يمكنكم التواصل معنا أو متابعة حساباتنا الرسمية عبر المنصات المختلفة.
@@ -3126,25 +2278,17 @@ class="social-card reveal"
 >
 
 <div class="social-icon">
-
 <svg viewBox="0 0 24 24">
-
 <path d="M12 4c-3 0-4.5 2.1-4.5 4.7v2.1c0 .5-.2.8-.7 1.1l-1 .5c-.3.2-.2.6.1.7l2 .5c.3.1.5.3.6.7.2.8 1 1.7 2.2 1.9.5.1.8.3 1.1.7.6.8 1.4 1.2 2.2 1.2s1.6-.4 2.2-1.2c.3-.4.6-.6 1.1-.7 1.2-.2 2-.9 2.2-1.9.1-.4.3-.6.6-.7l2-.5c.3-.1.4-.5.1-.7l-1-.5c-.5-.3-.7-.6-.7-1.1V8.7C16.5 6.1 15 4 12 4Z"/>
-
 </svg>
-
 </div>
 
 <div class="social-info">
-
 <strong>سناب شات</strong>
-
 <span>تابعنا على Snapchat</span>
-
 </div>
 
 </a>
-
 
 
 <a
@@ -3155,27 +2299,19 @@ class="social-card reveal"
 >
 
 <div class="social-icon">
-
 <svg viewBox="0 0 24 24">
-
 <rect x="3" y="3" width="18" height="18" rx="5"/>
 <circle cx="12" cy="12" r="4"/>
 <circle cx="17.5" cy="6.5" r=".7" fill="currentColor" stroke="none"/>
-
 </svg>
-
 </div>
 
 <div class="social-info">
-
 <strong>إنستغرام</strong>
-
 <span>تابعنا على Instagram</span>
-
 </div>
 
 </a>
-
 
 
 <a
@@ -3186,26 +2322,18 @@ class="social-card reveal"
 >
 
 <div class="social-icon">
-
 <svg viewBox="0 0 24 24">
-
 <path d="M5 4l14 16"/>
 <path d="M19 4L5 20"/>
-
 </svg>
-
 </div>
 
 <div class="social-info">
-
 <strong>إكس</strong>
-
 <span>تابعنا على X</span>
-
 </div>
 
 </a>
-
 
 
 <a
@@ -3216,26 +2344,18 @@ class="social-card reveal"
 >
 
 <div class="social-icon">
-
 <svg viewBox="0 0 24 24">
-
 <path d="M14 5v9.2a4 4 0 1 1-3-3.9"/>
 <path d="M14 5c.6 2.1 1.8 3.3 4 3.6"/>
-
 </svg>
-
 </div>
 
 <div class="social-info">
-
 <strong>تيك توك</strong>
-
 <span>تابعنا على TikTok</span>
-
 </div>
 
 </a>
-
 
 
 <a
@@ -3246,28 +2366,20 @@ class="social-card reveal"
 >
 
 <div class="social-icon">
-
 <svg viewBox="0 0 24 24">
-
 <path d="M7 9v8"/>
 <path d="M7 6.5v.1"/>
 <path d="M11 17v-5"/>
 <path d="M11 14.2c0-2.2 1.2-3.2 2.7-3.2 1.6 0 2.3 1 2.3 3v3"/>
-
 </svg>
-
 </div>
 
 <div class="social-info">
-
 <strong>LinkedIn</strong>
-
 <span>ملفنا المهني</span>
-
 </div>
 
 </a>
-
 
 
 <a
@@ -3278,26 +2390,18 @@ class="social-card reveal"
 >
 
 <div class="social-icon">
-
 <svg viewBox="0 0 24 24">
-
 <rect x="3" y="6" width="18" height="12" rx="4"/>
 <path d="M10 9l5 3-5 3Z" fill="currentColor" stroke="none"/>
-
 </svg>
-
 </div>
 
 <div class="social-info">
-
 <strong>يوتيوب</strong>
-
 <span>قناتنا الرسمية</span>
-
 </div>
 
 </a>
-
 
 
 <a
@@ -3308,26 +2412,18 @@ class="social-card reveal"
 >
 
 <div class="social-icon">
-
 <svg viewBox="0 0 24 24">
-
 <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/>
 <circle cx="12" cy="10" r="2.3"/>
-
 </svg>
-
 </div>
 
 <div class="social-info">
-
 <strong>موقعنا على الخريطة</strong>
-
 <span>Google Maps</span>
-
 </div>
 
 </a>
-
 
 
 <a
@@ -3338,23 +2434,15 @@ class="social-card reveal"
 >
 
 <div class="social-icon">
-
 <svg viewBox="0 0 24 24">
-
 <path d="M20.5 11.2a8.5 8.5 0 0 1-12.6 7.4L4 20l1.4-3.7A8.5 8.5 0 1 1 20.5 11.2Z"/>
-
-<path d="M8.8 8.2c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.8 1.8c.1.3.1.5-.1.7l-.6.7c-.1.1-.1.3 0 .5.4.8 1.1 1.5 1.9 1.9.2.1.4.1.5 0l.7-.6c.2-.2.4-.2.7-.1l1.8.8c.3.1.4.3.4.5v.5c0 .3 0 .5-.4.7-.4.2-1.2.4-2.1.1-1.2-.4-2.4-1.1-3.4-2.1-1-1-1.7-2.2-2.1-3.4-.3-.9-.1-1.7.1-2.1Z"/>
-
+<path d="M8.8 8.2c.2-.4.4-.4.7-.4h.5c.2 0 .4.1-.1.7l-.6.7c-.1.1-.1.3 0 .5.4.8 1.1 1.5 1.9 1.9.2.1.4.1.5 0l.7-.6c.2-.2.4-.2.7-.1l1.8.8c.3.1.4.3.4.5v.5c0 .3 0 .5-.4.7-.4.2-1.2.4-2.1.1-1.2-.4-2.4-1.1-3.4-2.1-1-1-1.7-2.2-2.1-3.4-.3-.9-.1-1.7.1-2.1Z"/>
 </svg>
-
 </div>
 
 <div class="social-info">
-
 <strong>واتساب</strong>
-
 <span>تواصل معنا مباشرة</span>
-
 </div>
 
 </a>
@@ -3367,10 +2455,9 @@ class="social-card reveal"
 </section>
 
 
-
-<!-- =========================================================
+<!-- =========================
      CONTACT
-========================================================= -->
+========================= -->
 
 <section class="contact" id="contact">
 
@@ -3378,20 +2465,11 @@ class="social-card reveal"
 
 <div class="contact-box reveal">
 
-<div class="contact-inner">
-
-<div class="contact-title">
-
-<h2>
-هل تحتاج إلى استشارة قانونية؟
-</h2>
+<h2>هل تحتاج إلى استشارة قانونية؟</h2>
 
 <p>
 تواصل معنا لمناقشة احتياجك القانوني ومعرفة الخيارات المتاحة.
 </p>
-
-</div>
-
 
 <div class="contact-actions">
 
@@ -3400,17 +2478,11 @@ href="tel:+966544270651"
 class="btn btn-primary"
 dir="ltr"
 >
-
 <svg viewBox="0 0 24 24">
-
 <path d="M6.5 3.5h3l1.5 4-2 1.5a15 15 0 0 0 6 6l1.5-2 4 1.5v3c0 .8-.7 1.5-1.5 1.5C11.3 19 5 12.7 5 5c0-.8.7-1.5 1.5-1.5Z"/>
-
 </svg>
-
-054 427 0651
-
+<span>054 427 0651</span>
 </a>
-
 
 <a
 href="https://wa.me/966544270651"
@@ -3418,11 +2490,8 @@ target="_blank"
 rel="noopener noreferrer"
 class="btn btn-outline"
 >
-
 واتساب
-
 </a>
-
 
 <a
 href="https://maps.app.goo.gl/4i7e5cZeRJaVCS8NA?g_st=ipc"
@@ -3430,12 +2499,8 @@ target="_blank"
 rel="noopener noreferrer"
 class="btn btn-outline"
 >
-
 موقع المكتب
-
 </a>
-
-</div>
 
 </div>
 
@@ -3448,17 +2513,15 @@ class="btn btn-outline"
 </main>
 
 
-
-<!-- =========================================================
+<!-- =========================
      FOOTER
-========================================================= -->
+========================= -->
 
 <footer>
 
 <div class="container">
 
 <div class="footer-main">
-
 
 <div class="footer-brand">
 
@@ -3469,13 +2532,9 @@ alt="شعار المكتب"
 
 <div class="footer-brand-text">
 
-<strong>
-مكتب روينا عبدالفتاح رحالي
-</strong>
+<strong>مكتب روينا عبدالفتاح رحالي</strong>
 
-<span>
-للمحاماة والاستشارات القانونية
-</span>
+<span>للمحاماة والاستشارات القانونية</span>
 
 </div>
 
@@ -3485,19 +2544,13 @@ alt="شعار المكتب"
 <div class="footer-links">
 
 <a href="#home">الرئيسية</a>
-
 <a href="#about">عن المكتب</a>
-
 <a href="#services">الخدمات</a>
-
 <a href="#cases">التخصصات</a>
-
 <a href="#faq">الأسئلة الشائعة</a>
-
 <a href="#contact">تواصل معنا</a>
 
 </div>
-
 
 </div>
 
@@ -3513,10 +2566,9 @@ alt="شعار المكتب"
 </footer>
 
 
-
-<!-- =========================================================
-     WHATSAPP FLOATING
-========================================================= -->
+<!-- =========================
+     FLOATING WHATSAPP
+========================= -->
 
 <a
 href="https://wa.me/966544270651"
@@ -3537,30 +2589,22 @@ aria-label="التواصل عبر واتساب"
 </a>
 
 
-
 <script>
 
-/* =========================================================
+/* =========================
    FAQ
-========================================================= */
+========================= */
 
-document
-.querySelectorAll(".faq-question")
-.forEach(button => {
+document.querySelectorAll(".faq-question").forEach(button => {
 
     button.addEventListener("click", () => {
 
-        const item =
-            button.closest(".faq-item");
+        const item = button.closest(".faq-item");
 
-        document
-        .querySelectorAll(".faq-item")
-        .forEach(other => {
+        document.querySelectorAll(".faq-item").forEach(other => {
 
             if(other !== item){
-
                 other.classList.remove("active");
-
             }
 
         });
@@ -3572,60 +2616,53 @@ document
 });
 
 
-/* =========================================================
+/* =========================
    SCROLL REVEAL
-========================================================= */
+========================= */
 
-const observer =
-    new IntersectionObserver(
-        entries => {
+const observer = new IntersectionObserver(
 
-            entries.forEach(
-                entry => {
+    entries => {
 
-                    if(entry.isIntersecting){
+        entries.forEach(entry => {
 
-                        entry.target.classList.add("show");
+            if(entry.isIntersecting){
 
-                        observer.unobserve(
-                            entry.target
-                        );
+                entry.target.classList.add("show");
 
-                    }
+                observer.unobserve(entry.target);
 
-                }
-            );
+            }
 
-        },
-        {
-            threshold:.08
-        }
-    );
+        });
 
+    },
 
-document
-.querySelectorAll(".reveal")
-.forEach(
-    element =>
-    observer.observe(element)
+    {
+        threshold:.08
+    }
+
 );
 
+document.querySelectorAll(".reveal").forEach(element => {
+    observer.observe(element);
+});
 
-/* =========================================================
+
+/* =========================
    HEADER SCROLL
-========================================================= */
+========================= */
 
-const header =
-    document.querySelector("header");
+const header = document.getElementById("header");
 
 window.addEventListener(
     "scroll",
     () => {
 
-        if(window.scrollY > 30){
+        if(window.scrollY > 25){
 
             header.style.background =
-                "rgba(4,11,8,.94)";
+                "rgba(4,12,8,.95)";
 
             header.style.boxShadow =
                 "0 8px 30px rgba(0,0,0,.16)";
@@ -3633,7 +2670,7 @@ window.addEventListener(
         }else{
 
             header.style.background =
-                "rgba(6,15,11,.84)";
+                "rgba(5,16,11,.80)";
 
             header.style.boxShadow =
                 "none";
@@ -3647,7 +2684,6 @@ window.addEventListener(
 );
 
 </script>
-
 
 </body>
 </html>
