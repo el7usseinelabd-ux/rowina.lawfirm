@@ -4,41 +4,45 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>روينا رحالي للمحاماة والاستشارات القانونية</title>
+<title>روينا عبدالفتاح رحالي | للمحاماة والاستشارات القانونية</title>
 
-<meta name="description" content="روينا رحالي للمحاماة والاستشارات القانونية">
+<meta name="description" content="مكتب روينا عبدالفتاح رحالي للمحاماة والاستشارات القانونية. خدمات قانونية متخصصة في جدة والطائف وجميع مناطق المملكة العربية السعودية.">
+<meta name="theme-color" content="#08130f">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 
 /* =========================================================
-   VARIABLES
+   ROOT
 ========================================================= */
 
 :root{
-    --gold:#d6b46a;
-    --gold-light:#ead08d;
-    --gold-dark:#a98543;
+    --bg:#07110d;
+    --bg2:#0a1712;
+    --bg3:#0d1d17;
 
-    --dark:#111a1c;
-    --dark2:#172224;
-    --dark3:#202d2f;
+    --card:rgba(255,255,255,.035);
+    --card2:rgba(255,255,255,.055);
 
-    --cream:#f4f0e7;
-    --white:#ffffff;
+    --gold:#c89b3c;
+    --gold-light:#e4c66d;
+    --gold-soft:#b98a31;
 
-    --text:#293638;
-    --muted:#697577;
+    --white:#f5f2e9;
+    --text:#ddd9cf;
+    --muted:#8f9992;
 
-    --border:rgba(168,133,67,.18);
+    --line:rgba(214,174,78,.14);
 
-    --shadow:0 12px 35px rgba(18,27,29,.08);
+    --shadow:0 22px 60px rgba(0,0,0,.28);
 
-    --transition:.4s cubic-bezier(.2,.8,.2,1);
+    --radius:18px;
+
+    --container:1160px;
 }
 
 
@@ -54,20 +58,66 @@
 
 html{
     scroll-behavior:smooth;
+    scroll-padding-top:80px;
 }
 
 body{
-    margin:0;
     font-family:"Cairo",sans-serif;
-    background:var(--cream);
+
+    background:
+        radial-gradient(
+            circle at 50% -12%,
+            rgba(201,157,61,.075),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 10% 45%,
+            rgba(21,61,44,.12),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #07110d 0%,
+            #08140f 48%,
+            #06100c 100%
+        );
+
     color:var(--text);
-    line-height:1.7;
+
     overflow-x:hidden;
+
+    line-height:1.75;
+}
+
+body::before{
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+
+    background-image:
+        radial-gradient(
+            rgba(225,194,106,.07) 1px,
+            transparent 1px
+        );
+
+    background-size:58px 58px;
+
+    opacity:.09;
+
+    z-index:-1;
 }
 
 a{
     text-decoration:none;
     color:inherit;
+}
+
+img{
+    max-width:100%;
+    display:block;
 }
 
 button{
@@ -80,104 +130,12 @@ button{
 ========================================================= */
 
 .container{
-    width:min(1100px,91%);
-    margin:auto;
-}
-
-
-/* =========================================================
-   SECTIONS
-========================================================= */
-
-section{
-    padding:48px 0;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:27px;
-}
-
-.section-title span{
-    color:var(--gold-dark);
-    font-size:12px;
-    font-weight:700;
-}
-
-.section-title h2{
-    color:var(--dark);
-    font-size:27px;
-    line-height:1.35;
-    font-weight:800;
-    margin:3px 0 6px;
-}
-
-.section-title p{
-    color:var(--muted);
-    font-size:13px;
-    max-width:650px;
-    margin:auto;
-}
-
-.gold-line{
-    width:48px;
-    height:2px;
-    border-radius:10px;
-    background:linear-gradient(
-        90deg,
-        var(--gold-dark),
-        var(--gold-light)
+    width:min(
+        calc(100% - 34px),
+        var(--container)
     );
-    margin:9px auto 0;
-}
 
-
-/* =========================================================
-   TOP BAR
-========================================================= */
-
-.top-bar{
-    background:#0b1214;
-    color:white;
-    padding:7px 0;
-}
-
-.top-inner{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.top-text{
-    font-size:11px;
-    color:#aeb8b7;
-}
-
-.top-phone{
-    display:flex;
-    align-items:center;
-    gap:7px;
-    color:#f0d99b;
-    font-size:12px;
-    padding:4px 11px;
-    border:1px solid rgba(214,180,106,.28);
-    background:rgba(214,180,106,.06);
-    border-radius:30px;
-    transition:.3s;
-}
-
-.top-phone:hover{
-    background:rgba(214,180,106,.13);
-}
-
-.phone-icon{
-    width:23px;
-    height:23px;
-    border-radius:50%;
-    display:grid;
-    place-items:center;
-    background:var(--gold);
-    color:#111a1c;
+    margin:auto;
 }
 
 
@@ -186,209 +144,149 @@ section{
 ========================================================= */
 
 header{
-    position:relative;
+    position:fixed;
+
+    top:0;
+    right:0;
+    left:0;
+
+    height:74px;
+
+    z-index:1000;
+
     background:
-        radial-gradient(
-            circle at 50% -10%,
-            rgba(214,180,106,.12),
-            transparent 40%
-        ),
         linear-gradient(
-            145deg,
-            #1b292b,
-            #10191b 70%
+            180deg,
+            rgba(8,19,14,.94),
+            rgba(7,17,13,.88)
         );
 
-    color:white;
-    overflow:hidden;
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border-bottom:
+        1px solid
+        rgba(213,172,73,.12);
+
+    box-shadow:
+        0 8px 35px rgba(0,0,0,.12);
+
+    transition:
+        background .35s ease,
+        box-shadow .35s ease;
 }
-
-header::after{
-    content:"";
-    position:absolute;
-    width:420px;
-    height:420px;
-    border-radius:50%;
-    left:-230px;
-    bottom:-280px;
-    background:rgba(214,180,106,.04);
-}
-
-
-/* =========================================================
-   NAV
-========================================================= */
 
 .nav{
-    min-height:70px;
+    height:100%;
+
     display:flex;
+
     align-items:center;
     justify-content:space-between;
+
     gap:20px;
-    position:relative;
-    z-index:5;
 }
 
 .brand{
     display:flex;
     align-items:center;
-    gap:11px;
+    gap:10px;
+
     min-width:0;
 }
 
-
-/* =========================================================
-   LOGO
-========================================================= */
-
-.logo-wrap{
-    width:60px;
-    height:60px;
-    flex:0 0 60px;
-
-    position:relative;
-
-    display:grid;
-    place-items:center;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            #1a2729 54%,
-            #10191b 55%
-        );
-
-    border:1px solid rgba(214,180,106,.5);
-
-    box-shadow:
-        0 0 0 4px rgba(214,180,106,.04),
-        0 0 22px rgba(214,180,106,.10);
-}
-
-
-/* الحلقة الخارجية */
-
-.logo-wrap::before{
-    content:"";
-
-    position:absolute;
-
-    inset:-6px;
-
-    border-radius:50%;
-
-    border:1px solid rgba(214,180,106,.22);
-}
-
-
-/* نقاط ذهبية تدور */
-
-.logo-wrap::after{
-    content:"";
-
-    position:absolute;
-
-    inset:-9px;
-
-    border-radius:50%;
-
-    border:1px dashed rgba(214,180,106,.38);
-
-    animation:
-        logoRotate
-        15s linear infinite;
-}
-
-@keyframes logoRotate{
-
-    from{
-        transform:rotate(0);
-    }
-
-    to{
-        transform:rotate(360deg);
-    }
-
-}
-
-
-.logo{
-    width:45px;
-    height:45px;
+.brand img{
+    width:43px;
+    height:43px;
 
     object-fit:contain;
 
-    border-radius:50%;
-
-    position:relative;
-    z-index:2;
-
     filter:
         drop-shadow(
-            0 3px 7px rgba(0,0,0,.3)
+            0 5px 15px
+            rgba(215,174,71,.18)
         );
 }
 
+.brand-text{
+    line-height:1.15;
+}
 
-.brand-text h1{
-    color:#f0d99b;
-    font-size:16px;
-    line-height:1.25;
-    font-weight:800;
+.brand-text strong{
+    display:block;
+
+    color:var(--white);
+
+    font-size:13px;
+
+    font-weight:700;
+
     white-space:nowrap;
 }
 
-.brand-text p{
-    color:#c4cccb;
-    font-size:10px;
-    line-height:1.3;
+.brand-text span{
+    display:block;
+
+    color:var(--gold-light);
+
+    font-size:8px;
+
+    margin-top:3px;
 }
 
-
-/* =========================================================
-   NAV LINKS
-========================================================= */
-
-.nav-links{
+.nav-actions{
     display:flex;
     align-items:center;
-    gap:2px;
+    gap:9px;
 }
 
-.nav-links a{
-    color:#e2e6e5;
-    font-size:12px;
-    font-weight:600;
+.phone-top{
+    display:flex;
 
-    padding:7px 9px;
+    align-items:center;
+    gap:7px;
 
-    border-radius:6px;
+    padding:8px 13px;
 
-    transition:.3s;
-}
+    border:1px solid
+        rgba(213,173,74,.24);
 
-.nav-links a:hover{
+    border-radius:11px;
+
     color:var(--gold-light);
-    background:rgba(214,180,106,.07);
+
+    background:
+        rgba(213,173,74,.055);
+
+    transition:.35s ease;
+
+    font-size:11px;
+
+    font-weight:700;
 }
 
-.mobile-menu{
-    display:none;
+.phone-top svg{
+    width:16px;
+    height:16px;
 
-    width:39px;
-    height:39px;
+    stroke:currentColor;
+    fill:none;
 
-    border-radius:8px;
+    stroke-width:1.7;
+}
 
-    background:transparent;
+.phone-top:hover{
+    background:
+        rgba(213,173,74,.12);
 
-    color:white;
+    border-color:
+        rgba(213,173,74,.46);
 
-    border:1px solid rgba(214,180,106,.3);
+    transform:translateY(-2px);
 
-    cursor:pointer;
+    box-shadow:
+        0 8px 25px
+        rgba(197,151,53,.10);
 }
 
 
@@ -397,56 +295,136 @@ header::after{
 ========================================================= */
 
 .hero{
-    padding:58px 0 62px;
+    min-height:100vh;
 
-    text-align:center;
+    padding-top:74px;
 
+    display:flex;
+    align-items:center;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+
+    width:680px;
+    height:680px;
+
+    right:50%;
+    top:48%;
+
+    transform:
+        translate(50%,-50%);
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(211,169,66,.085),
+            transparent 67%
+        );
+
+    filter:blur(8px);
+
+    pointer-events:none;
+}
+
+.hero-content{
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    align-items:center;
+
+    gap:35px;
+}
+
+.hero-text{
     position:relative;
     z-index:2;
 }
 
-.hero-small{
+.kicker{
+    display:inline-flex;
+
+    align-items:center;
+    gap:8px;
+
     color:var(--gold-light);
 
-    font-size:12px;
-
+    font-size:11px;
     font-weight:700;
 
-    margin-bottom:7px;
+    margin-bottom:12px;
 }
 
-.hero h2{
-    font-size:34px;
+.kicker::before{
+    content:"";
 
-    line-height:1.35;
+    width:25px;
+    height:1px;
 
-    font-weight:800;
-
-    margin-bottom:8px;
-
-    color:#fff;
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--gold)
+        );
 }
 
-.hero h2 strong{
+.hero h1{
+    color:var(--white);
+
+    font-family:"Amiri",serif;
+
+    font-size:
+        clamp(
+            38px,
+            5vw,
+            64px
+        );
+
+    line-height:1.08;
+
+    margin-bottom:12px;
+
+    text-shadow:
+        0 8px 30px rgba(0,0,0,.25);
+}
+
+.hero h1 span{
     color:var(--gold-light);
+
+    display:inline-block;
 }
 
-.hero-description{
-    max-width:690px;
+.hero-subtitle{
+    color:#d1cec4;
 
-    margin:0 auto 20px;
+    font-size:
+        clamp(
+            14px,
+            1.4vw,
+            17px
+        );
 
-    color:#c9d0cf;
+    max-width:600px;
 
-    font-size:13px;
+    margin-bottom:21px;
+
+    line-height:1.9;
 }
 
 .hero-buttons{
     display:flex;
-
-    justify-content:center;
-
-    gap:8px;
+    gap:10px;
 
     flex-wrap:wrap;
 }
@@ -455,61 +433,429 @@ header::after{
     display:inline-flex;
 
     align-items:center;
-
     justify-content:center;
 
-    gap:7px;
+    gap:8px;
 
-    padding:9px 19px;
+    min-height:45px;
 
-    border-radius:7px;
+    padding:
+        9px 18px;
 
-    font-size:12px;
+    border-radius:11px;
+
+    font-size:11px;
 
     font-weight:700;
 
-    transition:var(--transition);
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        background .35s ease,
+        border-color .35s ease;
 }
 
-.btn-gold{
-    color:#111a1c;
+.btn svg{
+    width:16px;
+    height:16px;
+
+    stroke:currentColor;
+    fill:none;
+
+    stroke-width:1.7;
+}
+
+.btn-primary{
+    color:#08110c;
 
     background:
         linear-gradient(
             135deg,
-            #c7a25a,
-            #ecd491
+            #e3c46a,
+            #bd8f32
         );
 
     box-shadow:
-        0 7px 22px
-        rgba(214,180,106,.15);
+        0 10px 30px
+        rgba(194,147,51,.15);
 }
 
-.btn-gold:hover{
+.btn-primary:hover{
     transform:translateY(-3px);
 
     box-shadow:
-        0 11px 27px
-        rgba(214,180,106,.25);
+        0 17px 38px
+        rgba(194,147,51,.25);
 }
 
 .btn-outline{
-    color:#ead9a9;
+    color:var(--gold-light);
 
-    border:
-        1px solid
-        rgba(214,180,106,.35);
+    border:1px solid
+        rgba(212,173,73,.27);
 
     background:
-        rgba(255,255,255,.025);
+        rgba(212,173,73,.035);
 }
 
 .btn-outline:hover{
     transform:translateY(-3px);
 
+    border-color:
+        rgba(212,173,73,.55);
+
     background:
-        rgba(214,180,106,.09);
+        rgba(212,173,73,.08);
+}
+
+
+/* =========================================================
+   PROFESSIONAL LOGO STAGE
+========================================================= */
+
+.logo-wrap{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-height:450px;
+}
+
+.logo-stage{
+    width:350px;
+    height:350px;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    isolation:isolate;
+}
+
+/* glow behind the logo */
+
+.logo-stage::before{
+    content:"";
+
+    position:absolute;
+
+    inset:24px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(216,177,79,.10),
+            transparent 65%
+        );
+
+    filter:blur(7px);
+
+    animation:
+        logoGlow 4s ease-in-out infinite;
+
+    z-index:-2;
+}
+
+/* main elegant circle */
+
+.logo-stage::after{
+    content:"";
+
+    position:absolute;
+
+    inset:9px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(220,181,83,.32);
+
+    box-shadow:
+        inset 0 0 30px
+        rgba(213,173,72,.035),
+        0 0 40px
+        rgba(213,173,72,.055);
+
+    z-index:-1;
+}
+
+/* rotating fine orbit */
+
+.logo-orbit{
+    position:absolute;
+
+    inset:0;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(218,181,82,.13);
+
+    border-left-color:
+        transparent;
+
+    border-bottom-color:
+        rgba(218,181,82,.04);
+
+    animation:
+        orbitRotate 20s linear infinite;
+}
+
+/* gold particles */
+
+.logo-orbit::before,
+.logo-orbit::after{
+    content:"";
+
+    position:absolute;
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #fff8ce 0%,
+            #e5c66c 42%,
+            #a87825 100%
+        );
+
+    box-shadow:
+        0 0 10px
+        rgba(228,198,109,.95),
+        0 0 24px
+        rgba(205,157,50,.48);
+}
+
+.logo-orbit::before{
+    top:7px;
+    left:50%;
+
+    transform:translateX(-50%);
+}
+
+.logo-orbit::after{
+    bottom:18px;
+    right:20px;
+
+    width:5px;
+    height:5px;
+}
+
+/* second orbit */
+
+.logo-orbit-2{
+    position:absolute;
+
+    inset:31px;
+
+    border-radius:50%;
+
+    border:
+        1px dashed
+        rgba(217,176,75,.14);
+
+    animation:
+        orbitRotateReverse 15s linear infinite;
+}
+
+.logo-orbit-2::before,
+.logo-orbit-2::after{
+    content:"";
+
+    position:absolute;
+
+    width:4px;
+    height:4px;
+
+    border-radius:50%;
+
+    background:var(--gold-light);
+
+    box-shadow:
+        0 0 13px
+        var(--gold-light);
+}
+
+.logo-orbit-2::before{
+    top:20px;
+    right:7px;
+}
+
+.logo-orbit-2::after{
+    bottom:18px;
+    left:12px;
+}
+
+/* tiny third ring */
+
+.logo-orbit-3{
+    position:absolute;
+
+    inset:55px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(228,198,109,.07);
+
+    animation:
+        orbitRotate 28s linear infinite;
+}
+
+/* logo itself */
+
+.logo-main{
+    position:relative;
+
+    z-index:5;
+
+    width:170px;
+    height:170px;
+
+    object-fit:contain;
+
+    border-radius:50%;
+
+    filter:
+        drop-shadow(
+            0 14px 30px
+            rgba(0,0,0,.34)
+        )
+        drop-shadow(
+            0 0 22px
+            rgba(212,170,75,.10)
+        );
+
+    animation:
+        logoFloat 5s ease-in-out infinite;
+
+    transition:
+        transform .6s cubic-bezier(.2,.8,.2,1),
+        filter .6s ease;
+}
+
+.logo-stage:hover .logo-main{
+    transform:
+        scale(1.045);
+
+    filter:
+        drop-shadow(
+            0 20px 40px
+            rgba(0,0,0,.38)
+        )
+        drop-shadow(
+            0 0 32px
+            rgba(212,170,75,.22)
+        );
+}
+
+@keyframes logoFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-5px);
+    }
+}
+
+@keyframes orbitRotate{
+    from{
+        transform:rotate(0);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes orbitRotateReverse{
+    from{
+        transform:rotate(360deg);
+    }
+
+    to{
+        transform:rotate(0);
+    }
+}
+
+@keyframes logoGlow{
+    0%,100%{
+        opacity:.55;
+        transform:scale(.98);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.03);
+    }
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section{
+    padding:
+        58px 0;
+}
+
+.section-head{
+    max-width:700px;
+
+    margin:
+        0 auto 25px;
+
+    text-align:center;
+}
+
+.section-label{
+    color:var(--gold-light);
+
+    font-size:10px;
+
+    font-weight:700;
+
+    margin-bottom:5px;
+}
+
+.section-head h2{
+    color:var(--white);
+
+    font-family:"Amiri",serif;
+
+    font-size:
+        clamp(
+            28px,
+            3.7vw,
+            40px
+        );
+
+    line-height:1.2;
+
+    margin-bottom:6px;
+}
+
+.section-head p{
+    color:var(--muted);
+
+    font-size:12px;
+
+    line-height:1.8;
 }
 
 
@@ -518,50 +864,106 @@ header::after{
 ========================================================= */
 
 .about{
-    background:#f7f4ec;
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(255,255,255,.012),
+            transparent
+        );
 }
 
-.about-grid{
+.about-content{
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+}
+
+.about-content h3{
+    color:var(--white);
+
+    font-family:"Amiri",serif;
+
+    font-size:28px;
+
+    margin-bottom:10px;
+}
+
+.about-content p{
+    color:#aeb5af;
+
+    font-size:12px;
+
+    line-height:2;
+
+    margin-bottom:10px;
+}
+
+.about-points{
     display:grid;
 
     grid-template-columns:
-        repeat(2,1fr);
+        repeat(4,1fr);
 
-    gap:13px;
+    gap:10px;
+
+    margin-top:18px;
 }
 
-.about-card{
-    background:#fff;
+.about-point{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    padding:11px 9px;
 
     border:
         1px solid
-        rgba(30,45,48,.07);
+        rgba(213,173,72,.10);
+
+    background:
+        rgba(255,255,255,.025);
 
     border-radius:11px;
 
-    padding:21px;
+    font-size:10px;
 
-    transition:var(--transition);
+    color:#d8d5cd;
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        background .35s ease;
 }
 
-.about-card:hover{
+.about-point:hover{
     transform:translateY(-4px);
 
-    box-shadow:var(--shadow);
+    border-color:
+        rgba(213,173,72,.28);
+
+    background:
+        rgba(213,173,72,.04);
 }
 
-.about-card h3{
-    color:var(--dark);
+.about-point span{
+    width:6px;
+    height:6px;
 
-    font-size:17px;
+    flex-shrink:0;
 
-    margin-bottom:5px;
-}
+    border-radius:50%;
 
-.about-card p{
-    color:#606d6f;
+    background:var(--gold-light);
 
-    font-size:12.5px;
+    box-shadow:
+        0 0 10px
+        rgba(228,198,109,.5);
 }
 
 
@@ -569,11 +971,156 @@ header::after{
    SERVICES
 ========================================================= */
 
-.services{
-    background:#eee9dd;
+#services{
+    padding-top:48px;
 }
 
-.cards{
+.services-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:12px;
+}
+
+.service-card{
+    position:relative;
+
+    padding:19px;
+
+    min-height:172px;
+
+    border:
+        1px solid
+        rgba(213,173,72,.10);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.045),
+            rgba(255,255,255,.015)
+        );
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    transition:
+        transform .45s cubic-bezier(.2,.8,.2,1),
+        border-color .4s ease,
+        box-shadow .4s ease,
+        background .4s ease;
+}
+
+.service-card::before{
+    content:"";
+
+    position:absolute;
+
+    right:0;
+    top:0;
+
+    width:2px;
+    height:0;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--gold-light),
+            transparent
+        );
+
+    transition:
+        height .5s ease;
+}
+
+.service-card::after{
+    content:"";
+
+    position:absolute;
+
+    width:90px;
+    height:90px;
+
+    left:-55px;
+    bottom:-55px;
+
+    border-radius:50%;
+
+    background:
+        rgba(213,173,72,.035);
+
+    transition:
+        transform .5s ease;
+}
+
+.service-card:hover{
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(213,173,72,.28);
+
+    box-shadow:
+        0 18px 42px
+        rgba(0,0,0,.21);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(213,173,72,.055),
+            rgba(255,255,255,.018)
+        );
+}
+
+.service-card:hover::before{
+    height:100%;
+}
+
+.service-card:hover::after{
+    transform:scale(1.5);
+}
+
+.service-card h3{
+    position:relative;
+    z-index:2;
+
+    color:var(--white);
+
+    font-family:"Amiri",serif;
+
+    font-size:21px;
+
+    margin-bottom:6px;
+}
+
+.service-card p{
+    position:relative;
+    z-index:2;
+
+    color:#929c95;
+
+    font-size:10.5px;
+
+    line-height:1.9;
+}
+
+
+/* =========================================================
+   CASES
+========================================================= */
+
+#cases{
+    padding-top:50px;
+}
+
+.cases{
+    background:
+        rgba(0,0,0,.075);
+}
+
+.cases-grid{
     display:grid;
 
     grid-template-columns:
@@ -582,180 +1129,168 @@ header::after{
     gap:11px;
 }
 
-.card{
-    background:
-        rgba(255,255,255,.82);
+.case-card{
+    padding:17px;
 
     border:
         1px solid
-        rgba(30,45,48,.06);
-
-    border-radius:10px;
-
-    padding:18px;
-
-    position:relative;
-
-    overflow:hidden;
-
-    transition:var(--transition);
-}
-
-.card::before{
-    content:"";
-
-    position:absolute;
-
-    right:0;
-    top:0;
-
-    height:2px;
-
-    width:0;
+        rgba(213,173,72,.10);
 
     background:
-        linear-gradient(
-            90deg,
-            var(--gold-dark),
-            var(--gold-light)
-        );
+        rgba(255,255,255,.025);
 
-    transition:.4s;
+    border-radius:15px;
+
+    transition:
+        transform .4s ease,
+        border-color .4s ease,
+        box-shadow .4s ease,
+        background .4s ease;
 }
 
-.card:hover{
-    transform:translateY(-5px);
+.case-card:hover{
+    transform:
+        translateY(-5px);
 
-    background:#fff;
+    border-color:
+        rgba(213,173,72,.28);
 
-    box-shadow:var(--shadow);
+    background:
+        rgba(213,173,72,.025);
+
+    box-shadow:
+        0 16px 36px
+        rgba(0,0,0,.20);
 }
 
-.card:hover::before{
-    width:100%;
-}
-
-.card-icon{
+.case-icon{
     width:37px;
     height:37px;
 
     display:grid;
-
     place-items:center;
 
-    border-radius:9px;
+    border-radius:10px;
+
+    color:var(--gold-light);
 
     background:
-        rgba(214,180,106,.13);
+        rgba(213,173,72,.06);
 
-    color:var(--gold-dark);
+    border:
+        1px solid
+        rgba(213,173,72,.14);
 
-    font-size:18px;
+    margin-bottom:10px;
 
-    margin-bottom:9px;
+    transition:
+        transform .35s ease,
+        background .35s ease;
 }
 
-.card h3{
-    color:var(--dark);
+.case-card:hover .case-icon{
+    transform:
+        translateY(-2px)
+        scale(1.05);
 
-    font-size:15px;
-
-    margin-bottom:3px;
+    background:
+        rgba(213,173,72,.10);
 }
 
-.card p{
-    color:#667274;
+.case-icon svg{
+    width:18px;
+    height:18px;
 
-    font-size:12px;
+    stroke:currentColor;
+    fill:none;
 
-    line-height:1.7;
+    stroke-width:1.5;
+}
+
+.case-card h3{
+    color:#f0eee7;
+
+    font-size:14px;
+
+    margin-bottom:5px;
+}
+
+.case-card p{
+    color:#8f9892;
+
+    font-size:10px;
+
+    line-height:1.9;
 }
 
 
 /* =========================================================
-   SPECIALTIES
+   WHY US
 ========================================================= */
 
-.cases{
-    background:#f7f4ec;
+#why{
+    padding-top:48px;
 }
 
-.cases-grid{
+.why-grid{
     display:grid;
 
     grid-template-columns:
-        repeat(2,1fr);
-
-    gap:10px;
-}
-
-.case{
-    display:flex;
-
-    align-items:flex-start;
+        repeat(4,1fr);
 
     gap:11px;
+}
 
-    background:#fff;
+.why-card{
+    text-align:center;
+
+    padding:20px 13px;
 
     border:
         1px solid
-        rgba(30,45,48,.06);
-
-    border-radius:10px;
-
-    padding:16px;
-
-    transition:var(--transition);
-}
-
-.case:hover{
-    transform:translateY(-4px);
-
-    box-shadow:
-        0 10px 27px
-        rgba(0,0,0,.07);
-}
-
-
-/*
-   أيقونة بدل الأرقام
-*/
-
-.case-icon{
-    width:36px;
-    height:36px;
-
-    min-width:36px;
-
-    display:grid;
-
-    place-items:center;
-
-    border-radius:9px;
+        rgba(213,173,72,.10);
 
     background:
-        rgba(214,180,106,.12);
+        rgba(255,255,255,.025);
 
-    color:var(--gold-dark);
+    border-radius:15px;
 
-    font-size:17px;
+    transition:
+        transform .4s ease,
+        border-color .4s ease,
+        background .4s ease,
+        box-shadow .4s ease;
 }
 
-.case h3{
-    color:var(--dark);
+.why-card:hover{
+    transform:
+        translateY(-5px);
 
-    font-size:15px;
+    border-color:
+        rgba(213,173,72,.27);
 
-    margin-bottom:2px;
+    background:
+        rgba(213,173,72,.035);
+
+    box-shadow:
+        0 15px 34px
+        rgba(0,0,0,.18);
 }
 
-.case p{
-    color:#687476;
+.why-card h3{
+    color:#eeeae0;
 
-    font-size:11.5px;
+    font-size:13px;
 
-    line-height:1.65;
+    margin-bottom:4px;
+}
+
+.why-card p{
+    color:#838d87;
+
+    font-size:9.5px;
+
+    line-height:1.8;
 }
 
 
@@ -763,12 +1298,12 @@ header::after{
    FAQ
 ========================================================= */
 
-.faq{
-    background:#eee9dd;
+#faq{
+    padding-top:48px;
 }
 
 .faq-list{
-    max-width:900px;
+    max-width:880px;
 
     margin:auto;
 
@@ -776,55 +1311,85 @@ header::after{
 
     flex-direction:column;
 
-    gap:7px;
+    gap:8px;
 }
 
 .faq-item{
-    background:#fff;
-
     border:
         1px solid
-        rgba(30,45,48,.06);
+        rgba(213,173,72,.10);
 
-    border-radius:9px;
+    border-radius:14px;
 
     overflow:hidden;
+
+    background:
+        rgba(255,255,255,.025);
+
+    transition:
+        border-color .35s ease,
+        background .35s ease,
+        transform .35s ease;
+}
+
+.faq-item:hover{
+    border-color:
+        rgba(213,173,72,.22);
+}
+
+.faq-item.active{
+    background:
+        rgba(213,173,72,.035);
+
+    border-color:
+        rgba(213,173,72,.24);
 }
 
 .faq-question{
     width:100%;
 
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding:15px 17px;
+
+    background:none;
+
     border:0;
 
-    background:#fff;
-
-    color:var(--dark);
-
-    padding:13px 16px;
+    color:#eeeae0;
 
     text-align:right;
 
-    font-size:13px;
-
-    font-weight:700;
-
     cursor:pointer;
 
-    display:flex;
+    font-size:12px;
 
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:10px;
+    font-weight:700;
 }
 
-.faq-question span:last-child{
-    color:var(--gold-dark);
+.faq-plus{
+    width:27px;
+    height:27px;
 
-    font-size:18px;
+    flex-shrink:0;
 
-    transition:.3s;
+    display:grid;
+    place-items:center;
+
+    border-radius:8px;
+
+    color:var(--gold-light);
+
+    border:
+        1px solid
+        rgba(213,173,72,.14);
+
+    transition:.35s ease;
 }
 
 .faq-answer{
@@ -832,128 +1397,33 @@ header::after{
 
     overflow:hidden;
 
-    transition:max-height .4s ease;
+    transition:
+        max-height .45s ease,
+        padding .45s ease;
 }
 
 .faq-answer p{
+    color:#969f99;
+
+    font-size:10.5px;
+
+    line-height:2;
+
     padding:
-        0
-        16px
-        13px;
-
-    color:#667274;
-
-    font-size:12px;
+        0 17px;
 }
 
-.faq-item.active
-.faq-question span:last-child{
+.faq-item.active .faq-answer{
+    max-height:250px;
+
+    padding-bottom:14px;
+}
+
+.faq-item.active .faq-plus{
     transform:rotate(45deg);
-}
-
-
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.contact{
-    background:
-        radial-gradient(
-            circle at 20% 0,
-            rgba(214,180,106,.08),
-            transparent 35%
-        ),
-        #10191b;
-
-    color:#fff;
-}
-
-.contact .section-title h2{
-    color:white;
-}
-
-.contact .section-title p{
-    color:#aeb8b7;
-}
-
-.contact-grid{
-    display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap:13px;
-}
-
-.contact-card{
-    background:
-        rgba(255,255,255,.035);
-
-    border:
-        1px solid
-        rgba(214,180,106,.14);
-
-    border-radius:11px;
-
-    padding:20px;
-}
-
-.contact-card h3{
-    color:#efd899;
-
-    font-size:17px;
-
-    margin-bottom:10px;
-}
-
-.contact-item{
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    padding:8px 0;
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,.055);
-}
-
-.contact-item:last-child{
-    border-bottom:0;
-}
-
-.contact-icon{
-    width:34px;
-    height:34px;
-
-    min-width:34px;
-
-    display:grid;
-
-    place-items:center;
-
-    border-radius:8px;
 
     background:
-        rgba(214,180,106,.09);
-
-    color:#e5c77f;
-}
-
-.contact-item small{
-    display:block;
-
-    color:#899594;
-
-    font-size:9px;
-}
-
-.contact-item strong{
-    color:#fff;
-
-    font-size:12px;
+        rgba(213,173,72,.10);
 }
 
 
@@ -961,50 +1431,264 @@ header::after{
    SOCIAL
 ========================================================= */
 
-.socials{
+#social{
+    padding-top:48px;
+    padding-bottom:48px;
+}
+
+.social-grid{
     display:grid;
 
     grid-template-columns:
         repeat(4,1fr);
 
-    gap:7px;
+    gap:10px;
+
+    max-width:1040px;
+
+    margin:auto;
 }
 
-.social{
+.social-card{
+    position:relative;
+
+    min-height:72px;
+
     display:flex;
 
     align-items:center;
 
-    justify-content:center;
+    gap:11px;
 
-    padding:9px 5px;
+    padding:12px;
 
     border:
         1px solid
-        rgba(214,180,106,.12);
+        rgba(213,173,72,.10);
 
     background:
-        rgba(255,255,255,.025);
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.035),
+            rgba(255,255,255,.008)
+        );
 
-    border-radius:8px;
+    border-radius:13px;
 
-    color:#d9dddc;
+    overflow:hidden;
+
+    transition:
+        transform .4s cubic-bezier(.2,.7,.2,1),
+        border-color .4s ease,
+        background .4s ease,
+        box-shadow .4s ease;
+}
+
+.social-card::before{
+    content:"";
+
+    position:absolute;
+
+    right:0;
+    top:0;
+    bottom:0;
+
+    width:2px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            var(--gold-light),
+            transparent
+        );
+
+    transform:
+        scaleY(0);
+
+    transition:.45s ease;
+}
+
+.social-card:hover{
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(213,173,72,.30);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(213,173,72,.055),
+            rgba(255,255,255,.008)
+        );
+
+    box-shadow:
+        0 15px 32px
+        rgba(0,0,0,.18);
+}
+
+.social-card:hover::before{
+    transform:scaleY(1);
+}
+
+.social-icon{
+    position:relative;
+
+    z-index:2;
+
+    width:37px;
+    height:37px;
+
+    flex-shrink:0;
+
+    display:grid;
+    place-items:center;
+
+    border:
+        1px solid
+        rgba(213,173,72,.17);
+
+    background:
+        rgba(213,173,72,.045);
+
+    color:var(--gold-light);
+
+    border-radius:10px;
+
+    transition:.4s ease;
+}
+
+.social-icon svg{
+    width:17px;
+    height:17px;
+
+    fill:none;
+
+    stroke:currentColor;
+
+    stroke-width:1.6;
+
+    stroke-linecap:round;
+    stroke-linejoin:round;
+
+    transition:.4s ease;
+}
+
+.social-card:hover .social-icon{
+    background:
+        rgba(213,173,72,.11);
+
+    border-color:
+        rgba(213,173,72,.40);
+
+    transform:
+        scale(1.05);
+}
+
+.social-info{
+    position:relative;
+
+    z-index:2;
+
+    min-width:0;
+}
+
+.social-info strong{
+    display:block;
+
+    color:#eeeae1;
 
     font-size:10.5px;
 
-    transition:var(--transition);
+    font-weight:700;
 }
 
-.social:hover{
-    transform:translateY(-3px);
+.social-info span{
+    display:block;
 
-    color:#efd899;
+    color:#78827c;
 
-    border-color:
-        rgba(214,180,106,.35);
+    font-size:8px;
+
+    margin-top:1px;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+#contact{
+    padding-top:40px;
+    padding-bottom:45px;
+}
+
+.contact-box{
+    position:relative;
+
+    overflow:hidden;
+
+    max-width:850px;
+
+    margin:auto;
+
+    padding:28px 25px;
+
+    border:
+        1px solid
+        rgba(213,173,72,.17);
 
     background:
-        rgba(214,180,106,.08);
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(213,173,72,.075),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.045),
+            rgba(255,255,255,.012)
+        );
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:
+        0 20px 55px
+        rgba(0,0,0,.20);
+}
+
+.contact-box h2{
+    color:#f5f1e7;
+
+    font-family:"Amiri",serif;
+
+    font-size:29px;
+
+    margin-bottom:5px;
+}
+
+.contact-box p{
+    color:#929b95;
+
+    font-size:11px;
+
+    margin-bottom:15px;
+}
+
+.contact-actions{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:8px;
 }
 
 
@@ -1013,59 +1697,228 @@ header::after{
 ========================================================= */
 
 footer{
-    background:#0a1113;
-
-    color:#8f9998;
-
-    text-align:center;
-
-    padding:18px 0;
-
     border-top:
         1px solid
-        rgba(214,180,106,.08);
+        rgba(213,173,72,.10);
+
+    padding:
+        21px 0 18px;
+
+    background:
+        rgba(0,0,0,.13);
 }
 
-.footer-name{
-    color:#efd899;
+.footer-main{
+    display:flex;
 
-    font-size:14px;
+    align-items:center;
+    justify-content:space-between;
 
-    font-weight:800;
+    gap:15px;
 
-    line-height:1.4;
+    flex-wrap:wrap;
 }
 
-.footer-sub{
-    color:#a8b0af;
+.footer-brand{
+    display:flex;
 
-    font-size:10px;
+    align-items:center;
 
-    margin-top:1px;
+    gap:8px;
+}
+
+.footer-brand img{
+    width:37px;
+    height:37px;
+
+    object-fit:contain;
+}
+
+.footer-brand-text{
+    line-height:1.15;
+}
+
+.footer-brand-text strong{
+    display:block;
+
+    color:#eeeae1;
+
+    font-size:11px;
+
+    line-height:1.25;
+}
+
+.footer-brand-text span{
+    display:block;
+
+    color:var(--gold-light);
+
+    font-size:7.5px;
+
+    margin-top:2px;
+}
+
+.footer-links{
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+}
+
+.footer-links a{
+    color:#7e8982;
+
+    font-size:8.5px;
+
+    transition:.3s ease;
+}
+
+.footer-links a:hover{
+    color:var(--gold-light);
 }
 
 .copyright{
-    color:#687170;
+    text-align:center;
 
-    font-size:9px;
+    color:#69736d;
 
-    margin-top:3px;
+    font-size:8px;
+
+    margin-top:13px;
+
+    padding-top:11px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.035);
 }
 
 
 /* =========================================================
-   REVEAL ANIMATION
+   WHATSAPP FLOATING
+========================================================= */
+
+.whatsapp{
+    position:fixed;
+
+    left:18px;
+    bottom:18px;
+
+    width:53px;
+    height:53px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #e9c96c,
+            #c69a38
+        );
+
+    color:#07150e;
+
+    z-index:999;
+
+    border:
+        1px solid
+        rgba(255,255,255,.20);
+
+    box-shadow:
+        0 9px 27px
+        rgba(0,0,0,.35),
+        0 0 0 6px
+        rgba(212,170,75,.05);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+.whatsapp::before{
+    content:"";
+
+    position:absolute;
+
+    inset:-6px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(212,170,75,.17);
+
+    animation:
+        whatsappPulse 2.8s ease-out infinite;
+}
+
+@keyframes whatsappPulse{
+
+    0%{
+        transform:scale(.92);
+        opacity:.7;
+    }
+
+    70%{
+        transform:scale(1.18);
+        opacity:0;
+    }
+
+    100%{
+        opacity:0;
+    }
+}
+
+.whatsapp svg{
+    position:relative;
+
+    z-index:2;
+
+    width:23px;
+    height:23px;
+
+    fill:none;
+
+    stroke:currentColor;
+
+    stroke-width:1.7;
+
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+.whatsapp:hover{
+    transform:
+        translateY(-4px)
+        scale(1.06);
+
+    box-shadow:
+        0 16px 36px
+        rgba(0,0,0,.38),
+        0 0 0 8px
+        rgba(212,170,75,.07);
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
 ========================================================= */
 
 .reveal{
     opacity:0;
 
     transform:
-        translateY(18px);
+        translateY(22px);
 
     transition:
-        opacity .65s ease,
-        transform .65s cubic-bezier(.2,.8,.2,1);
+        opacity .7s ease,
+        transform .7s cubic-bezier(.2,.7,.2,1);
 }
 
 .reveal.show{
@@ -1077,219 +1930,258 @@ footer{
 
 
 /* =========================================================
-   WHATSAPP
+   MOBILE
 ========================================================= */
 
-.whatsapp{
-    position:fixed;
+@media(max-width:1000px){
 
-    bottom:18px;
+    .hero-content{
+        grid-template-columns:1fr;
 
-    left:18px;
+        text-align:center;
 
-    width:49px;
-
-    height:49px;
-
-    display:grid;
-
-    place-items:center;
-
-    border-radius:50%;
-
-    background:#198754;
-
-    color:white;
-
-    font-size:22px;
-
-    z-index:100;
-
-    box-shadow:
-        0 8px 25px
-        rgba(0,0,0,.25);
-
-    transition:.3s;
-}
-
-.whatsapp:hover{
-    transform:
-        translateY(-3px)
-        scale(1.06);
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media(max-width:900px){
-
-    .nav-links{
-        display:none;
-
-        position:absolute;
-
-        top:70px;
-
-        right:0;
-        left:0;
-
-        padding:7px;
-
-        flex-direction:column;
-
-        align-items:stretch;
-
-        background:#10191b;
-
-        border-top:
-            1px solid
-            rgba(214,180,106,.12);
+        gap:5px;
     }
 
-    .nav-links.open{
-        display:flex;
+    .hero-text{
+        order:1;
     }
 
-    .nav-links a{
-        padding:9px 12px;
+    .logo-wrap{
+        order:0;
+
+        min-height:350px;
     }
 
-    .mobile-menu{
-        display:block;
+    .hero-subtitle{
+        margin-left:auto;
+        margin-right:auto;
     }
 
-    .cards{
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .logo-stage{
+        width:320px;
+        height:320px;
+    }
+
+    .logo-main{
+        width:155px;
+        height:155px;
+    }
+
+    .services-grid{
         grid-template-columns:
             repeat(2,1fr);
     }
 
-    .about-grid,
-    .contact-grid{
-        grid-template-columns:1fr;
+    .cases-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .why-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .social-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .about-points{
+        grid-template-columns:
+            repeat(2,1fr);
     }
 }
 
 
-/* =========================================================
-   MOBILE
-========================================================= */
-
 @media(max-width:650px){
 
-    section{
-        padding:38px 0;
-    }
-
     .container{
-        width:91%;
+        width:
+            calc(100% - 26px);
     }
 
-    .top-text{
+    header{
+        height:68px;
+    }
+
+    .brand-text{
         display:none;
     }
 
-    .top-inner{
-        justify-content:center;
-    }
-
-    .nav{
-        min-height:64px;
-    }
-
-    .logo-wrap{
-        width:54px;
-        height:54px;
-
-        flex-basis:54px;
-    }
-
-    .logo{
+    .brand img{
         width:41px;
         height:41px;
     }
 
-    .brand-text h1{
-        font-size:13px;
+    .phone-top{
+        padding:
+            7px 10px;
+
+        font-size:9px;
     }
 
-    .brand-text p{
-        font-size:8.5px;
+    .phone-top span{
+        display:none;
     }
 
     .hero{
-        padding:47px 0 52px;
+        padding-top:68px;
     }
 
-    .hero h2{
-        font-size:26px;
+    .hero h1{
+        font-size:38px;
+
+        line-height:1.08;
     }
 
-    .hero-description{
+    .hero-subtitle{
         font-size:12px;
+
+        line-height:1.9;
     }
 
-    .hero-buttons{
-        padding:0 10px;
+    .logo-wrap{
+        min-height:300px;
     }
 
-    .btn{
-        padding:8px 15px;
+    .logo-stage{
+        width:275px;
+        height:275px;
     }
 
-    .section-title{
-        margin-bottom:21px;
+    .logo-stage::before{
+        inset:20px;
     }
 
-    .section-title h2{
-        font-size:23px;
+    .logo-stage::after{
+        inset:7px;
     }
 
-    .section-title p{
-        font-size:12px;
+    .logo-orbit-2{
+        inset:27px;
     }
 
-    .cards{
+    .logo-orbit-3{
+        inset:48px;
+    }
+
+    .logo-main{
+        width:135px;
+        height:135px;
+    }
+
+    section{
+        padding:
+            47px 0;
+    }
+
+    .section-head{
+        margin-bottom:20px;
+    }
+
+    .section-head h2{
+        font-size:29px;
+    }
+
+    .section-head p{
+        font-size:10.5px;
+    }
+
+    .services-grid,
+    .cases-grid,
+    .social-grid{
         grid-template-columns:1fr;
     }
 
-    .cases-grid{
-        grid-template-columns:1fr;
-    }
-
-    .socials{
+    .why-grid{
         grid-template-columns:
             repeat(2,1fr);
     }
 
-    .contact-card{
-        padding:17px;
+    .about-points{
+        grid-template-columns:1fr;
     }
 
+    .about-content h3{
+        font-size:26px;
+    }
+
+    .about-content p{
+        font-size:11px;
+    }
+
+    .contact-box{
+        padding:23px 15px;
+    }
+
+    .contact-box h2{
+        font-size:26px;
+    }
+
+    .contact-box p{
+        font-size:10px;
+    }
+
+    .footer-main{
+        justify-content:center;
+
+        text-align:center;
+    }
+
+    .footer-brand{
+        justify-content:center;
+
+        width:100%;
+    }
+
+    .footer-links{
+        justify-content:center;
+
+        gap:9px 12px;
+    }
+
+    .whatsapp{
+        width:51px;
+        height:51px;
+
+        left:13px;
+        bottom:13px;
+    }
 }
 
 
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
+@media(max-width:380px){
 
-@media(max-width:390px){
-
-    .brand-text h1{
-        font-size:11.5px;
+    .hero h1{
+        font-size:33px;
     }
 
-    .hero h2{
-        font-size:23px;
+    .logo-stage{
+        width:250px;
+        height:250px;
     }
 
-    .hero-buttons{
-        flex-direction:column;
+    .logo-main{
+        width:125px;
+        height:125px;
     }
 
-    .btn{
-        width:100%;
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .phone-top{
+        display:none;
+    }
+
+    .social-card{
+        min-height:68px;
     }
 }
 
@@ -1301,149 +2193,48 @@ footer{
 
 
 <!-- =========================================================
-     TOP
-========================================================= -->
-
-<div class="top-bar">
-
-    <div class="container top-inner">
-
-        <div class="top-text">
-            للاستشارات والخدمات القانونية
-        </div>
-
-        <a
-            href="tel:+966544270651"
-            class="top-phone"
-        >
-
-            <span class="phone-icon">☎</span>
-
-            <span dir="ltr">
-                054 427 0651
-            </span>
-
-        </a>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
      HEADER
 ========================================================= -->
 
 <header>
 
-<div class="container">
-
-<nav class="nav">
+<div class="container nav">
 
 <a href="#home" class="brand">
 
-    <div class="logo-wrap">
+<img
+src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.jpg"
+alt="شعار روينا عبدالفتاح رحالي"
+>
 
-        <img
-            class="logo"
-            src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.jpg"
-            alt="شعار روينا رحالي"
-        >
+<div class="brand-text">
 
-    </div>
+<strong>روينا عبدالفتاح رحالي</strong>
 
-    <div class="brand-text">
+<span>للمحاماة والاستشارات القانونية</span>
 
-        <h1>روينا رحالي</h1>
-
-        <p>
-            للمحاماة والاستشارات القانونية
-        </p>
-
-    </div>
+</div>
 
 </a>
 
 
-<button
-    class="mobile-menu"
-    id="mobileMenu"
->
-    ☰
-</button>
+<div class="nav-actions">
 
-
-<div
-    class="nav-links"
-    id="navLinks"
+<a
+href="tel:+966544270651"
+class="phone-top"
+aria-label="الاتصال بالمكتب"
 >
 
-    <a href="#home">الرئيسية</a>
+<svg viewBox="0 0 24 24">
 
-    <a href="#about">من نحن</a>
+<path d="M6.5 3.5h3l1.5 4-2 1.5a15 15 0 0 0 6 6l1.5-2 4 1.5v3c0 .8-.7 1.5-1.5 1.5C11.3 19 5 12.7 5 5c0-.8.7-1.5 1.5-1.5Z"/>
 
-    <a href="#services">خدماتنا</a>
+</svg>
 
-    <a href="#cases">التخصصات</a>
+<span>054 427 0651</span>
 
-    <a href="#faq">الأسئلة الشائعة</a>
-
-    <a href="#contact">تواصل معنا</a>
-
-</div>
-
-</nav>
-
-
-<!-- =========================================================
-     HERO
-========================================================= -->
-
-<div
-    class="hero"
-    id="home"
->
-
-    <div class="hero-small">
-        شراكة قانونية تقوم على الثقة
-    </div>
-
-    <h2>
-        <strong>روينا رحالي</strong>
-        للمحاماة والاستشارات القانونية
-    </h2>
-
-    <p class="hero-description">
-        نقدم خدمات قانونية متخصصة تقوم على المهنية والسرية
-        ودراسة كل قضية بما يتناسب مع طبيعتها واحتياجات العميل.
-    </p>
-
-    <div class="hero-buttons">
-
-        <a
-            href="tel:+966544270651"
-            class="btn btn-gold"
-        >
-            ☎ اتصل بنا
-        </a>
-
-        <a
-            href="https://wa.me/966544270651"
-            target="_blank"
-            class="btn btn-outline"
-        >
-            واتساب
-        </a>
-
-        <a
-            href="https://maps.app.goo.gl/4i7e5cZeRJaVCS8NA?g_st=ipc"
-            target="_blank"
-            class="btn btn-outline"
-        >
-            📍 موقعنا
-        </a>
-
-    </div>
+</a>
 
 </div>
 
@@ -1452,56 +2243,171 @@ footer{
 </header>
 
 
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<main id="home">
+
+<section class="hero">
+
+<div class="container hero-content">
+
+
+<div class="hero-text reveal">
+
+<div class="kicker">
+مكتب قانوني
+</div>
+
+<h1>
+روينا عبدالفتاح
+<br>
+<span>رحالي</span>
+</h1>
+
+<p class="hero-subtitle">
+
+للمحاماة والاستشارات القانونية، نقدم خدمات قانونية متخصصة
+بمنهج مهني يركز على حماية حقوق عملائنا وتحقيق أفضل الحلول القانونية.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a
+href="tel:+966544270651"
+class="btn btn-primary"
+>
+
+<svg viewBox="0 0 24 24">
+
+<path d="M6.5 3.5h3l1.5 4-2 1.5a15 15 0 0 0 6 6l1.5-2 4 1.5v3c0 .8-.7 1.5-1.5 1.5C11.3 19 5 12.7 5 5c0-.8.7-1.5 1.5-1.5Z"/>
+
+</svg>
+
+اتصل بنا
+
+</a>
+
+
+<a
+href="https://wa.me/966544270651"
+target="_blank"
+rel="noopener noreferrer"
+class="btn btn-outline"
+>
+
+<svg viewBox="0 0 24 24">
+
+<path d="M20.5 11.2a8.5 8.5 0 0 1-12.6 7.4L4 20l1.4-3.7A8.5 8.5 0 1 1 20.5 11.2Z"/>
+
+</svg>
+
+واتساب
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="logo-wrap reveal">
+
+<div class="logo-stage">
+
+<div class="logo-orbit"></div>
+
+<div class="logo-orbit-2"></div>
+
+<div class="logo-orbit-3"></div>
+
+<img
+class="logo-main"
+src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.jpg"
+alt="شعار مكتب روينا عبدالفتاح رحالي"
+>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
 <!-- =========================================================
      ABOUT
 ========================================================= -->
 
-<section
-    class="about"
-    id="about"
->
+<section class="about" id="about">
 
 <div class="container">
 
-<div class="section-title reveal">
+<div class="section-head reveal">
 
-    <span>نبذة عنا</span>
+<div class="section-label">
+عن المكتب
+</div>
 
-    <h2>من نحن</h2>
+<h2>
+خبرة قانونية برؤية مهنية
+</h2>
 
-    <div class="gold-line"></div>
+<p>
+نضع خبرتنا القانونية في خدمة عملائنا للوصول إلى حلول عملية ومدروسة.
+</p>
 
 </div>
 
 
-<div class="about-grid">
+<div class="about-content reveal">
 
-<div class="about-card reveal">
+<h3>
+روينا عبدالفتاح رحالي
+</h3>
 
-    <h3>
-        روينا رحالي للمحاماة والاستشارات القانونية
-    </h3>
+<p>
+مكتب متخصص في المحاماة والاستشارات القانونية، يعمل على تقديم
+الخدمات القانونية للأفراد والمنشآت وفق منهج مهني يراعي طبيعة
+كل قضية واحتياجات كل عميل.
+</p>
 
-    <p>
-        مكتب قانوني يقدم خدمات المحاماة والاستشارات القانونية
-        بمهنية واهتمام، مع الحرص على فهم احتياجات كل عميل
-        ودراسة الموضوع من جوانبه القانونية المختلفة.
-    </p>
+<p>
+نسعى إلى تقديم حلول قانونية واضحة ومدروسة، مع المحافظة على
+السرية المهنية والالتزام بالأنظمة واللوائح المعمول بها في المملكة
+العربية السعودية.
+</p>
 
+
+<div class="about-points">
+
+<div class="about-point">
+<span></span>
+استشارات قانونية متخصصة
 </div>
 
+<div class="about-point">
+<span></span>
+تمثيل ومرافعة قانونية
+</div>
 
-<div class="about-card reveal">
+<div class="about-point">
+<span></span>
+صياغة ومراجعة العقود
+</div>
 
-    <h3>
-        رؤيتنا
-    </h3>
-
-    <p>
-        تقديم خدمات قانونية موثوقة ترتكز على المهنية والوضوح
-        والسرية، والمساهمة في حماية الحقوق والمصالح القانونية
-        لعملائنا وفق الأنظمة المعمول بها في المملكة العربية السعودية.
-    </p>
+<div class="about-point">
+<span></span>
+سرية وخصوصية المعلومات
+</div>
 
 </div>
 
@@ -1510,128 +2416,107 @@ footer{
 </div>
 
 </section>
+
 
 
 <!-- =========================================================
      SERVICES
 ========================================================= -->
 
-<section
-    class="services"
-    id="services"
->
+<section id="services">
 
 <div class="container">
 
-<div class="section-title reveal">
+<div class="section-head reveal">
 
-    <span>خدمات قانونية متخصصة</span>
+<div class="section-label">
+خدماتنا
+</div>
 
-    <h2>خدماتنا</h2>
+<h2>
+حلول قانونية متكاملة
+</h2>
 
-    <div class="gold-line"></div>
+<p>
+مجموعة من الخدمات القانونية التي تلبي احتياجات الأفراد والمنشآت.
+</p>
 
 </div>
 
 
-<div class="cards">
+<div class="services-grid">
 
 
-<div class="card reveal">
+<div class="service-card reveal">
 
-    <div class="card-icon">⚖</div>
+<h3>الاستشارات القانونية</h3>
 
-    <h3>
-        الاستشارات القانونية
-    </h3>
-
-    <p>
-        دراسة المسائل القانونية وتقديم الرأي والمشورة
-        المناسبة وفق الأنظمة واللوائح ذات الصلة.
-    </p>
+<p>
+دراسة الوقائع والمستندات وتقديم الرأي القانوني المناسب
+بناءً على الأنظمة واللوائح ذات العلاقة.
+</p>
 
 </div>
 
 
-<div class="card reveal">
+<div class="service-card reveal">
 
-    <div class="card-icon">▣</div>
+<h3>المرافعات والتقاضي</h3>
 
-    <h3>
-        صياغة العقود
-    </h3>
-
-    <p>
-        إعداد ومراجعة وصياغة العقود والاتفاقيات بما يحفظ
-        الحقوق ويقلل المخاطر القانونية.
-    </p>
+<p>
+تمثيل العملاء ومتابعة الدعاوى والإجراءات القضائية أمام
+الجهات والمحاكم المختصة.
+</p>
 
 </div>
 
 
-<div class="card reveal">
+<div class="service-card reveal">
 
-    <div class="card-icon">⚖</div>
+<h3>صياغة العقود</h3>
 
-    <h3>
-        الترافع وتمثيل العملاء
-    </h3>
-
-    <p>
-        تمثيل العملاء أمام الجهات والمحاكم المختصة
-        ومتابعة الإجراءات القانونية ذات العلاقة.
-    </p>
+<p>
+صياغة ومراجعة العقود والاتفاقيات بطريقة تحفظ الحقوق
+وتوضح الالتزامات القانونية للأطراف.
+</p>
 
 </div>
 
 
-<div class="card reveal">
+<div class="service-card reveal">
 
-    <div class="card-icon">▤</div>
+<h3>التحكيم</h3>
 
-    <h3>
-        القضايا التجارية
-    </h3>
-
-    <p>
-        معالجة المنازعات والمسائل القانونية المتعلقة
-        بالأعمال والشركات والعلاقات التجارية.
-    </p>
+<p>
+تقديم الدعم القانوني في إجراءات التحكيم وتسوية النزاعات
+بأساليب قانونية متخصصة.
+</p>
 
 </div>
 
 
-<div class="card reveal">
+<div class="service-card reveal">
 
-    <div class="card-icon">◈</div>
+<h3>التوثيق</h3>
 
-    <h3>
-        القضايا العمالية
-    </h3>
-
-    <p>
-        تقديم الدعم القانوني في النزاعات والقضايا
-        المتعلقة بعلاقات العمل وحقوق الأطراف.
-    </p>
+<p>
+المساعدة في الإجراءات القانونية والتوثيقية ذات العلاقة
+بالمعاملات والوثائق.
+</p>
 
 </div>
 
 
-<div class="card reveal">
+<div class="service-card reveal">
 
-    <div class="card-icon">◆</div>
+<h3>الخدمات القانونية للمنشآت</h3>
 
-    <h3>
-        التوثيق والخدمات القانونية
-    </h3>
-
-    <p>
-        تقديم الخدمات القانونية والتوثيقية وفق الأنظمة
-        والإجراءات المعمول بها.
-    </p>
+<p>
+حلول قانونية للشركات والمنشآت تشمل العقود والحوكمة
+والالتزام والمتابعة القانونية.
+</p>
 
 </div>
-
 
 </div>
 
@@ -1640,29 +2525,28 @@ footer{
 </section>
 
 
+
 <!-- =========================================================
      CASES
 ========================================================= -->
 
-<section
-    class="cases"
-    id="cases"
->
+<section class="cases" id="cases">
 
 <div class="container">
 
-<div class="section-title reveal">
+<div class="section-head reveal">
 
-    <span>مجالات التخصص</span>
+<div class="section-label">
+التخصصات والقضايا
+</div>
 
-    <h2>القضايا والتخصصات</h2>
+<h2>
+مجالات قانونية متعددة
+</h2>
 
-    <div class="gold-line"></div>
-
-    <p>
-        نتعامل مع مجموعة متنوعة من المسائل والقضايا القانونية
-        وفق طبيعة كل حالة ومتطلباتها.
-    </p>
+<p>
+نتعامل مع مجموعة متنوعة من القضايا والخدمات القانونية.
+</p>
 
 </div>
 
@@ -1670,165 +2554,227 @@ footer{
 <div class="cases-grid">
 
 
-<div class="case reveal">
+<div class="case-card reveal">
 
-    <div class="case-icon">⚖</div>
+<div class="case-icon">
 
-    <div>
+<svg viewBox="0 0 24 24">
 
-        <h3>
-            القضايا التجارية
-        </h3>
+<rect x="3" y="5" width="18" height="14" rx="2"/>
+<path d="M8 5V3h8v2"/>
+<path d="M3 10h18"/>
 
-        <p>
-            المنازعات التجارية والعقود والشركات والحقوق
-            والالتزامات الناشئة عن التعاملات التجارية.
-        </p>
+</svg>
 
-    </div>
+</div>
+
+<h3>القضايا التجارية</h3>
+
+<p>
+المنازعات التجارية، والحقوق والالتزامات التعاقدية،
+والقضايا المرتبطة بالأنشطة والمنشآت التجارية.
+</p>
 
 </div>
 
 
-<div class="case reveal">
+<div class="case-card reveal">
 
-    <div class="case-icon">◈</div>
+<div class="case-icon">
 
-    <div>
+<svg viewBox="0 0 24 24">
 
-        <h3>
-            القضايا العمالية
-        </h3>
+<path d="M4 19h16"/>
+<path d="M6 17V9"/>
+<path d="M10 17V6"/>
+<path d="M14 17V11"/>
+<path d="M18 17V4"/>
 
-        <p>
-            النزاعات المتعلقة بعقود العمل والأجور
-            والحقوق والالتزامات العمالية.
-        </p>
+</svg>
 
-    </div>
+</div>
+
+<h3>القضايا العمالية</h3>
+
+<p>
+المطالبات والحقوق العمالية والمنازعات بين العامل
+وصاحب العمل والإجراءات المرتبطة بها.
+</p>
 
 </div>
 
 
-<div class="case reveal">
+<div class="case-card reveal">
 
-    <div class="case-icon">◇</div>
+<div class="case-icon">
 
-    <div>
+<svg viewBox="0 0 24 24">
 
-        <h3>
-            الأحوال الشخصية
-        </h3>
+<path d="M12 3v18"/>
+<path d="M5 7h14"/>
+<path d="M6 7l-3 6h6L6 7Z"/>
+<path d="M18 7l-3 6h6l-3-6Z"/>
 
-        <p>
-            المسائل الأسرية والأحوال الشخصية وما يرتبط
-            بها من دعاوى وإجراءات قانونية.
-        </p>
+</svg>
 
-    </div>
+</div>
+
+<h3>الأحوال الشخصية</h3>
+
+<p>
+قضايا الأسرة والزواج والطلاق والنفقة والحضانة
+وغيرها من المسائل المتعلقة بالأحوال الشخصية.
+</p>
 
 </div>
 
 
-<div class="case reveal">
+<div class="case-card reveal">
 
-    <div class="case-icon">⌂</div>
+<div class="case-icon">
 
-    <div>
+<svg viewBox="0 0 24 24">
 
-        <h3>
-            القضايا العقارية
-        </h3>
+<path d="M3 10h18"/>
+<path d="M5 10v9"/>
+<path d="M9 10v9"/>
+<path d="M15 10v9"/>
+<path d="M19 10v9"/>
+<path d="M3 19h18"/>
+<path d="M4 10l8-6 8 6"/>
 
-        <p>
-            المنازعات والحقوق المتعلقة بالعقارات والملكية
-            والإيجارات والمعاملات العقارية.
-        </p>
+</svg>
 
-    </div>
+</div>
+
+<h3>القضايا العقارية</h3>
+
+<p>
+المنازعات المتعلقة بالعقارات والملكية والإيجارات
+والحقوق والالتزامات العقارية.
+</p>
 
 </div>
 
 
-<div class="case reveal">
+<div class="case-card reveal">
 
-    <div class="case-icon">⚖</div>
+<div class="case-icon">
 
-    <div>
+<svg viewBox="0 0 24 24">
 
-        <h3>
-            القضايا الجنائية
-        </h3>
+<path d="M12 3l8 4v5c0 4.8-3.4 7.7-8 9-4.6-1.3-8-4.2-8-9V7l8-4Z"/>
+<path d="M9 12l2 2 4-4"/>
 
-        <p>
-            تقديم الخدمات القانونية المتعلقة بالقضايا
-            والإجراءات الجنائية وفق الأنظمة المعمول بها.
-        </p>
+</svg>
 
-    </div>
+</div>
+
+<h3>القضايا الجنائية</h3>
+
+<p>
+التمثيل والدفاع القانوني ومتابعة الإجراءات في القضايا
+الجنائية أمام الجهات المختصة.
+</p>
 
 </div>
 
 
-<div class="case reveal">
+<div class="case-card reveal">
 
-    <div class="case-icon">▤</div>
+<div class="case-icon">
 
-    <div>
+<svg viewBox="0 0 24 24">
 
-        <h3>
-            القضايا الإدارية
-        </h3>
+<path d="M5 4h14v16H5z"/>
+<path d="M8 8h8"/>
+<path d="M8 12h8"/>
+<path d="M8 16h5"/>
 
-        <p>
-            المسائل والمنازعات الإدارية وما يرتبط
-            بالقرارات والإجراءات أمام الجهات المختصة.
-        </p>
+</svg>
 
-    </div>
+</div>
+
+<h3>القضايا الإدارية</h3>
+
+<p>
+المنازعات الإدارية والدعاوى المرتبطة بالقرارات والإجراءات
+الإدارية أمام الجهات والمحاكم المختصة.
+</p>
 
 </div>
 
 
-<div class="case reveal">
+<div class="case-card reveal">
 
-    <div class="case-icon">◇</div>
+<div class="case-icon">
 
-    <div>
+<svg viewBox="0 0 24 24">
 
-        <h3>
-            التحكيم
-        </h3>
+<circle cx="12" cy="12" r="8"/>
+<path d="M12 8v8"/>
+<path d="M8 12h8"/>
 
-        <p>
-            تقديم الخدمات القانونية المتعلقة بإجراءات
-            التحكيم والمنازعات الخاضعة له.
-        </p>
+</svg>
 
-    </div>
+</div>
+
+<h3>التحكيم وتسوية النزاعات</h3>
+
+<p>
+المساعدة في تسوية النزاعات بالطرق البديلة والتحكيم
+وفق الأطر والإجراءات القانونية.
+</p>
 
 </div>
 
 
-<div class="case reveal">
+<div class="case-card reveal">
 
-    <div class="case-icon">⚖</div>
+<div class="case-icon">
 
-    <div>
+<svg viewBox="0 0 24 24">
 
-        <h3>
-            الاستشارات القانونية
-        </h3>
+<path d="M7 3h10v18H7z"/>
+<path d="M9 7h6"/>
+<path d="M9 11h6"/>
+<path d="M9 15h4"/>
 
-        <p>
-            دراسة الوقائع وتقديم الرأي القانوني المناسب
-            وفق طبيعة الموضوع والأنظمة ذات العلاقة.
-        </p>
-
-    </div>
+</svg>
 
 </div>
 
+<h3>العقود والاتفاقيات</h3>
+
+<p>
+إعداد ومراجعة الاتفاقيات والعقود القانونية وتحليل
+بنودها والتزامات أطرافها.
+</p>
+
+</div>
+
+
+<div class="case-card reveal">
+
+<div class="case-icon">
+
+<svg viewBox="0 0 24 24">
+
+<circle cx="12" cy="8" r="3"/>
+<path d="M5 20c.7-3.4 3-5 7-5s6.3 1.6 7 5"/>
+
+</svg>
+
+</div>
+
+<h3>الخدمات القانونية للأفراد</h3>
+
+<p>
+استشارات وتمثيل قانوني للأفراد في مختلف المسائل
+والنزاعات التي تحتاج إلى معالجة قانونية.
+</p>
+
+</div>
 
 </div>
 
@@ -1837,28 +2783,107 @@ footer{
 </section>
 
 
+
+<!-- =========================================================
+     WHY US
+========================================================= -->
+
+<section id="why">
+
+<div class="container">
+
+<div class="section-head reveal">
+
+<div class="section-label">
+لماذا نحن
+</div>
+
+<h2>
+شراكة قانونية تقوم على الثقة
+</h2>
+
+<p>
+نحرص على بناء علاقة مهنية واضحة ومستقرة مع عملائنا.
+</p>
+
+</div>
+
+
+<div class="why-grid">
+
+
+<div class="why-card reveal">
+
+<h3>المهنية</h3>
+
+<p>
+التعامل مع كل ملف بمنهج قانوني مهني ومدروس.
+</p>
+
+</div>
+
+
+<div class="why-card reveal">
+
+<h3>السرية</h3>
+
+<p>
+الحفاظ على سرية المعلومات والوثائق الخاصة بالعملاء.
+</p>
+
+</div>
+
+
+<div class="why-card reveal">
+
+<h3>الوضوح</h3>
+
+<p>
+تقديم المعلومات القانونية بصورة واضحة ومفهومة.
+</p>
+
+</div>
+
+
+<div class="why-card reveal">
+
+<h3>المتابعة</h3>
+
+<p>
+متابعة الإجراءات والتطورات المتعلقة بالملفات القانونية.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
 <!-- =========================================================
      FAQ
 ========================================================= -->
 
-<section
-    class="faq"
-    id="faq"
->
+<section id="faq">
 
 <div class="container">
 
-<div class="section-title reveal">
+<div class="section-head reveal">
 
-    <span>إجابات لأكثر الاستفسارات</span>
+<div class="section-label">
+الأسئلة الشائعة
+</div>
 
-    <h2>الأسئلة الشائعة</h2>
+<h2>
+إجابات لأكثر الاستفسارات تكراراً
+</h2>
 
-    <div class="gold-line"></div>
-
-    <p>
-        إجابات لأكثر الاستفسارات تكراراً من عملائنا الكرام
-    </p>
+<p>
+أهم المعلومات التي يحتاجها عملاؤنا قبل بدء الإجراءات القانونية.
+</p>
 
 </div>
 
@@ -1870,21 +2895,20 @@ footer{
 
 <button class="faq-question">
 
-    <span>
-        ما هي مجالات الخدمات القانونية التي تقدمونها؟
-    </span>
+<span>
+ما هي مجالات الخدمات القانونية التي تقدمونها؟
+</span>
 
-    <span>+</span>
+<span class="faq-plus">+</span>
 
 </button>
 
 <div class="faq-answer">
 
 <p>
-    نقدم خدمات قانونية شاملة تشمل:
-    القضايا التجارية، العمالية، الأحوال الشخصية،
-    العقارية، الجنائية، الإدارية، التحكيم،
-    الاستشارات القانونية، صياغة العقود والتوثيق.
+نقدم خدمات قانونية شاملة تشمل: القضايا التجارية، العمالية،
+الأحوال الشخصية، العقارية، الجنائية، الإدارية، التحكيم،
+الاستشارات القانونية، صياغة العقود والتوثيق.
 </p>
 
 </div>
@@ -1896,20 +2920,20 @@ footer{
 
 <button class="faq-question">
 
-    <span>
-        كيف يمكنني حجز استشارة قانونية؟
-    </span>
+<span>
+كيف يمكنني حجز استشارة قانونية؟
+</span>
 
-    <span>+</span>
+<span class="faq-plus">+</span>
 
 </button>
 
 <div class="faq-answer">
 
 <p>
-    يمكنك التواصل معنا مباشرة عبر الاتصال أو عبر واتساب،
-    أو زيارة أحد فروعنا في جدة أو الطائف خلال أوقات العمل
-    من 8 صباحاً حتى 9 مساءً.
+يمكنك التواصل معنا مباشرة عبر الاتصال أو عبر واتساب،
+أو زيارة أحد فروعنا في جدة أو الطائف خلال أوقات العمل
+من 8 صباحاً حتى 9 مساءً.
 </p>
 
 </div>
@@ -1921,20 +2945,20 @@ footer{
 
 <button class="faq-question">
 
-    <span>
-        هل تضمنون سرية المعلومات؟
-    </span>
+<span>
+هل تضمنون سرية المعلومات؟
+</span>
 
-    <span>+</span>
+<span class="faq-plus">+</span>
 
 </button>
 
 <div class="faq-answer">
 
 <p>
-    نعم، نلتزم بأعلى معايير السرية المهنية، وجميع المعلومات
-    والوثائق المتعلقة بقضاياكم محفوظة بسرية تامة وفقاً
-    لقواعد المهنة وأنظمة المملكة.
+نعم، نلتزم بأعلى معايير السرية المهنية، وجميع المعلومات
+والوثائق المتعلقة بقضاياكم محفوظة بسرية تامة وفقاً لقواعد
+المهنة وأنظمة المملكة.
 </p>
 
 </div>
@@ -1946,19 +2970,19 @@ footer{
 
 <button class="faq-question">
 
-    <span>
-        هل تترافعون أمام جميع المحاكم في المملكة؟
-    </span>
+<span>
+هل تترافعون أمام جميع المحاكم في المملكة؟
+</span>
 
-    <span>+</span>
+<span class="faq-plus">+</span>
 
 </button>
 
 <div class="faq-answer">
 
 <p>
-    نعم، فريقنا من المحامين المرخصين رسمياً من وزارة العدل
-    يترافع أمام جميع درجات المحاكم في المملكة العربية السعودية.
+نعم، فريقنا من المحامين المرخصين رسمياً من وزارة العدل
+يترافع أمام جميع درجات المحاكم في المملكة العربية السعودية.
 </p>
 
 </div>
@@ -1970,19 +2994,19 @@ footer{
 
 <button class="faq-question">
 
-    <span>
-        كم تستغرق القضية عادةً حتى صدور الحكم؟
-    </span>
+<span>
+كم تستغرق القضية عادةً حتى صدور الحكم؟
+</span>
 
-    <span>+</span>
+<span class="faq-plus">+</span>
 
 </button>
 
 <div class="faq-answer">
 
 <p>
-    تختلف المدة باختلاف نوع القضية ودرجة تعقيدها وإجراءات المحكمة،
-    ويمكن تحديد إطار زمني تقريبي بعد دراسة القضية في الاستشارة الأولى.
+تختلف المدة باختلاف نوع القضية ودرجة تعقيدها وإجراءات المحكمة،
+ويمكن تحديد إطار زمني تقريبي بعد دراسة القضية في الاستشارة الأولى.
 </p>
 
 </div>
@@ -1994,19 +3018,19 @@ footer{
 
 <button class="faq-question">
 
-    <span>
-        هل تقدمون خدماتكم خارج جدة والطائف؟
-    </span>
+<span>
+هل تقدمون خدماتكم خارج جدة والطائف؟
+</span>
 
-    <span>+</span>
+<span class="faq-plus">+</span>
 
 </button>
 
 <div class="faq-answer">
 
 <p>
-    نعم، نقدم خدماتنا في جميع مناطق المملكة العربية السعودية،
-    ويمكن التنسيق عبر فروعنا الرئيسية في جدة والطائف.
+نعم، نقدم خدماتنا في جميع مناطق المملكة العربية السعودية،
+ويمكن التنسيق عبر فروعنا الرئيسية في جدة والطائف.
 </p>
 
 </div>
@@ -2019,203 +3043,355 @@ footer{
 </div>
 
 </section>
+
+
+
+<!-- =========================================================
+     SOCIAL
+========================================================= -->
+
+<section id="social">
+
+<div class="container">
+
+<div class="section-head reveal">
+
+<div class="section-label">
+حساباتنا وروابطنا
+</div>
+
+<h2>
+تابعنا وتواصل معنا
+</h2>
+
+<p>
+يمكنكم التواصل معنا أو متابعة حساباتنا الرسمية عبر المنصات المختلفة.
+</p>
+
+</div>
+
+
+<div class="social-grid">
+
+
+<!-- SNAPCHAT -->
+
+<a
+href="https://snapchat.com/t/dl9ibhPp"
+target="_blank"
+rel="noopener noreferrer"
+class="social-card reveal"
+>
+
+<div class="social-icon">
+
+<svg viewBox="0 0 24 24">
+
+<path d="M12 4c-3 0-4.5 2.1-4.5 4.7v2.1c0 .5-.2.8-.7 1.1l-1 .5c-.3.2-.2.6.1.7l2 .5c.3.1.5.3.6.7.2.8 1 1.7 2.2 1.9.5.1.8.3 1.1.7.6.8 1.4 1.2 2.2 1.2s1.6-.4 2.2-1.2c.3-.4.6-.6 1.1-.7 1.2-.2 2-.9 2.2-1.9.1-.4.3-.6.6-.7l2-.5c.3-.1.4-.5.1-.7l-1-.5c-.5-.3-.7-.6-.7-1.1V8.7C16.5 6.1 15 4 12 4Z"/>
+
+</svg>
+
+</div>
+
+<div class="social-info">
+
+<strong>سناب شات</strong>
+
+<span>تابعنا على Snapchat</span>
+
+</div>
+
+</a>
+
+
+<!-- INSTAGRAM -->
+
+<a
+href="https://www.instagram.com/rowinarahali?igsh=MW1vbnFjeW56NDgzbA%3D%3D&utm_source=qr"
+target="_blank"
+rel="noopener noreferrer"
+class="social-card reveal"
+>
+
+<div class="social-icon">
+
+<svg viewBox="0 0 24 24">
+
+<rect x="3" y="3" width="18" height="18" rx="5"/>
+<circle cx="12" cy="12" r="4"/>
+<circle cx="17.5" cy="6.5" r=".7" fill="currentColor" stroke="none"/>
+
+</svg>
+
+</div>
+
+<div class="social-info">
+
+<strong>إنستغرام</strong>
+
+<span>تابعنا على Instagram</span>
+
+</div>
+
+</a>
+
+
+<!-- X -->
+
+<a
+href="https://x.com/rowinarahali?s=21"
+target="_blank"
+rel="noopener noreferrer"
+class="social-card reveal"
+>
+
+<div class="social-icon">
+
+<svg viewBox="0 0 24 24">
+
+<path d="M5 4l14 16"/>
+<path d="M19 4L5 20"/>
+
+</svg>
+
+</div>
+
+<div class="social-info">
+
+<strong>إكس</strong>
+
+<span>تابعنا على X</span>
+
+</div>
+
+</a>
+
+
+<!-- TIKTOK -->
+
+<a
+href="https://www.tiktok.com/@rowina_ar?_r=1&_t=ZS-927I2h5U5xt"
+target="_blank"
+rel="noopener noreferrer"
+class="social-card reveal"
+>
+
+<div class="social-icon">
+
+<svg viewBox="0 0 24 24">
+
+<path d="M14 5v9.2a4 4 0 1 1-3-3.9"/>
+<path d="M14 5c.6 2.1 1.8 3.3 4 3.6"/>
+
+</svg>
+
+</div>
+
+<div class="social-info">
+
+<strong>تيك توك</strong>
+
+<span>تابعنا على TikTok</span>
+
+</div>
+
+</a>
+
+
+<!-- LINKEDIN -->
+
+<a
+href="https://www.linkedin.com/in/rowina-rahali-43a83b352?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+target="_blank"
+rel="noopener noreferrer"
+class="social-card reveal"
+>
+
+<div class="social-icon">
+
+<svg viewBox="0 0 24 24">
+
+<path d="M7 9v8"/>
+<path d="M7 6.5v.1"/>
+<path d="M11 17v-5"/>
+<path d="M11 14.2c0-2.2 1.2-3.2 2.7-3.2 1.6 0 2.3 1 2.3 3v3"/>
+
+</svg>
+
+</div>
+
+<div class="social-info">
+
+<strong>LinkedIn</strong>
+
+<span>ملفنا المهني</span>
+
+</div>
+
+</a>
+
+
+<!-- YOUTUBE -->
+
+<a
+href="https://www.youtube.com/@Rowinarahali.lawfirm"
+target="_blank"
+rel="noopener noreferrer"
+class="social-card reveal"
+>
+
+<div class="social-icon">
+
+<svg viewBox="0 0 24 24">
+
+<rect x="3" y="6" width="18" height="12" rx="4"/>
+<path d="M10 9l5 3-5 3Z" fill="currentColor" stroke="none"/>
+
+</svg>
+
+</div>
+
+<div class="social-info">
+
+<strong>يوتيوب</strong>
+
+<span>قناتنا الرسمية</span>
+
+</div>
+
+</a>
+
+
+<!-- GOOGLE MAPS -->
+
+<a
+href="https://maps.app.goo.gl/4i7e5cZeRJaVCS8NA?g_st=ipc"
+target="_blank"
+rel="noopener noreferrer"
+class="social-card reveal"
+>
+
+<div class="social-icon">
+
+<svg viewBox="0 0 24 24">
+
+<path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/>
+<circle cx="12" cy="10" r="2.3"/>
+
+</svg>
+
+</div>
+
+<div class="social-info">
+
+<strong>موقعنا على الخريطة</strong>
+
+<span>Google Maps</span>
+
+</div>
+
+</a>
+
+
+<!-- WHATSAPP -->
+
+<a
+href="https://wa.me/966544270651"
+target="_blank"
+rel="noopener noreferrer"
+class="social-card reveal"
+>
+
+<div class="social-icon">
+
+<svg viewBox="0 0 24 24">
+
+<path d="M20.5 11.2a8.5 8.5 0 0 1-12.6 7.4L4 20l1.4-3.7A8.5 8.5 0 1 1 20.5 11.2Z"/>
+
+<path d="M8.8 8.2c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.8 1.8c.1.3.1.5-.1.7l-.6.7c-.1.1-.1.3 0 .5.4.8 1.1 1.5 1.9 1.9.2.1.4.1.5 0l.7-.6c.2-.2.4-.2.7-.1l1.8.8c.3.1.4.3.4.5v.5c0 .3 0 .5-.4.7-.4.2-1.2.4-2.1.1-1.2-.4-2.4-1.1-3.4-2.1-1-1-1.7-2.2-2.1-3.4-.3-.9-.1-1.7.1-2.1Z"/>
+
+</svg>
+
+</div>
+
+<div class="social-info">
+
+<strong>واتساب</strong>
+
+<span>تواصل معنا مباشرة</span>
+
+</div>
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
 
 
 <!-- =========================================================
      CONTACT
 ========================================================= -->
 
-<section
-    class="contact"
-    id="contact"
->
+<section id="contact">
 
 <div class="container">
 
-<div class="section-title reveal">
+<div class="contact-box reveal">
 
-    <span>نحن هنا لخدمتكم</span>
+<h2>
+هل تحتاج إلى استشارة قانونية؟
+</h2>
 
-    <h2>تواصل معنا</h2>
-
-    <div class="gold-line"></div>
-
-    <p>
-        يسعدنا استقبال استفساراتكم والتواصل معكم
-    </p>
-
-</div>
+<p>
+تواصل معنا لمناقشة احتياجك القانوني ومعرفة الخيارات المتاحة.
+</p>
 
 
-<div class="contact-grid">
-
-
-<div class="contact-card reveal">
-
-<h3>
-    بيانات التواصل
-</h3>
-
+<div class="contact-actions">
 
 <a
-    class="contact-item"
-    href="tel:+966544270651"
+href="tel:+966544270651"
+class="btn btn-primary"
 >
 
-<div class="contact-icon">
-    ☎
-</div>
+<svg viewBox="0 0 24 24">
 
-<div>
+<path d="M6.5 3.5h3l1.5 4-2 1.5a15 15 0 0 0 6 6l1.5-2 4 1.5v3c0 .8-.7 1.5-1.5 1.5C11.3 19 5 12.7 5 5c0-.8.7-1.5 1.5-1.5Z"/>
 
-<small>
-    الاتصال المباشر
-</small>
+</svg>
 
-<strong dir="ltr">
-    054 427 0651
-</strong>
-
-</div>
+054 427 0651
 
 </a>
 
 
 <a
-    class="contact-item"
-    href="https://wa.me/966544270651"
-    target="_blank"
+href="https://wa.me/966544270651"
+target="_blank"
+rel="noopener noreferrer"
+class="btn btn-outline"
 >
 
-<div class="contact-icon">
-    ◉
-</div>
-
-<div>
-
-<small>
-    واتساب
-</small>
-
-<strong>
-    تواصل معنا عبر واتساب
-</strong>
-
-</div>
+واتساب
 
 </a>
 
 
 <a
-    class="contact-item"
-    href="https://maps.app.goo.gl/4i7e5cZeRJaVCS8NA?g_st=ipc"
-    target="_blank"
+href="https://maps.app.goo.gl/4i7e5cZeRJaVCS8NA?g_st=ipc"
+target="_blank"
+rel="noopener noreferrer"
+class="btn btn-outline"
 >
 
-<div class="contact-icon">
-    ⌖
-</div>
-
-<div>
-
-<small>
-    الموقع
-</small>
-
-<strong>
-    جدة والطائف
-</strong>
-
-</div>
+موقع المكتب
 
 </a>
-
-</div>
-
-
-<div class="contact-card reveal">
-
-<h3>
-    حساباتنا الرسمية
-</h3>
-
-
-<div class="socials">
-
-
-<a
-    class="social"
-    href="https://snapchat.com/t/dl9ibhPp"
-    target="_blank"
->
-    👻 سناب شات
-</a>
-
-
-<a
-    class="social"
-    href="https://www.instagram.com/rowinarahali?igsh=MW1vbnFjeW56NDgzbA%3D%3D&utm_source=qr"
-    target="_blank"
->
-    ◎ إنستغرام
-</a>
-
-
-<a
-    class="social"
-    href="https://x.com/rowinarahali?s=21"
-    target="_blank"
->
-    𝕏 X
-</a>
-
-
-<a
-    class="social"
-    href="https://www.tiktok.com/@rowina_ar?_r=1&_t=ZS-927I2h5U5xt"
-    target="_blank"
->
-    ♪ تيك توك
-</a>
-
-
-<a
-    class="social"
-    href="https://www.linkedin.com/in/rowina-rahali-43a83b352?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-    target="_blank"
->
-    in LinkedIn
-</a>
-
-
-<a
-    class="social"
-    href="https://www.youtube.com/@Rowinarahali.lawfirm"
-    target="_blank"
->
-    ▶ يوتيوب
-</a>
-
-
-<a
-    class="social"
-    href="https://wa.me/966544270651"
-    target="_blank"
->
-    ◉ واتساب
-</a>
-
-
-<a
-    class="social"
-    href="https://maps.app.goo.gl/4i7e5cZeRJaVCS8NA?g_st=ipc"
-    target="_blank"
->
-    📍 Google Maps
-</a>
-
-
-</div>
 
 </div>
 
@@ -2224,6 +3400,9 @@ footer{
 </div>
 
 </section>
+
+</main>
+
 
 
 <!-- =========================================================
@@ -2234,16 +3413,59 @@ footer{
 
 <div class="container">
 
-<div class="footer-name">
-    روينا رحالي للمحاماة والاستشارات القانونية
+<div class="footer-main">
+
+
+<div class="footer-brand">
+
+<img
+src="https://raw.githubusercontent.com/el7usseinelabd-ux/rowina.lawfirm/main/logo.jpg"
+alt="شعار المكتب"
+>
+
+<div class="footer-brand-text">
+
+<strong>
+مكتب روينا عبدالفتاح رحالي
+</strong>
+
+<span>
+للمحاماة والاستشارات القانونية
+</span>
+
 </div>
 
-<div class="footer-sub">
-    محاماة واستشارات قانونية
 </div>
+
+
+<div class="footer-links">
+
+<a href="#home">الرئيسية</a>
+
+<a href="#about">عن المكتب</a>
+
+<a href="#services">الخدمات</a>
+
+<a href="#cases">التخصصات</a>
+
+<a href="#why">لماذا نحن</a>
+
+<a href="#faq">الأسئلة الشائعة</a>
+
+<a href="#social">حساباتنا</a>
+
+<a href="#contact">تواصل معنا</a>
+
+</div>
+
+
+</div>
+
 
 <div class="copyright">
-    جميع الحقوق محفوظة © 2026
+
+© 2026 مكتب روينا عبدالفتاح رحالي للمحاماة والاستشارات القانونية — جميع الحقوق محفوظة
+
 </div>
 
 </div>
@@ -2251,203 +3473,173 @@ footer{
 </footer>
 
 
+
 <!-- =========================================================
-     FLOATING WHATSAPP
+     WHATSAPP FLOATING
 ========================================================= -->
 
 <a
-    href="https://wa.me/966544270651"
-    target="_blank"
-    class="whatsapp"
-    aria-label="واتساب"
+href="https://wa.me/966544270651"
+target="_blank"
+rel="noopener noreferrer"
+class="whatsapp"
+aria-label="التواصل عبر واتساب"
 >
-    ◉
+
+<svg viewBox="0 0 24 24">
+
+<path d="M20.5 11.2a8.5 8.5 0 0 1-12.6 7.4L4 20l1.4-3.7A8.5 8.5 0 1 1 20.5 11.2Z"/>
+
+<path d="M8.8 8.2c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.8 1.8c.1.3.1.5-.1.7l-.6.7c-.1.1-.1.3 0 .5.4.8 1.1 1.5 1.9 1.9.2.1.4.1.5 0l.7-.6c.2-.2.4-.2.7-.1l1.8.8c.3.1.4.3.4.5v.5c0 .3 0 .5-.4.7-.4.2-1.2.4-2.1.1-1.2-.4-2.4-1.1-3.4-2.1-1-1-1.7-2.2-2.1-3.4-.3-.9-.1-1.7.1-2.1Z"/>
+
+</svg>
+
 </a>
+
 
 
 <script>
 
 /* =========================================================
-   MOBILE MENU
-========================================================= */
-
-const mobileMenu =
-    document.getElementById("mobileMenu");
-
-const navLinks =
-    document.getElementById("navLinks");
-
-
-mobileMenu.addEventListener(
-    "click",
-    () => {
-
-        navLinks.classList.toggle("open");
-
-    }
-);
-
-
-document
-.querySelectorAll(".nav-links a")
-.forEach(link => {
-
-    link.addEventListener(
-        "click",
-        () => {
-
-            navLinks.classList.remove("open");
-
-        }
-    );
-
-});
-
-
-/* =========================================================
-   REVEAL
-========================================================= */
-
-const revealElements =
-    document.querySelectorAll(".reveal");
-
-
-const revealObserver =
-    new IntersectionObserver(
-
-        entries => {
-
-            entries.forEach(entry => {
-
-                if(entry.isIntersecting){
-
-                    entry.target
-                        .classList
-                        .add("show");
-
-                    revealObserver
-                        .unobserve(entry.target);
-
-                }
-
-            });
-
-        },
-
-        {
-            threshold:.08
-        }
-
-    );
-
-
-revealElements.forEach(element => {
-
-    revealObserver.observe(element);
-
-});
-
-
-/* =========================================================
    FAQ
 ========================================================= */
 
-document
-.querySelectorAll(".faq-question")
-.forEach(button => {
+document.querySelectorAll(".faq-question").forEach(button => {
 
-    button.addEventListener(
-        "click",
-        () => {
+    button.addEventListener("click", () => {
 
-            const item =
-                button.parentElement;
+        const item =
+            button.closest(".faq-item");
 
-            const answer =
-                item.querySelector(
-                    ".faq-answer"
-                );
-
-
-            document
+        document
             .querySelectorAll(".faq-item")
             .forEach(other => {
 
                 if(other !== item){
-
-                    other
-                        .classList
-                        .remove("active");
-
-                    other
-                        .querySelector(
-                            ".faq-answer"
-                        )
-                        .style
-                        .maxHeight = null;
-
+                    other.classList.remove("active");
                 }
 
             });
 
+        item.classList.toggle("active");
 
-            item
-                .classList
-                .toggle("active");
-
-
-            if(
-                item.classList.contains("active")
-            ){
-
-                answer.style.maxHeight =
-                    answer.scrollHeight + "px";
-
-            }else{
-
-                answer.style.maxHeight =
-                    null;
-
-            }
-
-        }
-    );
+    });
 
 });
 
 
 /* =========================================================
-   SMOOTH LINKS
+   SCROLL REVEAL
 ========================================================= */
 
-document
-.querySelectorAll('a[href^="#"]')
-.forEach(anchor => {
+const observer =
+    new IntersectionObserver(
+        entries => {
 
-    anchor.addEventListener(
-        "click",
-        function(e){
+            entries.forEach(
+                entry => {
 
-            const target =
-                document.querySelector(
-                    this.getAttribute("href")
-                );
+                    if(entry.isIntersecting){
 
-            if(!target) return;
+                        entry.target.classList.add("show");
 
-            e.preventDefault();
+                        observer.unobserve(
+                            entry.target
+                        );
 
-            target.scrollIntoView({
-                behavior:"smooth",
-                block:"start"
-            });
+                    }
 
+                }
+            );
+
+        },
+        {
+            threshold:.08
         }
     );
 
-});
+
+document
+    .querySelectorAll(".reveal")
+    .forEach(
+        element => observer.observe(element)
+    );
+
+
+/* =========================================================
+   HEADER SCROLL
+========================================================= */
+
+const header =
+    document.querySelector("header");
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        if(window.scrollY > 25){
+
+            header.style.background =
+                "rgba(6,16,12,.97)";
+
+            header.style.boxShadow =
+                "0 10px 35px rgba(0,0,0,.20)";
+
+        }else{
+
+            header.style.background =
+                "linear-gradient(180deg,rgba(8,19,14,.94),rgba(7,17,13,.88))";
+
+            header.style.boxShadow =
+                "0 8px 35px rgba(0,0,0,.12)";
+
+        }
+
+    },
+    {
+        passive:true
+    }
+);
+
+
+/* =========================================================
+   SMALL PARALLAX EFFECT FOR LOGO
+========================================================= */
+
+const logoStage =
+    document.querySelector(".logo-stage");
+
+if(logoStage && window.matchMedia("(pointer:fine)").matches){
+
+    logoStage.addEventListener("mousemove", e => {
+
+        const rect =
+            logoStage.getBoundingClientRect();
+
+        const x =
+            (e.clientX - rect.left) / rect.width - .5;
+
+        const y =
+            (e.clientY - rect.top) / rect.height - .5;
+
+        logoStage.style.transform =
+            `perspective(800px)
+             rotateY(${x * 5}deg)
+             rotateX(${y * -5}deg)`;
+
+    });
+
+    logoStage.addEventListener("mouseleave", () => {
+
+        logoStage.style.transform =
+            "perspective(800px) rotateY(0deg) rotateX(0deg)";
+
+    });
+
+}
 
 </script>
+
 
 </body>
 </html>
